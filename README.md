@@ -9,7 +9,6 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 <th colspan="3">Browser Compatibility</th>
 </tr>
 <tr>
-<tr>
 <td>Browser</td>
 <td>Version</td>
 <td>Works?</td>
@@ -18,21 +17,25 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 <td>11</td>
 <td>All good</td>
 </tr>
+<tr>
 <td>Mozilla Firefox</td>
 <td>26</td>
 <td>All good</td>
 </tr>
+<tr>
 <td>Google Chrome</td>
 <td>34.0.1756.0</td>
-<td>Broken</td>
+<td>Minor bugs</td>
 </tr>
+<tr>
 <td>Apple Safari</td>
 <td>N/A</td>
 <td>Untested</td>
 </tr>
+<tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>Broken</td>
+<td>Barely Works</td>
 </tr>
 </table>
 
