@@ -37,7 +37,7 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 <tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>Barely Works</td>
+<td>On and off</td>
 </tr>
 </table>
 
