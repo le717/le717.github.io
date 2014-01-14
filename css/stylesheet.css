@@ -1,0 +1,169 @@
+@charset "UTF-8";
+/*
+    Created 2014 Triangle717
+    <http://Triangle717.WordPress.com/>
+
+    Licensed under The MIT License
+    <http://opensource.org/licenses/MIT/>
+*/
+
+html { height: 100%; width: 100%; }
+
+/* Use Source Sans Pro for all text */
+body { font-family: "Source Sans Pro", sans-serif; }
+
+/* Set link decoration */
+a {
+    text-decoration: none;
+    color: blue;
+}
+a:hover { text-decoration: underline; }
+#subpages a { color: #93ac2c; }
+
+/* Remove bullet points */
+ul { list-style: none; }
+
+/* Move the loading link from the very corner */
+#load-link {
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+/* Define racket size and color */
+.racket {
+    width: 20px;
+    height: 120px;
+    background-color: #554d4d;
+}
+
+/* Position left racket */
+#left-racket {
+    margin-left: 73px;
+    margin-top: 18px;
+}
+
+ /* Position right racket */
+#right-racket {
+    /* FIXME margin-left is broken on mobile */
+    margin-left: 66%;
+    animation-direction: alternate-reverse;
+    margin-top: -50px;
+}
+
+/* The loading ball */
+#loading {
+    position: absolute;
+    display: table;
+    width: 200px;
+    height: 200px;
+    left: 100px;
+    top: 50px;
+    box-shadow: 0px 0px 3px #000000;
+    background-color: #cc0000;
+    background: radial-gradient(ellipse at center, #cc0000 0%,#cc0000 100%);
+    border-radius: 100%;
+}
+
+/* Loading ball branding */
+#loading p {
+    /* Alignment settings  */
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    /* Font settings */
+    font-size: 2.188em;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Hide page content on page load */
+#subpages { display: none; }
+
+/* Center page contents
+//FUTURE This can be done better */
+#subpages div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    transform: translate(100%, 0px);
+}
+
+/* Footer */
+#footer { font-size: 0.68rem; margin-top: -50px; }
+
+/* GitHub Buttons */
+iframe {
+    border: none;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+/* ------ Animation settings ------ */
+
+.slide-ani {
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.rotate-ani {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.racket-ani {
+    animation-name: racket;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+/* ------ Animation keyframes ------ */
+
+@keyframes slide {
+    0% {
+        transform: translate(0%, 0px);
+    }
+    50% {
+        transform: translate(150%, 100px);
+    }
+    100% {
+        transform: translate(300%, 0px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes racket {
+    0% {
+        transform: translateY(0%);
+        background-color: rgb(255, 255, 0);
+    }
+    1% {
+        background-color: rgba(255, 255, 0, 0.9);
+    }
+    2% {
+        background-color: #554d4d;
+    }
+    50% {
+        transform: translateY(150%);
+    }
+    100% {
+        transform: translateY(300%);
+    }
+}
