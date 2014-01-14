@@ -4,6 +4,8 @@ Possible future home of my website. My website can currently be found on [WordPr
 
 Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I may improve it later. Right now, it is best enjoyed on non-mobile devices. :smile:
 
+## [http://le717.github.io](http://le717.github.io) ##
+
 <table>
 <tr>
 <th colspan="3">Browser Compatibility</th>
@@ -25,7 +27,7 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 <tr>
 <td>Google Chrome</td>
 <td>34.0.1756.0</td>
-<td>Minor bugs</td>
+<td>Bit buggy</td>
 </tr>
 <tr>
 <td>Apple Safari</td>
