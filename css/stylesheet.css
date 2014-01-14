@@ -38,14 +38,14 @@ ul { list-style: none; }
 
 /* Position left racket */
 #left-racket {
-    margin-left: 73px;
+    margin-left: 75px;
     margin-top: 18px;
 }
 
  /* Position right racket */
 #right-racket {
     /* FIXME margin-left is broken on mobile */
-    margin-left: 66%;
+    margin-left: 65.5%;
     animation-direction: alternate-reverse;
     margin-top: -50px;
 }
