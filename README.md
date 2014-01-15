@@ -1,10 +1,8 @@
-# le717.github.io #
+# [http://le717.github.io](http://le717.github.io) #
 
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
-Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I may improve it later. Right now, it is best enjoyed on non-mobile devices. :smile:
-
-## [http://le717.github.io](http://le717.github.io) ##
+Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I may improve it later. It can be a bit buggy depending your browser and device type. Right now, it is best enjoyed on desktop browsers. Please consult thhe table below for browser compatibility (I update it as bugs are fixed). :smile:
 
 <table>
 <tr>
@@ -17,12 +15,12 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 </tr>
 <td>Internet Explorer</td>
 <td>11</td>
-<td>All good</td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Mozilla Firefox</td>
 <td>26</td>
-<td>All good</td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Google Chrome</td>
