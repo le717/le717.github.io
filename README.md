@@ -27,7 +27,7 @@ Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy. I m
 <tr>
 <td>Google Chrome</td>
 <td>34.0.1756.0</td>
-<td>Bit buggy</td>
+<td>Mostly working</td>
 </tr>
 <tr>
 <td>Apple Safari</td>

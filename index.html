@@ -28,13 +28,24 @@
             var aniTwo = document.querySelector(".rotate-ani");
             var lRacket = document.querySelector("#left-racket");
             var rRacket = document.querySelector("#right-racket");
+            var racketAni = document.querySelector(".racket-ani");
             var waitLink = document.querySelector("#load-link");
             var loadingText = document.querySelector("#loading p");
             var pageContent = document.querySelector("#subpages");
 
-            // Stop animations and hide animation content
+            var playStates = ["animationPlayState", "webkitAnimationPlayState"];
+
+            // Stop animations
             aniOne.style.animationPlayState = "paused";
             aniTwo.style.animationPlayState = "paused";
+            racketAni.style.animationPlayState = "paused";
+
+            // Stop animations on Webkit too (UGH Chrome)
+            aniOne.style.webkitAnimationPlayState = "paused";
+            aniTwo.style.webkitAnimationPlayState = "paused";
+            racketAni.style.webkitAnimationPlayState = "paused";
+
+            // Hide animation elements
             waitLink.style.display = "none";
             lRacket.style.display = "none";
             rRacket.style.display = "none";

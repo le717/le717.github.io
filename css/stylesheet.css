@@ -54,6 +54,7 @@ ul { list-style: none; }
 #loading {
     position: absolute;
     display: table;
+    /*FIXME Smaller ball */
     width: 200px;
     height: 200px;
     left: 100px;
