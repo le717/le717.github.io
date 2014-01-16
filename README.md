@@ -2,7 +2,9 @@
 
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
-Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation for you to enjoy (best enjoyed on desktop browsers), but it a bit buggy depending your browser and device type. Please consult the table below for browser compatibility (I update it as bugs are fixed/changes are made). :smile:
+Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation entitled **Not Pong** for you to enjoy (best enjoyed on desktop browsers), but it can be
+a bit buggy depending your browser. Please consult the table below for browser compatibility (I update it as bugs are fixed/changes are 
+made).:smile:
 
 <table>
 <tr>
