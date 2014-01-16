@@ -33,7 +33,4 @@ function stopAll() {
 
     // Display (lame) page contents
     pageContent.style.display = "table";
-
-    //FIXME Page positioning so this is not needed on mobile (usually has no effect on desktop)
-    window.scroll(365, 0);
 }
