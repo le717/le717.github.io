@@ -2,15 +2,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    jshint: {
-        // Define the JS files to lint
-        files: ["gruntfile.js", "js/script.js"],
-        options: {
-            globals: {
-                jQuery: true
-            }
-        }
-    },
+    // Lint check any CSS
     csslint: {
       options: {
         csslintrc: ".csslintrc"
@@ -28,6 +20,7 @@ module.exports = function(grunt) {
         src: ["css/style.css"]
       }
     },
+    // Minify any CSS
     cssmin: {
         add_banner: {
             options: {
@@ -38,6 +31,17 @@ module.exports = function(grunt) {
             }
         }
     },
+    // Lint check any JavaScript
+    jshint: {
+        // Define the JS files to lint
+        files: ["gruntfile.js", "js/script.js"],
+        options: {
+            globals: {
+                jQuery: true
+            }
+        }
+    },
+    // Minify any JavaScript
     uglify: {
         my_target: {
             files: {
@@ -45,9 +49,10 @@ module.exports = function(grunt) {
             }
         }
     },
+    // Watched files to trigger grunt
     watch: {
-        files: ["index.html", "<%= csslint.files %>", "<%= jshint.files %>"],
-            tasks: ["jshint", "uglify"]
+        files: ["index.html", "css/style.css", "<%= jshint.files %>"],
+            tasks: ["default"]
         }
     });
 
@@ -59,6 +64,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
 
     // Default task(s).
-    grunt.registerTask("default", ["cssmin", "jshint", "uglify"]);
+    grunt.registerTask("default", ["csslint", "cssmin", "jshint", "uglify"]);
 
 };
