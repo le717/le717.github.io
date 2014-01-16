@@ -1,5 +1,7 @@
 # [http://le717.github.io](http://le717.github.io) #
 
+[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io)
+
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
 Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation entitled **Not Pong** for you to enjoy (best enjoyed on desktop browsers), but it can be
@@ -17,7 +19,7 @@ made).:smile:
 </tr>
 <td>Internet Explorer</td>
 <td>11</td>
-<td>Right racket<br>does not flash</td>
+<td>:negative_squared_cross_mark:</td>
 </tr>
 <tr>
 <td>Mozilla Firefox</td>
