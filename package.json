@@ -4,7 +4,7 @@
   "description": "Possible future home of my website, currently hosts Not Pong CSS3 animation",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt default"
   },
   "repository": {
     "type": "git",
