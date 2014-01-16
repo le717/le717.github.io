@@ -11,6 +11,23 @@ module.exports = function(grunt) {
             }
         }
     },
+    csslint: {
+      options: {
+        csslintrc: ".csslintrc"
+      },
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ["css/style.css"]
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ["css/style.css"]
+      }
+    },
     cssmin: {
         add_banner: {
             options: {
@@ -29,13 +46,14 @@ module.exports = function(grunt) {
         }
     },
     watch: {
-        files: ["index.html", "css/style.css", "<%= jshint.files %>"],
+        files: ["index.html", "<%= csslint.files %>", "<%= jshint.files %>"],
             tasks: ["jshint", "uglify"]
         }
     });
 
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-csslint");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
