@@ -65,5 +65,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask("default", ["csslint", "cssmin", "jshint", "uglify"]);
+    grunt.registerTask("test", ["cssmin", "uglify"]);
 
 };

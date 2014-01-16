@@ -4,7 +4,7 @@
   "description": "Possible future home of my website, currently hosts Not Pong CSS3 animation",
   "main": "index.html",
   "scripts": {
-    "test": "grunt default"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
