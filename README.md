@@ -17,7 +17,7 @@ made).:smile:
 </tr>
 <td>Internet Explorer</td>
 <td>11</td>
-<td>:white_check_mark:</td>
+<td>Right racket<br>does not flash</td>
 </tr>
 <tr>
 <td>Mozilla Firefox</td>
