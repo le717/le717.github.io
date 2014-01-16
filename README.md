@@ -26,7 +26,7 @@ made).:smile:
 </tr>
 <tr>
 <td>Google Chrome</td>
-<td>34.0.1756.0</td>
+<td>34.0.1788.0</td>
 <td>:white_check_mark:</td>
 </tr>
 <tr>
@@ -37,7 +37,7 @@ made).:smile:
 <tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>Occasional animation bugs</td>
+<td>Occasional bugs</td>
 </tr>
 </table>
 
