@@ -159,13 +159,13 @@ iframe {
 
 @keyframes slide {
     0% {
-        transform: translate(0rem, 0px);
+        transform: translate(0rem, 0rem);
     }
     50% {
         transform: translate(20.6rem, 25rem);
     }
     100% {
-        transform: translate(41.2rem, 0px);
+        transform: translate(41.2rem, 0rem);
     }
 }
 
