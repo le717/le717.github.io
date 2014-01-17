@@ -129,6 +129,7 @@ iframe {
     border: none;
     overflow: hidden;
     background-color: transparent;
+    padding-top: 4px;
 }
 
 /* ------ Animation settings ------ */
