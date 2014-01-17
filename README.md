@@ -1,9 +1,10 @@
-# [http://le717.github.io](http://le717.github.io) [![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) #
+# [http://le717.github.io](http://le717.github.io) #
+[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
 Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation entitled **Not Pong** for you to enjoy (best enjoyed on desktop browsers), but it can be
-a bit buggy depending your browser. Please consult the table below for browser compatibility (I update it as bugs are fixed/changes are 
+a bit buggy depending your browser. Please consult the table below for browser compatibility (I update it as bugs are fixed/changes are
 made).:smile:
 
 <table>
@@ -49,7 +50,7 @@ I've used some very helpful third-party libraries in writing this. I recommend c
 
 * [-prefix-free](http://leaverou.github.io/prefixfree/)
 * [GitHub Buttons](http://ghbtns.com/)
-* [Gruntjs](http://gruntjs.com/)
+* [Grunt](http://gruntjs.com/)
 
 ## License ##
 

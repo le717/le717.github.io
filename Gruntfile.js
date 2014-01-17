@@ -47,8 +47,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
-  // Define out tasks. `test` is used for Travis CI
+  // Define any tasks.
   grunt.registerTask("default", ["cssmin", "jshint", "uglify"]);
-  grunt.registerTask("test", ["cssmin", "uglify"]);
-
 };

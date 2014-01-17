@@ -4,7 +4,7 @@
   "description": "Possible future home of my website, currently hosts Not Pong CSS3 animation",
   "main": "index.html",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt default"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
   "author": "Triangle717",
   "license": "The MIT License",
   "bugs": {
-    "url": "https://github.com/le717/le717.github.io/issues"
+    "url": "https://github.com/le717/le717.github.io/issues/"
   },
   "homepage": "http://le717.github.io",
   "devDependencies": {
@@ -28,7 +28,6 @@
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-uglify": "~0.3.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-contrib-csslint": "~0.2.0"
+    "grunt-contrib-cssmin": "~0.7.0"
   }
 }
