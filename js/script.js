@@ -34,3 +34,29 @@ function stopAll() {
     // Display (lame) page contents
     pageContent.style.display = "table";
 }
+
+function detectBrowser() {
+    /*
+    The the web browser the user is running. Taken from
+    https://developer.mozilla.org/en-US/docs/Web/API/window.navigator#Example_.231.3A_Browser_detect_and_return_a_string
+    and slightly edited to clean it up a bit.
+    */
+    var theBrowser, sUsrAg = navigator.userAgent;
+
+    if (sUsrAg.indexOf("Chrome") > -1) {
+        theBrowser = "Google Chrome";
+    } else if (sUsrAg.indexOf("Safari") > -1) {
+        theBrowser = "Apple Safari";
+    } else if (sUsrAg.indexOf("Opera") > -1) {
+        theBrowser = "Opera";
+    } else if (sUsrAg.indexOf("Firefox") > -1) {
+        theBrowser = "Mozilla Firefox";
+    } else if (sUsrAg.indexOf("MSIE") > -1) {
+        theBrowser = "Microsoft Internet Explorer";
+    }
+
+    var yourBrowser = document.querySelector("#yourBrowser");
+    yourBrowser.innerHTML = "You are using " + theBrowser + " to view my website!";
+}
+
+detectBrowser();
