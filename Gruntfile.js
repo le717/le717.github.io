@@ -1,13 +1,40 @@
 module.exports = function (grunt) {
-  // Project configuration.
-  grunt.initConfig({
-    pkg: grunt.file.readJSON("package.json"),
+    "use strict";
+    // Project configuration
+    grunt.initConfig({
+        pkg: grunt.file.readJSON("package.json"),
+        banner: '/* <%= pkg.name %> - v<%= pkg.version %>\n' +
+      '<%= pkg.homepage ? "" + pkg.homepage + "\\n" : "" %>' +
+      'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
+      'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
+
+        // Validate the HTML using the W3C HTML Validator
+        validation: {
+            options: {
+            reset: grunt.option('reset') || false,
+            stoponerror: false,
+            },
+            files: {
+            src: "index.html",
+            }
+        },
+
+    // Lint the CSS
+    csslint: {
+      strict: {
+        options: {
+          csslintrc: '.csslintrc',
+          'import': 2
+        },
+        src: "css/style.css",
+      }
+    },
 
     // Minify any CSS
     cssmin: {
       add_banner: {
         options: {
-          banner: "/* Created 2014 Triangle717, Licensed under The MIT License */"
+          banner: "<%= banner %>"
         },
         files: {
           "css/style.min.css": ["css/style.css"]
@@ -15,18 +42,21 @@ module.exports = function (grunt) {
       }
     },
 
-    // Lint check any JavaScript
+    // Lint the JavaScript
     jshint: {
-      files: ["package.json", "gruntfile.js", "js/script.js"],
-      options: {
-        globals: {
-          jQuery: true
-        }
-      }
+      src: {
+        options: {
+          jshintrc: ".jshintrc"
+        },
+        src: ["gruntfile.js", "js/script.js"],
+      },
     },
 
     // Minify any JavaScript
     uglify: {
+    options: {
+          banner: "<%= banner %>"
+        },
       my_target: {
         files: {
           "js/script.min.js": ["js/script.js"],
@@ -36,17 +66,31 @@ module.exports = function (grunt) {
 
     // Watched files to trigger grunt
     watch: {
-      files: ["index.html", "css/style.css", "<%= jshint.files %>"],
+      files: ["index.html", "css/*.css", "*.js", "js/*.js"],
       tasks: ["default"]
     }
   });
 
-  // Load any plugins
+  // Load the plugins required for our tasks
+  grunt.loadNpmTasks('grunt-html-validation');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-cssmin");
   grunt.loadNpmTasks("grunt-contrib-uglify");
   grunt.loadNpmTasks("grunt-contrib-watch");
 
-  // Define any tasks.
-  grunt.registerTask("default", ["cssmin", "jshint", "uglify"]);
+    grunt.registerTask('default', 'List commands', function () {
+        grunt.log.writeln("");
+        grunt.log.writeln("Run 'grunt lint' to lint the source files");
+        grunt.log.writeln("Run 'grunt build' to minify the source files");
+        grunt.log.writeln("Run 'grunt all' to lint and minify the source files");
+    });
+
+    // Define the tasks
+    grunt.registerTask("lint", ["validation", "csslint", "jshint"]);
+    grunt.registerTask("build", ["cssmin", "uglify"]);
+    grunt.registerTask("all", ["lint", "build"]);
+
+    // Always use --force to stop csslint from killing the task
+    grunt.option("force", true);
 };
