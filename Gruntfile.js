@@ -11,8 +11,9 @@ module.exports = function (grunt) {
         // Validate the HTML using the W3C HTML Validator
         validation: {
             options: {
-                reset: grunt.option("reset") || false,
+                reset: true,
                 stoponerror: false,
+                reportpath: false,
             },
             files: {
                 src: "index.html",
