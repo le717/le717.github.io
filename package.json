@@ -18,7 +18,12 @@
     "Not Pong"
   ],
   "author": "Triangle717",
-  "license": "The MIT License",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/le717/le717.github.io/issues/"
   },
