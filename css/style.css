@@ -39,7 +39,7 @@ a:hover { text-decoration: underline; }
     /* Box styling */
     text-align: center;
     background-color: rgba(211, 235, 225, 0.6);
-    box-shadow: 0px 0px 2px 2px rgb(204, 0, 0);
+    box-shadow: 0 0 2px 2px rgb(204, 0, 0);
 
     /* Transition */
     transition: opacity, transform;
@@ -111,7 +111,7 @@ a:hover { text-decoration: underline; }
     height: 150px;
     left: 20px;
     top: 50px;
-    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+    box-shadow: 0 0 3px rgb(0, 0, 0);
     background-color: rgb(204, 0, 0);
     border-radius: 100%;
 }
