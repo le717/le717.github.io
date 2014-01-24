@@ -14,10 +14,7 @@ html {
 }
 
 /* Use Source Sans Pro for all text */
-body {
-    font-family: "Source Sans Pro", sans-serif;
-    font-size-adjust: auto;
-}
+body { font-family: "Source Sans Pro", sans-serif; }
 
 /* Set link decoration */
 a {
@@ -28,10 +25,34 @@ a:hover { text-decoration: underline; }
 #subpages a { color: rgb(147, 172, 44); }
 
 #yourBrowser {
-    display: none;
-    border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    /* Location */
+    position: fixed;
+    display: block;
+    right: 20px;
+    bottom: -210px;
+    width: 210px;
+    height: 210px;
+
+    /* Set the box to initally be invisible */
+    opacity: 0;
+
+    /* Box styling */
+    text-align: center;
+    background-color: rgba(211, 235, 225, 0.6);
+    box-shadow: 0px 0px 2px 2px rgb(204, 0, 0);
+
+    /* Transition */
+    transition: opacity, transform;
+    transition-duration: 2s, 1.8s;
+    transition-timing-function: ease-in;
+}
+
+/* Disguise the fact this is a link */
+#yourBrowser a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* Move the loading link from the very corner */
@@ -46,7 +67,6 @@ a:hover { text-decoration: underline; }
     font-family: "Press Start 2P", "Impact", monospace;
     font-weight: bold;
     font-size: 2rem;
-    font-size-adjust: auto;
     transform: translateX(18rem);
 }
 

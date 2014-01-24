@@ -6,6 +6,8 @@
     <http://opensource.org/licenses/MIT/>
 */
 
+var yourBrowser = document.querySelector("#yourBrowser");
+
 function stopAll() {
     "use strict";
     /* Stop the animation and display (pittyful) page contents */
@@ -35,28 +37,70 @@ function stopAll() {
     pageContent.style.display = "table";
 }
 
-function detectBrowser() {
-    /*
-    The the web browser the user is running. Taken from
-    https://developer.mozilla.org/en-US/docs/Web/API/window.navigator#Example_.231.3A_Browser_detect_and_return_a_string
-    and slightly edited to clean it up a bit.
-    */
-    var theBrowser, sUsrAg = navigator.userAgent;
 
-    if (sUsrAg.indexOf("Chrome") > -1) {
-        theBrowser = "Google Chrome";
-    } else if (sUsrAg.indexOf("Safari") > -1) {
-        theBrowser = "Apple Safari";
-    } else if (sUsrAg.indexOf("Opera") > -1) {
-        theBrowser = "Opera";
-    } else if (sUsrAg.indexOf("Firefox") > -1) {
-        theBrowser = "Mozilla Firefox";
-    } else if (sUsrAg.indexOf("MSIE") > -1) {
-        theBrowser = "Microsoft Internet Explorer";
-    }
+function hideBrowserBox() {
+    "use strict";
+    /* Hide the browser box */
+    // Trigger the fade-out transition
+    yourBrowser.style.opacity = "0";
 
-    var yourBrowser = document.querySelector("#yourBrowser");
-    yourBrowser.innerHTML = "You are using " + theBrowser + " to view my website!";
+    // Trigger the sliding transition
+    yourBrowser.style.webkitTransform = "translateY(220px)";
+    yourBrowser.style.transform = "translateY(220px)";
 }
 
-detectBrowser();
+
+function detectBrowser() {
+    "use strict";
+    /* //TODO Write me */
+    var theBrowser,
+        theBrowserLogo,
+        usrAgent = navigator.userAgent,
+        theBrowserVersion = $.browser.versionNumber,
+        yourBrowserA = document.querySelector("#yourBrowser a"),
+        // Default message
+        theBrowserMessage = "Your should be able to view my site error free!<br>";
+
+    // This is Google Chrome
+    if ($.browser.chrome) {
+        theBrowser = "Google Chrome";
+        theBrowserLogo = "img/chrome.png";
+
+    // This is Safari
+    //else if (usrAgent.indexOf("Safari") > -1) {
+    } else if ($.browser.safari) {
+        theBrowser = "Apple Safari";
+        theBrowserLogo = "img/safari.png";
+        theBrowserMessage = "You might experience some issues while browsing my site. " +
+        "If you do, please report it so I may look into fixing them.";
+
+    // This is Opera
+    } else if ($.browser.opr) {
+        theBrowser = "Opera";
+        theBrowserLogo = "img/opera.png";
+        theBrowserMessage = "You might experience some issues while browsing my site. " +
+        "If you do, please report it so I may look into fixing them.";
+
+    // This is Mozilla Firefox
+    } else if ($.browser.mozilla) {
+        theBrowser = "Mozilla Firefox";
+        theBrowserLogo = "img/firefox.png";
+
+    //TODO Old IE (<= 9, MSIE) check
+    } else if ($.browser.msie) {
+        theBrowser = "Internet Explorer";
+        theBrowserLogo = "img/ie.png";
+    }
+
+    // Insert message and browser logo
+    yourBrowserA.innerHTML = "You are using<br>" + theBrowser + " " + theBrowserVersion + "<br>" +
+    theBrowserMessage + '<br><img alt="Browser logo" width="90" height="90" src="' +
+    theBrowserLogo + '" />';
+
+    // Trigger the fade-in transition
+    yourBrowser.style.opacity = "1";
+
+    // Trigger the sliding transition
+    yourBrowser.style.webkitTransform = "translateY(-220px)";
+    yourBrowser.style.transform = "translateY(-220px)";
+}
