@@ -1,0 +1,9 @@
+{
+    "maxlen" : 100,
+    "indent" : 4,
+    "globals" : [
+        "$",
+        "document",
+        "window"
+    ]
+}
