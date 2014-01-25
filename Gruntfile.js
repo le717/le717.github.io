@@ -67,7 +67,7 @@ module.exports = function (grunt) {
 
         // Watched files to trigger grunt
         watch: {
-            files: ["index.html", "css/*.css", "*.js", "js/*.js"],
+            files: ["index.html", "css/style.css", "*.js", "js/script.js"],
             tasks: ["all"]
         }
     });
