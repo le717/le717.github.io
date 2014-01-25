@@ -59,7 +59,7 @@ function detectBrowser() {
         theBrowserVersion = $.browser.versionNumber,
         yourBrowserA = document.querySelector("#yourBrowser a"),
         // Default message
-        theBrowserMessage = "Your should be able to view my site error free!<br>";
+        theBrowserMessage = "You should be able to view my site error free!<br>";
 
     // This is Google Chrome
     if ($.browser.chrome) {
