@@ -13,7 +13,11 @@ html {
 }
 
 /* Use Source Sans Pro for all text */
-body { font-family: "Source Sans Pro", sans-serif; }
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: #f8f8f8;
+    color: #363a3a;
+}
 
 /* Set link decoration */
 a {
@@ -21,7 +25,7 @@ a {
     color: rgb(0, 0, 255);
 }
 a:hover { text-decoration: underline; }
-#subpages a { color: rgb(147, 172, 44); }
+#subpages a { color: inherit; }
 
 #yourBrowser {
     /* Location */
@@ -50,7 +54,7 @@ a:hover { text-decoration: underline; }
 #yourBrowser a {
     text-decoration: none;
     color: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -65,7 +69,8 @@ a:hover { text-decoration: underline; }
 #game-name {
     font-family: "Press Start 2P", "Impact", monospace;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 35px;
+    color: rgb(0, 0, 0);
     transform: translateX(18rem);
 }
 
