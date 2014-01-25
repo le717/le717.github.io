@@ -52,7 +52,7 @@ function hideBrowserBox() {
 
 function detectBrowser() {
     "use strict";
-    /* //TODO Write me */
+    /* Detect the user's web browser and display message */
     var theBrowser,
         theBrowserLogo,
         usrAgent = navigator.userAgent,
@@ -65,6 +65,11 @@ function detectBrowser() {
     if ($.browser.chrome) {
         theBrowser = "Google Chrome";
         theBrowserLogo = "img/chrome.png";
+
+    // This is Mozilla Firefox
+    } else if ($.browser.mozilla) {
+        theBrowser = "Mozilla Firefox";
+        theBrowserLogo = "img/firefox.png";
 
     // This is Safari
     //else if (usrAgent.indexOf("Safari") > -1) {
@@ -81,21 +86,26 @@ function detectBrowser() {
         theBrowserMessage = "You might experience some issues while browsing my site. " +
         "If you do, please report it so I may look into fixing them.";
 
-    // This is Mozilla Firefox
-    } else if ($.browser.mozilla) {
-        theBrowser = "Mozilla Firefox";
-        theBrowserLogo = "img/firefox.png";
-
     //TODO Old IE (<= 9, MSIE) check
     } else if ($.browser.msie) {
         theBrowser = "Internet Explorer";
         theBrowserLogo = "img/ie.png";
+        theBrowserMessage = "You might experience some issues while browsing my site. " +
+        "If you do, please report it so I may look into fixing them.";
+
+    // Some other browser
+    } else {
+        theBrowser = "An Unidentified Browser";
+        theBrowserVersion = "";
+        theBrowserLogo = "img/globe-blue.png";
+        theBrowserMessage = "If you will, please submit an issue on GitHub with compatibility " +
+            "results so I can develop for this browser.";
     }
 
     // Insert message and browser logo
-    yourBrowserA.innerHTML = "You are using<br>" + theBrowser + " " + theBrowserVersion + "<br>" +
-    theBrowserMessage + '<br><img alt="Browser logo" width="90" height="90" src="' +
-    theBrowserLogo + '" />';
+    yourBrowserA.innerHTML = "You are using<br>" + theBrowser + " " + theBrowserVersion + ".<br>" +
+        theBrowserMessage + '<br><img alt="Browser logo" width="90" height="90" src="' +
+        theBrowserLogo + '" />';
 
     // Trigger the fade-in transition
     yourBrowser.style.opacity = "1";
