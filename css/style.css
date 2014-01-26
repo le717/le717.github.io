@@ -60,7 +60,9 @@ a:hover { text-decoration: underline; }
 
 /* Move the loading link from the very corner */
 #wait-link {
-    margin-left: 0.7rem;
+    position: relative;
+    top: 15px;
+    left: 15px;
     font-size: 1.2rem;
     font-weight: bold;
 }
