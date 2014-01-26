@@ -133,18 +133,24 @@ a:hover { text-decoration: underline; }
 }
 
 /* Remove bullet points */
-ul { list-style: none; }
+ul {
+    list-style: none;
+    text-align: justify;
+}
+
+li:before {
+    content: "▲";
+    padding-right: 5px;
+}
 
 /* Hide page content on page load */
 #subpages { display: none; }
 
-/* Center page contents
-//FUTURE This can be done better */
-#subpages div {
-    display: table-cell;
-    vertical-align: middle;
+/* Center page contents */
+#subpages {
     text-align: center;
-    transform: translate(100%, 0px);
+    margin: 0 auto;
+    width: 400px;
 }
 
 /* Footer text */
