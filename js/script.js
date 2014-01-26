@@ -10,21 +10,12 @@ var $yourBrowser = $("#yourBrowser");
 
 function stopAll() {
     "use strict";
-    /* Stop the animation and display (pittyful) page contents */
-    //var aniOne = document.querySelector(".slide-ani");
-    //var aniTwo = document.querySelector(".rotate-ani");
-    //var racketAni = document.querySelector(".racket-ani");
+    /* Stop the animation and display (pitiful) page contents */
 
     // Stop animations
     $(".slide-ani").css("animationPlayState", "paused");
     $(".rotate-ani").css("animationPlayState", "paused");
     $(".racket-ani").css("animationPlayState", "paused");
-
-    // Stop animations on Webkit too (Grrr Chrome)
-    // TODO Ensure these can removed once pushed
-    //aniOne.style.webkitAnimationPlayState = "paused";
-    //aniTwo.style.webkitAnimationPlayState = "paused";
-    //racketAni.style.webkitAnimationPlayState = "paused";
 
     // Hide animation elements
     $("#wait-link").css("display", "none");
