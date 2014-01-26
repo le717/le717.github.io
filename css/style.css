@@ -61,9 +61,10 @@ a:hover { text-decoration: underline; }
 /* Move the loading link from the very corner */
 #wait-link {
     position: relative;
-    top: 15px;
-    left: 15px;
-    font-size: 1.2rem;
+    top: 9px;
+    left: 9px;
+    padding-bottom: 30px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -134,16 +135,20 @@ a:hover { text-decoration: underline; }
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Remove bullet points */
+/* Align subpages list */
 ul {
     list-style: none;
     text-align: justify;
 }
 
+/* Use custom bullet point */
 li:before {
     content: "▲";
     padding-right: 5px;
 }
+
+/* Workarond for Opera to properly display text */
+li { font-weight: bold; }
 
 /* Hide page content on page load */
 #subpages { display: none; }
@@ -159,6 +164,8 @@ li:before {
 footer {
     font-size: 0.68rem;
     margin-top: -50px;
+    /* Workarond for Opera to properly display text */
+    font-weight: bold;
 }
 
 /* GitHub Buttons (http://ghbtns.com/) */
