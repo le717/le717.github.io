@@ -1,5 +1,5 @@
 ﻿# [http://le717.github.io](http://le717.github.io) #
-[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/le717/le717.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
@@ -36,7 +36,7 @@ made).:smile:
 <tr>
 <td>Apple Safari</td>
 <td>5.1.7<br>6.1.1</td>
-<td>:negative_squared_cross_mark:<br>Untested
+<td>:negative_squared_cross_mark:<br>:white_check_mark:
 </td>
 </tr>
 <tr>
@@ -61,7 +61,4 @@ I've used some very helpful third-party libraries in writing this. I recommend c
 ## License ##
 
 Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](http://opensource.org/licenses/MIT).
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/le717/le717.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
