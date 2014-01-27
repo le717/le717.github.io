@@ -41,7 +41,7 @@ a:hover { text-decoration: underline; }
 
     /* Box styling */
     text-align: center;
-    background-color: rgba(211, 235, 225, 0.6);
+    background-color: rgba(251, 253, 252, 0.6);
     box-shadow: 0 0 2px 2px rgb(204, 0, 0);
 
     /* Transition */

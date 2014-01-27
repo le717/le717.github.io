@@ -18,7 +18,8 @@ made).:smile:
 </tr>
 <td>Internet Explorer</td>
 <td>11</td>
-<td>:negative_squared_cross_mark:</td>
+<td><strong>Windows 7:</strong> :negative_squared_cross_mark:<br>
+<strong>Windows 8:</strong> :white_check_mark:</td>
 </tr>
 <tr>
 <td>Mozilla Firefox</td>
@@ -27,7 +28,7 @@ made).:smile:
 </tr>
 <tr>
 <td>Google Chrome</td>
-<td>34.0.1788.0</td>
+<td>34.0.1807.0</td>
 <td>:white_check_mark:</td>
 </tr>
 <tr>
@@ -38,7 +39,7 @@ made).:smile:
 <tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>Occasional bugs</td>
+<td>:white_check_mark:</td>
 </tr>
 </table>
 

@@ -69,8 +69,6 @@ function detectBrowser() {
     } else if ($.browser.opr) {
         theBrowser = "Opera";
         theBrowserLogo = "img/opera.png";
-        theBrowserMessage = "You might experience some issues while browsing my site. " +
-            "If you do, please report it so I may look into fixing them.";
 
         //TODO Old IE (<= 9, MSIE) check
     } else if ($.browser.msie) {
