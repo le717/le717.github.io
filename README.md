@@ -18,8 +18,10 @@ made).:smile:
 </tr>
 <td>Internet Explorer</td>
 <td>11</td>
-<td><strong>Windows 7:</strong> :negative_squared_cross_mark:<br>
-<strong>Windows 8:</strong> :white_check_mark:</td>
+<td>
+<strong>Windows 7:</strong> :negative_squared_cross_mark:<br>
+<strong>Windows 8:</strong> :white_check_mark:
+</td>
 </tr>
 <tr>
 <td>Mozilla Firefox</td>
@@ -33,8 +35,9 @@ made).:smile:
 </tr>
 <tr>
 <td>Apple Safari</td>
-<td>N/A</td>
-<td>Untested</td>
+<td>5.1.7<br>6.1.1</td>
+<td>:negative_squared_cross_mark:<br>Untested
+</td>
 </tr>
 <tr>
 <td>Opera</td>
