@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                     csslintrc: ".csslintrc",
                     "import": 2
                 },
-                src: "css/style.css",
+                src: ["css/*.css", "!css/*.min.css"],
             }
         },
 
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                     banner: "<%= banner %>"
                 },
                 files: {
-                    "css/style.min.css": ["css/style.css"]
+                    "css/<%= pkg.name %>.min.css": ["css/*.css", "!css/*.min.css"]
                 }
             }
         },
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
 
         // Watched files to trigger grunt
         watch: {
-            files: ["css/*.css", "!css/*.min.css", "js/*.js", "!js/*.min.js",],
+            files: ["Gruntfile.js", "css/*.css", "!css/*.min.css", "js/*.js", "!js/*.min.js",],
             tasks: ["all"]
         }
     });
