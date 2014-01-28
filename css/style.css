@@ -86,7 +86,8 @@ a:hover { text-decoration: underline; }
 #faster-speed span {
     position: relative;
     right: 21.5px;
-    top: 40px;
+    top: 38px;
+    transition: text-shadow 0.5s ease;
 }
 
 /* Decrease speed button */
@@ -103,7 +104,11 @@ a:hover { text-decoration: underline; }
     position: relative;
     right: 24.5px;
     bottom: 65px;
+    transition: text-shadow 0.5s ease-in;
 }
+
+/* Small bit of feedback on control labels */
+#faster-speed span:hover, #slower-speed span:hover { text-shadow: 1px 1px 2px #000; }
 
 /* Move the loading link from the very corner */
 #wait-link {
