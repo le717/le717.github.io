@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             options: {
                 reset: true,
                 stoponerror: false,
-                reportpath: false,
+                reportpath: false
             },
             files: {
                 src: "index.html",
