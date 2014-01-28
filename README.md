@@ -20,7 +20,7 @@ made).:smile:
 <td>11</td>
 <td>
 <strong>Windows 7:</strong> :negative_squared_cross_mark:<br>
-<strong>Windows 8:</strong> :white_check_mark:
+<strong>Windows 8:</strong> Speed controls do not work
 </td>
 </tr>
 <tr>
@@ -31,7 +31,7 @@ made).:smile:
 <tr>
 <td>Google Chrome</td>
 <td>34.0.1807.0</td>
-<td>:white_check_mark:</td>
+<td>Speed controls do not work</td>
 </tr>
 <tr>
 <td>Apple Safari</td>
@@ -42,7 +42,7 @@ made).:smile:
 <tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>:white_check_mark:</td>
+<td>Speed controls do not work</td>
 </tr>
 </table>
 
