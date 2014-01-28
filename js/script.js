@@ -45,7 +45,10 @@ function detectBrowser() {
         usrAgent = navigator.userAgent,
         $theBrowserVersion = $.browser.versionNumber,
         // Default compatibility message
-        theBrowserMessage = "You should be able to view my site error free!<br>";
+        theBrowserMessage = "You should be able to view my site error free!<br>",
+        // Message to display for incompatible browser
+        theBrowserMessageError = "You might experience some issues while browsing my site. " +
+                "If you do, please report them for me to fix.";
 
     // This is Google Chrome
     if ($.browser.chrome) {
@@ -58,12 +61,14 @@ function detectBrowser() {
         theBrowserLogo = "img/firefox.png";
 
         // This is Safari
-        //else if (usrAgent.indexOf("Safari") > -1) {
     } else if ($.browser.safari) {
         theBrowser = "Apple Safari";
         theBrowserLogo = "img/safari.png";
-        theBrowserMessage = "You might experience some issues while browsing my site. " +
-            "If you do, please report it so I may look into fixing them.";
+        
+        // Display error message for Safari 5 and below
+        if ($theBrowserVersion <= 5) {
+            theBrowserMessage = theBrowserMessageError;
+        }
 
         // This is Opera
     } else if ($.browser.opr) {
@@ -74,8 +79,7 @@ function detectBrowser() {
     } else if ($.browser.msie) {
         theBrowser = "Internet Explorer";
         theBrowserLogo = "img/ie.png";
-        theBrowserMessage = "You might experience some issues while browsing my site. " +
-            "If you do, please report it so I may look into fixing them.";
+        theBrowserMessage = theBrowserMessageError;
 
         // Some other browser
     } else {
