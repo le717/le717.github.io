@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 options: {
                     jshintrc: ".jshintrc"
                 },
-                src: ["Gruntfile.js", "js/script.js"],
+                src: ["Gruntfile.js", "js/*.js", "!js/*.min.js"],
             },
         },
 
@@ -60,7 +60,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    "js/script.min.js": ["js/script.js"],
+                    "js/<%= pkg.name %>.min.js": ["js/script.js", "js/not-pong.js"],
                 }
             }
         },
