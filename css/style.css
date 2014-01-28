@@ -54,8 +54,55 @@ a:hover { text-decoration: underline; }
 #yourBrowser a {
     text-decoration: none;
     color: inherit;
-    font-size: 16px;
     font-weight: 700;
+}
+
+/* Animation speed controls container */
+#speedy {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: -20px;
+}
+
+/* General settings for triangle controllers */
+.speed-controls {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    color: white;
+}
+
+/* Increase speed button */
+#faster-speed {
+    left: 180px;
+    top: 8px;
+    border-width: 0 45px 77.9px 45px;
+    border-color: transparent transparent #0b9c0b transparent;
+}
+
+/* "Faster" label */
+#faster-speed span {
+    position: relative;
+    right: 21.5px;
+    top: 40px;
+}
+
+/* Decrease speed button */
+#slower-speed {
+    float: right;
+    right: 160px;
+    bottom: 65px;
+    border-width: 77.9px 45px 0 45px;
+    border-color: #ff0000 transparent transparent transparent;
+}
+
+/* "Slower" label */
+#slower-speed span {
+    position: relative;
+    right: 24.5px;
+    bottom: 65px;
 }
 
 /* Move the loading link from the very corner */
@@ -82,9 +129,9 @@ a:hover { text-decoration: underline; }
     position: absolute;
     width: 53.125rem;
     height: 37.30rem;
-    overflow: hidden;
+/*    overflow: hidden;*/
     left: 10rem;
-    top: 2rem;
+    top: 2.2rem;
 }
 
 /* Define racket size and color */
@@ -161,8 +208,17 @@ li { font-weight: bold; }
 }
 
 /* Footer text */
-footer {
+/*footer {
     font-size: 0.68rem;
+    margin-top: -50px;*/
+
+    /* Workarond for Opera to properly display text */
+    /*font-weight: bold;
+}*/
+
+/* "Site last updated on" label */
+#last-update {
+    font-size: 16px;
     margin-top: -50px;
 
     /* Workarond for Opera to properly display text */

@@ -30,15 +30,25 @@
     <!-- Objects used in animations -->
     <a id="wait-link" target="_self" onclick="stopAll();"
        title="Also click this if you can&apos;t view my awesome animation. :(">Site taking too long to load?</a>
+
     <div id="wrapper">
+
+        <!-- Animation speed controls -->
+        <div id="speedy">
+            <div class="speed-controls" id="faster-speed" onclick="increaseSpeed();"><span>Faster</span></div>
+            <div class="speed-controls" id="slower-speed" onclick="decreaseSpeed();"><span>Slower</span></div>
+        </div>
+
+        <!-- Ball, rackets, their animations, and Not Pong title -->
         <div class="slide-ani" id="loading"><p class="rotate-ani">Triangle717</p></div>
         <div class="racket racket-ani" id="left-racket"></div>
         <div class="racket racket-ani" id="right-racket"></div>
         <p id="game-name">Not Pong</p>
     </div>
 
-    <div id="yourBrowser">
-        <a onclick="hideBrowserBox();" title="Click to dismiss message"></a>
+    <!-- Displays what browser the user is using -->
+    <div onclick="hideBrowserBox();" id="yourBrowser">
+        <a title="Click to dismiss message"></a>
     </div>
 
     <div id="subpages">
@@ -54,14 +64,18 @@
             <img alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
         </a>
 
+        <!-- Last updated display -->
+        <div id="last-update"></div>
+
         <!-- Modern browser message -->
-        <footer>This site uses HTML5 and CSS3.<br>If you can&apos;t view it, get a modern browser. Go to
+        <!-- <footer>This site uses HTML5 and CSS3.<br>If you can&apos;t view it, get a modern browser. Go to
             <a href="http://browsehappy.com/">browsehappy.com</a> for more.<br>I personally recommend Mozilla Firefox.
-        </footer>
+        </footer> -->
 
         <!-- @mdo's GitHub buttons from http://ghbtns.com/ -->
             <iframe src="http://ghbtns.com/github-btn.html?user=le717&type=follow&size=large" scrolling="no" width="150" height="30"></iframe>
-    </div>
+
+    </div> <!-- #subpages -->
 
     <!-- Teh JavaScripts -->
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
