@@ -7,6 +7,8 @@ module.exports = function (grunt) {
       '<%= pkg.homepage ? "" + pkg.homepage + "\\n" : "" %>' +
       'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
       'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
+        cssfiles: ["css/*.css", "!css/*.min.css"],
+        jsfiles: ["js/*.js", "!js/*.min.js"],
 
         // Validate the HTML using the W3C HTML Validator
         validation: {
@@ -27,7 +29,7 @@ module.exports = function (grunt) {
                     csslintrc: ".csslintrc",
                     "import": 2
                 },
-                src: ["css/*.css", "!css/*.min.css"],
+                src: "<%= cssfiles %>",
             }
         },
 
@@ -38,7 +40,7 @@ module.exports = function (grunt) {
                     banner: "<%= banner %>"
                 },
                 files: {
-                    "css/<%= pkg.name %>.min.css": ["css/*.css", "!css/*.min.css"]
+                    "css/<%= pkg.name %>.min.css": "<%= cssfiles %>"
                 }
             }
         },
@@ -60,19 +62,19 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    "js/<%= pkg.name %>.min.js": ["js/script.js", "js/not-pong.js"],
+                    "js/<%= pkg.name %>.min.js": "<%= jsfiles %>",
                 }
             }
         },
 
         // Watched files to trigger grunt
         watch: {
-            files: ["Gruntfile.js", "css/*.css", "!css/*.min.css", "js/*.js", "!js/*.min.js",],
+            files: ["Gruntfile.js", "<%= cssfiles %>", "<%= jsfiles %>"],
             tasks: ["all"]
         }
     });
 
-    // Load the plugins required for our tasks
+    // Load the plugins required to perform our tasks
     grunt.loadNpmTasks('grunt-html-validation');
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks("grunt-contrib-jshint");
