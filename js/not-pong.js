@@ -19,8 +19,8 @@ function stopAll() {
     $("#wait-link").css("display", "none");
     $("#wrapper").css("display", "none");
 
-    // Display (lame) page contents
-    $("#subpages").css("display", "table");
+    // Display (pitiful) page contents
+    $("#subpages").css("display", "block");
 }
 
 function decreaseSpeed(){

@@ -40,7 +40,6 @@ function detectBrowser() {
         theBrowser = "Google Chrome";
         theBrowserLogo = "img/chrome.png";
         theBrowserMessage = theBrowserMessageError;
-        theBrowserMessage = theBrowserMessageError;
 
         // This is Mozilla Firefox
     } else if ($.browser.mozilla) {
@@ -54,7 +53,8 @@ function detectBrowser() {
 
         // Display error message for Safari 5 and below
         if ($theBrowserVersion <= 5) {
-            theBrowserMessage = theBrowserMessageError;
+            theBrowserMessage = "Your version of Safari does not support my site. " +
+            "Please visit browsehappy.com to research a modern browser.";
         }
 
         // This is Opera
@@ -83,11 +83,9 @@ function detectBrowser() {
                                ".<br>" + theBrowserMessage + '<br><img alt="Browser logo" ' +
                                'width="90" height="90" src="' + theBrowserLogo + '" />');
 
-    // Trigger the fade-in transition
+    // Trigger the fade-in and sliding transitions
     $yourBrowser.css("opacity", "1");
-
-    // Trigger the sliding transition
-    $yourBrowser.css("transform", "translateY(-220px)");
+    $yourBrowser.css("transform", "translateY(-230px)");
 }
 
 // Get date of last commit using GitHub API

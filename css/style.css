@@ -32,9 +32,9 @@ a:hover { text-decoration: underline; }
     position: fixed;
     display: block;
     right: 20px;
-    bottom: -210px;
-    width: 210px;
-    height: 210px;
+    bottom: -220px;
+    width: 220px;
+    height: 220px;
 
     /* Set the box to initally be invisible */
     opacity: 0;
@@ -72,11 +72,12 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
-/* Hide page content on page load */
-#subpages { display: none; }
-
-/* Center page contents */
+/* Pitiful page contents (for now) */
 #subpages {
+    /* Hide page content on page load */
+    display: none;
+
+    /* Center page contents */
     text-align: center;
     margin: 0 auto;
     width: 400px;
