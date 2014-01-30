@@ -27,8 +27,10 @@ function decreaseSpeed(){
     "use strict";
     /* Decrease the animation speed of Not Pong */
     var $slideAniSpeed, $rotateAniSpeed, $racketAniSpeed;
-
+    
     // Get the current speed values
+    // FIXME The currrent values are gathered from Chrome and IE,
+    // but why do they have no visible effect?
     var $slideAni = $(".slide-ani").css("animation-duration");
     var $rotateAni = $(".rotate-ani").css("animation-duration");
     var $racketAni = $(".racket-ani").css("animation-duration");
@@ -54,9 +56,10 @@ function decreaseSpeed(){
         $slideAniSpeed = 2;
         $rotateAniSpeed = 3;
         $racketAniSpeed = 2;
-
-        // Otherwise, decrease the animation speeds
     } else {
+        // Otherwise, decrease the animation speeds
+        // FIXME All values are made equal, not with $rotateAniSpeed one less
+        // as it is supposed to be.
         $slideAniSpeed = $slideAni + 1;
         $rotateAniSpeed = $rotateAni + 1;
         $racketAniSpeed = $racketAni + 1;
@@ -80,6 +83,8 @@ function increaseSpeed(){
     var $slideAniSpeed, $rotateAniSpeed, $racketAniSpeed;
 
     // Get the current speed values
+    // FIXME The currrent values are gathered from Chrome and IE,
+    // but why do they have no visible effect?
     var $slideAni = $(".slide-ani").css("animation-duration");
     var $rotateAni = $(".rotate-ani").css("animation-duration");
     var $racketAni = $(".racket-ani").css("animation-duration");
@@ -105,9 +110,10 @@ function increaseSpeed(){
         $slideAniSpeed = 2;
         $rotateAniSpeed = 3;
         $racketAniSpeed = 2;
-
-        // Otherwise, increase the animation speeds
     } else {
+        // Otherwise, increase the animation speeds
+        // FIXME All values are made equal, not with $rotateAniSpeed one less
+        // as it is supposed to be.
         $slideAniSpeed = $slideAni - 1;
         $rotateAniSpeed = $rotateAni - 1;
         $racketAniSpeed = $racketAni - 1;
