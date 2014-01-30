@@ -10,6 +10,18 @@ module.exports = function (grunt) {
         cssfiles: ["css/*.css", "!css/*.min.css"],
         jsfiles: ["js/*.js", "!js/*.min.js"],
 
+        // Keep the devDependencies up-to-date
+        devUpdate: {
+            main: {
+                options: {
+                    // Do not mention already updated dependencies
+                    reportUpdated: false,
+                    // Prompt asking if the dependency should be updated
+                    updateType : "prompt"
+                }
+            }
+        },
+
         // Validate the HTML using the W3C HTML Validator
         validation: {
             options: {
@@ -74,13 +86,8 @@ module.exports = function (grunt) {
         }
     });
 
-    // Load the plugins required to perform our tasks
-    grunt.loadNpmTasks('grunt-html-validation');
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-    grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks("grunt-contrib-cssmin");
-    grunt.loadNpmTasks("grunt-contrib-uglify");
-    grunt.loadNpmTasks("grunt-contrib-watch");
+    // Load all the plugins required to perform our tasks
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.registerTask('default', 'List commands', function () {
         grunt.log.writeln("");
