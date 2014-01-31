@@ -58,8 +58,6 @@ function decreaseSpeed(){
         $racketAniSpeed = 2;
     } else {
         // Otherwise, decrease the animation speeds
-        // FIXME All values are made equal, not with $rotateAniSpeed one less
-        // as it is supposed to be.
         $slideAniSpeed = $slideAni + 1;
         $rotateAniSpeed = $rotateAni + 1;
         $racketAniSpeed = $racketAni + 1;
@@ -112,8 +110,6 @@ function increaseSpeed(){
         $racketAniSpeed = 2;
     } else {
         // Otherwise, increase the animation speeds
-        // FIXME All values are made equal, not with $rotateAniSpeed one less
-        // as it is supposed to be.
         $slideAniSpeed = $slideAni - 1;
         $rotateAniSpeed = $rotateAni - 1;
         $racketAniSpeed = $racketAni - 1;

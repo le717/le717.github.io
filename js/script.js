@@ -41,15 +41,16 @@ function detectBrowser() {
         theBrowserLogo = "img/chrome.png";
         theBrowserMessage = theBrowserMessageError;
 
-        // This is Mozilla Firefox
     } else if ($.browser.mozilla) {
+        // This is Mozilla Firefox
         theBrowser = "Mozilla Firefox";
         theBrowserLogo = "img/firefox.png";
 
-        // This is Safari
     } else if ($.browser.safari) {
+        // This is Safari
         theBrowser = "Apple Safari";
         theBrowserLogo = "img/safari.png";
+        theBrowserMessage = theBrowserMessageError;
 
         // Display error message for Safari 5 and below
         if ($theBrowserVersion <= 5) {
@@ -57,20 +58,27 @@ function detectBrowser() {
             "Please visit browsehappy.com to research a modern browser.";
         }
 
-        // This is Opera
     } else if ($.browser.opr) {
+        // This is Opera
         theBrowser = "Opera";
         theBrowserLogo = "img/opera.png";
         theBrowserMessage = theBrowserMessageError;
 
-        //TODO Old IE (<= 9, MSIE) check
     } else if ($.browser.msie) {
+        // This is Internet Explorer
         theBrowser = "Internet Explorer";
         theBrowserLogo = "img/ie.png";
         theBrowserMessage = theBrowserMessageError;
+        
+        //TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
+        // Display error message for IE 9 and below
+        if ($theBrowserVersion <= 9) {
+            theBrowserMessage = "Your version of IE does not support my site. " +
+            "Please visit browsehappy.com to research a modern browser.";
+        }
 
-        // Some other browser
     } else {
+        // Some other browser
         theBrowser = "An Unidentified Browser";
         $theBrowserVersion = "";
         theBrowserLogo = "img/globe-blue.png";

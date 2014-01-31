@@ -36,7 +36,7 @@ made).:smile:
 <tr>
 <td>Apple Safari</td>
 <td>5.1.7<br>6.1.1</td>
-<td>:negative_squared_cross_mark:<br>:white_check_mark:
+<td>:negative_squared_cross_mark:<br>Speed controls do not work
 </td>
 </tr>
 <tr>
