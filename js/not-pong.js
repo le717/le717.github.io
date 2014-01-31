@@ -27,7 +27,7 @@ function decreaseSpeed(){
     "use strict";
     /* Decrease the animation speed of Not Pong */
     var $slideAniSpeed, $rotateAniSpeed, $racketAniSpeed;
-    
+
     // Get the current speed values
     // FIXME The currrent values are gathered from Chrome and IE,
     // but why do they have no visible effect?

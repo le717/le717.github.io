@@ -2,5 +2,7 @@
   "adjoining-classes": false,
   "ids": false,
   "fallback-colors": false,
-  "known-properties": false
+  "known-properties": false,
+  "vendor-prefix": false,
+  "compatible-vendor-prefixes": false
 }
