@@ -91,9 +91,10 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', 'List commands', function () {
         grunt.log.writeln("");
-        grunt.log.writeln("Run 'grunt lint' to lint the source files");
-        grunt.log.writeln("Run 'grunt build' to minify the source files");
-        grunt.log.writeln("Run 'grunt all' to lint and minify the source files");
+        grunt.log.writeln('Run "grunt lint" to lint the source files');
+        grunt.log.writeln('Run "grunt build" to minify the source files');
+        grunt.log.writeln('Run "grunt devUpdate" to update the devDependencies');
+        grunt.log.writeln('Run "grunt all" to run all tasks except "devUpdate"');
     });
 
     // Define the tasks

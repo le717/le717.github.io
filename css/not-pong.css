@@ -202,26 +202,26 @@
 /* Move the ball across the screen, Webkit-only rules */
 @-webkit-keyframes slide {
     0% {
-        -webkit-transform: translate(0rem, 0rem);
+        -webkit-transform: translate3d(0, 0, 0);
     }
     50% {
-        -webkit-transform: translate(20.6rem, 25rem);
+        -webkit-transform: translate3d(20.6rem, 25rem, 0);
     }
     100% {
-        -webkit-transform: translate(41.2rem, 0rem);
+        -webkit-transform: translate3d(41.2rem, 0rem, 0);
     }
 }
 
 /* Move the ball across the screen, all other browsers */
 @keyframes slide {
     0% {
-        transform: translate(0rem, 0rem);
+        transform: translate3d(0, 0, 0);
     }
     50% {
-        transform: translate(20.6rem, 25rem);
+        transform: translate3d(20.6rem, 25rem, 0);
     }
     100% {
-        transform: translate(41.2rem, 0rem);
+        transform: translate3d(41.2rem, 0rem, 0);
     }
 }
 
@@ -268,7 +268,7 @@ all other browsers */
 /* Move the rackets up and down, Webkit-only rules */
 @-webkit-keyframes racket {
     0% {
-        -webkit-transform: translateY(0%);
+        -webkit-transform: translate3d(0, 0%, 0);
         /* Solid yellow racket upon fullest impact */
         background-color: rgb(255, 255, 0);
     }
@@ -281,17 +281,17 @@ all other browsers */
         background-color: rgb(85, 77, 77);
     }
     50% {
-        -webkit-transform: translateY(150%);
+        -webkit-transform: translate3d(0, 150%, 0);
     }
     100% {
-        -webkit-transform: translateY(300%);
+        -webkit-transform: translate3d(0, 300%, 0);
     }
 }
 
 /* Move the rackets up and down, all other browsers */
 @keyframes racket {
     0% {
-        transform: translateY(0%);
+        transform: translate3d(0, 0%, 0);
         /* Solid yellow racket upon fullest impact */
         background-color: rgb(255, 255, 0);
     }
@@ -304,10 +304,10 @@ all other browsers */
         background-color: rgb(85, 77, 77);
     }
     50% {
-        transform: translateY(150%);
+        transform: translate3d(0, 150%, 0);
     }
     100% {
-        transform: translateY(300%);
+        transform: translate3d(0, 300%, 0);
     }
 }
 
