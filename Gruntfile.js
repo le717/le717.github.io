@@ -22,19 +22,17 @@ module.exports = function (grunt) {
             }
         },
 
-        // Validate the HTML using the W3C HTML Validator
-        validation: {
-            options: {
-                reset: true,
-                stoponerror: false,
-                reportpath: false
-            },
-            files: {
-                src: "index.html",
+        // Lint the HTML using HTMLHint
+        htmlhint: {
+            html: {
+                options: {
+                    "tag-pair": true,
+                },
+                src: ["index.html"]
             }
         },
 
-        // Lint the CSS
+        // Lint the CSS using CSS Lint
         csslint: {
             strict: {
                 options: {
@@ -45,7 +43,7 @@ module.exports = function (grunt) {
             }
         },
 
-        // Minify any CSS
+        // Minify any CSS using CSSMin
         cssmin: {
             add_banner: {
                 options: {
@@ -57,17 +55,17 @@ module.exports = function (grunt) {
             }
         },
 
-        // Lint the JavaScript
+        // Lint the JavaScript using JSHint
         jshint: {
             src: {
                 options: {
                     jshintrc: ".jshintrc"
                 },
-                src: ["Gruntfile.js", "js/*.js", "!js/*.min.js"],
+                src: "<%= jsfiles %>",
             },
         },
 
-        // Minify any JavaScript
+        // Minify any JavaScript using Uglify
         uglify: {
             options: {
                 banner: "<%= banner %>"
