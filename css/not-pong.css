@@ -60,22 +60,11 @@
 /* Small bit of feedback on control labels */
 #faster-speed span:hover, #slower-speed span:hover { text-shadow: 1px 1px 2px #000; }
 
-/* Move the loading link from the very corner */
-#wait-link {
-    position: relative;
-    top: 9px;
-    left: 9px;
-    padding-bottom: 30px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 /* "Not Pong" text */
 #game-name {
     font-family: "Press Start 2P", "Impact", monospace;
     font-weight: bold;
     font-size: 35px;
-    color: #000;
     -webkit-transform: translateX(18rem);
     transform: translateX(18rem);
 }
@@ -205,7 +194,7 @@
         -webkit-transform: translate3d(0, 0, 0);
     }
     50% {
-        -webkit-transform: translate3d(20.6rem, 25rem, 0);
+        -webkit-transform: translate3d(20rem, 25rem, 0);
     }
     100% {
         -webkit-transform: translate3d(41.2rem, 0rem, 0);
@@ -218,7 +207,7 @@
         transform: translate3d(0, 0, 0);
     }
     50% {
-        transform: translate3d(20.6rem, 25rem, 0);
+        transform: translate3d(20rem, 25rem, 0);
     }
     100% {
         transform: translate3d(41.2rem, 0rem, 0);

@@ -96,7 +96,7 @@ module.exports = function (grunt) {
     });
 
     // Define the tasks
-    grunt.registerTask("lint", ["validation", "csslint", "jshint"]);
+    grunt.registerTask("lint", ["htmlhint", "csslint", "jshint"]);
     grunt.registerTask("build", ["cssmin", "uglify"]);
     grunt.registerTask("all", ["lint", "build"]);
 

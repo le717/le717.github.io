@@ -7,25 +7,20 @@
     <http://opensource.org/licenses/MIT/>
 */
 
-html {
-    width: 100%;
-    height: 100%;
-}
-
-/* Use Source Sans Pro for all text */
-body {
-    font-family: "Source Sans Pro", sans-serif;
-    background-color: #f8f8f8;
-    color: #363a3a;
-}
-
 /* Set link decoration */
-a {
-    text-decoration: none;
-    color: #00f;
-}
+a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 #subpages a { color: inherit; }
+
+/* Move the loading link from the very corner */
+#wait-link {
+    position: relative;
+    top: 9px;
+    left: 9px;
+    padding-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
 
 #yourBrowser {
     /* Location */
@@ -42,7 +37,7 @@ a:hover { text-decoration: underline; }
     /* Box styling */
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 0 2px 2px #c00;
+    box-shadow: 1px 1px 2px 2px black;
 
     /* Transition */
     transition: opacity, transform;
@@ -53,7 +48,7 @@ a:hover { text-decoration: underline; }
 /* Disguise the fact this is a link */
 #yourBrowser a {
     text-decoration: none;
-    color: inherit;
+    color: #363a3a;
     font-weight: 700;
 }
 
