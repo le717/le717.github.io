@@ -65,6 +65,8 @@
     font-family: "Press Start 2P", "Impact", monospace;
     font-weight: bold;
     font-size: 35px;
+    color: #fff;
+    text-shadow: 1px 1px 2px black;
     -webkit-transform: translateX(18rem);
     transform: translateX(18rem);
 }
@@ -83,7 +85,7 @@
 .racket {
     width: 20px;
     height: 120px;
-    background-color: #554d4d;
+    background-color: #bcacac;
 }
 
 /* Position left racket */
@@ -259,7 +261,7 @@ all other browsers */
     0% {
         -webkit-transform: translate3d(0, 0%, 0);
         /* Solid yellow racket upon fullest impact */
-        background-color: rgb(255, 255, 0);
+        background-color: #ff0;
     }
     1% {
         /* Gradually build up to impact */
@@ -267,7 +269,7 @@ all other browsers */
     }
     2% {
         /* Kick back to gray to create a flash effect */
-        background-color: rgb(85, 77, 77);
+        background-color: #bcacac;
     }
     50% {
         -webkit-transform: translate3d(0, 150%, 0);
@@ -282,7 +284,7 @@ all other browsers */
     0% {
         transform: translate3d(0, 0%, 0);
         /* Solid yellow racket upon fullest impact */
-        background-color: rgb(255, 255, 0);
+        background-color: #ff0;
     }
     1% {
         /* Gradually build up to impact */
@@ -290,7 +292,7 @@ all other browsers */
     }
     2% {
         /* Kick back to gray to create a flash effect */
-        background-color: rgb(85, 77, 77);
+        background-color: #bcacac;
     }
     50% {
         transform: translate3d(0, 150%, 0);

@@ -58,9 +58,9 @@ ul {
     text-align: justify;
 }
 
-/* Use custom bullet point */
+/* Use custom (Unicode only!) bullet point */
 li:before {
-    content: "▲";
+    content: "\25B2";
     padding-right: 5px;
 }
 
