@@ -6,17 +6,17 @@
     <http://opensource.org/licenses/MIT/>
 */
 
-var $yourBrowser = $("#yourBrowser");
+var $userBrowser = $("#yourBrowser");
 
 
 function hideBrowserBox() {
     "use strict";
     /* Hide the browser box */
     // Trigger the fade-out transition
-    $yourBrowser.css("opacity", "0");
+    $userBrowser.css("opacity", "0");
 
     // Trigger the sliding transition
-    $yourBrowser.css("transform", "translateY(220px)");
+    $userBrowser.css("transform", "translateY(220px)");
 }
 
 
@@ -25,7 +25,6 @@ function detectBrowser() {
     /* Detect the user's web browser and display message */
     var theBrowser,
         theBrowserLogo,
-        usrAgent = navigator.userAgent,
         $theBrowserVersion = $.browser.versionNumber,
 
         // Default compatibility message
@@ -69,7 +68,7 @@ function detectBrowser() {
         theBrowser = "Internet Explorer";
         theBrowserLogo = "img/ie.png";
         theBrowserMessage = theBrowserMessageError;
-        
+
         //TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
         // Display error message for IE 9 and below
         if ($theBrowserVersion <= 9) {
@@ -87,22 +86,22 @@ function detectBrowser() {
     }
 
     // Insert message and browser logo
-    $("#yourBrowser a").append("You are using<br>" + theBrowser + " " + $theBrowserVersion +
-                               ".<br>" + theBrowserMessage + '<br><img alt="Browser logo" ' +
-                               'width="90" height="90" src="' + theBrowserLogo + '" />');
+   $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="90" height="90" src="{3}" />'.format(
+   theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
 
     // Trigger the fade-in and sliding transitions
-    $yourBrowser.css("opacity", "1");
-    $yourBrowser.css("transform", "translateY(-230px)");
+    $userBrowser.css("opacity", "1");
+    $userBrowser.css("transform", "translateY(-230px)");
 }
 
-// Get date of last commit using GitHub API
-// Taken from http://buzz.jaysalvat.com/
 $(function() {
-    $.getJSON("https://api.github.com/repos/le717/le717.github.io/commits/master?callback=?",
+    // Run function to detect visitor's browser
+    detectBrowser();
+    // Get date of last commit using GitHub Pages API
+    $.getJSON("https://api.github.com/repos/le717/le717.github.io",
               function(data) {
-                    var date = data.data.commit.committer.date.replace(/(T(.*))$/g, "");
-                    //var date = "Right now";
-                    $("#last-update").text("Site last updated on: " + date);
+                    var lastUpdate = data.updated_at.replace(/(T(.*))$/g, "");
+                    //var lastUpdate = "Right now";
+                    $("#last-update").text("Site last updated on: {0}".format(lastUpdate));
                 }, "json");
 });

@@ -40,14 +40,12 @@
         }
     </style>
     <link rel="stylesheet" href="css/le717.github.io.min.css" data-noprefix />
-    <!-- Grab the -prefix-free library from http://leaverou.github.io/prefixfree/ -->
-<!--    <script src="//leaverou.github.io/prefixfree/prefixfree.min.js"></script>-->
 </head>
 
 <body>
     <!-- Objects used in animations -->
     <a id="wait-link" target="_self" onclick="stopAll();"
-       title="Also click this if you can&apos;t view my awesome animation. :(">Site taking too long to load?</a>
+       title="Also click this if you can&apos;t view my awesome animation. :(">Proceed to main site</a>
 
     <div id="wrapper">
 
@@ -78,7 +76,7 @@
         </ul>
 
         <!-- My logo -->
-        <a href="http://Triangle717.WordPress.com" title="My blog">
+        <a href="http://Triangle717.WordPress.com" title="Visit my blog">
             <img alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
         </a>
 
@@ -93,7 +91,15 @@
     <!-- Teh JavaScripts -->
     <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="js/jquery.browser.min.js"></script>
+
+    <!--
+        Duplicate Python's `str.format()`.
+        https://github.com/davidchambers/string-format
+    -->
+    <script src="js/string-format.js"></script>
+
+    <!-- Grab the -prefix-free library from http://leaverou.github.io/prefixfree/ -->
+    <!-- <script src="//leaverou.github.io/prefixfree/prefixfree.min.js"></script>-->
     <script src="js/le717.github.io.min.js"></script>
-    <script>detectBrowser();</script>
 </body>
 </html>
