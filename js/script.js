@@ -86,8 +86,7 @@ function detectBrowser() {
     }
 
     // Insert message and browser logo
-    $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br>' +
-                              '<img alt="{0}" width="90" height="90" src="{3}" />'.format(
+    $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="90" height="90" src="{3}" />'.format(
    theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
 
     // Trigger the fade-in and sliding transitions

@@ -22,6 +22,17 @@ module.exports = function (grunt) {
             }
         },
 
+        copy: {
+            main: {
+                expand: true,
+                cwd: 'node_modules/string-format/lib/',
+                src: "**",
+                dest: 'js/',
+                flatten: true,
+                filter: 'isFile'
+            },
+        },
+
         // Lint the HTML using HTMLHint
         htmlhint: {
             html: {
