@@ -60,5 +60,5 @@ I've used some very helpful third-party libraries in writing this. I recommend c
 
 ## License ##
 
-Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](http://opensource.org/licenses/MIT).
+Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](License.md).
 
