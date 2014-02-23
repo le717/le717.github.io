@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-    <meta charset="utf-8">
-<!--    <meta name=viewport content="width=device-width, initial-scale=1">-->
+    <meta charset="UTF-8">
+    <!-- <meta name=viewport content="width=device-width, initial-scale=1"> -->
     <title>Triangle Land</title>
     <link rel="shortcut icon" type="image/x-icon" href="http://0.gravatar.com/blavatar/e0a245fde30ccb366d05f3c6a87ea044?s=16" sizes="16x16" />
     <link rel="icon" type="image/x-icon" href="http://0.gravatar.com/blavatar/e0a245fde30ccb366d05f3c6a87ea044?s=16" sizes="16x16" />
@@ -15,13 +15,15 @@
         Licensed under The MIT License
         <http://opensource.org/licenses/MIT/>
     -->
+
     <!-- Open all links in a new tab/window -->
     <base target="_blank">
 
     <!-- Pull in fonts from Google -->
-    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700|Press+Start+2P" rel="stylesheet" data-noprefix />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700|Press+Start+2P">
+
     <!-- Grab my CSS -->
-    <style>
+    <style type="text/css">
         html {
             width: 100%;
             height: 100%;
@@ -39,7 +41,7 @@
             background-attachment: fixed;
         }
     </style>
-    <link rel="stylesheet" href="css/le717.github.io.min.css" data-noprefix />
+    <link rel="stylesheet" type="text/css" href="css/le717.github.io.min.css">
 </head>
 
 <body>
@@ -48,13 +50,6 @@
        title="Also click this if you can&apos;t view my awesome animation. :(">Proceed to main site</a>
 
     <div id="wrapper">
-
-        <!-- Animation speed controls -->
-        <div id="speedy">
-            <div class="speed-controls" id="faster-speed" onclick="increaseSpeed();"><span>Faster</span></div>
-            <div class="speed-controls" id="slower-speed" onclick="decreaseSpeed();"><span>Slower</span></div>
-        </div>
-
         <!-- Ball, rackets, their animations, and Not Pong title -->
         <div class="slide-ani" id="loading"><p class="rotate-ani">Triangle717</p></div>
         <div class="racket racket-ani" id="left-racket"></div>
@@ -88,18 +83,17 @@
 
     </div> <!-- #subpages -->
 
-    <!-- Import jQuery and jQuery plugins -->
-    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <!-- jQuery and jQuery plugins -->
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="js/jquery.browser.min.js"></script>
 
     <!--
-        Import String::format
+        String::format
         https://github.com/davidchambers/string-format
     -->
     <script src="js/string-format.js"></script>
 
-    <!-- Grab the -prefix-free library from http://leaverou.github.io/prefixfree/ -->
-    <!-- <script src="//leaverou.github.io/prefixfree/prefixfree.min.js"></script>-->
+    <!-- My own JavaScript -->
     <script src="js/le717.github.io.min.js"></script>
 </body>
 </html>

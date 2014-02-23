@@ -7,59 +7,6 @@
     <http://opensource.org/licenses/MIT/>
 */
 
-/* Animation speed controls container */
-#speedy {
-    position: absolute;
-    width: 100%;
-    height: 0;
-    top: -7px;
-}
-
-/* General settings for triangle controllers */
-.speed-controls {
-    position: relative;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    color: white;
-}
-
-/* Increase speed button */
-#faster-speed {
-    left: 180px;
-    top: 8px;
-    border-width: 0 45px 77.9px 45px;
-    border-color: transparent transparent #0b9c0b transparent;
-}
-
-/* "Faster" label */
-#faster-speed span {
-    position: relative;
-    right: 21.5px;
-    top: 38px;
-    transition: text-shadow 0.5s ease;
-}
-
-/* Decrease speed button */
-#slower-speed {
-    float: right;
-    right: 160px;
-    bottom: 65px;
-    border-width: 77.9px 45px 0 45px;
-    border-color: #ff0000 transparent transparent transparent;
-}
-
-/* "Slower" label */
-#slower-speed span {
-    position: relative;
-    right: 24.5px;
-    bottom: 65px;
-    transition: text-shadow 0.5s ease-in;
-}
-
-/* Small bit of feedback on control labels */
-#faster-speed span:hover, #slower-speed span:hover { text-shadow: 1px 1px 2px #000; }
-
 /* "Not Pong" text */
 #game-name {
     font-family: "Press Start 2P", "Impact", monospace;
@@ -104,7 +51,7 @@
     animation-direction: alternate-reverse;
 }
 
-/* The loading ball */
+/* Triangle717 ball */
 #loading {
     position: absolute;
     display: table;
@@ -117,7 +64,7 @@
     border-radius: 100%;
 }
 
-/* Loading ball branding */
+/* Triangle717 ball branding */
 #loading p {
     /* Alignment settings  */
     display: table-cell;

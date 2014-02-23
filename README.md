@@ -52,7 +52,6 @@ If you need a modern browser, go to [browsehappy.com](http://browsehappy.com/) t
 
 I've used some very helpful third-party libraries in writing this. I recommend checking them out. :smiley:
 
-* [-prefix-free](http://leaverou.github.io/prefixfree/)
 * [GitHub Buttons](http://ghbtns.com/)
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
