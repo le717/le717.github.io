@@ -8,7 +8,7 @@ module.exports = function (grunt) {
       'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
       'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
         cssfiles: ["css/*.css", "!css/*.min.css"],
-        jsfiles: ["js/*.js", "!js/*.min.js"],
+        jsfiles: ["js/*.js", "!js/string-format.js", "!js/*.min.js"],
 
         // Keep the devDependencies up-to-date
         devUpdate: {

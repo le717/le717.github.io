@@ -20,7 +20,7 @@ made).:smile:
 <td>11</td>
 <td>
 <strong>Windows 7:</strong> :negative_squared_cross_mark:<br>
-<strong>Windows 8:</strong> Speed controls do not work
+<strong>Windows 8:</strong> :white_check_mark:
 </td>
 </tr>
 <tr>
@@ -31,12 +31,12 @@ made).:smile:
 <tr>
 <td>Google Chrome</td>
 <td>34.0.1807.0</td>
-<td>Speed controls do not work</td>
+<td>:white_check_mark:</td>
 </tr>
 <tr>
 <td>Apple Safari</td>
 <td>5.1.7<br>6.1.1</td>
-<td>:negative_squared_cross_mark:<br>Speed controls do not work
+<td>:negative_squared_cross_mark:<br>:white_check_mark:
 </td>
 </tr>
 <tr>
@@ -57,6 +57,7 @@ I've used some very helpful third-party libraries in writing this. I recommend c
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
 * [jquery-browser-plugin](https://github.com/gabceb/jquery-browser-plugin/)
+* [String::format](https://github.com/davidchambers/string-format/)
 
 ## License ##
 
