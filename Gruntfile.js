@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     "use strict";
     // Project configuration
     grunt.initConfig({
@@ -22,14 +22,15 @@ module.exports = function (grunt) {
             }
         },
 
+        // Copy String::format to the proper location
         copy: {
             main: {
                 expand: true,
-                cwd: 'node_modules/string-format/lib/',
+                cwd: "node_modules/string-format/lib/",
                 src: "**",
-                dest: 'js/',
+                dest: "js/",
                 flatten: true,
-                filter: 'isFile'
+                filter: "isFile"
             },
         },
 
@@ -108,7 +109,7 @@ module.exports = function (grunt) {
 
     // Define the tasks
     grunt.registerTask("lint", ["htmlhint", "csslint", "jshint"]);
-    grunt.registerTask("build", ["cssmin", "uglify"]);
+    grunt.registerTask("build", ["cssmin", "uglify", "copy"]);
     grunt.registerTask("all", ["lint", "build"]);
 
     // Always use --force to stop csslint from killing the task
