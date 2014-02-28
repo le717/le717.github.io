@@ -38,7 +38,6 @@ function detectBrowser() {
     if ($.browser.chrome) {
         theBrowser = "Google Chrome";
         theBrowserLogo = "img/chrome.png";
-        theBrowserMessage = theBrowserMessageError;
 
     } else if ($.browser.mozilla) {
         // This is Mozilla Firefox
@@ -61,13 +60,11 @@ function detectBrowser() {
         // This is Opera
         theBrowser = "Opera";
         theBrowserLogo = "img/opera.png";
-        theBrowserMessage = theBrowserMessageError;
 
     } else if ($.browser.msie) {
         // This is Internet Explorer
         theBrowser = "Internet Explorer";
         theBrowserLogo = "img/ie.png";
-        theBrowserMessage = theBrowserMessageError;
 
         //TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
         // Display error message for IE 9 and below
@@ -97,6 +94,7 @@ function detectBrowser() {
 $(function() {
     // Run function to detect visitor's browser
     detectBrowser();
+
     // Get date of last commit using GitHub Pages API
     $.getJSON("https://api.github.com/repos/le717/le717.github.io",
               function(data) {

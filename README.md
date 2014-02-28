@@ -1,5 +1,6 @@
-﻿# [http://le717.github.io](http://le717.github.io) #
-[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.png?theme=shields.io)](https://david-dm.org/le717/le717.github.io#info=devDependencies)  [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/le717/le717.github.io/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+# [http://le717.github.io](http://le717.github.io) #
+
+[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.png?theme=shields.io)](https://david-dm.org/le717/le717.github.io#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
@@ -42,7 +43,7 @@ made).:smile:
 <tr>
 <td>Opera</td>
 <td>18.0.1284.68</td>
-<td>Speed controls do not work</td>
+<td>:white_check_mark:</td>
 </tr>
 </table>
 
@@ -55,7 +56,7 @@ I've used some very helpful third-party libraries in writing this. I recommend c
 * [GitHub Buttons](http://ghbtns.com/)
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
-* [jquery-browser-plugin](https://github.com/gabceb/jquery-browser-plugin/)
+* [jquery.browser](https://github.com/gabceb/jquery-browser-plugin/)
 * [String::format](https://github.com/davidchambers/string-format/)
 
 ## License ##
