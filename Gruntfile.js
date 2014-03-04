@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
       'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
         cssfiles: ["css/*.css", "!css/*.min.css"],
-        jsfiles: ["js/*.js", "!js/string-format.js", "!js/*.min.js"],
+        jsfiles: ["js/*.js", "!js/*.min.js"],
 
         // Keep the devDependencies up-to-date
         devUpdate: {
@@ -22,13 +22,13 @@ module.exports = function(grunt) {
             }
         },
 
-        // Copy String::format to the proper location
+        // Copy JavaScript dependencies to the proper location
         copy: {
             main: {
                 expand: true,
-                cwd: "node_modules/string-format/lib/",
-                src: "**",
-                dest: "js/",
+                cwd: "node_modules/",
+                src: ["jquery.browser/dist/*.min.js", "string-format/lib/*"],
+                dest: "lib/",
                 flatten: true,
                 filter: "isFile"
             },
