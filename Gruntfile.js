@@ -80,7 +80,9 @@ module.exports = function(grunt) {
         // Minify any JavaScript using Uglify
         uglify: {
             options: {
-                banner: "<%= banner %>"
+                banner: "<%= banner %>",
+                compress: true,
+                report: "min"
             },
             my_target: {
                 files: {

@@ -28,11 +28,13 @@ a:hover { text-decoration: underline; }
     display: block;
     right: 20px;
     bottom: -220px;
+
+    /* Size */
     width: 220px;
     height: 220px;
 
-    /* Set the box to initally be invisible */
-    opacity: 0;
+    /* Set the box to initally be visible */
+    opacity: 1;
 
     /* Box styling */
     text-align: center;
@@ -41,8 +43,8 @@ a:hover { text-decoration: underline; }
 
     /* Transition */
     transition: opacity, transform;
-    transition-duration: 2s, 1.8s;
-    transition-timing-function: ease-in;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
 }
 
 /* Disguise the fact this is a link */
@@ -87,7 +89,7 @@ li { font-weight: bold; }
     font-weight: bold;
 }
 
-/* GitHub Buttons (http://ghbtns.com/) */
+/* GitHub Button (http://ghbtns.com/) */
 iframe {
     border: none;
     overflow: hidden;

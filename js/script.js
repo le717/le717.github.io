@@ -14,9 +14,6 @@ function hideBrowserBox() {
     /* Hide the browser box */
     // Trigger the fade-out transition
     $userBrowser.css("opacity", "0");
-
-    // Trigger the sliding transition
-    $userBrowser.css("transform", "translateY(220px)");
 }
 
 
@@ -83,11 +80,12 @@ function detectBrowser() {
     }
 
     // Insert message and browser logo
+    /* jshint ignore:start */
     $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="90" height="90" src="{3}" />'.format(
    theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
+    /* jshint ignore:end */
 
-    // Trigger the fade-in and sliding transitions
-    $userBrowser.css("opacity", "1");
+    // Trigger the fade-in transitions
     $userBrowser.css("transform", "translateY(-230px)");
 }
 
