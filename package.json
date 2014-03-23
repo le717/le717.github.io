@@ -14,7 +14,7 @@
   "licenses": [
     {
       "type": "The MIT License",
-      "url": "http://opensource.org/licenses/MIT"
+      "url": "http://le717.github.io/license.html"
     }
   ],
   "homepage": "http://le717.github.io",
@@ -22,7 +22,7 @@
     "string-format": "^0.2.1",
     "jquery.browser": "^0.0.5"
   },
- "devDependencies": {
+  "devDependencies": {
     "grunt": "^0.4.2",
     "matchdep": "^0.3.0",
     "grunt-contrib-jshint": "^0.8.0",
