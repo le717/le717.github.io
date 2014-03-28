@@ -1,101 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <!-- <meta name=viewport content="width=device-width, initial-scale=1"> -->
-    <title>Triangle Land</title>
-    <link rel="apple-touch-icon" sizes="152x152" href="./apple-touch-icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./apple-touch-icon-precomposed.png">
-    <link rel="shortcut icon" sizes="152x152" href="./favicon.png">
+  <meta charset="UTF-8">
+  <!-- <meta name=viewport content="width=device-width, initial-scale=1"> -->
+  <title>Triangle Land</title>
+  <link rel="apple-touch-icon" sizes="152x152" href="./apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" sizes="152x152" href="./favicon.png">
 
-    <!--
-        Created 2014 Triangle717
-        <http://Triangle717.WordPress.com/>
+  <!--
+    Created 2014 Triangle717
+    <http://Triangle717.WordPress.com/>
 
-        Licensed under The MIT License
-        <http://opensource.org/licenses/MIT/>
-    -->
+    Licensed under The MIT License
+    <http://opensource.org/licenses/MIT/>
+  -->
 
-    <!-- Open all links in a new tab/window -->
-    <base target="_blank">
+  <!-- Open all links in a new tab/window -->
+  <base target="_blank">
 
-    <!-- Pull in fonts from Google -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700|Press+Start+2P">
+  <!-- Pull in fonts from Google -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700">
 
-    <!-- Grab my CSS -->
-    <style>
-        html {
-            width: 100%;
-            height: 100%;
-        }
+  <!-- Grab my CSS -->
+  <style>
+    html {
+      width: 100%;
+      height: 100%;
+    }
 
-        body {
-            /* Use Source Sans Pro for all text */
-            font-family: "Source Sans Pro", "Open Sans", sans-serif;
-            color: #f8f8f8;
-            margin: 0 auto;
-            border: none;
-            overflow: hidden;
-            background-color: #f8f8f8;
-            background-image: url("img/bg.png");
-            background-attachment: fixed;
-        }
-    </style>
-    <link rel="stylesheet" type="text/css" href="css/le717.github.io.min.css">
+    body {
+      /* Use Source Sans Pro for all text */
+      font-family: "Source Sans Pro", "Open Sans", sans-serif;
+      color: #f8f8f8;
+      background-color: #494949;
+      background-image: url("img/bg.png");
+      background-attachment: fixed;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="css/le717.github.io.min.css">
 </head>
 
 <body>
-    <!-- Objects used in animations -->
-    <a id="wait-link" target="_self" onclick="stopAll();"
-       title="Also click this if you can&apos;t view my awesome animation. :(">Proceed to main site</a>
+  <!-- Displays what browser the user is using -->
+  <div onclick="hideBrowserBox();" id="yourBrowser">
+    <a title="Click to dismiss message"></a>
+  </div>
 
-    <div id="wrapper">
-        <!-- Ball, rackets, their animations, and Not Pong title -->
-        <div class="slide-ani" id="loading"><p class="rotate-ani">Triangle717</p></div>
-        <div class="racket racket-ani" id="left-racket"></div>
-        <div class="racket racket-ani" id="right-racket"></div>
-        <p id="game-name">Not Pong</p>
-    </div>
+  <h2>Sites on this domain</h2>
+  <!-- //TODO Perhaps populate this from JS, automatically appended the domain using document.URL? -->
+  <ul>
+    <li><a href="http://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
+    <li><a href="http://le717.github.io/CRTC/">CRTC</a></li>
+    <li><a href="http://le717.github.io/PatchIt/">PatchIt! Website</a></li>
+    <li><a href="http://le717.github.io/LUN-Patcher/"><em>LEGO Universe News!</em> Patcher v2.0 - <br>Development version</a></li>
+  </ul>
 
-    <!-- Displays what browser the user is using -->
-    <div onclick="hideBrowserBox();" id="yourBrowser">
-        <a title="Click to dismiss message"></a>
-    </div>
+  <!-- My logo -->
+  <a href="http://Triangle717.WordPress.com" title="Visit my blog">
+    <img alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
+  </a>
 
-    <div id="subpages">
-        <h2>Other sites on this domain:</h2>
-        <!-- //TODO Perhaps populate this from JS, automatically appended the domain using document.URL? -->
-        <ul>
-            <li><a href="http://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
-            <li><a href="http://le717.github.io/CRTC/">CRTC</a></li>
-            <li><a href="http://le717.github.io/PatchIt/">PatchIt! Website</a></li>
-            <li><a href="http://le717.github.io/LUN-Patcher/"><em>LEGO Universe News!</em> Patcher v2.0 - <br>Development version</a></li>
-        </ul>
+  <!-- Last updated display -->
+  <div id="last-update"></div>
 
-        <!-- My logo -->
-        <a href="http://Triangle717.WordPress.com" title="Visit my blog">
-            <img alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
-        </a>
+  <!--
+    GitHub Buttons by @mdo
+    http://ghbtns.com/
+  -->
+  <iframe src="http://ghbtns.com/github-btn.html?user=le717&type=follow&size=large" scrolling="no" width="150" height="30"></iframe>
 
-        <!-- Last updated display -->
-        <div id="last-update"></div>
+  <!-- jQuery and jQuery plugins -->
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="lib/jquery.browser.min.js"></script>
 
-        <!-- @mdo's GitHub buttons from http://ghbtns.com/ -->
-        <iframe src="http://ghbtns.com/github-btn.html?user=le717&type=follow&size=large" scrolling="no" width="150" height="30"></iframe>
+  <!--
+    String::format
+    https://github.com/davidchambers/string-format
+  -->
+  <script src="lib/string-format.js"></script>
 
-    </div> <!-- #subpages -->
-
-    <!-- jQuery and jQuery plugins -->
-    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script src="lib/jquery.browser.min.js"></script>
-
-    <!--
-        String::format
-        https://github.com/davidchambers/string-format
-    -->
-    <script src="lib/string-format.js"></script>
-
-    <!-- My own JavaScript -->
-    <script src="js/le717.github.io.min.js"></script>
+  <!-- My own JavaScript -->
+  <script src="js/le717.github.io.min.js"></script>
 </body>
 </html>
