@@ -51,11 +51,11 @@ If you need a modern browser, go to [browsehappy.com](http://browsehappy.com/) t
 
 ## Third-party Libraries ##
 
-I've used some very helpful third-party libraries in writing this. I recommend checking them out. :smiley:
+I've used some very nice third-party libraries and styling on my site. I recommend checking them out. :smiley:
 
-* [GitHub Buttons](http://ghbtns.com/)
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
+* [Ionicons](http://ionicons.com/)
 * [jquery.browser](https://github.com/gabceb/jquery-browser-plugin/)
 * [String::format](https://github.com/davidchambers/string-format/)
 

@@ -20,7 +20,8 @@
   <base target="_blank">
 
   <!-- Pull in fonts from Google -->
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:500,700">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
 
   <!-- Grab my CSS -->
   <style>
@@ -47,31 +48,36 @@
     <a title="Click to dismiss message"></a>
   </div>
 
-  <h2>Sites on this domain</h2>
-  <!-- //TODO Perhaps populate this from JS, automatically appended the domain using document.URL? -->
-  <ul>
-    <li><a href="http://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
-    <li><a href="http://le717.github.io/CRTC/">CRTC</a></li>
-    <li><a href="http://le717.github.io/PatchIt/">PatchIt! Website</a></li>
-    <li><a href="http://le717.github.io/LUN-Patcher/"><em>LEGO Universe News!</em> Patcher v2.0 - <br>Development version</a></li>
-  </ul>
+  <div class="page-center" id="subpages">
+    <h2>Subpages</h2>
+    <ul>
+      <li><a href="pages/notpong.html" target="_self">Not Pong</a></li>
+      <li><a href="pages/spelling.html" target="_self">Spelling Captcha</a></li>
+    </ul>
+  </div>
+
+  <div class="page-center" id="subsites">
+    <h2>Sites</h2>
+    <!-- //TODO Perhaps populate this from JS, automatically appended the domain using document.URL? -->
+    <ul>
+      <li><a href="http://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
+      <li><a href="http://le717.github.io/CRTC/">CRTC</a></li>
+      <li><a href="http://le717.github.io/PatchIt/">PatchIt! Website</a></li>
+      <li><a href="http://le717.github.io/LUN-Patcher/"><em>LEGO Universe News!</em> Patcher v2.0 - <br>Development version</a></li>
+    </ul>
+  </div>
 
   <!-- My logo -->
-  <a href="http://Triangle717.WordPress.com" title="Visit my blog">
-    <img alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
-  </a>
+  <div class="page-center" id="my-logo">
+    <a href="http://Triangle717.WordPress.com" title="Visit my blog">
+      <img  alt="Triangle Land logo" width="370" height="370" src="img/tri717logo.png" />
+    </a>
+  </div>
 
-  <!-- Last updated display -->
-  <div id="last-update"></div>
-
-  <!--
-    GitHub Buttons by @mdo
-    http://ghbtns.com/
-  -->
-  <iframe src="http://ghbtns.com/github-btn.html?user=le717&type=follow&size=large" scrolling="no" width="150" height="30"></iframe>
+  <a href="https://github.com/le717"><div class="icon ion-social-github" id="gh-button"></div></a>
 
   <!-- jQuery and jQuery plugins -->
-  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
   <script src="lib/jquery.browser.min.js"></script>
 
   <!--

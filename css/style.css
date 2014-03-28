@@ -1,19 +1,19 @@
 @charset "UTF-8";
 /*
-    Created 2014 Triangle717
-    <http://Triangle717.WordPress.com/>
+  Created 2014 Triangle717
+  <http://Triangle717.WordPress.com/>
 
-    Licensed under The MIT License
-    <http://opensource.org/licenses/MIT/>
+  Licensed under The MIT License
+  <http://opensource.org/licenses/MIT/>
 */
 
 
 /* Center pitiful page contents (for now) */
-body {
-    /* Center page contents */
-    text-align: center;
-    margin: 0 auto;
-    width: 400px;
+.page-center {
+  /* Center page contents */
+  text-align: center;
+  margin: 0 auto;
+  width: 400px;
 }
 
 /* Set link decoration */
@@ -24,47 +24,47 @@ a {
 a:hover { text-decoration: underline; }
 
 #yourBrowser {
-    /* Location */
-    position: fixed;
-    display: block;
-    right: 20px;
-    bottom: -220px;
+  /* Location */
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: -220px;
 
-    /* Size */
-    width: 220px;
-    height: 220px;
+  /* Size */
+  width: 220px;
+  height: 220px;
 
-    /* Set the box to initally be visible */
-    opacity: 1;
+  /* Set the box to initally be visible */
+  opacity: 1;
 
-    /* Box styling */
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+  /* Box styling */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 1px 1px 2px 2px black;
 
-    /* Transition */
-    transition: opacity, transform;
-    transition-duration: 1.5s;
-    transition-timing-function: ease-out;
+  /* Transition */
+  transition: opacity, transform;
+  transition-duration: 1.5s;
+  transition-timing-function: ease-out;
 }
 
 /* Disguise the fact this is a link */
 #yourBrowser a {
-    text-decoration: none;
-    color: #363a3a;
-    font-weight: 700;
+  text-decoration: none;
+  color: #363a3a;
+  font-weight: 700;
 }
 
 /* Align subpages list */
 ul {
-    list-style: none;
-    text-align: justify;
+  list-style: none;
+  text-align: justify;
 }
 
 /* Use custom (Unicode only!) bullet point */
 li:before {
-    content: "\25B2";
-    padding-right: 5px;
+  content: "\25B2";
+  padding-right: 5px;
 }
 
 /* Workarond for Opera to properly display text */
@@ -72,17 +72,48 @@ li { font-weight: bold; }
 
 /* "Site last updated on" label */
 #last-update {
-    font-size: 16px;
-    margin-top: -50px;
+  font-size: 16px;
+  margin-top: -50px;
 
-    /* Workarond for Opera to properly display text */
-    font-weight: bold;
+  /* Workarond for Opera to properly display text */
+  font-weight: bold;
 }
 
 /* GitHub Button (http://ghbtns.com/) */
 iframe {
-    border: none;
-    overflow: hidden;
-    background-color: transparent;
-    padding-top: 4px;
+  border: none;
+  overflow: hidden;
+  background-color: transparent;
+  padding-top: 4px;
 }
+
+#subpages {
+  position: relative;
+  top: 10em;
+  left: 22%;
+}
+
+#subsites {
+  position: relative;
+  right: 17.5%;
+  top: 2.9em;
+}
+
+#subsites li:before { content: none; }
+
+#subsites li:after {
+/* Use custom (Unicode only!) bullet point */
+  content: "\25B2";
+  padding-left: 5px;
+}
+
+#my-logo { margin-top: -15%; }
+
+#gh-button {
+  position: relative;
+  left: 48.5%;
+  font-size: 50px;
+  color: black;
+}
+
+#gh-button:hover { color: #5193D4; }
