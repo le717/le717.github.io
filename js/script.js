@@ -86,11 +86,21 @@ function detectBrowser() {
 
   // Trigger the fade-in transitions
   $userBrowser.css("transform", "translateY(-230px)");
+  return theBrowser;
 }
 
 $(function() {
   // Run function to detect visitor's browser
-  detectBrowser();
+  var myBroswer = detectBrowser();
+
+  // Workaround for Ionicons XSS exception on all browsers but Chrome
+  if (myBroswer !== "Google Chrome") {
+    $("#gh-button").removeClass("icon");
+    $("#gh-button").removeClass("ion-social-github");
+    $("#gh-button").css("display", "inline-block");
+    $("#gh-button").append('<img width="50" height="50" />');
+    $("#gh-button img").attr("src", "img/ion-social-github.png");
+  }
 
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io",

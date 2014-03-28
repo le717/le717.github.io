@@ -93,6 +93,10 @@ iframe {
   left: 22%;
 }
 
+#subpages h2 {
+  margin-left: -30%
+}
+
 #subsites {
   position: relative;
   right: 17.5%;
