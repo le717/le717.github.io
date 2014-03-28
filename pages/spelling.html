@@ -2,7 +2,7 @@
 title: Triangle Land - Spelling Captcha
 ---
 {% include header.html %}
-<!-- Inspired by http://i.imgur.com/WmdsdL3.jpg -->
+  <!-- Inspired by http://i.imgur.com/WmdsdL3.jpg -->
 
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <style>
@@ -73,7 +73,8 @@ title: Triangle Land - Spelling Captcha
     (function() {
       "use strict";
       var answers = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
-          prefix = "../img/captcha/",
+         // prefix = "../img/captcha/",
+          prefix = "{{ site.baseurl }}/img/captcha/",
           template = "<img class='captcha-image' src='prefix-image' /><br><br>",
           images = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"];
 
@@ -101,8 +102,4 @@ title: Triangle Land - Spelling Captcha
       }
     }
   </script>
-<!--
-</body>
-</html>
--->
   {% include footer.html %}
