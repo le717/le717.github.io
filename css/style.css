@@ -7,20 +7,21 @@
     <http://opensource.org/licenses/MIT/>
 */
 
-/* Set link decoration */
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-#subpages a { color: inherit; }
 
-/* Move the loading link from the very corner */
-#wait-link {
-    position: relative;
-    top: 9px;
-    left: 9px;
-    padding-bottom: 30px;
-    font-size: 18px;
-    font-weight: bold;
+/* Center pitiful page contents (for now) */
+body {
+    /* Center page contents */
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
 }
+
+/* Set link decoration */
+a {
+  text-decoration: none;
+  color: #f8f8f8;
+}
+a:hover { text-decoration: underline; }
 
 #yourBrowser {
     /* Location */
@@ -68,17 +69,6 @@ li:before {
 
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
-
-/* Pitiful page contents (for now) */
-#subpages {
-    /* Hide page content on page load */
-    display: none;
-
-    /* Center page contents */
-    text-align: center;
-    margin: 0 auto;
-    width: 400px;
-}
 
 /* "Site last updated on" label */
 #last-update {
