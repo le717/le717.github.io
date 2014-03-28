@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spelling Captcha</title>
+
+  <!--
+    Created 2014 Triangle717
+    <http://Triangle717.WordPress.com/>
+
+    Inspired by http://i.imgur.com/WmdsdL3.jpg
+  -->
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #full-answer { font-weight: 700; }
+    #input-box {
+      border: none;
+      box-shadow: -0.4px -0.5px 0.5px 0.1px black;
+    }
+
+    /* Mac-style CSS button from
+     * http://calebogden.com/safari-css-submit-button
+     */
+    #submit-button {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #5e5e5e #888 #696969 #888;
+      font: 11px/16px 'Lucida Grande', Sans-serif;
+      color: #000;
+      text-decoration: none;
+      padding: 0 8px;
+      background: #FCFCFC;
+      cursor: default;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      font-family: "Open Sans", sans-serif;
+
+      border-radius: 18px;
+      background: linear-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(40%,#f3f3f3), color-stop(100%,#ededed));
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.15), 0 -2px 3px 0px #FFF inset, 0 -10px 0 0 #ededed inset;
+    }
+
+    #submit-button:active {
+      border-color: #323d9f #3365b4 #3365b4 #6f6f6f;
+      background: #7cb0de;
+      background: linear-gradient(linear, left top, left bottom, color-stop(0%,#a7c7e1), color-stop(40%,#9dc2e1), color-stop(100%,#7cb0de));
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 -2px 3px 0px rgba(182, 226, 244, 1) inset, 0 -10px 0 0 #73abda inset;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
+    Please type the correct sequence of characters into the field below.
+  </p>
+  <br>
+  <div id="captcha-image-container"></div>
+  <form>
+    <p id="full-answer"></p>
+    <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
+  </form>
+
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script>
+
+    function selectRandom(myArray) {
+      "use strict";
+      /* Select a random item from `myArray` */
+      return myArray[Math.floor(Math.random() * myArray.length)];
+    }
+
+    (function() {
+      "use strict";
+      var answers = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
+          prefix = "img/captcha/",
+          template = "<img class='captcha-image' src='prefix-image' /><br><br>",
+          images = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"];
+
+      var selectedAnswer = selectRandom(answers);
+
+      if (answers.indexOf(selectedAnswer) === 0) {
+        $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[0]));
+        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[1]));
+
+      } else {
+        $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[2]));
+        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[3]));
+        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[4]));
+      }
+      $(".captcha-image").attr("height", "100");
+      selectedAnswer = selectedAnswer.replace(/input-box/, '<input id="input-box" autofocus autocomplete="off" />');
+      $("#full-answer").html(selectedAnswer);
+    })();
+
+    function checkInput() {
+      "use strict";
+      var userInput = $("#input-box").val();
+      if (userInput.length === 5 || userInput.length === 6) {
+        $("body").empty();
+      }
+    }
+  </script>
+</body>
+</html>
