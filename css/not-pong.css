@@ -14,7 +14,7 @@
     color: #fff;
     text-shadow: 1px 1px 2px black;
     -webkit-transform: translateX(18rem);
-    transform: translateX(18rem);
+            transform: translateX(18rem);
 }
 
 /* Wrap the animation for proper display on different sized screens */
@@ -39,7 +39,7 @@
     float: left;
     margin-top: 50px;
     -webkit-animation-direction: alternate;
-    animation-direction: alternate;
+            animation-direction: alternate;
 }
 
  /* Position right racket */
