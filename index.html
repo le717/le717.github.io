@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
   <meta charset="UTF-8">
-  <!-- <meta name=viewport content="width=device-width, initial-scale=1"> -->
+  <meta name=viewport content="width=device-width, initial-scale=1"> 
   <title>Triangle Land</title>
   <link rel="apple-touch-icon" sizes="152x152" href="./apple-touch-icon.png">
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./apple-touch-icon-precomposed.png">
@@ -39,10 +39,12 @@
       background-attachment: fixed;
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="css/{{ site.github.project_title }}.min.css">
-</head>
-
-<body>
+  <link rel="stylesheet" href="css/{{ site.github.project_title }}.min.css">
+  <!--</head>-->
+<!--<body>-->
+<!--{% include base-style.html %}-->
+  
+{% include bridge.html %}
   <!-- Displays what browser the user is using -->
   <div onclick="hideBrowserBox();" id="yourBrowser">
     <a title="Click to dismiss message"></a>
