@@ -73,7 +73,7 @@ function detectBrowser() {
     }
 
   //} else {
-  } else if (!$.browser.chrome || !$.browser.mozilla || !$.browser.opr) {
+  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
