@@ -111,3 +111,9 @@ li { font-weight: bold; }
   color: black;
   height: auto;
 }
+
+#mit-license {
+  position: absolute;
+  -webkit-transform: translate3d(-22px, 1100%, 0);
+          transform: translate3d(-22px, 1100%, 0);
+}
