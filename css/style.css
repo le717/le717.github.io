@@ -102,11 +102,8 @@ li { font-weight: bold; }
 /* GitHub social button */
 #gh-button {
   position: absolute;
-/*  margin-top: 4em;*/
-/*  margin-top: 15%;*/
-/*  margin-left: 1.2%;*/
-  -webkit-transform: translate3d(-6.5px, 300%, 0);
-          transform: translate3d(-6.5px, 300%, 0);
+  -webkit-transform: translate3d(-8.5px, 300%, 0);
+          transform: translate3d(-8.5px, 300%, 0);
   font-size: 50px;
   color: black;
   height: auto;
@@ -115,6 +112,6 @@ li { font-weight: bold; }
 /* MIT License */
 #mit-license {
   position: absolute;
-  -webkit-transform: translate3d(-22px, 1100%, 0);
-          transform: translate3d(-20px, 1200%, 0);
+  -webkit-transform: translate3d(-25px, 1200%, 0);
+          transform: translate3d(-25px, 1200%, 0);
 }
