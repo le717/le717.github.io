@@ -106,6 +106,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', 'List commands', function () {
     grunt.log.writeln("");
+    grunt.log.writeln('Run "grunt copy" to copy any dependencies');
     grunt.log.writeln('Run "grunt lint" to lint the source files');
     grunt.log.writeln('Run "grunt build" to minify the source files');
     grunt.log.writeln('Run "grunt devUpdate" to update the devDependencies');
@@ -114,7 +115,7 @@ module.exports = function(grunt) {
 
   // Define the tasks
   grunt.registerTask("lint", ["htmlhint", "csslint", "jshint"]);
-  grunt.registerTask("build", ["cssmin", "uglify", "copy"]);
+  grunt.registerTask("build", ["cssmin", "uglify"]);
   grunt.registerTask("all", ["lint", "build"]);
 
   // Always use --force to stop csslint from killing the task
