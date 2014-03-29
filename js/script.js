@@ -31,16 +31,17 @@ function detectBrowser() {
       "If you do, please report them for me to fix.";
 
   // This is Google Chrome
-  if ($.browser.chrome) {
-    theBrowser = "Google Chrome";
-    theBrowserLogo = "img/chrome.png";
+//  if ($.browser.chrome) {
+//    theBrowser = "Google Chrome";
+//    theBrowserLogo = "img/chrome.png";
+//
+//  } else if ($.browser.mozilla) {
+//    // This is Mozilla Firefox
+//    theBrowser = "Mozilla Firefox";
+//    theBrowserLogo = "img/firefox.png";
 
-  } else if ($.browser.mozilla) {
-    // This is Mozilla Firefox
-    theBrowser = "Mozilla Firefox";
-    theBrowserLogo = "img/firefox.png";
-
-  } else if ($.browser.safari) {
+//  } else if ($.browser.safari) {
+  if ($.browser.safari) {
     // This is Safari
     theBrowser = "Apple Safari";
     theBrowserLogo = "img/safari.png";
@@ -52,19 +53,21 @@ function detectBrowser() {
       "Please visit browsehappy.com to research a modern browser.";
     }
 
-  } else if ($.browser.opr) {
-    // This is Opera
-    theBrowser = "Opera";
-    theBrowserLogo = "img/opera.png";
+//  } else if ($.browser.opr) {
+//    // This is Opera
+//    theBrowser = "Opera";
+//    theBrowserLogo = "img/opera.png";
 
   } else if ($.browser.msie) {
     // This is Internet Explorer
-    theBrowser = "Internet Explorer";
-    theBrowserLogo = "img/ie.png";
+//    theBrowser = "Internet Explorer";
+//    theBrowserLogo = "img/ie.png";
 
     //TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
     // Display error message for IE 9 and below
     if ($theBrowserVersion <= 9) {
+      theBrowser = "Internet Explorer";
+      theBrowserLogo = "img/ie.png";
       theBrowserMessage = "Your version of IE does not support my site. " +
       "Please visit browsehappy.com to research a modern browser.";
     }
@@ -75,7 +78,7 @@ function detectBrowser() {
     $theBrowserVersion = "";
     theBrowserLogo = "img/globe-blue.png";
     theBrowserMessage = "If you will, please submit an issue on GitHub with compatibility " +
-        "results so I can develop for this browser.";
+        "results. :)";
   }
 
     // Insert message and browser logo
@@ -85,7 +88,7 @@ function detectBrowser() {
     /* jshint ignore:end */
 
   // Trigger the fade-in transitions
-  $userBrowser.css("transform", "translateY(-230px)");
+  $userBrowser.css("transform", "translate3d(0, -230px, 0)");
   return theBrowser;
 }
 
