@@ -20,12 +20,13 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
-/* (Roughly) enter pitiful page contents */
-.page-center {
-  /* Center page contents */
-  text-align: center;
-  margin: 0 auto;
-  width: 400px;
+/* Page center */
+.center {
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  -webkit-transform: translate3d(-45%, -50%, 0);
+          transform: translate3d(-45%, -50%, 0);
 }
 
 #yourBrowser {
@@ -63,27 +64,12 @@ li { font-weight: bold; }
 /* Move the browser logo away from the text */
 #yourBrowser img { margin-top: 5px; }
 
-#subpages {
-  position: relative;
-  top: 10em;
-  left: 22%;
-}
-
-#subpages h2 {
-  margin-left: 10%;
-  text-align: left;
-}
-
-#subpages ul { text-align: left; }
-
 #subsites {
-  position: relative;
-  right: 26.5%;
-  top: 3em;
+  left: 22%;
+  top: 17.2em;
 }
 
-#subsites h2 { text-align: right; }
-
+#subsites h2,
 #subsites ul { text-align: right; }
 
 /* Remove the triangle from the left */
@@ -95,16 +81,27 @@ li { font-weight: bold; }
   padding-left: 5px;
 }
 
-/* Move my logo up */
-#my-logo { margin-top: -15%; }
+#subpages {
+  position: relative;
+  top: 15em;
+  left: 6%;
+  display: inline-block;
+}
+
+#subpages h2 {
+  margin-left: 25%;
+  text-align: left;
+}
+
+#subpages ul { text-align: left; }
 
 /* Hover effect for social buttons */
 .social-button:hover { color: #5193D4; }
 
 /* GitHub social button */
 #gh-button {
-  position: relative;
-  left: 48%;
+  margin-top: 15%;
+  margin-left: 1%;
   font-size: 50px;
   color: black;
 }
