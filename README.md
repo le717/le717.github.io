@@ -1,8 +1,8 @@
 # [http://le717.github.io](http://le717.github.io) #
 
-[![Build Status](https://travis-ci.org/le717/le717.github.io.png)](https://travis-ci.org/le717/le717.github.io) [![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.png?theme=shields.io)](https://david-dm.org/le717/le717.github.io#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.png?theme=shields.io)](https://david-dm.org/le717/le717.github.io#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-Possible future home of my website. My website can currently be found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
+Future home of my website which I will write from scratch. My current website is found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
 Oh yea, almost forgot. I wrote an HTML5 and CSS3 animation entitled **Not Pong** for you to enjoy (best enjoyed on desktop browsers), but it can be
 a bit buggy depending your browser. Please consult the table below for browser compatibility (I update it as bugs are fixed/changes are
