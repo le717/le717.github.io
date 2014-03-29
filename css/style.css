@@ -109,6 +109,7 @@ iframe {
 /* Use custom (Unicode only!) bullet point */
   content: "\25B2";
   padding-left: 5px;
+  text-align: right;
 }
 
 #my-logo { margin-top: -15%; }
