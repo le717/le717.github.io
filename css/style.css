@@ -101,8 +101,13 @@ li { font-weight: bold; }
 
 /* GitHub social button */
 #gh-button {
-  margin-top: 15%;
-  margin-left: 1%;
+  position: absolute;
+/*  margin-top: 4em;*/
+/*  margin-top: 15%;*/
+/*  margin-left: 1.2%;*/
+  -webkit-transform: translate3d(-6.5px, 300%, 0);
+          transform: translate3d(-6.5px, 300%, 0);
   font-size: 50px;
   color: black;
+  height: auto;
 }
