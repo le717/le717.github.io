@@ -89,6 +89,11 @@ $(function() {
     $("#gh-button img").attr("src", "img/ion-social-github.png");
   }
 
+  // Replace the SVG with a PNG on IE (IE doesn't always like SVGs)
+  if ($.browser.msie) {
+    $("#my-logo").attr("src", "img/Triangle717-Logo.png");
+  }
+
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io",
 //    function(data) {

@@ -20,10 +20,11 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
+/* Center-align my logo in the page :D */
 #my-logo {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 46%;
   margin-top: -185px;
   margin-left: -185px;
 }
