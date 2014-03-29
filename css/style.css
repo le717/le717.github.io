@@ -20,6 +20,14 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
+#my-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -185px;
+  margin-left: -185px;
+}
+
 /* Page center */
 .center {
   position: absolute;
