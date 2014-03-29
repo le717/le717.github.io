@@ -43,7 +43,6 @@ li { font-weight: bold; }
 
   /* Set the box to initally be visible */
   opacity: 1;
-  visibility: none;
 
   /* Box styling */
   text-align: center;
