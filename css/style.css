@@ -55,13 +55,10 @@ a:hover { text-decoration: underline; }
   font-weight: 700;
 }
 
-/* Align subpages list */
-ul {
-  list-style: none;
-  text-align: justify;
-}
+/* Remove list styling in favor of custom one :D */
+ul { list-style: none; }
 
-/* Use custom (Unicode only!) bullet point */
+/* Use custom (Unicode only!) triangle bullet point */
 li:before {
   content: "\25B2";
   padding-right: 5px;
@@ -79,14 +76,6 @@ li { font-weight: bold; }
   font-weight: bold;
 }
 
-/* GitHub Button (http://ghbtns.com/) */
-iframe {
-  border: none;
-  overflow: hidden;
-  background-color: transparent;
-  padding-top: 4px;
-}
-
 #subpages {
   position: relative;
   top: 10em;
@@ -97,21 +86,26 @@ iframe {
   margin-left: -30%
 }
 
+#subpages ul { text-align: left; }
+
 #subsites {
   position: relative;
-  right: 17.5%;
-  top: 2.9em;
+  right: 26.5%;
+  top: 3em;
 }
 
+#subsites ul { text-align: right; }
+
+/* Remove the triangle from the left */
 #subsites li:before { content: none; }
 
+/* Restore the triangle, but this time on the right */
 #subsites li:after {
-/* Use custom (Unicode only!) bullet point */
   content: "\25B2";
   padding-left: 5px;
-  text-align: right;
 }
 
+/* Move my logo up */
 #my-logo { margin-top: -15%; }
 
 #gh-button {

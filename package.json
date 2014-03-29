@@ -1,7 +1,7 @@
 {
   "name": "le717.github.io",
-  "version": "0.1.0",
-  "description": "Possible future home of my website, currently hosts Not Pong CSS3 animation",
+  "version": "0.1.1",
+  "description": "My future website",
   "main": "index.html",
   "scripts": {
     "test": "grunt lint"
