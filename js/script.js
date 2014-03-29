@@ -72,7 +72,8 @@ function detectBrowser() {
       "Please visit browsehappy.com to research a modern browser.";
     }
 
-  } else {
+  //} else {
+  } else if (!$.browser.chrome || !$.browser.mozilla || !$.browser.opr) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
@@ -93,11 +94,11 @@ function detectBrowser() {
 }
 
 $(function() {
-  // Run function to detect visitor's browser
-  var myBroswer = detectBrowser();
+  // Run process to detect visitor's browser
+  detectBrowser();
 
   // Workaround for Ionicons XSS exception on all browsers but Chrome
-  if (myBroswer !== "Google Chrome") {
+  if (!$.browser.chrome) {
     $("#gh-button").removeClass("icon");
     $("#gh-button").removeClass("ion-social-github");
     $("#gh-button").css("display", "inline-block");
