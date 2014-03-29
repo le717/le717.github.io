@@ -65,6 +65,7 @@ li { font-weight: bold; }
 #yourBrowser img { margin-top: 5px; }
 
 #subsites {
+  position: relative;
   left: 22%;
   top: 17.2em;
 }
