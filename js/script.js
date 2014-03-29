@@ -6,14 +6,12 @@
   <http://opensource.org/licenses/MIT/>
 */
 
-var $userBrowser = $("#yourBrowser");
-
 
 function hideBrowserBox() {
   "use strict";
   /* Hide the browser box */
   // Trigger the fade-out transition
-  $userBrowser.css("opacity", "0");
+  $("#yourBrowser").css("opacity", "0");
 }
 
 
@@ -31,17 +29,6 @@ function detectBrowser() {
       theBrowserMessageError = "You might experience some issues while browsing my site. " +
       "If you do, please report them for me to fix.";
 
-  // This is Google Chrome
-//  if ($.browser.chrome) {
-//    theBrowser = "Google Chrome";
-//    theBrowserLogo = "img/chrome.png";
-//
-//  } else if ($.browser.mozilla) {
-//    // This is Mozilla Firefox
-//    theBrowser = "Mozilla Firefox";
-//    theBrowserLogo = "img/firefox.png";
-
-//  } else if ($.browser.safari) {
   if ($.browser.safari) {
     // This is Safari
     theBrowser = "Apple Safari";
@@ -55,18 +42,10 @@ function detectBrowser() {
       "Please visit browsehappy.com to research a modern browser.";
     }
 
-//  } else if ($.browser.opr) {
-//    // This is Opera
-//    theBrowser = "Opera";
-//    theBrowserLogo = "img/opera.png";
-
   } else if ($.browser.msie) {
     // This is Internet Explorer
-//    theBrowser = "Internet Explorer";
-//    theBrowserLogo = "img/ie.png";
-
-    //TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
-    // Display error message for IE 9 and below
+    // TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
+    // Display error message on IE 9 and below
     if ($theBrowserVersion <= 9) {
       theBrowser = "Internet Explorer";
       theBrowserLogo = "img/ie.png";
@@ -75,34 +54,33 @@ function detectBrowser() {
       showPanel = true;
     }
 
-  //} else {
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
     theBrowserLogo = "img/globe-blue.png";
-    theBrowserMessage = "If you will, please submit an issue on GitHub with compatibility " +
-        "results. :)";
+    theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
     showPanel = true;
   }
-  
+
+  // Insert message and browser logo
   if (showPanel) {
-      // Insert message and browser logo
       /* jshint ignore:start */
       $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="90" height="90" src="{3}" />'.format(
      theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
       /* jshint ignore:end */
 
     // Trigger the fade-in transitions
-    $userBrowser.css("transform", "translate3d(0, -230px, 0)");
+    $("#yourBrowser").css("transform", "translate3d(0, -230px, 0)");
   }
 }
 
 $(function() {
+  "use strict";
   // Run process to detect visitor's browser
   detectBrowser();
 
-  // Workaround for Ionicons XSS exception on all browsers but Chrome
+  // Workaround for Ionicons XSS exception from their CDN on all browsers but Chrome
   if (!$.browser.chrome) {
     $("#gh-button").removeClass("icon");
     $("#gh-button").removeClass("ion-social-github");
