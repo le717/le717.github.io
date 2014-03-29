@@ -8,6 +8,18 @@
 */
 
 
+/* Remove list styling in favor of custom one :D */
+ul { list-style: none; }
+
+/* Use custom (Unicode only!) triangle bullet point */
+li:before {
+  content: "\25B2";
+  padding-right: 5px;
+}
+
+/* Workarond for Opera to properly display text */
+li { font-weight: bold; }
+
 /* (Roughly) enter pitiful page contents */
 .page-center {
   /* Center page contents */
@@ -21,7 +33,8 @@
   position: fixed;
   display: block;
   right: 20px;
-  bottom: -220px;
+  bottom: -230px;
+  z-index: 1;
 
   /* Size */
   width: 220px;
@@ -33,7 +46,7 @@
   /* Box styling */
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 1px 1px 2px 2px black;
+  box-shadow: 1px 1px 2px 2px black;
 
   /* Transition */
   transition: opacity, transform;
@@ -44,30 +57,11 @@
 /* Disguise the fact this is a link */
 #yourBrowser a {
   text-decoration: none;
-  color: #363a3a;
   font-weight: 700;
 }
 
-/* Remove list styling in favor of custom one :D */
-ul { list-style: none; }
-
-/* Use custom (Unicode only!) triangle bullet point */
-li:before {
-  content: "\25B2";
-  padding-right: 5px;
-}
-
-/* Workarond for Opera to properly display text */
-li { font-weight: bold; }
-
-/* "Site last updated on" label */
-#last-update {
-  font-size: 16px;
-  margin-top: -50px;
-
-  /* Workarond for Opera to properly display text */
-  font-weight: bold;
-}
+/* Move the browser logo away from the text */
+#yourBrowser img { margin-top: 5px; }
 
 #subpages {
   position: relative;
@@ -76,7 +70,8 @@ li { font-weight: bold; }
 }
 
 #subpages h2 {
-  margin-left: -30%
+  margin-left: 10%;
+  text-align: left;
 }
 
 #subpages ul { text-align: left; }
@@ -86,6 +81,8 @@ li { font-weight: bold; }
   right: 26.5%;
   top: 3em;
 }
+
+#subsites h2 { text-align: right; }
 
 #subsites ul { text-align: right; }
 
@@ -101,11 +98,13 @@ li { font-weight: bold; }
 /* Move my logo up */
 #my-logo { margin-top: -15%; }
 
+/* Hover effect for social buttons */
+.social-button:hover { color: #5193D4; }
+
+/* GitHub social button */
 #gh-button {
   position: relative;
   left: 48%;
   font-size: 50px;
   color: black;
 }
-
-#gh-button:hover { color: #5193D4; }
