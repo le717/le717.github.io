@@ -112,8 +112,9 @@ li { font-weight: bold; }
   height: auto;
 }
 
+/* MIT License */
 #mit-license {
   position: absolute;
   -webkit-transform: translate3d(-22px, 1100%, 0);
-          transform: translate3d(-22px, 1100%, 0);
+          transform: translate3d(-20px, 1200%, 0);
 }
