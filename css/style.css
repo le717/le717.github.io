@@ -8,20 +8,13 @@
 */
 
 
-/* Center pitiful page contents (for now) */
+/* (Roughly) enter pitiful page contents */
 .page-center {
   /* Center page contents */
   text-align: center;
   margin: 0 auto;
   width: 400px;
 }
-
-/* Set link decoration */
-a {
-  text-decoration: none;
-  color: #f8f8f8;
-}
-a:hover { text-decoration: underline; }
 
 #yourBrowser {
   /* Location */
