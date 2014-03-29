@@ -78,8 +78,9 @@ title: Triangle Land - Spelling Captcha
           images = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"];
 
       var selectedAnswer = selectRandom(answers);
+      var selectedAnswerIndex = answers.indexOf(selectedAnswer);
 
-      if (answers.indexOf(selectedAnswer) === 0) {
+      if (selectedAnswerIndex === 0) {
         $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[0]));
         $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[1]));
 
@@ -89,14 +90,24 @@ title: Triangle Land - Spelling Captcha
         $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[4]));
       }
       $(".captcha-image").attr("height", "100");
-      selectedAnswer = selectedAnswer.replace(/input-box/, '<input id="input-box" autofocus autocomplete="off" />');
+      selectedAnswer = selectedAnswer.replace(/input-box/, '<input id="input-box" autocomplete="off" />');
       $("#full-answer").html(selectedAnswer);
+
+      window.selectedAnswerIndex = selectedAnswerIndex;
     })();
 
     function checkInput() {
       "use strict";
-      var userInput = $("#input-box").val();
-      if (userInput.length === 5 || userInput.length === 6) {
+      var theRightAnswer,
+        userInput = $("#input-box").val();
+
+      if (selectedAnswerIndex === 0) {
+        theRightAnswer = "you're";
+      } else {
+        theRightAnswer = "there";
+      }
+
+      if (userInput.toLowerCase() === theRightAnswer) {
         $("body").empty();
       }
     }
