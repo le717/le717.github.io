@@ -20,16 +20,18 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
-/* Center-align my logo in the page :D */
-#my-logo {
+.centered {
   position: fixed;
   top: 50%;
   left: 50%;
+}
+
+/* Center-align my logo in the page :D */
+#my-logo {
   margin-top: -185px;
   margin-left: -185px;
 }
 
-/* Page center */
 .center {
   position: absolute;
   left: 45%;
@@ -110,12 +112,10 @@ li { font-weight: bold; }
 
 /* GitHub social button */
 #gh-button {
-  position: absolute;
-  -webkit-transform: translate3d(-8.5px, 300%, 0);
-          transform: translate3d(-8.5px, 300%, 0);
   font-size: 50px;
   color: black;
-  height: auto;
+  margin-top: -25px;
+  margin-left: -25px;
 }
 
 /* MIT License */
