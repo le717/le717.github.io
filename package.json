@@ -19,8 +19,8 @@
   ],
   "homepage": "http://le717.github.io",
   "dependencies": {
-    "string-format": "^0.2.1",
-    "jquery.browser": "^0.0.5"
+    "string-format": ">=0.2.1",
+    "jquery.browser": ">=0.0.6"
   },
   "devDependencies": {
     "grunt": "^0.4.2",
