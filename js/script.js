@@ -54,7 +54,7 @@ function detectBrowser() {
       showPanel = true;
     }
 
-  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr) {
+  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
