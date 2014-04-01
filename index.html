@@ -1,9 +1,9 @@
 ---
-title: Triangle Land
+title: Home
 googlefont: Source+Sans+Pro:500,700
 ---
 {% include header.html %}
-<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
+<link rel="stylesheet" href="{{ site.baseurl }}/lib/ionicons.min.css">
 {% include base-style.html %}
 <!--  <link rel="stylesheet" href="{{ site.baseurl }}/css/le717.github.io.min.css">-->
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
@@ -11,6 +11,13 @@ googlefont: Source+Sans+Pro:500,700
   <!-- Displays what browser the user is using -->
   <div onclick="hideBrowserBox();" id="yourBrowser">
     <a title="Click to dismiss message"></a>
+  </div>
+
+  <!-- My logo -->
+  <div>
+    <a target="_blank" href="http://Triangle717.WordPress.com" title="Visit my blog">
+      <img class="centered" id="my-logo" alt="Triangle Land logo" width="370" height="370" src="img/Triangle717-Logo.svg" />
+    </a>
   </div>
 
 <!--
@@ -33,18 +40,11 @@ googlefont: Source+Sans+Pro:500,700
   </div>
 -->
 
-  <!-- My logo -->
-  <div>
-    <a target="_blank" href="http://Triangle717.WordPress.com" title="Visit my blog">
-      <img class="centered" id="my-logo" alt="Triangle Land logo" width="370" height="370" src="img/Triangle717-Logo.svg" />
-    </a>
-  </div>
-
   <!--
     Ionicons
     http://ionicons.com/
   -->
-  <a target="_blank" href="https://github.com/le717"><div class="icon ion-social-github social-button centered" id="gh-button"></div></a>
+  <a style="text-decoration: none;" target="_blank" href="https://github.com/le717"><div class="icon ion-social-github social-button centered" id="gh-button"></div></a>
 
   <!-- MIT License -->
   <a class="centered" id="mit-license" href="{{ site.baseurl }}/license.html">MIT License</a>

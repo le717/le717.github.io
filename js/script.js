@@ -80,15 +80,6 @@ $(function() {
   // Run process to detect visitor's browser
   detectBrowser();
 
-  // Workaround for Ionicons XSS exception from their CDN on all browsers but Chrome
-  if (!$.browser.chrome) {
-    $("#gh-button").removeClass("icon");
-    $("#gh-button").removeClass("ion-social-github");
-    $("#gh-button").css("display", "inline-block");
-    $("#gh-button").append('<img width="50" height="50" />');
-    $("#gh-button img").attr("src", "img/ion-social-github.png");
-  }
-
   // Replace the SVG with a PNG on IE (IE doesn't always like SVGs)
   if ($.browser.msie) {
     $("#my-logo").attr("src", "img/Triangle717-Logo.png");
