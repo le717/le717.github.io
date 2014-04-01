@@ -12,6 +12,18 @@ blockquote {
   padding: 10px 15px;
   background-color: rgba(232, 162, 162, 0.570);
   font-size: 1.05em;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+blockquote:before {
+  content: open-quote;
+  font-size: 1.5em;
+  margin-right: 0.1em;
+}
+blockquote:after {
+  content: close-quote;
+  font-size: 1.5em;
+  margin-left: 0.1em;
 }
 
 /* Remove list styling in favor of custom one :D */
@@ -31,6 +43,9 @@ li { font-weight: bold; }
   top: 50%;
   left: 50%;
 }
+
+.bold { font-weight: 700; }
+.italic { font-style: italic; }
 
 /* Center-align my logo in the page :D */
 #my-logo {
