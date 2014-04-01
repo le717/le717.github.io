@@ -7,6 +7,7 @@
   <http://opensource.org/licenses/MIT/>
 */
 
+
 blockquote {
   border-left: 7px solid #FF0000;
   padding: 10px 15px;
@@ -20,6 +21,7 @@ blockquote:before {
   font-size: 1.5em;
   margin-right: 0.1em;
 }
+
 blockquote:after {
   content: close-quote;
   font-size: 1.5em;
@@ -70,36 +72,29 @@ ul { list-style: none; }
 }
 
 #yourBrowser {
-  /* Location */
   position: fixed;
   display: block;
   right: 20px;
   bottom: -230px;
   z-index: 1;
 
-  /* Size */
   width: 220px;
   height: 220px;
 
-  /* Set the box to initally be visible */
   opacity: 1;
+  visibility: hidden;
 
-  /* Box styling */
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 2px 2px black;
 
-  /* Transition */
   transition: opacity, transform;
   transition-duration: 1.5s;
   transition-timing-function: ease-out;
 }
 
 /* Disguise the fact this is a link */
-#yourBrowser a {
-  text-decoration: none;
-  font-weight: 700;
-}
+#yourBrowser a { text-decoration: none; }
 
 /* Move the browser logo away from the text */
 #yourBrowser img { margin-top: 5px; }
@@ -139,7 +134,7 @@ ul { list-style: none; }
 .social-button-link {
   text-decoration: none;
   text-shadow: none;
-  color: black;
+  color: #000;
 }
 
 /* Hover effect for social buttons */
@@ -176,5 +171,4 @@ ul { list-style: none; }
 #mit-license {
   margin-left: -40px;
   top: 82.5%;
-  font-weight: 700;
 }

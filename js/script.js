@@ -71,6 +71,7 @@ function detectBrowser() {
       /* jshint ignore:end */
 
     // Trigger the fade-in transitions
+    $("#yourBrowser").css("visibility", "visible");
     $("#yourBrowser").css("transform", "translate3d(0, -230px, 0)");
   }
 }
