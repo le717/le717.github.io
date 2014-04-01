@@ -38,6 +38,8 @@ li:before {
 /* Workarond for Opera to properly display text */
 li { font-weight: bold; }
 
+.img-shadow { box-shadow: 1px 1px 5px 1px black; }
+
 .centered {
   position: fixed;
   top: 50%;
