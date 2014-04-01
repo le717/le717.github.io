@@ -107,6 +107,8 @@ li { font-weight: bold; }
 
 #subpages ul { text-align: left; }
 
+.social-button-link { text-decoration: none; }
+
 /* Hover effect for social buttons */
 .social-button:hover { color: #5193D4; }
 
