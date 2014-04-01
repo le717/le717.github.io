@@ -7,6 +7,10 @@
   <http://opensource.org/licenses/MIT/>
 */
 
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+}
 
 /* Remove list styling in favor of custom one :D */
 ul { list-style: none; }
