@@ -142,23 +142,23 @@ li { font-weight: bold; }
 
 /* GitHub social button */
 #gh-button {
-  font-size: 50px;
-  margin-top: -28px;
+  font-size: 3.1em;
+  margin-top: -22px;
   margin-left: -25px;
   top: 77%;
 }
 
 /* WordPress social button */
 #wp-button {
-  font-size: 62px;
-  margin-top: -28px;
+  font-size: 3.75em;
+  margin-top: -27px;
   margin-left: -85px;
   top: 77%;
 }
 
 /* YouTube social button */
 #yt-button {
-  font-size: 50px;
+  font-size: 3.125em;
   margin-top: -23px;
   margin-left: 31px;
   top: 77%;
