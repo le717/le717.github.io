@@ -107,7 +107,10 @@ li { font-weight: bold; }
 
 #subpages ul { text-align: left; }
 
-.social-button-link { text-decoration: none; }
+.social-button-link {
+  text-decoration: none;
+  color: black;
+}
 
 /* Hover effect for social buttons */
 .social-button:hover { color: #5193D4; }
@@ -115,7 +118,6 @@ li { font-weight: bold; }
 /* GitHub social button */
 #gh-button {
   font-size: 50px;
-  color: black;
   margin-top: -25px;
   margin-left: -25px;
   top: 77%;
@@ -124,7 +126,6 @@ li { font-weight: bold; }
 /* WordPress social button */
 #wp-button {
   font-size: 62px;
-  color: black;
   margin-top: -30px;
   margin-left: -85px;
   top: 77%;
