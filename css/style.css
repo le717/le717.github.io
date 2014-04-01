@@ -130,16 +130,20 @@ li { font-weight: bold; }
 
 .social-button-link {
   text-decoration: none;
+  text-shadow: none;
   color: black;
 }
 
 /* Hover effect for social buttons */
-.social-button:hover { color: #5193D4; }
+.social-button:hover {
+  color: #5193D4;
+  text-shadow: 1px 1px 2px black;
+}
 
 /* GitHub social button */
 #gh-button {
   font-size: 50px;
-  margin-top: -25px;
+  margin-top: -28px;
   margin-left: -25px;
   top: 77%;
 }
@@ -147,20 +151,17 @@ li { font-weight: bold; }
 /* WordPress social button */
 #wp-button {
   font-size: 62px;
-  margin-top: -30px;
+  margin-top: -28px;
   margin-left: -85px;
   top: 77%;
 }
 
 /* YouTube social button */
 #yt-button {
-/*
-  font-size: 62px;
-  margin-top: -30px;
-  margin-left: -85px;
+  font-size: 50px;
+  margin-top: -23px;
+  margin-left: 31px;
   top: 77%;
-*/
-  display: none;
 }
 
 /* MIT License */
