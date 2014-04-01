@@ -26,8 +26,11 @@ blockquote:after {
   margin-left: 0.1em;
 }
 
-/* Remove list styling in favor of custom one :D */
-ul { list-style: none; }
+p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: justify;
+}
 
 /* Use custom (Unicode only!) triangle bullet point */
 li:before {
@@ -36,7 +39,10 @@ li:before {
 }
 
 /* Workarond for Opera to properly display text */
-li { font-weight: bold; }
+li { font-weight: 700; }
+
+/* Remove unordered list bullet point in favor of custom one :D */
+ul { list-style: none; }
 
 .img-shadow { box-shadow: 1px 1px 5px 1px black; }
 
