@@ -121,6 +121,15 @@ li { font-weight: bold; }
   top: 77%;
 }
 
+/* WordPress social button */
+#wp-button {
+  font-size: 62px;
+  color: black;
+  margin-top: -30px;
+  margin-left: -85px;
+  top: 77%;
+}
+
 /* MIT License */
 #mit-license {
   margin-left: -40px;
