@@ -46,8 +46,8 @@ li { font-weight: 700; }
 /* Remove unordered list bullet point in favor of custom one :D */
 ul { list-style: none; }
 
-::-moz-selection { color: rgba(0, 0, 255, 0.5); }
-::selection      { color: rgba(0, 0, 255, 0.5); }
+::-moz-selection { background-color: rgba(0, 0, 255, 0.5); }
+::selection      { background-color: rgba(0, 0, 255, 0.5); }
 
 .img-shadow { box-shadow: 1px 1px 5px 1px black; }
 
