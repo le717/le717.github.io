@@ -152,6 +152,17 @@ li { font-weight: bold; }
   top: 77%;
 }
 
+/* YouTube social button */
+#yt-button {
+/*
+  font-size: 62px;
+  margin-top: -30px;
+  margin-left: -85px;
+  top: 77%;
+*/
+  display: none;
+}
+
 /* MIT License */
 #mit-license {
   margin-left: -40px;
