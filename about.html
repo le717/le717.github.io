@@ -7,36 +7,57 @@ googlefont: Source+Sans+Pro:600,700
 <style>
   h1 { text-align: center; }
   p {
-    margin-left: 20px;
+    margin-left: 0.938em;
     text-align: justify;
   }
+  #i-am-age { border-bottom: 1px dashed white; }
 </style>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
 {% include bridge.html %}
-<h1>About Me</h1>
-<p>
-  Hello! I am <strong>Triangle717</strong> (pronounced <strong>lee seven one seven</strong>), sometimes known as <strong>le717</strong> (pronounced
-  <strong>lee seven seventeen</strong>). I am <span id="i-am-age">19</span> years old, harkening from Triangle Land, Georgia, USA.<br>I am a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.
-  <br><br>
-  I am a programmer. After discovering the world of programming in October 2013 by going through the  <a target="_blank" href="http://www.codecademy.com">Codcademy HTML Fundamentals</a> track and following <a target="_blank" href="http://swaroopch.com/notes/python/"><em>A Byte of Python</em></a> by<br><a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
-  I discovered what God had prepared me for though the hardships I have endured.
-  <br><br>
-  I am currently attending technical college to obtain my associates degree in website design and development. Projected graduation date is Spring or Summer 2015.
-  <br><br>
-  I am a strong supporter of open-source programs. You will find all my programming work on <a target="_blank" href="https://github.com/le717">GitHub</a>.
-  Links to various projects and downloads for them can be found on the <a target="_blank" href="http://Triangle717.WordPress.com/code/">Source  Code</a> and <a target="_blank" href="http://Triangle717.WordPress.com/downloads/">Downloads</a> pages of my
-<a target="_blank" href="http://Triangle717.WordPress.com/">blog</a>, respectively.
-</p>
+  <h1>About Me</h1>
+  <p>
+    Hello! I am <span class="bold">Triangle717</span> (pronounced <span class="bold">lee seven one seven</span>), sometimes known as
+    <span class="bold">le717</span> (pronounced <span class="bold">lee seven seventeen</span>). I am
+    <span title="My age is calculated automatically. :D" id="i-am-age"></span> years old, harkening from Triangle Land, Georgia, USA.<br>
+    I am a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.
+    <br><br>
+    I am a programmer of nearly one and a half years. After discovering the world of programming in October 2013 by going through the  <a target="_blank" href="http://www.codecademy.com">Codcademy HTML Fundamentals</a> track and following <a target="_blank" href="http://swaroopch.com/notes/python/"><em>A Byte of Python</em></a> by<br><a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
+    I discovered what God had prepared me for though the hardships I have endured.
+    <br><br>
+    I am currently attending technical college to obtain my associates degree in website design and development. Projected graduation date is Spring or Summer 2015.
+    <br><br>
+    I am a strong supporter of open-source programs. You will find all my programming work on <a target="_blank" href="https://github.com/le717">GitHub</a>.
+    Links to various projects and downloads for them can be found on the <a target="_blank" href="http://Triangle717.WordPress.com/code/">Source  Code</a> and <a target="_blank" href="http://Triangle717.WordPress.com/downloads/">Downloads</a> pages of my
+  <a target="_blank" href="http://Triangle717.WordPress.com/">blog</a>, respectively.
+  </p>
 
-<blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
-<a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans 1:16a (NKJV)</a></blockquote>
+  <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
+  <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans 1:16a (NKJV)</a></blockquote>
 
-<p style="text-align:center;"><img class="aligncenter" style="box-shadow:1px 1px 5px 1px black;" alt="Triangle717" src="http://1.gravatar.com/avatar/3493f5b364f9958db51194a6fc629a46?size=350" width="350" height="350" /></p>
+  <p style="text-align:center;"><img class="aligncenter" style="box-shadow:1px 1px 5px 1px black;" alt="Triangle717" src="http://1.gravatar.com/avatar/3493f5b364f9958db51194a6fc629a46?size=325" width="325" height="325" /></p>
 
-<h1>About this site</h1>
+  <h1>About this site</h1>
 
-<p><span class="bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="https://github.com/le717/le717.github.io/">open-source</a>) written from scratch by yours truly.<br>
+  <p><span class="bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="https://github.com/le717/le717.github.io/">open-source</a>) written from scratch by yours truly.<br>
 
-As of April 1, 2014, <span class="bold">Triangle Land</span> is still under heavy construction, and things will change and move around without notice. I am sorry for any inconvenience this may cause.</p>
+  As of April 1, 2014, <span class="bold">Triangle Land</span> is still under heavy construction, and things will change and move around without notice. I am sorry for any inconvenience this may cause.</p>
 
+  <script>
+    var curDate  = new Date();
+    var curYear  = curDate.getUTCFullYear(),
+        curMonth = curDate.getUTCMonth(),
+        curDay   = curDate.getUTCDate();
+
+    var myYear   = 1995,
+        myMonth  = 2, // UTC month value, AKA March
+        myDay    = 13,
+        myAge;
+
+    myAge = parseInt(curYear) % parseInt(myYear);
+    if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
+      myAge -= 1;
+    }
+
+    $("#i-am-age").html(myAge);
+  </script>
 {% include footer.html %}
