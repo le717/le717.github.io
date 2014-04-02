@@ -13,32 +13,31 @@ googlefont: Source+Sans+Pro:400,600,700
   <h1>About Me</h1>
   <p>
     Hello! I am <span class="bold">Triangle717</span> (pronounced <span class="bold">Triangle seven one seven</span>), sometimes known as
-    <span class="bold">le717</span> (pronounced <span class="bold">lee seven seventeen</span>). I am
-    <span title="My age is calculated automatically. :D" id="i-am-age"></span> years old, harkening from Triangle Land, Georgia, USA.<br>
-    I am a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.
-    <br><br>
-    I am a programmer of nearly one and a half years. After discovering the world of programming in October 2013 by going through the  <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="italic">A Byte of Python</span></a> book by
+    <span class="bold">le717</span> (pronounced <span class="bold">lee seven seventeen</span>). 
+    I am <span title="My age is calculated automatically. :D" id="i-am-age"></span> years old, harkening from Triangle Land, Georgia, USA.<br>
+    I am also a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.
+
+    <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
+  <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans 1:16a (NKJV)</a></blockquote>
+
+  I am a programmer of nearly one and a half years. After discovering the world of programming in October 2013 by completing the <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="italic">A Byte of Python</span></a> book by
     <a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>, I discovered what God had prepared me for though the hardships I have endured.
     <br><br>
     I am currently attending technical college to obtain my associates degree in website design and development. Projected graduation date is Spring or Summer 2015.
     <br><br>
-    I am a strong supporter of open-source programs. You will find all my programming work on <a target="_blank" href="https://github.com/le717">GitHub</a>.
-    Links to various projects and downloads for them can be found on the <a target="_blank" href="http://Triangle717.WordPress.com/code/">Source  Code</a> and <a target="_blank" href="http://Triangle717.WordPress.com/downloads/">Downloads</a> pages of my
-  <a target="_blank" href="http://Triangle717.WordPress.com/">blog</a>, respectively.
+    I am a strong supporter of open-source programming. That is why you will find all my programming work on <a target="_blank" href="{{ site.github.owner_url }}">GitHub</a>.
+    Links to various projects and downloads for them can be found on the <a target="_blank" href="http://Triangle717.WordPress.com/code/">Source  Code</a> and <a target="_blank" href="http://Triangle717.WordPress.com/downloads/">Downloads</a> pages on my WordPress.com
+    <a target="_blank" href="http://Triangle717.WordPress.com/">blog</a>, respectively, in addition to many of the project's appropriate Releases page.
   </p>
-
-  <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
-  <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans 1:16a (NKJV)</a></blockquote>
 
   <p style="text-align: center;"><img class="img-shadow" alt="Triangle717" src="http://1.gravatar.com/avatar/3493f5b364f9958db51194a6fc629a46?size=325" width="325" height="325" /></p>
 
   <h1>About this site</h1>
+  <p>
+    <span class="bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="{{ site.github.repository_url }}">open-source</a> under the <a href="{{ site.baseurl }}/license.html">MIT License</a>), written from scratch by yours truly.<br>
+    As of March 31, 2014, <span class="bold">Triangle Land</span> is under heavy construction, and things will change, break, and move around without notice. I am sorry for any inconvenience this may cause.
+</p>
 
-  <p><span class="bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="{{ site.github.repository_url }}">open-source</a> under the <a href="{{ site.baseurl }}/license.html">MIT License</a>) written from scratch by yours truly.<br>
-
-  As of April 1, 2014, <span class="bold">Triangle Land</span> is still under heavy construction, and things will change and move around without notice. I am sorry for any inconvenience this may cause.</p>
-  
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"> </script>
   <script>
     var curDate  = new Date();
     var curYear  = curDate.getUTCFullYear(),
@@ -46,14 +45,15 @@ googlefont: Source+Sans+Pro:400,600,700
         curDay   = curDate.getUTCDate();
 
     var myYear   = 1995,
-        myMonth  = 2, // UTC month value, AKA March
+        myMonth  = 2, // UTC month value is zero-based
         myDay    = 13;
 
-    var myAge = parseInt(curYear) % parseInt(myYear);
+    var myAge    = parseInt(curYear) % parseInt(myYear);
+    // Do not update my age unless it is my birthday
     if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
       myAge -= 1;
     }
 
-    $("#i-am-age").html(myAge);
+    document.getElementById("i-am-age").innerHTML = myAge;
   </script>
 {% include footer.html %}
