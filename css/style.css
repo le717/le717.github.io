@@ -109,7 +109,6 @@
   margin-left: -25px;
   top: 77%;
 }
-#gh-button:active,
 #gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
@@ -119,7 +118,6 @@
   margin-left: -90px;
   top: 77%;
 }
-#wp-button:active,
 #wp-button:hover { color: #1E8CBE; }
 
 /* YouTube social button */
@@ -129,7 +127,6 @@
   margin-left: 37px;
   top: 77%;
 }
-#yt-button:active,
 #yt-button:hover { color: #CC181E; }
 
 /* MIT License */
