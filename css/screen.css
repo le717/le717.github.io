@@ -7,7 +7,7 @@
 */
 
 /* Colorize social buttons only on touchscreens */
-@media screen and (max-width: 720px) {
+@media screen {
   #gh-button:active { color: #BBBBBB; }
   #gh-button:hover { color: #000; }
 
