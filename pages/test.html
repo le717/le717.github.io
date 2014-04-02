@@ -1,11 +1,19 @@
 ---
-title: Spelling Captcha
-googlefont: Open+Sans:400,700
+title: Test Page
+googlefont: Open+Sans:400,600,700
 ---
 {% include header.html %}
 {% include base-style.html %}
   <link rel="stylesheet" href="{{ site.baseurl }}/lib/ionicons.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+  <style>
+    #home-link {
+      margin-left: 10px;
+    }
+    #home-button {
+      font-size: 1.5em;
+    }
+  </style>
 {% include bridge.html %}
-  <a class="social-button-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"></div></a>
+  <a class="social-button-link social-button" id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"><span>Home</span></div></a>
 {% include footer.html %}
