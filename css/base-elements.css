@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*
+  Created 2014 Triangle717
+  <http://Triangle717.WordPress.com/>
+
+  Licensed under The MIT License
+  <http://opensource.org/licenses/MIT/>
+*/
+
+
+blockquote {
+  border-left: 7px solid rgb(0, 0, 196);
+  padding: 10px 15px;
+  background-color: rgba(128, 128, 128, 0.8);
+  font-size: 1.05em;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+blockquote:before {
+  content: open-quote;
+  font-size: 1.5em;
+  margin-right: 0.1em;
+}
+
+blockquote:after {
+  content: close-quote;
+  font-size: 1.5em;
+  margin-left: 0.1em;
+}
+
+p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: left;
+}
+
+/* Use custom (Unicode only!) triangle bullet point */
+li:before {
+  content: "\25B2";
+  padding-right: 5px;
+}
+
+/* Workarond for Opera to properly display text */
+li { font-weight: 700; }
+
+/* Remove unordered list bullet point in favor of custom one :D */
+ul { list-style: none; }
+
+::-moz-selection { background-color: rgba(0, 0, 255, 0.3); }
+     ::selection { background-color: rgba(0, 0, 255, 0.3); }

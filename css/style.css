@@ -8,47 +8,6 @@
 */
 
 
-blockquote {
-  border-left: 7px solid #FF0000;
-  padding: 10px 15px;
-  background-color: rgba(154, 133, 133, 0.6);
-  font-size: 1.05em;
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
-}
-
-blockquote:before {
-  content: open-quote;
-  font-size: 1.5em;
-  margin-right: 0.1em;
-}
-
-blockquote:after {
-  content: close-quote;
-  font-size: 1.5em;
-  margin-left: 0.1em;
-}
-
-p {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  text-align: left;
-}
-
-/* Use custom (Unicode only!) triangle bullet point */
-li:before {
-  content: "\25B2";
-  padding-right: 5px;
-}
-
-/* Workarond for Opera to properly display text */
-li { font-weight: 700; }
-
-/* Remove unordered list bullet point in favor of custom one :D */
-ul { list-style: none; }
-
-::-moz-selection { background-color: rgba(0, 0, 255, 0.3); }
-     ::selection { background-color: rgba(0, 0, 255, 0.3); }
-
 .img-shadow { box-shadow: 1px 1px 5px 1px black; }
 
 .centered {
@@ -83,8 +42,8 @@ ul { list-style: none; }
 
 /*  width: 220px;*/
 /*  height: 220px;*/
-  width: 13.5em;
-  height: 13.5em;
+  width: 13em;
+  height: 13em;
 
   opacity: 1;
   visibility: hidden;
@@ -101,7 +60,7 @@ ul { list-style: none; }
 /* Disguise the fact this is a link */
 #yourBrowser a {
   text-decoration: none;
-  font-size: 0.875em;
+  font-size: 0.75em;
 }
 
 /* Move the browser logo away from the text */
