@@ -56,6 +56,20 @@
 /* Move the browser logo away from the text */
 #yourBrowser img { margin-top: 5px; }
 
+#subpages {
+  position: relative;
+  top: 6.5em;
+  left: 57%;
+  display: inline-block;
+}
+
+#subpages h2 {
+  position: relative;
+  top: 0.65em;
+  margin-left: 25%;
+  text-align: left;
+}
+
 #subsites {
   position: relative;
   left: 22%;
@@ -73,20 +87,6 @@
   content: "\25B2";
   padding-left: 5px;
 }
-
-#subpages {
-  position: relative;
-  top: 6.5em;
-  left: 27%;
-  display: inline-block;
-}
-
-#subpages h2 {
-  margin-left: 25%;
-  text-align: left;
-}
-
-#subpages ul { text-align: left; }
 
 .social-button-link {
   text-decoration: none;
