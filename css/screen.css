@@ -19,10 +19,6 @@
 }*/
 
 @media screen and (max-width: 720px) {
-
-  #subpages { display: none; }
-  #subsites { display: none; }
-
   .social-button {
     -webkit-transform: translate3d(0, 35px, 0);
         -ms-transform: translate3d(0, 35px, 0);
@@ -39,10 +35,6 @@
 
 /* ------- 320px (iPhone <= 3) ------- */
 @media screen and (max-width: 320px) {
-
-  #subpages { display: none; }
-  #subsites { display: none; }
-
   #my-avatar { margin-left: -1em; }
 
   #my-logo {

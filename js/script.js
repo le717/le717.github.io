@@ -70,6 +70,10 @@ function detectBrowser() {
     $theBrowserVersion = "";
     theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
     showPanel = true;
+
+    // NOTE Hide text on mobile browsers until I can work on them
+    $("#subpages").css("display", "none");
+    $("#subsites").css("display", "none");
   }
 
   // Insert message and browser logo
