@@ -51,19 +51,19 @@ function detectBrowser() {
       showPanel = true;
     }
 
-  else if ($.browser.mobile) {
-    // Mobile browsers
-    theBrowser = "A Mobile Browser";
-    $theBrowserVersion = "";
-    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
-    showPanel = true;
-  }
-
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
+    showPanel = true;
+  }
+
+  else if ($.browser.mobile) {
+    // Mobile browsers
+    theBrowser = "A Mobile Browser";
+    $theBrowserVersion = "";
+    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
     showPanel = true;
   }
 
