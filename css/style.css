@@ -16,8 +16,8 @@
   left: 50%;
 }
 
-.bold { font-weight: 700; }
-.italic { font-style: italic; }
+.text-bold { font-weight: 700; }
+.text-italic { font-style: italic; }
 
 /* Center-align my logo in the page :D */
 #my-logo {
@@ -40,8 +40,6 @@
   bottom: -230px;
   z-index: 1;
 
-/*  width: 220px;*/
-/*  height: 220px;*/
   width: 13em;
   height: 13em;
 

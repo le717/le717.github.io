@@ -31,7 +31,7 @@ function detectBrowser() {
 
   if ($.browser.safari) {
     // This is Safari
-    theBrowser = "Apple Safari";
+    theBrowser = "Safari";
     theBrowserLogo = "img/safari.png";
     theBrowserMessage = theBrowserMessageError;
     showPanel = true;
@@ -66,7 +66,7 @@ function detectBrowser() {
   // Insert message and browser logo
   if (showPanel) {
       /* jshint ignore:start */
-      $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="90" height="90" src="{3}" />'.format(
+      $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="70" height="70" src="{3}" />'.format(
      theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
       /* jshint ignore:end */
 

@@ -1,4 +1,4 @@
-/* le717.github.io - v0.1.2
+/* le717.github.io - v0.2.0
 http://le717.github.io
 Created 2014 Triangle717; Licensed under the The MIT License
 */
