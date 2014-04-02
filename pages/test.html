@@ -1,5 +1,5 @@
 ---
-title: Test Page
+title: Home button
 googlefont: Open+Sans:400,600,700
 ---
 {% include header.html %}
@@ -9,11 +9,12 @@ googlefont: Open+Sans:400,600,700
   <style>
     #home-link {
       margin-left: 10px;
-    }
-    #home-button {
       font-size: 1.5em;
+    }
+    #home-button span {
+      font-size: 1em;
     }
   </style>
 {% include bridge.html %}
-  <a class="social-button-link social-button" id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"><span>Home</span></div></a>
+  <a id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"><span>Home</span></div></a>
 {% include footer.html %}
