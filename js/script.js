@@ -52,7 +52,7 @@ function detectBrowser() {
 
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
     // Some other browser
-    theBrowser = "An unidentified browser";
+    theBrowser = "an unidentified browser";
     $theBrowserVersion = "";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
     showPanel = true;
@@ -60,7 +60,7 @@ function detectBrowser() {
 
   else if ($.browser.mobile) {
     // Mobile browsers
-    theBrowser = "A mobile browser";
+    theBrowser = "a mobile browser";
     $theBrowserVersion = "";
     theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
     showPanel = true;
