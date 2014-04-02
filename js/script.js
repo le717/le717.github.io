@@ -18,7 +18,7 @@ function hideBrowserBox() {
 function detectBrowser() {
   "use strict";
   /* Detect the user's web browser and display message */
-  var theBrowser, theBrowserLogo,
+  var theBrowser,
       $theBrowserVersion = $.browser.versionNumber,
       showPanel = false,
 
@@ -32,7 +32,6 @@ function detectBrowser() {
   if ($.browser.safari) {
     // This is Safari
     theBrowser = "Safari";
-    theBrowserLogo = "img/safari.png";
     theBrowserMessage = theBrowserMessageError;
     showPanel = true;
 
@@ -48,17 +47,15 @@ function detectBrowser() {
     // Display error message on IE 9 and below
     if ($theBrowserVersion <= 9) {
       theBrowser = "Internet Explorer";
-      theBrowserLogo = "img/ie.png";
       theBrowserMessage = "Your version of IE does not support my site. " +
       "Please visit browsehappy.com to research a modern browser.";
       showPanel = true;
     }
 
-  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
+  } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
-    theBrowserLogo = "img/globe-blue.png";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
     showPanel = true;
   }
@@ -66,8 +63,8 @@ function detectBrowser() {
   // Insert message and browser logo
   if (showPanel) {
       /* jshint ignore:start */
-      $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}<br><img alt="{0}" width="70" height="70" src="{3}" />'.format(
-     theBrowser, $theBrowserVersion, theBrowserMessage, theBrowserLogo));
+      $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}'.format(
+     theBrowser, $theBrowserVersion, theBrowserMessage));
       /* jshint ignore:end */
 
     // Trigger the fade-in transitions
