@@ -175,3 +175,29 @@ ul { list-style: none; }
   margin-left: -40px;
   top: 82.5%;
 }
+
+
+/* ------- Home button styling ------- */
+
+
+#home-link {
+  margin-left: 10px;
+  font-size: 1.5em;
+}
+
+#home-link span {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+#home-button {
+  font-size: 1.3em;
+  transition-property: -webkit-transform, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+#home-button:hover {
+  -webkit-transform: translate3d(-5px, 0, 0);
+          transform: translate3d(-5px, 0, 0);
+}
