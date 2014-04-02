@@ -49,7 +49,10 @@
         -ms-transform: translate3d(0, 20px, 0);
             transform: translate3d(0, 20px, 0);
   }
-  #yt-button { margin-left: 41px; }
+  #yt-button {
+    margin-top: -21px;
+    margin-left: 42px;
+  }
 
    #mit-license {
     font-size: 1.2em;
