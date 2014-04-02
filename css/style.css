@@ -41,10 +41,12 @@
   z-index: 1;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
+
   width: 8em;
   height: 8em;
   opacity: 1;
-  visibility: hidden;
+  display: none;
+
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 5px black;
