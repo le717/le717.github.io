@@ -7,7 +7,7 @@
 */
 
 /* Colorize social buttons only on touchscreens */
-@media screen {
+@media screen and (max-width: 720px) {
   #gh-button:active { color: #BBBBBB; }
   #gh-button:hover { color: #000; }
 
@@ -49,6 +49,7 @@
         -ms-transform: translate3d(0, 20px, 0);
             transform: translate3d(0, 20px, 0);
   }
+  #yt-button { margin-left: 41px; }
 
    #mit-license {
     font-size: 1.2em;
