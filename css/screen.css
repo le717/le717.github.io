@@ -6,3 +6,8 @@
   <http://opensource.org/licenses/MIT/>
 */
 
+
+/* ------- 320px (iPhone <= 3) ------- */
+@media screen and (max-width: 320px) {
+  #my-avatar { margin-left: -1em; }
+}
