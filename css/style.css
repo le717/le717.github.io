@@ -83,8 +83,8 @@ ul { list-style: none; }
 
 /*  width: 220px;*/
 /*  height: 220px;*/
-  width: 13.750em;
-  height: 13.750em;
+  width: 13.5em;
+  height: 13.5em;
 
   opacity: 1;
   visibility: hidden;
@@ -99,7 +99,10 @@ ul { list-style: none; }
 }
 
 /* Disguise the fact this is a link */
-#yourBrowser a { text-decoration: none; }
+#yourBrowser a {
+  text-decoration: none;
+  font-size: 0.875em;
+}
 
 /* Move the browser logo away from the text */
 #yourBrowser img { margin-top: 5px; }
@@ -142,7 +145,7 @@ ul { list-style: none; }
   color: #000;
 }
 
-.social-button:hover {  text-shadow: 1px 1px 2px black; }
+.social-button:hover {  text-shadow: 1px 1px 10px black; }
 
 /* GitHub social button */
 #gh-button {
@@ -151,6 +154,7 @@ ul { list-style: none; }
   margin-left: -25px;
   top: 77%;
 }
+#gh-button:active,
 #gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
@@ -160,6 +164,7 @@ ul { list-style: none; }
   margin-left: -90px;
   top: 77%;
 }
+#wp-button:active,
 #wp-button:hover { color: #1E8CBE; }
 
 /* YouTube social button */
@@ -169,6 +174,7 @@ ul { list-style: none; }
   margin-left: 37px;
   top: 77%;
 }
+#yt-button:active,
 #yt-button:hover { color: #CC181E; }
 
 /* MIT License */
