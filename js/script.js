@@ -81,7 +81,7 @@ function detectBrowser() {
 
     // Trigger the fade-in transitions
     $("#yourBrowser").css("display", "block");
-    $("#yourBrowser").css("transform", "translate3d(0, -220px, 0)");
+    $("#yourBrowser").css("transform", "translate3d(0, 220px, 0)");
   }
 }
 
