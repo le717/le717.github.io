@@ -82,9 +82,9 @@ function detectBrowser() {
 (function() {
   "use strict";
   // Run process to detect visitor's browser
-  //detectBrowser();
+  detectBrowser();
 
-  // Replace the SVG with a PNG on IE (IE doesn't always like SVGs)
+  // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
     $("#my-logo").attr("src", "img/Triangle717-Logo.png");
   }
