@@ -7,23 +7,23 @@
 */
 
 
-function hideBrowserBox() {
+$("#yourBrowser a").on("click", function() {
   "use strict";
-  /* Hide the browser box */
-  // Trigger the fade-out transition
+  /* Hide the browser ID box */
   $("#yourBrowser").css("opacity", "0");
-}
+  $("#yourBrowser").css("visibility", "hidden");
+});
 
 
 function detectBrowser() {
   "use strict";
-  /* Detect the user's web browser and display message */
+  /* Detect visitor's web browser and display message accordingly */
   var theBrowser,
       $theBrowserVersion = $.browser.versionNumber,
       showPanel = false,
 
       // Default compatibility message
-      theBrowserMessage = "You should be able to view my site error free!<br>",
+      theBrowserMessage = "You should be able to view my site error free!",
 
       // Message to display for incompatible browser
       theBrowserMessageError = "You might experience some issues while browsing my site. " +
@@ -60,6 +60,15 @@ function detectBrowser() {
     showPanel = true;
   }
 
+  else if ($.browser.mobile) {
+    // Mobile browsers
+    theBrowser = "A Mobile Browser";
+    $theBrowserVersion = "";
+    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.' +
+      "Please be patient while I continue to develop the site. :smiley:";
+    showPanel = true;
+  }
+
   // Insert message and browser logo
   if (showPanel) {
       /* jshint ignore:start */
@@ -69,7 +78,7 @@ function detectBrowser() {
 
     // Trigger the fade-in transitions
     $("#yourBrowser").css("visibility", "visible");
-    $("#yourBrowser").css("transform", "translate3d(0, -230px, 0)");
+    $("#yourBrowser").css("transform", "translate3d(0, -220px, 0)");
   }
 }
 
