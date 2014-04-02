@@ -11,7 +11,6 @@ $("#yourBrowser a").on("click", function() {
   "use strict";
   /* Hide the browser ID box */
   $("#yourBrowser").css("opacity", "0");
-  $("#yourBrowser").css("visibility", "hidden");
 });
 
 
@@ -52,20 +51,19 @@ function detectBrowser() {
       showPanel = true;
     }
 
+  else if ($.browser.mobile) {
+    // Mobile browsers
+    theBrowser = "A Mobile Browser";
+    $theBrowserVersion = "";
+    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
+    showPanel = true;
+  }
+
   } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "An Unidentified Browser";
     $theBrowserVersion = "";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
-    showPanel = true;
-  }
-
-  else if ($.browser.mobile) {
-    // Mobile browsers
-    theBrowser = "A Mobile Browser";
-    $theBrowserVersion = "";
-    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.' +
-      "Please be patient while I continue to develop the site. :smiley:";
     showPanel = true;
   }
 
