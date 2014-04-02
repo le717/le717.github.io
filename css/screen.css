@@ -49,6 +49,8 @@
         -ms-transform: translate3d(0, 20px, 0);
             transform: translate3d(0, 20px, 0);
   }
+  
+  #wp-button { margin-left: -95px; }
   #yt-button {
     margin-top: -21px;
     margin-left: 42px;
