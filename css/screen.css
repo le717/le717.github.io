@@ -7,17 +7,6 @@
 */
 
 
-/* ------- 320px (iPhone <= 3) ------- */
-@media screen and (max-width: 320px) {
-  #my-avatar { margin-left: -1em; }
-  #my-logo {
-    width: 320px;
-    height: 320px;
-    left: 58%;
-    top: 47%;
-  }
-}
-
 @media screen and (max-width: 720px) {
   .social-button {
     -webkit-transform: translate3d(0, 35px, 0);
@@ -30,5 +19,30 @@
     -webkit-transform: translate3d(-5px, 45px, 0);
         -ms-transform: translate3d(-5px, 45px, 0);
             transform: translate3d(-5px, 45px, 0);
+  }
+}
+
+/* ------- 320px (iPhone <= 3) ------- */
+@media screen and (max-width: 320px) {
+  #my-avatar { margin-left: -1em; }
+
+  #my-logo {
+    width: 320px;
+    height: 320px;
+    left: 58%;
+    top: 47%;
+  }
+
+  .social-button {
+    -webkit-transform: translate3d(0, 20px, 0);
+        -ms-transform: translate3d(0, 20px, 0);
+            transform: translate3d(0, 20px, 0);
+  }
+
+   #mit-license {
+    font-size: 1.2em;
+    -webkit-transform: translate3d(-5px, 35px, 0);
+        -ms-transform: translate3d(-5px, 35px, 0);
+            transform: translate3d(-5px, 35px, 0);
   }
 }
