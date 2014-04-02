@@ -25,8 +25,7 @@ function detectBrowser() {
       theBrowserMessage = "You should be able to view my site error free!",
 
       // Message to display for incompatible browser
-      theBrowserMessageError = "You might experience some issues while browsing my site. " +
-      "If you do, please report them for me to fix.";
+      theBrowserMessageError = "You might experience some issues while browsing my site.";
 
   if ($.browser.safari) {
     // This is Safari
@@ -36,7 +35,7 @@ function detectBrowser() {
 
     // Display error message for Safari 5 and below
     if ($theBrowserVersion <= 5) {
-      theBrowserMessage = "Your version of Safari does not support my site. " +
+      theBrowserMessage = "Your Safari version does not support my site. " +
       "Please visit browsehappy.com to research a modern browser.";
     }
 
@@ -46,14 +45,14 @@ function detectBrowser() {
     // Display error message on IE 9 and below
     if ($theBrowserVersion <= 9) {
       theBrowser = "Internet Explorer";
-      theBrowserMessage = "Your version of IE does not support my site. " +
+      theBrowserMessage = "Your IE version does not support my site. " +
       "Please visit browsehappy.com to research a modern browser.";
       showPanel = true;
     }
 
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
     // Some other browser
-    theBrowser = "An Unidentified Browser";
+    theBrowser = "An unidentified browser";
     $theBrowserVersion = "";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
     showPanel = true;
@@ -61,7 +60,7 @@ function detectBrowser() {
 
   else if ($.browser.mobile) {
     // Mobile browsers
-    theBrowser = "A Mobile Browser";
+    theBrowser = "A mobile browser";
     $theBrowserVersion = "";
     theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsers.';
     showPanel = true;
@@ -80,10 +79,10 @@ function detectBrowser() {
   }
 }
 
-$(function() {
+(function() {
   "use strict";
   // Run process to detect visitor's browser
-  detectBrowser();
+  //detectBrowser();
 
   // Replace the SVG with a PNG on IE (IE doesn't always like SVGs)
   if ($.browser.msie) {
@@ -97,4 +96,4 @@ $(function() {
 //      //var lastUpdate = "Right now";
 //      $("#last-update").text("Last update: {0}".format(lastUpdate));
 //    }, "json");
-});
+})();
