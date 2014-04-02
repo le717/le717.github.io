@@ -11,10 +11,16 @@ googlefont: Open+Sans:400,600,700
       margin-left: 10px;
       font-size: 1.5em;
     }
-    #home-button span {
-      font-size: 1em;
+    #home-link span {
+      font-size: 1.2em;
+      margin-left: 10px;
+      font-family: "Source Sans Pro", "Open Sans", sans-serif;
+    }
+    #home-link span:hover { text-decoration: underline; }
+    #home-button {
+      font-size: 1.5em;
     }
   </style>
 {% include bridge.html %}
-  <a id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"><span>Home</span></div></a>
+  <a id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"></div><span>Home</span></a>
 {% include footer.html %}
