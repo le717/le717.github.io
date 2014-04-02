@@ -12,8 +12,9 @@ $("#yourBrowser a").on("click", function() {
   /* Hide the browser ID box */
   $("#yourBrowser").css("opacity", "0");
   $("#yourBrowser").bind("transitionend", function(e) {
-    if (e.propertyName == "opacity")
+    if (e.originalEvent.propertyName == "opacity") {
       $("#yourBrowser").css("display", "none");
+    }
   });
 });
 
