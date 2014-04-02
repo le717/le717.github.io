@@ -7,6 +7,12 @@ googlefont: Open+Sans:400,600,700
   <link rel="stylesheet" href="{{ site.baseurl }}/lib/ionicons.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
   <style>
+    
+    div {
+      transition-property: -webkit-transform, transform;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out;
+    }
     #home-link {
       margin-left: 10px;
       font-size: 1.5em;
@@ -22,11 +28,11 @@ googlefont: Open+Sans:400,600,700
       transition-duration: 0.2s;
       transition-timing-function: ease-out;
     }
-    #home-button:hover {
+    #home-button:hover, div {
       -webkit-transform: translate3d(-5px, 0, 0);
               transform: translate3d(-5px, 0, 0);
     }
   </style>
 {% include bridge.html %}
-  <a id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"></div><span>Home</span></a>
+  <div><a id="home-link" target="_blank" href="{{ site.baseurl }} "><div class="icon ion-arrow-left-c" id="home-button"></div><span>Home</span></a></div>
 {% include footer.html %}
