@@ -11,3 +11,8 @@
 @media screen and (max-width: 320px) {
   #my-avatar { margin-left: -1em; }
 }
+
+@media screen and (max-width: 720px) {
+  .social-button { top: 82%; }
+  #mit-license { top: 87%; }
+}
