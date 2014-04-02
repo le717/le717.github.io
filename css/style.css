@@ -140,11 +140,7 @@ ul { list-style: none; }
   color: #000;
 }
 
-/* Hover effect for social buttons */
-.social-button:hover {
-  color: #5193D4;
-  text-shadow: 1px 1px 2px black;
-}
+.social-button:hover {  text-shadow: 1px 1px 2px black; }
 
 /* GitHub social button */
 #gh-button {
@@ -153,6 +149,7 @@ ul { list-style: none; }
   margin-left: -25px;
   top: 77%;
 }
+#gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
 #wp-button {
@@ -161,14 +158,16 @@ ul { list-style: none; }
   margin-left: -90px;
   top: 77%;
 }
+#wp-button:hover { color: #1E8CBE; }
 
 /* YouTube social button */
 #yt-button {
   font-size: 3.125em;
   margin-top: -23px;
-  margin-left: 36px;
+  margin-left: 37px;
   top: 77%;
 }
+#yt-button:hover { color: #CC181E; }
 
 /* MIT License */
 #mit-license {
