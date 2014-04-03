@@ -8,7 +8,6 @@ googlefont: Open+Sans:400,700
   <style>
     body {
       font-family: "Open Sans", sans-serif;
-      text-align: center;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -52,13 +51,13 @@ googlefont: Open+Sans:400,700
   <link rel="stylesheet" media="all" href="{{ site.baseurl }}/lib/ionicons/ionicons.min.css">
   <link rel="stylesheet" media="all" href="{{ site.baseurl }}/css/style.css">
 {% include bridge.html %}
-  <p id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
+  <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
     Please type the correct sequence of characters into the field below.
   </p>
   <br>
-  <div id="captcha-image-container"></div>
-  <form>
-    <p id="full-answer"></p>
+  <div class="text-center" id="captcha-image-container"></div>
+  <form class="text-center">
+    <p class="text-center" id="full-answer"></p>
     <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
   </form>
 
