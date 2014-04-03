@@ -29,27 +29,11 @@ with open("MyFile.txt", "rt") as f:
   
   <h1>Sitemap</h1>
   <nav>
-    {% for section in site.data.page %}
+    {% for section in site.data.docs %}
     <h4>{{ section.title }}</h4>
-    <ul>
-      <li>
-        	<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-        </li>
-    </ul>
+    <li>{{ page.title }}</li>
+    <!-- {% include docs_ul.html items=section.docs %} -->
     {% endfor %}
   </nav>
 
-
-  <script>
-    pages = [];
-    {% for p in site.pages %}
-      {% if p.title == "Home" %}
-        pages[0] = '<a href="{{ site.baseurl }}">{{ p.title }}</a>';
-      {% endif %}
-      
-      pages.push('<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>');
-    {% endfor %}
-    pages.sort();
-    console.log(pages);
-  </script>
 {% include footer.html %}
