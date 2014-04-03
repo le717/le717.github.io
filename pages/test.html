@@ -26,4 +26,12 @@ with open("MyFile.txt", "rt") as f:
         {% endfor %}
     </ul>
   </nav>
+  <script>
+    pages = [];
+    {% for p in site.pages %}
+      pages.push('<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>');
+    {% endfor %}
+    pages.sort();
+    console.log(pages);
+  </script>
 {% include footer.html %}
