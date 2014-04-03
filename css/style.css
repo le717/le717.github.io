@@ -19,11 +19,20 @@
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
 
+#my-logo-link { color: transparent; }
+
 /* Center-align my logo in the page :D */
 #my-logo {
   margin-top: -185px;
   margin-left: -185px;
 }
+  
+#home-link {
+  text-decoration: none;
+  color: #fcf54a;
+  text-shadow: 1px 1px 2px black;
+}
+#home-link:hover { text-decoration: underline; }
 
 #yourBrowser {
   position: fixed;
