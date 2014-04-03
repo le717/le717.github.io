@@ -2,6 +2,6 @@
   {% include base-style.html %}
 {% include bridge.html %}
   <h1 class="text-center">{{ page.title }}</h1>
-{% if page.type != 404 %}<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>{% endif %}
+{% if page.type == Story %}<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>{% endif %}
   {{ content }}
 {% include footer.html %}
