@@ -26,6 +26,20 @@ with open("MyFile.txt", "rt") as f:
         {% endfor %}
     </ul>
   </nav>
+  
+  <h1>Sitemap</h1>
+  <nav>
+    {% for section in site.data.page %}
+    <h4>{{ section.title }}</h4>
+    <ul>
+      <li>
+        	<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+  </nav>
+
+
   <script>
     pages = [];
     {% for p in site.pages %}
