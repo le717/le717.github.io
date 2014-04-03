@@ -1,7 +1,7 @@
 {% include header.html %}
   {% include base-style.html %}
 {% include bridge.html %}
-  {% if page.type != "Info" %}<h1 class="text-center">{{ page.title }}</h1>{% endif %}
+  <h1 {% if page.type != "Info" %}class="text-center"{% endif %}>{{ page.title }}</h1>
 {% if page.type == "Story" %}<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>{% endif %}
   {{ content }}
 {% include footer.html %}

@@ -101,6 +101,7 @@
   position: relative;
   left: 22%;
   top: 17.2em;
+  display: none;
 }
 
 #subsites h2,
@@ -167,29 +168,29 @@
 }
 
 
-/* ------- Home button styling ------- */
+/* ------- Previous button styling ------- */
 
 
-#home-link {
+#previous-link {
   margin-left: 10px;
   margin-top: -5px;
   font-size: 1.5em;
   display: inline-block;
 }
 
-#home-link span {
+#previous-link span {
   font-size: 1.2em;
   margin-left: 10px;
 }
 
-#home-button {
+#previous-button {
   font-size: 1.3em;
   transition-property: -webkit-transform, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
 
-#home-button:hover {
+#previous-button:hover {
   -webkit-transform: translate3d(-5px, 0, 0);
           transform: translate3d(-5px, 0, 0);
 }
