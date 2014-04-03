@@ -14,7 +14,7 @@ with open("MyFile.txt", "rt") as f:
   <h1 style="text-align: center">Sitemap</h1>
   <nav>
     {% for p in site.pages %}
-    {% if p.type == Story %}
+    {% if p.type == "Story" %}
     <h3>Stories</h3>
     {% endif %}
     <ul>

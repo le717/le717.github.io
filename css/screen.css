@@ -34,8 +34,10 @@
 }
 
 #my-logo-404 {
-  margin-top: -3em;
-  margin-left: -11.5em;
+  margin-top: -4em;
+  margin-left: -11.2em;
+  width: 360px;
+  height: 360px;
 }
 
 /* ------- 320px (iPhone <= 3) ------- */
