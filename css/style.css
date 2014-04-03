@@ -28,9 +28,16 @@
   margin-left: -185px;
 }
 
+/*
 #my-logo-404 {
   margin-top: -8em;
   margin-left: -12em;
+}
+*/
+
+.publish-info {
+  font-size: 0.82em;
+  text-shadow: 1px 1px 2px black;
 }
   
 #home-link {

@@ -2,6 +2,7 @@ name: Triangle Land
 markdown: redcarpet
 pygments: true
 baseurl: //le717.github.io
+wpurl: http://Triangle717.WordPress.com
 gems:
  - jekyll-mentions
  - jekyll-redirect-from
