@@ -19,6 +19,7 @@
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
 .text-center { text-align: center; }
+.text-right { text-align: center; }
 
 #my-logo-link { color: transparent; }
 
@@ -42,9 +43,9 @@
 
 #sitemap h3 { margin-bottom: 2px; }
 
-#yourBrowser {
+#announcement {
   position: fixed;
-  display: block;
+  display: none;
   right: 20px;
   top: 220px;
   z-index: 1;
@@ -54,25 +55,20 @@
   width: 8em;
   height: 7em;
   opacity: 1;
-  display: none;
 
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 5px black;
 
-  transition-property: opacity, transform;
+  transition-property: opacity, -webkit-transform, -ms-transform, transform;
   transition-duration: 1.5s;
   transition-timing-function: ease-out;
 }
 
-#yourBrowser a {
+#announcement a {
   text-decoration: none;
   font-size: 0.75em;
 }
-
-/* Move the browser logo away from the text */
-#yourBrowser img { margin-top: 5px; }
-
 
 /* ------- Site index styling ------- */
 
@@ -116,8 +112,8 @@
 }
 
 .social-button:hover {
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4),
-               0px -1px 0px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),
+               0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* GitHub social button */
@@ -181,13 +177,14 @@
 
 #previous-button {
   font-size: 1.3em;
-  transition-property: -webkit-transform, transform;
+  transition-property: -webkit-transform, -ms-transform, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
 
 #previous-button:hover {
   -webkit-transform: translate3d(-5px, 0, 0);
+      -ms-transform: translate3d(-5px, 0, 0);
           transform: translate3d(-5px, 0, 0);
 }
 

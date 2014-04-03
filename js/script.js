@@ -7,14 +7,13 @@
 */
 
 
-$("#yourBrowser").on("click", function() {
+$("#announcement").on("click", function() {
   "use strict";
   /* Hide the browser ID box */
-  $("#yourBrowser").css("opacity", "0");
-  $("#yourBrowser").bind("transitionend", function(e) {
+  $("#announcement").css("opacity", "0");
+  $("#announcement").bind("transitionend", function(e) {
     if (e.originalEvent.propertyName == "opacity") {
-      $("#yourBrowser").css("display", "none");
-      $("#yourBrowser a").css("display", "none");
+      $("#announcement").css("display", "none");
     }
   });
 });
@@ -52,7 +51,7 @@ function detectBrowser() {
     if ($theBrowserVersion <= 9) {
       theBrowser = "Internet Explorer";
       theBrowserMessage = "Your IE version does not support my site. " +
-      "Please visit browsehappy.com to research a modern browser.";
+      "Please visit browsehappy.com to research a modern browsing.";
       showPanel = true;
     }
 
@@ -79,13 +78,13 @@ function detectBrowser() {
   // Insert message and browser logo
   if (showPanel) {
       /* jshint ignore:start */
-      $("#yourBrowser a").append('You are using<br>{0} {1}.<br>{2}'.format(
+      $("#announcement a").append('You are using<br>{0} {1}<br>{2}'.format(
      theBrowser, $theBrowserVersion, theBrowserMessage));
       /* jshint ignore:end */
 
     // Trigger the fade-in transitions
-    $("#yourBrowser").css("display", "block");
-    $("#yourBrowser").css("transform", "translate3d(0, -220px, 0)");
+    $("#announcement").css("display", "block");
+    $("#announcement").css("transform", "translate3d(0, -220px, 0)");
   }
 }
 
