@@ -1,20 +1,19 @@
 - title: Main
-  page:
+  docs:
   - Home
   - About
   - MIT License
   - Sitemap
 
 - title: Stories
-  page:
+  docs:
   - fashion
 
 - title: Tutorials
-  page:
+  docs:
   - JavaScript
   - Python
 
 - title: Downloads
-  page:
+  docs:
   - Source Code
-  
