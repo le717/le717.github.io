@@ -7,6 +7,8 @@
   <http://opensource.org/licenses/MIT/>
 */
 
+::-moz-selection { background-color: rgba(0, 0, 255, 0.3); }
+     ::selection { background-color: rgba(0, 0, 255, 0.3); }
 
 blockquote {
   border-left: 7px solid rgb(0, 0, 196);
@@ -28,11 +30,8 @@ blockquote:after {
   margin-left: 0.1em;
 }
 
-p {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  text-align: left;
-}
+/* Workarond for Opera to properly display text */
+li { font-weight: 700; }
 
 /* Use custom (Unicode only!) triangle bullet point */
 li:before {
@@ -40,11 +39,18 @@ li:before {
   padding-right: 5px;
 }
 
-/* Workarond for Opera to properly display text */
-li { font-weight: 700; }
+p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  text-align: left;
+}
+
+pre {
+  border-left: 4px solid #DDD;
+  padding: 2px 5px;
+  background-color: rgb(12, 120, 120);
+  font-size: 0.95em;
+}
 
 /* Remove unordered list bullet point in favor of custom one :D */
 ul { list-style: none; }
-
-::-moz-selection { background-color: rgba(0, 0, 255, 0.3); }
-     ::selection { background-color: rgba(0, 0, 255, 0.3); }
