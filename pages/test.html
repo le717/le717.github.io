@@ -1,6 +1,5 @@
 ---
 title: Test page
-googlefont: Open+Sans:400,600,700
 ---
 {% include header.html %}
 {% include base-style.html %}
@@ -16,44 +15,17 @@ with open("MyFile.txt", "rt") as f:
 </pre>
 
   <code>new Date()</code>
-  <!-- <nav>
-    <ul>
-        {% for p in site.pages %}
-        <li>
-        {% if p.url contains ".html" %}
-        	<a class="{% if p.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-        </li>
-        {% else %}
-          <ul>
-            <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-          </ul>
-        {% endif %}
-        {% endfor %}
-    </ul>
-  </nav>
 
-  <nav>
-    <ul>
-        {% for p in site.pages %}
-        <li>
-        	<a class="{% if p.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-  </nav>
-  
-  <script>
-    console.log("{% site.data.docs %}");
-    console.log("{% for section in site.data.docs %}{{ section.title }}{% endfor %}");
-  </script>
-  
   <h1>Sitemap</h1>
-  <nav>
-    {% for section in site.data.docs %}
-    <a>{{ section.title }}</a>
-    <!-- <li>{{ page.title }}</li>
-    {% include docs_ul.html items=section.docs %} -->
-    <!-- {% endfor %}
-  </nav> -->
+    <nav>
+      <ul>
+      {% for section in site.data.docs %}
+        <li>
+          <h4>{{ section.title }}</h4><br>
+          <a>{{ page.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </nav>
 
 {% include footer.html %}
