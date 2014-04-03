@@ -42,13 +42,6 @@
 
 #sitemap h3 { margin-bottom: 2px; }
 
-#home-link {
-  text-decoration: none;
-  color: #fcf54a;
-  text-shadow: 1px 1px 2px black;
-}
-#home-link:hover { text-decoration: underline; }
-
 #yourBrowser {
   position: fixed;
   display: block;
@@ -170,13 +163,16 @@
 
 /* ------- Previous button styling ------- */
 
-
 #previous-link {
   margin-left: 10px;
   margin-top: -5px;
   font-size: 1.5em;
   display: inline-block;
+  text-decoration: none;
+  color: #fcf54a;
+  text-shadow: 1px 1px 2px black;
 }
+#previous-link:hover { text-decoration: underline; }
 
 #previous-link span {
   font-size: 1.2em;
