@@ -80,7 +80,7 @@ function detectBrowser() {
   finalMessage = 'You are using<br>{0}<br>{1}'.format(theBrowser, theBrowserMessage);
 
   // Make the announcement if there is one to make
-  if (finalMessage.length > 0) {
+  if (theBrowser.length > 0) {
     makeAnnouncement(finalMessage);
   }
 }
