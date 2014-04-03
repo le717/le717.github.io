@@ -141,6 +141,12 @@
   top: 82.5%;
 }
 
+.sitemap-active {
+    font-size: 1.1em;
+    color: #E4E1E8;
+    text-shadow: 2px 2px 2px black;
+}
+
 
 /* ------- Home button styling ------- */
 
