@@ -13,10 +13,10 @@ googlefont: Open+Sans:400,600,700
 # Read entire contents of MyFile.txt into memory
 with open("MyFile.txt", "rt") as f:
     lines = f.read()
-# No need for to close the file, since `with` did that for us.</pre>
+</pre>
 
   <code>new Date()</code>
-
+  
   <nav>
     <ul>
         {% for p in site.pages %}
@@ -32,6 +32,21 @@ with open("MyFile.txt", "rt") as f:
         {% endfor %}
     </ul>
   </nav>
+
+  <nav>
+    <ul>
+        {% for p in site.pages %}
+        <li>
+        	<a class="{% if p.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+  </nav>
+  
+  <script>
+    console.log("{% site.data.docs %}");
+    console.log("{% for section in site.data.docs %}{{ section.title }}{% endfor %}");
+  </script>
   
   <h1>Sitemap</h1>
   <nav>
