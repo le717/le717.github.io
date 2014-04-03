@@ -96,7 +96,7 @@ function detectBrowser() {
 
   // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
-    $("#my-logo").attr("src", "img/Triangle717-Logo.png");
+    $(".my-logo").attr("src", "img/Triangle717-Logo.png");
   }
 
 //  // Get date of last commit using GitHub Pages API

@@ -22,7 +22,7 @@
 #my-logo-link { color: transparent; }
 
 /* Center-align my logo in the page :D */
-#my-logo {
+.my-logo {
   margin-top: -185px;
   margin-left: -185px;
 }

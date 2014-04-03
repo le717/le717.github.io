@@ -9,15 +9,15 @@ title: Test page
 # Read entire contents of MyFile.txt into memory
 with open("MyFile.txt", "rt") as f:
     lines = f.read()
-</pre>
-
-  <code>new Date()</code>
+  </pre>
 
   <h1>Sitemap</h1>
     <nav>
       {% for section in site.data.docs %}
         <h4>{{ section.title }}</h4>
-        <a>{{ page.title }}</a>
+          <ul>
+            <a class="{% if page.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+          </ul>
       {% endfor %}
     </nav>
 
