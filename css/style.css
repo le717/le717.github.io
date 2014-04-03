@@ -1,11 +1,12 @@
 @charset "UTF-8";
 /*
-  Created 2014 Triangle717
-  <http://Triangle717.WordPress.com/>
+ * Created 2014 Triangle717
+ * <http://Triangle717.WordPress.com/>
+ *
+ * Licensed under The MIT License
+ * <http://opensource.org/licenses/MIT/>
+ */
 
-  Licensed under The MIT License
-  <http://opensource.org/licenses/MIT/>
-*/
 
 /* Small shadow on images */
 .img-shadow { box-shadow: 1px 1px 5px 1px black; }
@@ -53,7 +54,7 @@
   border-bottom-left-radius: 7px;
 
   width: 8em;
-  height: 7em;
+  height: 7.5em;
   opacity: 1;
 
   text-align: center;
@@ -88,9 +89,9 @@
 
 #subsites {
   position: relative;
-  left: 22%;
-  top: 17.2em;
-  display: none;
+  left: -63%;
+  top: 3.5em;
+/*  display: none;*/
 }
 
 #subsites h2,
