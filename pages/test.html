@@ -16,7 +16,7 @@ with open("MyFile.txt", "rt") as f:
       {% for section in site.data.docs %}
         <h4>{{ section.title }}</h4>
           <ul>
-            <a class="{% if page.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
+            <a class="{% if page.type == '404' %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a>
           </ul>
       {% endfor %}
     </nav>
