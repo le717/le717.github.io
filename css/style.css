@@ -89,8 +89,9 @@
 
 #subsites {
   position: relative;
-  left: -63%;
-  top: 3.6em;
+  left: 1%;
+  top: 15.5em;
+  display: inline-block;
 }
 
 #subsites h2,
