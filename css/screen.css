@@ -33,11 +33,16 @@
   }
 }
 
+#my-logo-404 {
+  margin-top: -3em;
+  margin-left: -11.5em;
+}
+
 /* ------- 320px (iPhone <= 3) ------- */
 @media screen and (max-width: 320px) {
   #my-avatar { margin-left: -1em; }
 
-  #my-logo {
+  .my-logo {
     width: 320px;
     height: 320px;
     left: 58%;
@@ -62,4 +67,10 @@
         -ms-transform: translate3d(-5px, 35px, 0);
             transform: translate3d(-5px, 35px, 0);
   }
+  
+  #my-logo-404 {
+    margin-top: -4em;
+    margin-left: -11.5em;
+  }
+
 }
