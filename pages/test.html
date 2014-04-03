@@ -3,8 +3,6 @@ title: Test page
 ---
 {% include header.html %}
 {% include base-style.html %}
-  <style>
-  </style>
 {% include bridge.html %}
   <pre>#! /usr/bin/env/python
 
@@ -17,14 +15,20 @@ with open("MyFile.txt", "rt") as f:
 
   <h1>Sitemap</h1>
     <nav>
-      <ul>
       {% for section in site.data.docs %}
         <h4>{{ section.title }}</h4>
-        <li>
-          <a>{{ page.title }}</a>
-        </li>
+        <a>{{ page.title }}</a>
       {% endfor %}
-      </ul>
     </nav>
+
+  <nav>
+    <ul>
+      {% for p in site.pages %}
+      <li>
+        <a class="{% if p.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
 
 {% include footer.html %}
