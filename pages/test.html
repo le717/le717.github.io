@@ -17,7 +17,7 @@ with open("MyFile.txt", "rt") as f:
 
   <code>new Date()</code>
   
-  <nav>
+  <!-- <nav>
     <ul>
         {% for p in site.pages %}
         <li>
@@ -31,7 +31,7 @@ with open("MyFile.txt", "rt") as f:
         {% endif %}
         {% endfor %}
     </ul>
-  </nav>
+  </nav> -->
 
   <nav>
     <ul>
@@ -48,13 +48,13 @@ with open("MyFile.txt", "rt") as f:
     console.log("{% for section in site.data.docs %}{{ section.title }}{% endfor %}");
   </script>
   
-  <h1>Sitemap</h1>
+  <!-- <h1>Sitemap</h1>
   <nav>
     {% for section in site.data.docs %}
     <a>{{ section.title }}</a>
     <!-- <li>{{ page.title }}</li>
     {% include docs_ul.html items=section.docs %} -->
-    {% endfor %}
-  </nav>
+    <!-- {% endfor %}
+  </nav> -->
 
 {% include footer.html %}
