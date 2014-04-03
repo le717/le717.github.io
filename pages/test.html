@@ -17,7 +17,7 @@ with open("MyFile.txt", "rt") as f:
 
   <code>new Date()</code>
   
-  <nav class="nav-primary" role="navigation">
+  <nav>
     <ul>
         {% for p in site.pages %}
         <li>
@@ -29,6 +29,10 @@ with open("MyFile.txt", "rt") as f:
   <script>
     pages = [];
     {% for p in site.pages %}
+      {% if p.title == "Home" %}
+        pages[0] = '<a href="{{ site.baseurl }}">{{ p.title }}</a>';
+      {% endif %}
+      
       pages.push('<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>');
     {% endfor %}
     pages.sort();
