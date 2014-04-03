@@ -80,7 +80,9 @@
   }
 
   #sitemap-link {
-
+/*    margin-left: -22px;*/
+    top: 95%;
+    font-size: 0.8em;
   }
 
 }
