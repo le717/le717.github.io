@@ -34,8 +34,8 @@ with open("MyFile.txt", "rt") as f:
   
   <h1>Sitemap</h1>
   <nav>
-    {% for section in site.data.sitemap %}
-    <h4>{{ section.title }}</h4>
+    {% for section in site.data.docs %}
+    <a>{{ section.title }}</a>
     <!-- <li>{{ page.title }}</li>
     {% include docs_ul.html items=section.docs %} -->
     {% endfor %}
