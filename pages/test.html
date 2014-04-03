@@ -29,10 +29,10 @@ with open("MyFile.txt", "rt") as f:
   
   <h1>Sitemap</h1>
   <nav>
-    {% for section in site.data.docs %}
+    {% for section in site.data.page %}
     <h4>{{ section.title }}</h4>
-    <li>{{ page.title }}</li>
-    <!-- {% include docs_ul.html items=section.docs %} -->
+    <!-- <li>{{ page.title }}</li>
+    {% include docs_ul.html items=section.docs %} -->
     {% endfor %}
   </nav>
 
