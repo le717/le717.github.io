@@ -1,0 +1,20 @@
+- title: Main
+  page:
+  - Home
+  - About
+  - MIT License
+  - Sitemap
+
+- title: Stories
+  page:
+  - fashion
+
+- title: Tutorials
+  page:
+  - JavaScript
+  - Python
+
+- title: Downloads
+  page:
+  - Source Code
+  
