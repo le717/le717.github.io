@@ -34,10 +34,14 @@
 }
 
 #my-logo-404 {
-  margin-top: -4em;
+  margin-top: -2em;
   margin-left: -11.2em;
   width: 360px;
   height: 360px;
+}
+
+#sitemap-link {
+
 }
 
 /* ------- 320px (iPhone <= 3) ------- */
@@ -69,10 +73,14 @@
         -ms-transform: translate3d(-5px, 35px, 0);
             transform: translate3d(-5px, 35px, 0);
   }
-  
+
   #my-logo-404 {
     margin-top: 0em;
     margin-left: -10em;
+  }
+
+  #sitemap-link {
+
   }
 
 }
