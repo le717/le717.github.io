@@ -16,18 +16,19 @@ with open("MyFile.txt", "rt") as f:
 # No need for to close the file, since `with` did that for us.</pre>
 
   <code>new Date()</code>
-  
-  {% highlight python3 %}
-  with open("MyFile.txt", "rt") as f:
-    lines = f.read()
-  {% endhighlight %}
 
   <nav>
     <ul>
         {% for p in site.pages %}
         <li>
-        	<a {% if p.url == page.url %}class="sitemap-active"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
+        {% if p.url contains ".html" %}
+        	<a class="{% if p.url == page.url %}sitemap-active{% endif %}" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
         </li>
+        {% else %}
+          <ul>
+            <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
+          </ul>
+        {% endif %}
         {% endfor %}
     </ul>
   </nav>
