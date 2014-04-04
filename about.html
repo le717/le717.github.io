@@ -4,21 +4,22 @@ title: About
 {% include header.html %}
 {% include base-style.html %}
   <style>
-    #i-am-age { border-bottom: 1px dashed white; }
+    .generated-data { border-bottom: 1px dashed white; }
   </style>
 {% include bridge.html %}
   <h1 class="text-center">About</h1>
   <p>
     Hello! I am <span class="text-bold">Triangle717</span> (pronounced <span class="text-bold">Triangle seven one seven</span>), sometimes known as
     <span class="text-bold">le717</span> (pronounced <span class="text-bold">lee seven seventeen</span>).
-    I am <span title="My age is calculated automatically. :D" id="i-am-age"></span> years old, harkening from Triangle Land, Georgia, USA.<br>
+    I am <span class="generated-data" id="i-am-age" title="My age is calculated automatically. :D"></span> years old, harkening from Triangle Land, Georgia, USA.<br>
     I am also a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.
 
     <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
   <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans&nbsp;1:16a&nbsp;(NKJV)</a></blockquote>
 
   I am a programmer of nearly one and a half years. After discovering the world of programming in October 2013 by completing the <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="text-italic">A Byte of Python</span></a> book by <a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
-I discovered what I been developing the mental capacity to accomplish since I was 4 years old.
+I discovered what I been developing the mental capacity to accomplish since I was 4 years old. Currently, I am knowledgeable in
+<span class="generated-data" id="code-i-know" title="This list is also automatically generated. :D"></span>, but I plan on learning more.
     <br><br>
     I am currently attending technical college to obtain my associates degree in website design and development. Projected graduation date is 2015.
     <br><br>
@@ -36,6 +37,7 @@ I discovered what I been developing the mental capacity to accomplish since I wa
 </p>
 
   <script>
+    /* ------- Calculate my age ------- */
     var curDate  = new Date();
     var curYear  = curDate.getUTCFullYear(),
         curMonth = curDate.getUTCMonth(),
@@ -50,7 +52,24 @@ I discovered what I been developing the mental capacity to accomplish since I wa
     if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
       myAge -= 1;
     }
-
     document.getElementById("i-am-age").innerHTML = myAge;
+
+
+    /* ------- List the coding languages I know ------ */
+    var listAllTheCodes = "",
+        codingIKnow = ["Python", "HTML/CSS", "JavaScript"];
+
+    codingIKnow.forEach(function(value, index) {
+      listAllTheCodes += value + ", ";
+
+      // Make it grammatically correct
+      if (index === codingIKnow.length - 2) {
+        listAllTheCodes += "and ";
+      }
+    });
+
+    // Remove generated trailing space and comma
+    listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
+    document.getElementById("code-i-know").innerHTML = listAllTheCodes;
   </script>
 {% include footer.html %}
