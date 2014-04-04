@@ -47,12 +47,12 @@
   display: none;
   right: 20px;
   top: -220px;
-  z-index: 1;
+  z-index: 2;
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
 
-  width: 8em;
-  height: 7.5em;
+  width: 9.5em;
+  height: 9em;
   opacity: 1;
 
   text-align: center;
@@ -62,12 +62,12 @@
   transition-property: opacity, -webkit-transform, -ms-transform, transform;
   transition-duration: 1.5s;
   transition-timing-function: ease-out;
-  transition-delay: 0.5s;
+  transition-delay: 1s;
 }
 
 #announcement a {
   text-decoration: none;
-  font-size: 0.75em;
+  font-size: 0.9em;
 }
 
 /* ------- Site index styling ------- */

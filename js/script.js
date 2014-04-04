@@ -79,7 +79,7 @@ function detectBrowser() {
   finalMessage = 'You are using<br>{0}.<br>{1}'.format(theBrowser, theBrowserMessage);
 
   // Make the announcement if there is one to make
-  if (theBrowser.length > 0) {
+  if (theBrowser !== undefined) {
     makeAnnouncement(finalMessage);
   }
 }
@@ -93,7 +93,7 @@ $(function() {
   // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
     console.log("This is IE");
-    $(".my-logo").attr("src", "{{ site.baseurl}}/img/Triangle717-Logo.png");
+    $(".my-logo").attr("src", "{{ site.baseurl }}/img/Triangle717-Logo.png");
   }
 
   if ($.browser.mobile) {
