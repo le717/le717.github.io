@@ -44,32 +44,22 @@ function detectBrowser() {
    * and display message to that extent.
    */
 
-  var finalMessage, theBrowser,
-      // Default message to display for an incompatible browser
-      theBrowserMessage = "You might experience some issues while browsing my site.";
+  var finalMessage, theBrowser, theBrowserMessage;
 
-  if ($.browser.safari) {
-    // This is Safari
+  // This is Safari 5 or lower
+  if ($.browser.safari && $.browser.versionNumber <= 5) {
     theBrowser = "Safari";
+    theBrowserMessage = "Your Safari version does not support my site. " +
+    "Please visit browsehappy.com to research a modern browser.";
 
-    // Display error message for Safari 5 and below
-    if ($.browser.versionNumber <= 5) {
-      theBrowserMessage = "Your Safari version does not support my site. " +
-      "Please visit browsehappy.com to research a modern browser.";
-    }
+  } else if ($.browser.msie && $.browser.versionNumber <= 9) {
+    // This is Internet Explorer 9 or lower
+    theBrowser = "Internet Explorer";
+    theBrowserMessage = "Your browser does not support my site. " +
+    "Please visit browsehappy.com to research a modern browser.";
 
-  } else if ($.browser.msie) {
-    // This is Internet Explorer
-    // TODO IE11 on Windows 7 is broken, but IE11 on Win8.1 works? Huh?
-    // Display error message on IE 9 and below
-    if ($.browser.versionNumber <= 9) {
-      theBrowser = "Internet Explorer";
-      theBrowserMessage = "Your browser does not support my site. " +
-      "Please visit browsehappy.com to research a modern browser.";
-
-      // IE 9 does not like the text-shadow
-      $("#announcement a").css("color", "black");
-    }
+    // IE 9 does not like the text-shadow
+    $("#announcement a").css("color", "black");
 
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
     // Some other browser
@@ -95,7 +85,7 @@ function detectBrowser() {
 }
 
 
-(function() {
+$(function() {
   "use strict";
   // Run process to detect visitor's browser
   detectBrowser();
@@ -119,4 +109,4 @@ function detectBrowser() {
 //      //var lastUpdate = "Right now";
 //      $("#last-update").text("Last update: {0}".format(lastUpdate));
 //    }, "json");
-})();
+});
