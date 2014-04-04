@@ -102,6 +102,7 @@ function detectBrowser() {
 
   // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
+    console.log("This is IE");
     $(".my-logo").attr("src", "{{ site.baseurl}}/img/Triangle717-Logo.png");
   }
 

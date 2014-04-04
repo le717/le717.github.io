@@ -62,6 +62,7 @@
   transition-property: opacity, -webkit-transform, -ms-transform, transform;
   transition-duration: 1.5s;
   transition-timing-function: ease-out;
+  transition-delay: 0.5s;
 }
 
 #announcement a {
