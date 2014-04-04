@@ -10,11 +10,17 @@
 function makeAnnouncement(message) {
   "use strict";
   /* Show announcement box */
+
+  // Add the box to the page
+  var announcementBox = '<div id="announcement"><a title="Click to dismiss message"></a></div>';
+  $("body").append(announcementBox);
+
+  // Add the message
   $("#announcement a").html(message);
 
   // Trigger the fade-in transitions
   $("#announcement").css("display", "block");
-  $("#announcement").css("transform", "translate3d(0, -220px, 0)");
+  $("#announcement").css("transform", "translate3d(0, 220px, 0)");
 }
 
 

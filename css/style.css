@@ -46,7 +46,7 @@
   position: fixed;
   display: none;
   right: 20px;
-  top: 220px;
+  top: -220px;
   z-index: 1;
   border-bottom-right-radius: 7px;
   border-bottom-left-radius: 7px;
