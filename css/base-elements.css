@@ -30,9 +30,6 @@ blockquote:after {
   margin-left: 0.1em;
 }
 
-/* Workarond for Opera to properly display text */
-li { font-weight: 700; }
-
 /* Use custom (Unicode only!) triangle bullet point */
 li:before {
   content: "\25B2";

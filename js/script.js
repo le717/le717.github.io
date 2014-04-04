@@ -58,8 +58,11 @@ function detectBrowser() {
     // Display error message on IE 9 and below
     if ($.browser.versionNumber <= 9) {
       theBrowser = "Internet Explorer";
-      theBrowserMessage = "Your IE version does not support my site. " +
+      theBrowserMessage = "Your browser does not support my site. " +
       "Please visit browsehappy.com to research a modern browser.";
+
+      // IE 9 does not like the text-shadow
+      $("#announcement a").css("color", "black");
     }
 
   } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
@@ -77,7 +80,7 @@ function detectBrowser() {
   }
 
   // Create final message
-  finalMessage = 'You are using<br>{0}<br>{1}'.format(theBrowser, theBrowserMessage);
+  finalMessage = 'You are using<br>{0}.<br>{1}'.format(theBrowser, theBrowserMessage);
 
   // Make the announcement if there is one to make
   if (theBrowser.length > 0) {
@@ -93,7 +96,7 @@ function detectBrowser() {
 
   // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
-    $(".my-logo").attr("src", "img/Triangle717-Logo.png");
+    $(".my-logo").attr("src", "{{ site.baseurl}}/img/Triangle717-Logo.png");
   }
 
   if ($.browser.mobile) {
