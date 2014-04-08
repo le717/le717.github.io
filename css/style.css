@@ -38,11 +38,11 @@
 #my-logo-link { color: transparent; }
 
 /* Center-align my logo in the page :D */
-/*.my-logo {
+.my-logo {
   margin-top: -185px;
-/*  margin-top: -80px;
-  /*margin-left: -185px;
-}*/
+/*margin-top: -80px;*/
+  margin-left: -185px;
+}
 
 #my-logo-404 {
   margin-top: -8em;
