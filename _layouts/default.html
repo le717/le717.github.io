@@ -4,6 +4,4 @@
   <h1 {% if page.type != "Info" %}class="text-center"{% endif %}>{{ page.title }}</h1>
 {% if page.type == "Story" %}<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>{% endif %}
   {{ content }}
-{% include scripts.html %}
-{% include announcement.html %}
 {% include footer.html %}
