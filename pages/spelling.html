@@ -52,8 +52,7 @@ googlefont: Open+Sans:400,700
   <link rel="stylesheet" media="all" href="{{ site.baseurl }}/css/style.css">
 {% include bridge.html %}
   <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
-    Please type the correct sequence of characters into the field below.
-  </p>
+    Please type the correct sequence of characters into the field below.</p>
   <br>
   <div class="text-center" id="captcha-image-container"></div>
   <form class="text-center">
@@ -61,9 +60,8 @@ googlefont: Open+Sans:400,700
     <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
   </form>
 
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  {% include scripts.html %}
   <script>
-
     function selectRandom(myArray) {
       "use strict";
       /* Select a random item from `myArray` */
@@ -112,4 +110,5 @@ googlefont: Open+Sans:400,700
       }
     }
   </script>
+{% include announcement.html %}
   {% include footer.html %}
