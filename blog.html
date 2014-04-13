@@ -23,26 +23,23 @@ layout: default
         postURL = postDetails.URL;
       postContent = postDetails.content;
       postContainer = "#" + postID;
-      var jQPostContainer = $("#" + postID);
 
       console.log("Raw WP code: " + postContent);
 
       //postContent = postContent.replace(/style=".+"/g, "");
-      postContent = postContent.replace(/class='.+'/g, "");
+      //postContent = postContent.replace(/class='.+'/g, "");
       $(postContent).remove(".wp-smiley");
       console.log("WP code removed:\n" + postContent);
 
 
       $("body").append('<div id="' + postID + '"></div>');
-      //$(postContainer).html(postContent);
-      jQPostContainer.html(postContent);
+      $(postContainer).html(postContent);
     });
 
-//    $(postContent).find("img").each(function() {
-//    $("#20000-views").find("img").each(function() {
-//      var $this = $(this);
-//      $this.addClass("img-shadow");
-//    });
+    $(postContainer).find("img").each(function() {
+      var $this = $(this);
+      $this.addClass("img-shadow");
+    });
   }, "json");
 
 
