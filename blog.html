@@ -13,7 +13,7 @@ layout: default
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    console.log("Number of blog posts: " + data.posts.length);
+    console.log("Number of blog posts downloaded: " + data.posts.length);
 
     for (var i = 0; i < data.posts.length; i += 1) {
       var postContent = data.posts[i].content,
@@ -23,7 +23,10 @@ layout: default
           postURL = data.posts[i].URL,
           $postContainer = $("#" + postID);
 
-      $("body").append('<div id="' + postID + '"></div>');
+      //$("body").append('<div id="' + postID + '"></div>');
+      ($('<div id="' + postID + '"></div>')).prependTo("body");
+      console.log($postContainer);
+      console.log(postContent);
       $postContainer.html(postContent);
 
 //      $postContent.find("img").each(function() {
