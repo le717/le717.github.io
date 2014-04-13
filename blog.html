@@ -6,11 +6,14 @@ layout: default
 {% include scripts.html %}
 
 <script>
-  $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1").success(function (data) {
+  console.log("Loading blog feed from http://Triangle717.WordPress.com");
+
+  //$.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1").success(function (data) {
+    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1", function (data) {
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    console.log(data.posts.length);
+    console.log("Number of blog posts: " + data.posts.length);
 
     for (var i = 0; i < data.posts.length; i += 1) {
       var postContent = data.posts[i].content,
@@ -29,7 +32,8 @@ layout: default
 //        $this.width($this.width() / 2);
 //      });
     }
-  });
+  //});
+  }, "json");
 
 //    $('#title')
 //      .html(data.posts[i].title);
