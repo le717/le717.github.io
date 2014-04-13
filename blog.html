@@ -12,23 +12,23 @@ layout: default
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    var postContent, postDate, postID, postTitle, postURL, $postContainer;
+    var postDetails, postContent, postDate, postID, postTitle, postURL, $postContainer;
 
     console.log("Number of blog posts downloaded: " + data.posts.length);
 
     //for (var i = 0; i < data.posts.length; i += 1) {
-      data.posts.forEach(i, function() {
+      data.posts.forEach(postDetails, function() {
 //      postContent = data.posts[i].content;
 //      postDate = data.posts[i].date;
 //      postID = data.posts[i].slug;
 //      postTitle = data.posts[i].title;
 //      postURL = data.posts[i].URL;
 //      $postContainer = $("#" + postID);
-      postContent = i.content;
-      postDate = i.date;
-      postID = i.slug;
-      postTitle = i.title;
-      postURL = i.URL;
+      postContent = postDetails.content;
+      postDate = postDetails.date;
+      postID = postDetails.slug;
+      postTitle = postDetails.title;
+      postURL = postDetails.URL;
       $postContainer = $("#" + postID);
 
       console.log("Raw WP code: " + postContent);
