@@ -23,11 +23,11 @@ layout: default
           postURL = data.posts[i].URL,
           $postContainer = $("#" + postID);
 
-      //$("body").append('<div id="' + postID + '"></div>');
-      ($('<div id="' + postID + '"></div>')).prependTo("body");
-      console.log($postContainer);
+      $("body").append('<div id="' + postID + '"></div>');
+      console.log($postContainer.selector);
+      console.log(postID);
       console.log(postContent);
-      $postContainer.html(postContent);
+      $postContainer.text(postContent);
 
 //      $postContent.find("img").each(function() {
 //        var $this = $(this);
