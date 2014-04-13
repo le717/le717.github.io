@@ -35,15 +35,16 @@ layout: default
 
 //      console.log("Raw WP code: " + postContent);
 
-      postContent = postContent.replace(/style="*"/g, "");
-      $(postContent).remove(".wp-smiley .emoji");
+      postContent = postContent.replace(/style=".+"/g, "");
+      postContent = postContent.replace(/class='.+'/g, "");
+      $(postContent).remove(".wp-smiley");
       console.log("WP code removed:\n" + postContent);
 
 
       $("body").append('<div id="' + postID + '"></div>');
       //$postContainer.html(postContent);
       //$postContainer.html("postContent");
-      $postContainer.text(postContent.substring(0, 20));
+      $("#" + postID).html(postContent.substring(0, 20));
       //$("#20000-views").html("postContent");
 //      $("#20000-views").html(postContent);
     });
