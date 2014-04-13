@@ -28,7 +28,7 @@ layout: default
 
       //postContent = postContent.replace(/style=".+"/g, "");
       //postContent = postContent.replace(/class='.+'/g, "");
-      $(postContent).remove(".wp-smiley");
+      $(postContainer).remove(".wp-smiley");
       console.log("WP code removed:\n" + postContent);
 
 
@@ -36,9 +36,14 @@ layout: default
       $(postContainer).html(postContent);
     });
 
+    // Remove any WordPress alignment classes
+    $(postContainer).find("div").each(function() {
+      $(this).removeClass("alignnone, alignleft, aligncenter, alignright");
+    });
+
     $(postContainer).find("img").each(function() {
-      var $this = $(this);
-      $this.addClass("img-shadow");
+      $(this).removeClass();
+      $(this).addClass("img-shadow");
     });
   }, "json");
 
