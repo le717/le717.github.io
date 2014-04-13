@@ -36,8 +36,9 @@ layout: default
 //      console.log("Raw WP code: " + postContent);
 
 
-      [postContent].forEach.call($("*"), function(c) {
-        $(c).removeClass();
+      [postContent].forEach.call(document.querySelectorAll("*"), function(c) {
+        $(c).attr("class", "");
+        $(c).attr("style", "");
       });
       console.log("WP code removed:\n" + postContent);
 
@@ -45,7 +46,7 @@ layout: default
       $("body").append('<div id="' + postID + '"></div>');
       //$postContainer.html(postContent);
       //$postContainer.html("postContent");
-      $postContainer.append(postContent);
+      $postContainer.text(postContent.substring(0, 293));
       //$("#20000-views").html("postContent");
 //      $("#20000-views").html(postContent);
     });
