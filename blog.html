@@ -16,21 +16,28 @@ layout: default
 
     console.log("Number of blog posts downloaded: " + data.posts.length);
 
-    for (var i = 0; i < data.posts.length; i += 1) {
-      postContent = data.posts[i].content;
-      postDate = data.posts[i].date;
-      postID = data.posts[i].slug;
-      postTitle = data.posts[i].title;
-      postURL = data.posts[i].URL;
+    //for (var i = 0; i < data.posts.length; i += 1) {
+      data.posts.forEach(i, function() {
+//      postContent = data.posts[i].content;
+//      postDate = data.posts[i].date;
+//      postID = data.posts[i].slug;
+//      postTitle = data.posts[i].title;
+//      postURL = data.posts[i].URL;
+//      $postContainer = $("#" + postID);
+      postContent = i.content;
+      postDate = i.date;
+      postID = i.slug;
+      postTitle = i.title;
+      postURL = i.URL;
       $postContainer = $("#" + postID);
 
       console.log("Raw WP code: " + postContent);
 
-      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
-      [postContent].forEach.call($("*"), function(c) {
-        c.removeClass();
-      });
-      console.log("WP code removed:\n" + postContent);
+//      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
+//      [postContent].forEach.call($("*"), function(c) {
+//        $(c).removeClass();
+//      });
+//      console.log("WP code removed:\n" + postContent);
 
 
       $("body").append('<div id="' + postID + '"></div>');
@@ -39,7 +46,7 @@ layout: default
       $postContainer.selector.html(postContent);
       //$("#20000-views").html("postContent");
 //      $("#20000-views").html(postContent);
-    }
+    });
 
 //    $(postContent).find("img").each(function() {
 //    $("#20000-views").find("img").each(function() {
