@@ -1,5 +1,6 @@
 ---
 title: Blog
+type: Blog
 layout: default
 ---
 
@@ -17,34 +18,52 @@ layout: default
 //    console.log("Number of blog posts downloaded: " + data.posts.length);
 
       data.posts.forEach(function(postDetails) {
-      var postDate = postDetails.date,
-        postID = postDetails.slug,
-        postTitle = postDetails.title,
-        postURL = postDetails.URL;
-      postContent = postDetails.content;
-      postContainer = "#" + postID;
+        var postDate = postDetails.date,
+            postID = postDetails.slug,
+            postTitle = postDetails.title,
+            postURL = postDetails.URL;
+        postContent = postDetails.content;
+        postContainer = "#" + postID;
 
-      console.log("Raw WP code: " + postContent);
+        console.log("Raw WP code: " + postContent);
 
-      //postContent = postContent.replace(/style=".+"/g, "");
-      //postContent = postContent.replace(/class='.+'/g, "");
-      $(postContainer).remove(".wp-smiley");
+        //postContent = postContent.replace(/style=".+"/g, "");
+        //postContent = postContent.replace(/class='.+'/g, "");
+        //$(postContainer).remove(".wp-smiley");
+
+        // Remove any WordPress alignment classes
+      $(postContainer).find("div").each(function() {
+//        $(this).removeClass("alignnone");
+//        $(this).removeClass("alignleft");
+//        $(this).removeClass("aligncenter");
+//        $(this).removeClass("alignright");
+        $(this).stripClass("align");
+      }};
+
+      $(postContainer).find("img").each(function() {
+        $(this).removeClass();
+        $(this).addClass("img-shadow");
+      });
+
       console.log("WP code removed:\n" + postContent);
-
 
       $("body").append('<div id="' + postID + '"></div>');
       $(postContainer).html(postContent);
     });
 
-    // Remove any WordPress alignment classes
-    $(postContainer).find("div").each(function() {
-      $(this).removeClass("alignnone, alignleft, aligncenter, alignright");
-    });
-
-    $(postContainer).find("img").each(function() {
-      $(this).removeClass();
-      $(this).addClass("img-shadow");
-    });
+//    // Remove any WordPress alignment classes
+//    $(postContainer).find("div").each(function() {
+////      $(this).removeClass("alignnone");
+////      $(this).removeClass("alignleft");
+////      $(this).removeClass("aligncenter");
+////      $(this).removeClass("alignright");
+//      $(this).stripClass("align");
+//    });
+//
+//    $(postContainer).find("img").each(function() {
+//      $(this).removeClass();
+//      $(this).addClass("img-shadow");
+//    });
   }, "json");
 
 
