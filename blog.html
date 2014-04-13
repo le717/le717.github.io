@@ -24,23 +24,26 @@ layout: default
       postURL = data.posts[i].URL;
       $postContainer = $("#" + postID);
 
-//      console.log("Raw WP code: " + postContent);
+      console.log("Raw WP code: " + postContent);
+
+      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
 //      [postContent].forEach.call($("*"), function(c) {
 //        c.removeClass();
 //      });
+//      console.log("WP code removed:\n" + postContent);
+
 
       $("body").append('<div id="' + postID + '"></div>');
-      console.log("WP code removed: " + postContent);
       //$postContainer.html(postContent);
       //$postContainer.html("postContent");
       //$("#20000-views").html("postContent");
       $("#20000-views").html(postContent);
     }
 
-//    $(postContent).find("img").each(function() {
-//      var $this = $(this);
-//      $this.addClass("img-shadow");
-//    });
+    $(postContent).find("img").each(function() {
+      var $this = $(this);
+      $this.addClass("img-shadow");
+    });
   }, "json");
 
 
