@@ -8,7 +8,7 @@
  */
 
 
-/* Small shadow on images */
+/* Small box-shadow for images */
 .img-shadow { box-shadow: 1px 1px 5px 1px black; }
 
 .centered {

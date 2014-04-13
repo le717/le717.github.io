@@ -8,35 +8,40 @@ layout: default
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
-  //$.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1").success(function (data) {
-    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function (data) {
+  $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function (data) {
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
+
+    var postContent, postDate, postID, postTitle, postURL, $postContainer;
 
     console.log("Number of blog posts downloaded: " + data.posts.length);
 
     for (var i = 0; i < data.posts.length; i += 1) {
-      var postContent = data.posts[i].content,
-          postDate = data.posts[i].date,
-          postID = data.posts[i].slug,
-          postTitle = data.posts[i].title,
-          postURL = data.posts[i].URL,
-          $postContainer = $("#" + postID);
+      postContent = data.posts[i].content;
+      postDate = data.posts[i].date;
+      postID = data.posts[i].slug;
+      postTitle = data.posts[i].title;
+      postURL = data.posts[i].URL;
+      $postContainer = $("#" + postID);
+
+//      console.log("Raw WP code: " + postContent);
+//      [postContent].forEach.call($("*"), function(c) {
+//        c.removeClass();
+//      });
 
       $("body").append('<div id="' + postID + '"></div>');
-      console.log($postContainer.selector);
-      console.log(postID);
-      console.log(postContent);
-      $postContainer.text(postContent);
-
-//      $postContent.find("img").each(function() {
-//        var $this = $(this);
-//        $this.height($this.height() / 2);
-//        $this.width($this.width() / 2);
-//      });
+      console.log("WP code removed: " + postContent);
+      //$postContainer.html(postContent);
+      $postContainer.html("postContent");
     }
-  //});
+
+    postContent.find("img").each(function() {
+      var $this = $(this);
+      $this.addClass("img-shadow");
+    });
   }, "json");
+
+
 
 //    $('#title')
 //      .html(data.posts[i].title);
