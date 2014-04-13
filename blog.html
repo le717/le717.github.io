@@ -9,7 +9,7 @@ layout: default
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
-  $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function (data) {
+  $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
@@ -25,20 +25,20 @@ layout: default
         postContent = postDetails.content;
         postContainer = "#" + postID;
 
-        console.log("Raw WP code: " + postContent);
+        //console.log("Raw WP code: " + postContent);
 
         //postContent = postContent.replace(/style=".+"/g, "");
         //postContent = postContent.replace(/class='.+'/g, "");
         //$(postContainer).remove(".wp-smiley");
 
-        // Remove any WordPress alignment classes
+      // Remove any WordPress alignment classes
       $(postContainer).find("div").each(function() {
 //        $(this).removeClass("alignnone");
 //        $(this).removeClass("alignleft");
 //        $(this).removeClass("aligncenter");
 //        $(this).removeClass("alignright");
         $(this).stripClass("align");
-      }};
+      });
 
       $(postContainer).find("img").each(function() {
         $(this).removeClass();
