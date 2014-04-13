@@ -12,12 +12,12 @@ layout: default
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    var postDetails, postContent, postDate, postID, postTitle, postURL, $postContainer;
+    var postContent, postDate, postID, postTitle, postURL, $postContainer;
 
     console.log("Number of blog posts downloaded: " + data.posts.length);
 
     //for (var i = 0; i < data.posts.length; i += 1) {
-      data.posts.forEach(postDetails, function() {
+      data.posts.forEach(function(postDetails) {
 //      postContent = data.posts[i].content;
 //      postDate = data.posts[i].date;
 //      postID = data.posts[i].slug;
