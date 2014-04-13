@@ -12,28 +12,19 @@ layout: default
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    var postContent, postDate, postID, postTitle, postURL, $postContainer;
+    var postContent, postDate, postID, postTitle, postURL, postContainer;
 
     console.log("Number of blog posts downloaded: " + data.posts.length);
 
-    //for (var i = 0; i < data.posts.length; i += 1) {
       data.posts.forEach(function(postDetails) {
-//      postContent = data.posts[i].content;
-//      postDate = data.posts[i].date;
-//      postID = data.posts[i].slug;
-//      postTitle = data.posts[i].title;
-//      postURL = data.posts[i].URL;
-//      $postContainer = $("#" + postID);
       postContent = postDetails.content;
       postDate = postDetails.date;
       postID = postDetails.slug;
       postTitle = postDetails.title;
       postURL = postDetails.URL;
-      $postContainer = $("#" + postID);
+      postContainer = "#" + postID;
 
-      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
-
-//      console.log("Raw WP code: " + postContent);
+      console.log("Raw WP code: " + postContent);
 
       postContent = postContent.replace(/style=".+"/g, "");
       postContent = postContent.replace(/class='.+'/g, "");
@@ -41,12 +32,8 @@ layout: default
       console.log("WP code removed:\n" + postContent);
 
 
-      $("body").append('<div id="' + postID + '"></div>');
-      //$postContainer.html(postContent);
-      //$postContainer.html("postContent");
-      $("#" + postID).html(postContent.substring(0, 20));
-      //$("#20000-views").html("postContent");
-//      $("#20000-views").html(postContent);
+      $("body").append('<div class="centered" id="' + postID + '"></div>');
+      $(postContainer).html(postContent);
     });
 
 //    $(postContent).find("img").each(function() {
