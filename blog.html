@@ -31,19 +31,21 @@ layout: default
       postURL = postDetails.URL;
       $postContainer = $("#" + postID);
 
-      console.log("Raw WP code: " + postContent);
+      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
 
-//      console.log("jQuery post container selector ID:\n" + $postContainer.selector);
-//      [postContent].forEach.call($("*"), function(c) {
-//        $(c).removeClass();
-//      });
-//      console.log("WP code removed:\n" + postContent);
+//      console.log("Raw WP code: " + postContent);
+
+
+      [postContent].forEach.call($("*"), function(c) {
+        $(c).removeClass();
+      });
+      console.log("WP code removed:\n" + postContent);
 
 
       $("body").append('<div id="' + postID + '"></div>');
       //$postContainer.html(postContent);
       //$postContainer.html("postContent");
-      $postContainer.selector.html(postContent);
+      $postContainer.append(postContent);
       //$("#20000-views").html("postContent");
 //      $("#20000-views").html(postContent);
     });
