@@ -12,28 +12,30 @@ layout: default
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
 
-    var postContent, postDate, postID, postTitle, postURL, postContainer;
+    var postContent, postContainer;
 
-    console.log("Number of blog posts downloaded: " + data.posts.length);
+//    console.log("Number of blog posts downloaded: " + data.posts.length);
 
       data.posts.forEach(function(postDetails) {
+      var postDate = postDetails.date,
+        postID = postDetails.slug,
+        postTitle = postDetails.title,
+        postURL = postDetails.URL;
       postContent = postDetails.content;
-      postDate = postDetails.date;
-      postID = postDetails.slug;
-      postTitle = postDetails.title;
-      postURL = postDetails.URL;
       postContainer = "#" + postID;
+      var jQPostContainer = $("#" + postID);
 
       console.log("Raw WP code: " + postContent);
 
-      postContent = postContent.replace(/style=".+"/g, "");
+      //postContent = postContent.replace(/style=".+"/g, "");
       postContent = postContent.replace(/class='.+'/g, "");
       $(postContent).remove(".wp-smiley");
       console.log("WP code removed:\n" + postContent);
 
 
-      $("body").append('<div class="centered" id="' + postID + '"></div>');
-      $(postContainer).html(postContent);
+      $("body").append('<div id="' + postID + '"></div>');
+      //$(postContainer).html(postContent);
+      jQPostContainer.html(postContent);
     });
 
 //    $(postContent).find("img").each(function() {
