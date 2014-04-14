@@ -24,7 +24,8 @@ function makeAnnouncement(message) {
 }
 
 
-$("#announcement").on("click", function() {
+// $("#announcement").on("click", function() {
+$("#announcement #announcement a").on("click", function() {
   "use strict";
   /* Hide announcement box */
   $("#announcement").css("opacity", "0");
