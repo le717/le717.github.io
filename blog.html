@@ -18,7 +18,8 @@ layout: blogpost
 
       data.posts.forEach(function(postInfo) {
         var postAuthor       = postInfo.author.name,
-            postAuthorAvatar = postInfo.author.avatar_URL.replace(/?s=96/, "?s=64"),
+            //postAuthorAvatar = postInfo.author.avatar_URL,
+            postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
             postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
             postID           = postInfo.slug,
             postTitle        = postInfo.title,
