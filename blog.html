@@ -16,20 +16,22 @@ layout: blogpost
 
 //    console.log("Number of blog posts downloaded: " + data.posts.length);
 
-      data.posts.forEach(function(postDetails) {
-        var postAuthor = postDetails.name,
-            postDate = postDetails.date,
-            postID = postDetails.slug,
-            postTitle = postDetails.title,
-            postURL = postDetails.URL;
-        postContent = postDetails.content;
-        postContainer = "#" + postID;
+      data.posts.forEach(function(postInfo) {
+        var postAuthor       = postInfo.author.name,
+            postAuthorAvatar = postInfo.author.avatar_URL,
+            postDate         = postInfo.date,
+            postID           = postInfo.slug,
+            postTitle        = postInfo.title,
+            postURL          = postInfo.URL;
+        postContent          = postInfo.content;
+        postContainer        = "#" + postID;
 
         //console.log("Raw WP code: " + postContent);
 
         //postContent = postContent.replace(/style=".+"/g, "");
         //postContent = postContent.replace(/class='.+'/g, "");
-        //$(postContainer).remove(".wp-smiley");
+        $(postContainer).removeClass("wp-smiley");
+        //$(postContent).removeClass("wp-smiley");
 
         // Remove any WordPress alignment classes
         $(postContainer).find("div").each(function() {
@@ -41,6 +43,7 @@ layout: blogpost
 
         $(postContent).find("img").each(function() {
           $(this).removeClass();
+          $(this).attr("style", "");
           //$(this).stripClass("size-");
           $(this).addClass("img-shadow");
         });
@@ -48,9 +51,11 @@ layout: blogpost
         console.log("WP code removed:\n" + postContent);
 
         // Display post details
+        $(".post-author-avatar").attr("src", postAuthorAvatar);
         $(".post-title").html(postTitle);
         $(".post-date").html(postDate);
         $(".post-author").html(postAuthor);
+        $(".post-url").html(postURL);
 
         // Display post content
         $("body").append('<div id="' + postID + '"></div>');
