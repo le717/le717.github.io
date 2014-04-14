@@ -47,13 +47,12 @@ layout: blogpost
       });
 
     // Remove WordPress emote classes
-    // TODO Look up jQuery way to fully remove attribute
     $(postContainer).find("span").each(function() {
       var $this = $(this);
       $this.removeClass("emoji");
       $this.stripClass("wp-");
       $this.stripClass("emoji-");
-      $this.attr("title", "");
+      $this.removeAttr("title");
 
     });
 
@@ -68,14 +67,14 @@ layout: blogpost
       // Center any images
       // FIXME: Wrong method!
       if ($this.hasClass("wp-caption")) {
-        $this.addCLass("text-center");
+        $this.addClass("text-center");
       }
     });
 
     // Remove any WordPress image-related classes
     $(postContent).find("img").each(function() {
       //$(this).removeClass();
-      $(this).attr("style", "none");
+      $(this).removeAttr("style");
       $(this).stripClass("size-");
       //$(this).addClass("img-shadow");
     });
