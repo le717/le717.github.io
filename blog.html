@@ -18,8 +18,8 @@ layout: blogpost
 
       data.posts.forEach(function(postInfo) {
         var postAuthor       = postInfo.author.name,
-            postAuthorAvatar = postInfo.author.avatar_URL,
-            postDate         = postInfo.date,
+            postAuthorAvatar = postInfo.author.avatar_URL.replace(/?s=96/, "?s=64"),
+            postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
             postID           = postInfo.slug,
             postTitle        = postInfo.title,
             postURL          = postInfo.URL;
@@ -30,46 +30,42 @@ layout: blogpost
 
         //postContent = postContent.replace(/style=".+"/g, "");
         //postContent = postContent.replace(/class='.+'/g, "");
-        $(postContainer).removeClass("wp-smiley");
-        //$(postContent).removeClass("wp-smiley");
 
-        // Remove any WordPress alignment classes
-        $(postContainer).find("div").each(function() {
-          $(this).removeClass("alignnone");
-          $(this).removeClass("alignleft");
-          $(this).removeClass("aligncenter");
-          $(this).removeClass("alignright");
-        });
-
-        $(postContent).find("img").each(function() {
-          $(this).removeClass();
-          $(this).attr("style", "");
-          //$(this).stripClass("size-");
-          $(this).addClass("img-shadow");
-        });
-
-        console.log("WP code removed:\n" + postContent);
+        //console.log("WP code removed:\n" + postContent);
 
         // Display post details
         $(".post-author-avatar").attr("src", postAuthorAvatar);
         $(".post-title").html(postTitle);
         $(".post-date").html(postDate);
         $(".post-author").html(postAuthor);
-        $(".post-url").html(postURL);
+        $(".post-url").attr("src", postURL);
 
         // Display post content
         $("body").append('<div id="' + postID + '"></div>');
         $(postContainer).html(postContent);
       });
 
-//    // Remove any WordPress alignment classes
-//    $(postContainer).find("div").each(function() {
-////      $(this).removeClass("alignnone");
-////      $(this).removeClass("alignleft");
-////      $(this).removeClass("aligncenter");
-////      $(this).removeClass("alignright");
-//      $(this).stripClass("align");
-//    });
+    // Remove WordPress emote classes
+    $(postContainer).find("span").each(function() {
+      $(this).removeClass("emoji");
+      $(this).stripClass("wp-");
+      $(this).stripClass("emoji-");
+    });
+
+    // Remove any WordPress alignment classes
+    $(postContainer).find("div").each(function() {
+      $(this).removeClass("alignnone");
+      $(this).removeClass("alignleft");
+      $(this).removeClass("aligncenter");
+      $(this).removeClass("alignright");
+    });
+
+    $(postContent).find("img").each(function() {
+      $(this).removeClass();
+      $(this).attr("style", "");
+      //$(this).stripClass("size-");
+      $(this).addClass("img-shadow");
+    });
   }, "json");
 
 
