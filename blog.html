@@ -72,19 +72,21 @@ layout: blogpost
       }
     });
 
+    // Remove image styling
+    $("img").removeAttr("style");
+
     // Remove any WordPress image-related classes
     $(postContent).find("img").each(function() {
       var $this = $(this);
       //$(this).removeClass();
-      $this.removeAttr("style");
-      //$(this).stripClass("size-");
+      //$this.stripClass("size-");
       $this.removeClass("size-large");
-      //$(this).addClass("img-shadow");
+      //$this.addClass("img-shadow");
 
-      // If this is a mobile browser, half the image sizes
+      // If this is a mobile browser, quarter the image sizes
       if ($.browser.mobile) {
-        $this.width($this.width() / 2);
-        $this.height($this.height() / 2);
+        $this.width($this.width() / 4);
+        $this.height($this.height() / 4);
       }
     });
   }, "json");

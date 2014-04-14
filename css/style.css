@@ -207,7 +207,10 @@
 
 .post-title { text-shadow: 1px 2px blue; }
 
-.post-info { display: inline-block; }
+.post-info {
+  display: inline-block;
+  font-size: 0.9em;
+}
 
 
 /* ------- Various styling ------- */

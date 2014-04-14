@@ -105,8 +105,7 @@ $(function() {
   }
 
 //  // Get date of last commit using GitHub Pages API
-//  $.getJSON("https://api.github.com/repos/le717/le717.github.io",
-//    function (data) {
+//  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
 //      var lastUpdate = data.updated_at.replace(/(T(.*))$/g, "");
 //      //var lastUpdate = "Right now";
 //      $("#last-update").text("Last update: {0}".format(lastUpdate));
