@@ -18,8 +18,8 @@ layout: blogpost
 
       data.posts.forEach(function(postInfo) {
         var postAuthor       = postInfo.author.name,
-            //postAuthorAvatar = postInfo.author.avatar_URL,
             postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
+            // FUTURE: Convert to datestamp to keep time posted
             postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
             postID           = postInfo.slug,
             postTitle        = postInfo.title,
@@ -39,7 +39,7 @@ layout: blogpost
         $(".post-title").html(postTitle);
         $(".post-date").html(postDate);
         $(".post-author").html(postAuthor);
-        $(".post-url").attr("src", postURL);
+        $(".post-url").attr("href", postURL);
 
         // Display post content
         $("body").append('<div id="' + postID + '"></div>');
@@ -47,32 +47,37 @@ layout: blogpost
       });
 
     // Remove WordPress emote classes
+    // TODO Look up jQuery way to fully remove attribute
     $(postContainer).find("span").each(function() {
-      $(this).removeClass("emoji");
-      $(this).stripClass("wp-");
-      $(this).stripClass("emoji-");
+      var $this = $(this);
+      $this.removeClass("emoji");
+      $this.stripClass("wp-");
+      $this.stripClass("emoji-");
+      $this.attr("title", "");
+
     });
 
     // Remove any WordPress alignment classes
     $(postContainer).find("div").each(function() {
-      $(this).removeClass("alignnone");
-      $(this).removeClass("alignleft");
-      $(this).removeClass("aligncenter");
-      $(this).removeClass("alignright");
+      var $this = $(this);
+      $this.removeClass("alignnone");
+      $this.removeClass("alignleft");
+      $this.removeClass("aligncenter");
+      $this.removeClass("alignright");
+
+      // Center any images
+      // FIXME: Wrong method!
+      if ($this.hasClass("wp-caption")) {
+        $this.addCLass("text-center");
+      }
     });
 
+    // Remove any WordPress image-related classes
     $(postContent).find("img").each(function() {
-      $(this).removeClass();
-      $(this).attr("style", "");
-      //$(this).stripClass("size-");
-      $(this).addClass("img-shadow");
+      //$(this).removeClass();
+      $(this).attr("style", "none");
+      $(this).stripClass("size-");
+      //$(this).addClass("img-shadow");
     });
   }, "json");
-
-
-
-//    $('#title')
-//      .html(data.posts[i].title);
-//      .attr('href', data.posts[i].URL);
-//    });
 </script>
