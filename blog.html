@@ -23,7 +23,9 @@ layout: blogpost
 
   $(function() {
     "use strict";
-    /* Based on example from http://jsfiddle.net/hLWdH/334/ */
+    /* Create a blog post object
+     * Based on example from http://jsfiddle.net/hLWdH/334/
+     */
     $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
       var postContent, postContainer;
       //console.log("Number of blog posts downloaded: " + data.posts.length);
@@ -42,7 +44,6 @@ layout: blogpost
             postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
             // FUTURE: Convert to datestamp to keep time posted
             postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
-            postID           = postInfo.slug,
             postTitle        = postInfo.title,
             postURL          = postInfo.guid;
         postContent          = postInfo.content;
