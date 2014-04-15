@@ -27,14 +27,6 @@ function hideAnnouncement() {
   "use strict";
   /* Hide announcement box */
   $(".announcement").addClass("fadeout-ani");
-//  $(".announcement").css("opacity", "0");
-//
-//  // Make it where the box does not effect any elements after it is hidden
-//  $(".announcement").bind("transitionend", function(e) {
-//    if (e.originalEvent.propertyName === "opacity") {
-//      $(".announcement").css("display", "none");
-//    }
-//  });
 }
 
 

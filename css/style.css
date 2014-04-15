@@ -211,16 +211,6 @@
   font-size: 0.9em;
 }
 
-.img-caption {
-  background-color: gray;
-  width: 50%;
-  max-width: 90%;
-  padding-top: 25px;
-  position: relative;
-  left: 25%;
-}
-
-
 /* ------- Various styling ------- */
 
 .sitemap-active {
