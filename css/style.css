@@ -56,7 +56,9 @@
 
 #sitemap h3 { margin-bottom: 2px; }
 
-#announcement {
+/* ------- Announcement box styling ------- */
+
+.announcement {
   position: fixed;
   display: none;
   right: 20px;
@@ -79,7 +81,7 @@
   transition-delay: 1s;
 }
 
-#announcement a {
+.announcement a {
   text-decoration: none;
   font-size: 0.9em;
 }

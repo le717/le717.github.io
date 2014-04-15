@@ -12,28 +12,27 @@ function makeAnnouncement(message) {
   /* Show announcement box */
 
   // Add the box to the page
-  var announcementBox = '<div id="announcement"><a title="Click to dismiss message"></a></div>';
+  var announcementBox = '<div class="announcement"><a title="Click to dismiss message"></a></div>';
   $("body").append(announcementBox);
 
   // Add the message
-  $("#announcement a").html(message);
+  $(".announcement a").html(message);
 
   // Trigger the fade-in transitions
-  $("#announcement").css("display", "block");
-  $("#announcement").css("transform", "translate3d(0, 220px, 0)");
+  $(".announcement").css("display", "block");
+  $(".announcement").css("transform", "translate3d(0, 220px, 0)");
 }
 
 
-// $("#announcement").on("click", function() {
-$("#announcement #announcement a").on("click", function() {
+$(".announcement").on("click", function() {
   "use strict";
   /* Hide announcement box */
-  $("#announcement").css("opacity", "0");
+  $(".announcement").css("opacity", "0");
 
   // Make it where the box does not effect any elements after it is hidden
-  $("#announcement").bind("transitionend", function(e) {
-    if (e.originalEvent.propertyName == "opacity") {
-      $("#announcement").css("display", "none");
+  $(".announcement").bind("transitionend", function(e) {
+    if (e.originalEvent.propertyName === "opacity") {
+      $(".announcement").css("display", "none");
     }
   });
 });
@@ -93,7 +92,6 @@ $(function() {
 
   // Replace the SVG with a PNG on IE (IE does not always like SVGs)
   if ($.browser.msie) {
-    console.log("This is IE");
 //    $(".my-logo").attr("src", "{{ site.baseurl }}/img/Triangle717-Logo.png");
     $(".my-logo").attr("src", "//le717.github.io/img/Triangle717-Logo.png");
   }
@@ -109,5 +107,5 @@ $(function() {
 //      var lastUpdate = data.updated_at.replace(/(T(.*))$/g, "");
 //      //var lastUpdate = "Right now";
 //      $("#last-update").text("Last update: {0}".format(lastUpdate));
-//    }, "json");
+//    });
 });
