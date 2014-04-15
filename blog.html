@@ -75,20 +75,12 @@ layout: blogpost
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
-        $(value.postIDDOM).wpToEmoji();
+        //$(value.postIDDOM).wpToEmoji();
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
     });
   }
-
-    // Remove WordPress emote classes
-    /*$(postContainer).find("span").each(function() {
-      var $this = $(this);
-      $this.removeClass("emoji");
-      $this.stripClass("wp-");
-      $this.stripClass("emoji-");
-      $this.removeAttr("title");*/
 
 
   function cleanupPost(postContainer) {
@@ -97,6 +89,41 @@ layout: blogpost
 
     $(function() {
 
+      // Remove WordPress emote classes
+      $(postContainer).find("span").each(function() {
+        var $this = $(this);
+        $this.removeClass("emoji");
+        $this.removeClass("wp-smiley");
+  //      $this.stripClass("emoji-");
+        $this.removeAttr("title");
+      });
+
+      // Remove WordPress image styling
+      $("img").removeAttr("style");
+
+      // Center the images that have captions applied
+      $(".wp-caption").addClass("text-center");
+
+      // Remove any WordPress image-related classes
+      $(postContainer).find("img").each(function() {
+        var $this = $(this);
+        $this.removeAttr("class");
+
+        // Center non-captioned images
+        $this.parent("p").addClass("text-center");
+
+        // Add my own image styling
+        $this.addClass("img-shadow");
+
+        // If this is a mobile browser, third the image sizes
+        if ($.browser.mobile) {
+          $this.width($this.width() / 3);
+          $this.height($this.height() / 3);
+        }
+      });
+
+      $(".emoji-bigsmile").html(":smiley:");
+
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
@@ -104,28 +131,9 @@ layout: blogpost
         $this.removeClass("alignleft");
         $this.removeClass("aligncenter");
         $this.removeClass("alignright");
+        $this.removeClass("wp-caption");
+        $this.stripClass("attachment_");
         $this.removeAttr("style");
-      });
-
-      // Remove WordPress image styling
-      $("img").removeAttr("style");
-
-      // FIXME
-//      $("img").parent("div").addClass("text-center");
-
-      // Remove any WordPress image-related classes
-      $(postContainer).find("img").each(function() {
-        var $this = $(this);
-        $this.removeAttr("class");
-
-        // Add my own image styling
-        $this.addClass("img-shadow");
-
-        // If this is a mobile browser, third the image sizes
-//        if ($.browser.mobile) {
-//          $this.width($this.width() / 3);
-//          $this.height($this.height() / 3);
-//        }
       });
    });
   }
