@@ -12,7 +12,7 @@ function makeAnnouncement(message) {
   /* Show announcement box */
 
   // Add the box to the page
-  var announcementBox = '<div class="announcement"><a title="Click to dismiss message"></a></div>';
+  var announcementBox = '<div class="announcement" onclick="hideAnnouncement();"><a></a></div>';
   $("body").append(announcementBox);
 
   // Add the message
@@ -23,20 +23,18 @@ function makeAnnouncement(message) {
   $(".announcement").css("transform", "translate3d(0, 220px, 0)");
 }
 
-$(function() {
-  $(".announcement, .announcement a").on("click", function() {
-    "use strict";
-    /* Hide announcement box */
-    $(".announcement").css("opacity", "0");
+function hideAnnouncement() {
+  "use strict";
+  /* Hide announcement box */
+  $(".announcement").css("opacity", "0");
 
-    // Make it where the box does not effect any elements after it is hidden
-    $(".announcement").bind("transitionend", function(e) {
-      if (e.originalEvent.propertyName === "opacity") {
-        $(".announcement").css("display", "none");
-      }
-    });
+  // Make it where the box does not effect any elements after it is hidden
+  $(".announcement").bind("transitionend", function(e) {
+    if (e.originalEvent.propertyName === "opacity") {
+      $(".announcement").css("display", "none");
+    }
   });
-});
+}
 
 
 function detectBrowser() {
