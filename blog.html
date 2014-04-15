@@ -16,7 +16,8 @@ layout: blogpost
     this.postContent      = postContent;
     // FUTURE Convert to datestamp to keep time posted
     this.postDate         = postDate.replace(/(T(.*))$/g, "");
-    this.postID           = "#{0}".format(postID);
+    this.postID           = postID;
+    this.postIDDOM        = "#" + postID;
     this.postTitle        = postTitle;
     this.postURL          = postURL;
   }
@@ -45,31 +46,38 @@ layout: blogpost
 
     function showPosts() {
       "use strict";
-      /* TODO Write me! */
+      /* Display each blog post */
       $.each(allBlogPosts, function(key, value) {
 
-//        console.log(value.postTitle);
-//        console.log(value.postAuthorAvatar);
-//        console.log(value.postDate);
-//        console.log(value.postAuthor);
-//        console.log(value.postURL);
-//        console.log(value.postID);
-//        console.log(value.postContainer);
+      // Add the post container to the page
+      $("body").append(value.postContainer);
 
+        /* Display post details in the following order:
+         *
+         * Post title
+         * Author avatar
+         * Publish date
+         * Author name
+         * Permalink (to WordPress)
+         */
 
-        // Display post details
-        /*$(".post-author-avatar").attr("src", postAuthorAvatar);
-        $(".post-title").html(postTitle);
-        $(".post-date").html(postDate);
-        $(".post-author").html(postAuthor);
-        $(".post-url").attr("href", postURL);*/
+        $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
+        $(value.postIDDOM).append('<img class="post-author-avatar" />');
+        $(value.postIDDOM).append('<p class="post-info">Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
 
-        // Display post content
-        $("body").append(value.postContainer);
-        $(value.postID).html(value.postContent)
+        $(value.postIDDOM + " .post-title").html(value.postTitle);
+        $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
+        $(value.postIDDOM + " .post-date").html(value.postDate);
+        $(value.postIDDOM + " .post-author").html(value.postAuthor);
+        $(value.postIDDOM + " .post-url").attr("href", value.postURL);
+
+        // Finally, add the post content
+        $(value.postIDDOM).append(value.postContent)
 
         // Convert all WordPress emoticons to Emoji
-        $(value.postID).wpToEmoji();
+        $(value.postIDDOM).wpToEmoji();
+
+        // TODO Run cleanup
     });
   }
 
@@ -97,8 +105,17 @@ layout: blogpost
       }
     });*/
 
-    // Remove image styling
-    $("img").removeAttr("style");
+
+  function cleanupPost() {
+    "use strict";
+    /* Remove WordPress classes, IDs, and other unnecessary clutter */
+
+    $(function() {
+      // Remove image styling (usually a box-shadow)
+      $("img").removeAttr("style");
+    });
+  }
+
 
     // Remove any WordPress image-related classes
     /*$(postContent).find("img").each(function() {
