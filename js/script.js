@@ -61,7 +61,7 @@ function detectBrowser() {
     // IE 9 does not like the text-shadow
     $("#announcement a").css("color", "black");
 
-  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.opr && !$.browser.cros) {
+  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.msie && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "an unidentified browser";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
@@ -90,14 +90,16 @@ $(function() {
   // Run process to detect visitor's browser
   detectBrowser();
 
-  // Replace the SVG with a PNG on IE (IE does not always like SVGs)
+  // IE renders SVGs at half their proper size
+  // Fix that by doubling their width and height
   if ($.browser.msie) {
-//    $(".my-logo").attr("src", "{{ site.baseurl }}/img/Triangle717-Logo.png");
-    $(".my-logo").attr("src", "//le717.github.io/img/Triangle717-Logo.png");
+    var $myLogo = $(".my-logo");
+    $myLogo.width($myLogo.width() * 2);
+    $myLogo.height($myLogo.widheightth() * 2);
   }
 
+  // Hide text on mobile browsers until I can work on them
   if ($.browser.mobile) {
-    // NOTE Hide text on mobile browsers until I can work on them
     $("#subpages").css("display", "none");
     $("#subsites").css("display", "none");
   }
