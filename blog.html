@@ -72,12 +72,13 @@ layout: blogpost
         $(value.postIDDOM + " .post-url").attr("href", value.postURL);
 
         // Finally, add the post content
-        $(value.postIDDOM).append(value.postContent)
+        $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
         $(value.postIDDOM).wpToEmoji();
 
-        // TODO Run cleanup
+        // Run various cleanup functions
+        cleanupPost(value.postIDDOM);
     });
   }
 
@@ -89,46 +90,43 @@ layout: blogpost
       $this.stripClass("emoji-");
       $this.removeAttr("title");*/
 
-    // Remove any WordPress alignment classes
-    /*$(postContainer).find("div").each(function() {
-      var $this = $(this);
-      $this.removeClass("alignnone");
-      $this.removeClass("alignleft");
-      $this.removeClass("aligncenter");
-      $this.removeClass("alignright");
-      $this.removeAttr("style");
 
-      // Center any images
-      // FIXME: Wrong method!
-      if ($this.hasClass("wp-caption")) {
-        $this.addClass("text-center");
-      }
-    });*/
-
-
-  function cleanupPost() {
+  function cleanupPost(postContainer) {
     "use strict";
     /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
     $(function() {
-      // Remove image styling (usually a box-shadow)
+
+      // Remove any WordPress alignment classes and style attributes
+      $(postContainer).find("div").each(function() {
+        var $this = $(this);
+        $this.removeClass("alignnone");
+        $this.removeClass("alignleft");
+        $this.removeClass("aligncenter");
+        $this.removeClass("alignright");
+        $this.removeAttr("style");
+      });
+
+      // Remove WordPress image styling
       $("img").removeAttr("style");
-    });
+
+      // FIXME
+//      $("img").parent("div").addClass("text-center");
+
+      // Remove any WordPress image-related classes
+      $(postContainer).find("img").each(function() {
+        var $this = $(this);
+        $this.removeAttr("class");
+
+        // Add my own image styling
+        $this.addClass("img-shadow");
+
+        // If this is a mobile browser, third the image sizes
+//        if ($.browser.mobile) {
+//          $this.width($this.width() / 3);
+//          $this.height($this.height() / 3);
+//        }
+      });
+   });
   }
-
-
-    // Remove any WordPress image-related classes
-    /*$(postContent).find("img").each(function() {
-      var $this = $(this);
-      //$(this).removeClass();
-      //$this.stripClass("size-");
-      $this.removeClass("size-large");
-      //$this.addClass("img-shadow");
-
-      // If this is a mobile browser, third the image sizes
-      if ($.browser.mobile) {
-        $this.width($this.width() / 3);
-        $this.height($this.height() / 3);
-      }
-    });*/
 </script>
