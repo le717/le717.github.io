@@ -93,7 +93,7 @@ $(function() {
   // IE renders SVGs at half their proper size
   // Fix that by doubling their width and height
   if ($.browser.msie) {
-    var $myLogo = $(".my-logo");
+    var $myLogo = $(".loading-ani");
     $myLogo.width($myLogo.width() * 2);
     $myLogo.height($myLogo.height() * 2);
   }
