@@ -6,32 +6,47 @@ layout: blogpost
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
-  $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
+  // Store all the blog post objects
+  var allBlogPosts = [];
+
+  function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
+    this.postAuthor       = postAuthor.name;
+    this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=64");
+    this.postContainer    = "#" + postID;
+    this.postContent      = postContent;
+    // FUTURE: Convert to datestamp to keep time posted
+    this.postDate         = postDate.replace(/(T(.*))$/g, "");
+    this.postID           = postID;
+    this.postTitle        = postTitle;
+    this.postURL          = postURL;
+  }
+
+  $(function() {
     "use strict";
     /* Based on example from http://jsfiddle.net/hLWdH/334/ */
+    $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
+      var postContent, postContainer;
+      //console.log("Number of blog posts downloaded: " + data.posts.length);
 
-    var postContent, postContainer;
-
-//    console.log("Number of blog posts downloaded: " + data.posts.length);
-
-    //FIXME MAJOR refactoring
+      //FIXME MAJOR refactoring
       data.posts.forEach(function(postInfo) {
+
+        // Create a unique post ID
+        var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
+
+        // Create the post object and store it
+        var myPost = new BlogPost(postInfo.author, postInfo.date, postID, postInfo.title, postInfo.guid, postInfo.content);
+        allBlogPosts.push(myPost);
+
         var postAuthor       = postInfo.author.name,
             postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
             // FUTURE: Convert to datestamp to keep time posted
             postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
             postID           = postInfo.slug,
             postTitle        = postInfo.title,
-            postURL          = postInfo.URL;
+            postURL          = postInfo.guid;
         postContent          = postInfo.content;
         postContainer        = "#" + postID;
-
-        //console.log("Raw WP code: " + postContent);
-
-        //postContent = postContent.replace(/style=".+"/g, "");
-        //postContent = postContent.replace(/class='.+'/g, "");
-
-        //console.log("WP code removed:\n" + postContent);
 
         // Display post details
         $(".post-author-avatar").attr("src", postAuthorAvatar);
@@ -40,10 +55,15 @@ layout: blogpost
         $(".post-author").html(postAuthor);
         $(".post-url").attr("href", postURL);
 
+        // Convert all WordPress emoticons to Emoji
+        //$(postContainer).wpToEmoji();
+
         // Display post content
         $("body").append('<div id="' + postID + '"></div>');
         $(postContainer).html(postContent);
       });
+    });
+  });
 
     // Remove WordPress emote classes
     /*$(postContainer).find("span").each(function() {
@@ -51,15 +71,10 @@ layout: blogpost
       $this.removeClass("emoji");
       $this.stripClass("wp-");
       $this.stripClass("emoji-");
-      $this.removeAttr("title");
-
-    });*/
-
-    // Convert all WordPress emoticons to Emoji
-    $(postContainer).wpToEmoji();
+      $this.removeAttr("title");*/
 
     // Remove any WordPress alignment classes
-    $(postContainer).find("div").each(function() {
+    /*$(postContainer).find("div").each(function() {
       var $this = $(this);
       $this.removeClass("alignnone");
       $this.removeClass("alignleft");
@@ -72,24 +87,23 @@ layout: blogpost
       if ($this.hasClass("wp-caption")) {
         $this.addClass("text-center");
       }
-    });
+    });*/
 
     // Remove image styling
     $("img").removeAttr("style");
 
     // Remove any WordPress image-related classes
-    $(postContent).find("img").each(function() {
+    /*$(postContent).find("img").each(function() {
       var $this = $(this);
       //$(this).removeClass();
       //$this.stripClass("size-");
       $this.removeClass("size-large");
       //$this.addClass("img-shadow");
 
-      // If this is a mobile browser, quarter the image sizes
+      // If this is a mobile browser, third the image sizes
       if ($.browser.mobile) {
-        $this.width($this.width() / 4);
-        $this.height($this.height() / 4);
+        $this.width($this.width() / 3);
+        $this.height($this.height() / 3);
       }
-    });
-  }, "json");
+    });*/
 </script>
