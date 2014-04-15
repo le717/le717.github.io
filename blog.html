@@ -81,7 +81,7 @@ layout: blogpost
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
-        //$(value.postIDDOM).wpToEmoji();
+        $(value.postIDDOM).wpToEmoji();
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
@@ -99,8 +99,8 @@ layout: blogpost
       $(postContainer).find("span").each(function() {
         var $this = $(this);
         $this.removeClass("emoji");
+        $this.stripClass("emoji-");
         $this.removeClass("wp-smiley");
-  //      $this.stripClass("emoji-");
         $this.removeAttr("title");
       });
 
@@ -129,8 +129,6 @@ layout: blogpost
           $this.height($this.height() / 3);
         }
       });
-
-      $(".emoji-bigsmile").html(":smiley:");
 
 
       // Remove any WordPress alignment classes and style attributes
