@@ -1,7 +1,10 @@
 {% include header.html %}
   {% include base-style.html %}
+  <link rel="stylesheet" media="all" href="{{ site.baseurl }}/css/animations.css">
 {% include bridge.html %}
 {% include scripts.html %}
-<script src="lib/wp.to.emoji.js"></script>
+
+  <!-- WordPress to Emoji Converter -->
+  <script src="{{ site.baseurl }}/lib/wp.to.emoji.js"></script>
   {{ content }}
 {% include footer.html %}

@@ -40,7 +40,6 @@
 /* Center-align my logo in the page :D */
 .my-logo {
   margin-top: -185px;
-/*margin-top: -80px;*/
   margin-left: -185px;
 }
 
@@ -221,7 +220,6 @@
   padding-top: 25px;
   position: relative;
   left: 25%;
-  text-align: center;
 }
 
 

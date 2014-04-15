@@ -3,6 +3,8 @@ title: Blog
 layout: blogpost
 ---
 
+{% include loading.html %}
+
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
@@ -71,6 +73,10 @@ layout: blogpost
         $(value.postIDDOM + " .post-author").html(value.postAuthor);
         $(value.postIDDOM + " .post-url").attr("href", value.postURL);
 
+        // Now that the content is ready, stop the loading animation
+        $(".loading-ani").addClass("fadeout-ani");
+        $(".loading-ani").remove();
+
         // Finally, add the post content
         $(value.postIDDOM).append(value.postContent);
 
@@ -136,13 +142,25 @@ layout: blogpost
         $this.removeClass("alignright");
         $this.removeAttr("id");
         $this.removeAttr("style");
-        
+
         // Apply styling for image captions
         if ($this.hasClass("wp-caption")) {
           $this.removeClass("wp-caption");
           $this.addClass("img-caption");
         }
       });
+
+
+      $(postContainer).find("p").each(function() {
+        var $this = $(this);
+
+        // Apply alignment for image caption text
+        if ($this.hasClass("wp-caption-text")) {
+          $this.removeClass("wp-caption-text");
+          $this.css("text-align", "inherit");
+        }
+      });
+
    });
   }
 </script>
