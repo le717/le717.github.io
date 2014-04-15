@@ -3,8 +3,6 @@ title: Blog
 layout: blogpost
 ---
 
-{% include scripts.html %}
-
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
@@ -16,6 +14,7 @@ layout: blogpost
 
 //    console.log("Number of blog posts downloaded: " + data.posts.length);
 
+    //FIXME MAJOR refactoring
       data.posts.forEach(function(postInfo) {
         var postAuthor       = postInfo.author.name,
             postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
@@ -47,14 +46,17 @@ layout: blogpost
       });
 
     // Remove WordPress emote classes
-    $(postContainer).find("span").each(function() {
+    /*$(postContainer).find("span").each(function() {
       var $this = $(this);
       $this.removeClass("emoji");
       $this.stripClass("wp-");
       $this.stripClass("emoji-");
       $this.removeAttr("title");
 
-    });
+    });*/
+
+    // Convert all WordPress emoticons to Emoji
+    $(postContainer).wpToEmoji();
 
     // Remove any WordPress alignment classes
     $(postContainer).find("div").each(function() {
