@@ -76,3 +76,4 @@ _site
 localhost.py
 *.psd
 test.html
+lib/zepto.min.js
