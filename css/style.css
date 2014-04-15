@@ -36,15 +36,8 @@
 .text-center { text-align: center; }
 .text-right { text-align: center; }
 
+/* Kill the "border" around in the image in <= IE 10 */
 #my-logo-link { color: transparent; }
-
-/* Center-align my logo in the page :D */
-/*
-.my-logo {
-  margin-top: -185px;
-  margin-left: -185px;
-}
-*/
 
 /*
 #my-logo-404 {
@@ -214,7 +207,7 @@
 .post-title { text-shadow: 1px 2px blue; }
 
 .post-info {
-  display: inline-block;
+  display: inline;
   font-size: 0.9em;
 }
 
