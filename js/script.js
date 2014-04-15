@@ -95,7 +95,7 @@ $(function() {
   if ($.browser.msie) {
     var $myLogo = $(".my-logo");
     $myLogo.width($myLogo.width() * 2);
-    $myLogo.height($myLogo.widheightth() * 2);
+    $myLogo.height($myLogo.height() * 2);
   }
 
   // Hide text on mobile browsers until I can work on them
@@ -105,7 +105,7 @@ $(function() {
   }
 
   // Fully center the items that need centering
-  var $centered = $(".centered");
+  var $centered = $(".fully-centered");
   $centered.css("margin-left", -$centered.width() / 2);
   $centered.css("margin-top", -$centered.height() / 2);
 
