@@ -98,11 +98,13 @@ layout: blogpost
         $this.removeAttr("title");
       });
 
+
       // Remove WordPress image styling
       $("img").removeAttr("style");
 
       // Center the images that have captions applied
       $(".wp-caption").addClass("text-center");
+
 
       // Remove any WordPress image-related classes
       $(postContainer).find("img").each(function() {
@@ -124,6 +126,7 @@ layout: blogpost
 
       $(".emoji-bigsmile").html(":smiley:");
 
+
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
@@ -132,8 +135,14 @@ layout: blogpost
         $this.removeClass("aligncenter");
         $this.removeClass("alignright");
         $this.removeClass("wp-caption");
-        $this.stripClass("attachment_");
+        $this.removeAttr("id");
         $this.removeAttr("style");
+        
+        // Apply styling for image captions
+        if ($this.hasClass("wp-caption")) {
+          $this.removeClass("wp-caption");
+          $this.addClass("img-caption");
+        }
       });
    });
   }
