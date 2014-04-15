@@ -104,8 +104,8 @@ $(function() {
 
   // Fully center the items that need centering
   var $centered = $(".centered");
-  $centered.width($centered.width() / 2);
-  $centered.height($centered.height() / 2);
+  $centered.css("margin-left", -$centered.width() / 2);
+  $centered.css("margin-top", -$centered.height() / 2);
 
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
