@@ -61,7 +61,7 @@ function detectBrowser() {
     // IE 9 does not like the text-shadow
     $("#announcement a").css("color", "black");
 
-  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.msie && !$.browser.opr && !$.browser.cros) {
+  } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.msie && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "an unidentified browser";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
@@ -90,12 +90,9 @@ $(function() {
   // Run process to detect visitor's browser
   detectBrowser();
 
-  // IE renders SVGs at half their proper size
-  // Fix that by doubling their width and height
+  // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {
-    var $myLogo = $(".loading-ani .my-logo");
-    $myLogo.css("width", $myLogo.width() * 2);
-    $myLogo.css("height", $myLogo.height() * 2);
+    $(".loading-ani .my-logo").attr("src", "{{ site.baseurl }}/img/Triangle717-Logo.png");
   }
 
   // Hide text on mobile browsers until I can work on them
