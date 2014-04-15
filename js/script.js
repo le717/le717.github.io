@@ -23,17 +23,18 @@ function makeAnnouncement(message) {
   $(".announcement").css("transform", "translate3d(0, 220px, 0)");
 }
 
+$(function() {
+  $(".announcement, .announcement a").on("click", function() {
+    "use strict";
+    /* Hide announcement box */
+    $(".announcement").css("opacity", "0");
 
-$(".announcement").on("click", function() {
-  "use strict";
-  /* Hide announcement box */
-  $(".announcement").css("opacity", "0");
-
-  // Make it where the box does not effect any elements after it is hidden
-  $(".announcement").bind("transitionend", function(e) {
-    if (e.originalEvent.propertyName === "opacity") {
-      $(".announcement").css("display", "none");
-    }
+    // Make it where the box does not effect any elements after it is hidden
+    $(".announcement").bind("transitionend", function(e) {
+      if (e.originalEvent.propertyName === "opacity") {
+        $(".announcement").css("display", "none");
+      }
+    });
   });
 });
 
@@ -92,7 +93,8 @@ $(function() {
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {
-    $(".loading-ani .my-logo").attr("src", "{{ site.baseurl }}/img/Triangle717-Logo.png");
+    var $imgSrc = $(".loading-ani, .my-logo").attr("src");
+    $(".loading-ani, .my-logo").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
   }
 
   // Hide text on mobile browsers until I can work on them
