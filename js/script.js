@@ -53,7 +53,7 @@ function detectBrowser() {
     // IE 9 does not like the text-shadow
     $("#announcement a").css("color", "black");
 
-  } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.msie && !$.browser.opr && !$.browser.cros) {
+  } else if (!$.browser.desktop) {
     // Some other browser
     theBrowser = "an unidentified browser";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
