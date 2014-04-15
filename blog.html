@@ -12,11 +12,11 @@ layout: blogpost
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
     this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=64");
-    this.postContainer    = "#" + postID;
+    this.postContainer    = '<div id="{0}"></div>'.format(postID);
     this.postContent      = postContent;
-    // FUTURE: Convert to datestamp to keep time posted
+    // FUTURE Convert to datestamp to keep time posted
     this.postDate         = postDate.replace(/(T(.*))$/g, "");
-    this.postID           = postID;
+    this.postID           = "#{0}".format(postID);
     this.postTitle        = postTitle;
     this.postURL          = postURL;
   }
@@ -27,44 +27,51 @@ layout: blogpost
      * Based on example from http://jsfiddle.net/hLWdH/334/
      */
     $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
-      var postContent, postContainer;
-      //console.log("Number of blog posts downloaded: " + data.posts.length);
+      console.log("{0} blog posts retrieved".format(data.posts.length));
 
-      //FIXME MAJOR refactoring
       data.posts.forEach(function(postInfo) {
-
         // Create a unique post ID
         var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
         // Create the post object and store it
         var myPost = new BlogPost(postInfo.author, postInfo.date, postID, postInfo.title, postInfo.guid, postInfo.content);
         allBlogPosts.push(myPost);
+      });
 
-        var postAuthor       = postInfo.author.name,
-            postAuthorAvatar = postInfo.author.avatar_URL.replace(/s=96/, "s=64"),
-            // FUTURE: Convert to datestamp to keep time posted
-            postDate         = postInfo.date.replace(/(T(.*))$/g, ""),
-            postTitle        = postInfo.title,
-            postURL          = postInfo.guid;
-        postContent          = postInfo.content;
-        postContainer        = "#" + postID;
+      // Now that the posts are stored, go through and display them
+      showPosts();
+      });
+    });
+
+    function showPosts() {
+      "use strict";
+      /* TODO Write me! */
+      $.each(allBlogPosts, function(key, value) {
+
+//        console.log(value.postTitle);
+//        console.log(value.postAuthorAvatar);
+//        console.log(value.postDate);
+//        console.log(value.postAuthor);
+//        console.log(value.postURL);
+//        console.log(value.postID);
+//        console.log(value.postContainer);
+
 
         // Display post details
-        $(".post-author-avatar").attr("src", postAuthorAvatar);
+        /*$(".post-author-avatar").attr("src", postAuthorAvatar);
         $(".post-title").html(postTitle);
         $(".post-date").html(postDate);
         $(".post-author").html(postAuthor);
-        $(".post-url").attr("href", postURL);
-
-        // Convert all WordPress emoticons to Emoji
-        //$(postContainer).wpToEmoji();
+        $(".post-url").attr("href", postURL);*/
 
         // Display post content
-        $("body").append('<div id="' + postID + '"></div>');
-        $(postContainer).html(postContent);
-      });
+        $("body").append(value.postContainer);
+        $(value.postID).html(value.postContent)
+
+        // Convert all WordPress emoticons to Emoji
+        $(value.postID).wpToEmoji();
     });
-  });
+  }
 
     // Remove WordPress emote classes
     /*$(postContainer).find("span").each(function() {
