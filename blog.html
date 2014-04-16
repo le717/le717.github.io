@@ -55,8 +55,6 @@ layout: blogpost
       // Add the post container to the page
       $("body").append(value.postContainer);
 
-      var newPostContent = $(value.postIDDO).wpToEmoji().html();
-      console.log("\n\nblog.html: " + newPostContent);
 
       /* Display post details in the following order:
        *
@@ -64,12 +62,13 @@ layout: blogpost
        * Author avatar
        * Publish date
        * Author name
-       * Permalink (to WordPress)
+       * Permalink (back to WordPress)
+       * Post content
        */
 
       $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
-      $(value.postIDDOM).append('<img class="post-author-avatar" />');
-      $(value.postIDDOM).append('<p class="post-info">Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
+      $(value.postIDDOM).append('<p class="post-info"><img class="post-author-avatar" />&nbsp;&nbsp;Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
+      $(value.postIDDOM).append('<div class="post-content"></div>');
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);
       $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
@@ -85,7 +84,10 @@ layout: blogpost
       $(value.postIDDOM).wpToEmoji();
 
       // Finally, add the post content
-      $(value.postIDDOM).append(value.postContent);
+      $(value.postIDDOM + " .post-content").append(value.postContent);
+
+      var newPostContent = $(value.postIDDO + " .post-content").wpToEmoji().html();
+      console.log("\n\nblog.html: " + newPostContent);
 
       // Run various cleanup functions
       cleanupPost(value.postIDDOM);
@@ -126,6 +128,12 @@ layout: blogpost
         if ($.browser.mobile) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
+
+
+        } else if ($.browser.desktop) {
+            if ($this.width() >= $(window).width() / 3) {
+              $this.width($this.width() / 3)
+            }
         }
       });
 
