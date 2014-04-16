@@ -84,7 +84,7 @@ layout: blogpost
         $(value.postIDDOM).append("<span>:stuck_out_tongue:</span>");
 
         // Convert all WordPress emoticons to Emoji
-        var newPostContent = $(value.postIDDOM).wpToEmoji();
+        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
         console.log("\n\nblog.html: " + newPostContent);
 
         // Run various cleanup functions
