@@ -16,6 +16,7 @@ layout: blogpost
     this.postAuthorAvatar = postAuthor.avatar_URL;
     this.postContainer    = '<div id="{0}"></div>'.format(postID);
     this.postContent      = postContent;
+//    this.postContent      = postContent.wpToEmoji();
     // FUTURE Convert to datestamp to keep time posted
     this.postDate         = new Date(postDate).toLocaleDateString("en-US");
     this.postID           = postID;
@@ -94,6 +95,8 @@ layout: blogpost
     /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
     $(function() {
+      
+      $(".emoji-smile").html(":grinning:");
 
       // Remove WordPress emote classes
       $(postContainer).find("span").each(function() {
@@ -110,6 +113,9 @@ layout: blogpost
 
       // Center the images that have captions applied
       $(".wp-caption").addClass("text-center");
+
+      // Remove the nested paragraph in the blockquote
+      $("blockquote").html($("blockquote p").html());
 
 
       // Remove any WordPress image-related classes
