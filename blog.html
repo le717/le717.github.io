@@ -15,7 +15,7 @@ layout: blogpost
     this.postAuthor       = postAuthor.name;
     this.postAuthorAvatar = postAuthor.avatar_URL;
     this.postContainer    = '<div id="{0}"></div>'.format(postID);
-    this.postContent      = postContent;
+    this.postContent      = $(postContent).wpToEmoji();
     // FUTURE Convert to datestamp to keep time posted
     this.postDate         = new Date(postDate).toLocaleDateString("en-US");
     this.postID           = postID;
@@ -78,15 +78,11 @@ layout: blogpost
         $(".loading-ani").remove();
 
         // Finally, add the post content
-        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
-        $(value.postIDDOM).append(newPostContent);
-//        $(value.postIDDOM).append(value.postContent);
-//        $(value.postIDDOM).append($(value.postContent).wpToEmoji().html());
-        $(value.postIDDOM).append("<span>:stuck_out_tongue:</span>");
+//        $(value.postIDDOM).append(newPostContent);
+        $(value.postIDDOM).append(value.postContent.html());
 
         // Convert all WordPress emoticons to Emoji
-//        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
-//        console.log("\n\nblog.html: " + newPostContent);
+        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
         console.log("\n\nblog.html: " + newPostContent);
 
         // Run various cleanup functions
