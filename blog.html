@@ -79,11 +79,10 @@ layout: blogpost
 
         // Finally, add the post content
         console.log(value.postContent);
-        $(value.postIDDOM).wpToEmoji();
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
-        //$(value.postIDDOM).wpToEmoji();
+        $(value.postIDDOM).wpToEmoji();
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
