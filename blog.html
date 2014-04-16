@@ -16,7 +16,7 @@ layout: blogpost
     this.postAuthorAvatar = postAuthor.avatar_URL;
     this.postContainer    = '<div id="{0}"></div>'.format(postID);
 //    this.postContent      = postContent;
-    this.postContent      = postContent.wpToEmoji();
+    this.postContent      = $(postContent).html().wpToEmoji();
     // FUTURE Convert to datestamp to keep time posted
     this.postDate         = new Date(postDate).toLocaleDateString("en-US");
     this.postID           = postID;
