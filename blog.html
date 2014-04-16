@@ -31,7 +31,7 @@ layout: blogpost
     /* Create a blog post object
      * Based on example from http://jsfiddle.net/hLWdH/334/
      */
-    $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=1&callback=?", function(data) {
+    $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=7&callback=?", function(data) {
       console.log("{0} blog posts retrieved".format(data.posts.length));
 
       data.posts.forEach(function(postInfo) {
