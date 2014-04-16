@@ -15,14 +15,16 @@ layout: blogpost
     this.postAuthor       = postAuthor.name;
     this.postAuthorAvatar = postAuthor.avatar_URL;
     this.postContainer    = '<div id="{0}"></div>'.format(postID);
-    this.postContent      = postContent;
-//    this.postContent      = postContent.wpToEmoji();
+//    this.postContent      = postContent;
+    this.postContent      = postContent.wpToEmoji();
     // FUTURE Convert to datestamp to keep time posted
     this.postDate         = new Date(postDate).toLocaleDateString("en-US");
     this.postID           = postID;
     this.postIDDOM        = "#" + postID;
     this.postTitle        = postTitle;
     this.postURL          = postURL;
+
+    console.log(this.postContent);
   }
 
   $(function() {
@@ -82,7 +84,7 @@ layout: blogpost
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
-        $(value.postIDDOM).wpToEmoji();
+        //$(value.postIDDOM).wpToEmoji();
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
@@ -95,18 +97,8 @@ layout: blogpost
     /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
     $(function() {
-      
+
       $(".emoji-smile").html(":grinning:");
-
-      // Remove WordPress emote classes
-      $(postContainer).find("span").each(function() {
-        var $this = $(this);
-        $this.removeClass("emoji");
-        $this.stripClass("emoji-");
-        $this.removeClass("wp-smiley");
-        $this.removeAttr("title");
-      });
-
 
       // Remove WordPress image styling
       $("img").removeAttr("style");
@@ -126,14 +118,26 @@ layout: blogpost
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
 
-        // Add my own image styling
-        $this.addClass("img-shadow");
+        // Add my own image styling to non-emotes
+        if (!$this.hasClass("emoji")) {
+          $this.addClass("img-shadow");
+        }
 
         // If this is a mobile browser, third the image sizes
         if ($.browser.mobile) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
         }
+      });
+
+
+      // Remove WordPress emote classes
+      $(postContainer).find("span").each(function() {
+        var $this = $(this);
+        $this.removeClass("emoji");
+        $this.stripClass("emoji-");
+        $this.removeClass("wp-smiley");
+        $this.removeAttr("title");
       });
 
 
