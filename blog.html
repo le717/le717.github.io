@@ -81,7 +81,7 @@ layout: blogpost
       $(".loading-ani").remove();
 
       // Convert all WordPress emoticons to Emoji
-      $(value.postIDDOM + " .post-content").wpToEmoji();
+//      $(value.postIDDOM + " .post-content").wpToEmoji();
 
       // Finally, add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
@@ -130,13 +130,13 @@ layout: blogpost
           $this.height($this.height() / 3);
 
 
-        } else if ($.browser.desktop) {
-            console.log($this.width());
-            console.log($(window).width() / 4);
-            console.log($this.width() >= $(window).width() / 4);
-            if ($this.width() >= $(window).width() / 4) {
-              $this.width($this.width() / 4);
-            }
+//        } else if ($.browser.desktop) {
+//            console.log($this.width());
+//            console.log($(window).width() / 4);
+//            console.log($this.width() >= $(window).width() / 4);
+//            if ($this.width() >= $(window).width() / 4) {
+//              $this.width($this.width() / 4);
+//            }
         }
       });
 
