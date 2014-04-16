@@ -79,12 +79,13 @@ layout: blogpost
 
         // Finally, add the post content
 //        $(value.postIDDOM).append(value.postContent);
-        $(value.postIDDOM).append($(value.postIDDOM).wpToEmoji().html());
+        $(value.postIDDOM).append($(value.postContent).wpToEmoji().html());
         $(value.postIDDOM).append("<span>:stuck_out_tongue:</span>");
 
         // Convert all WordPress emoticons to Emoji
 //        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
 //        console.log("\n\nblog.html: " + newPostContent);
+        console.log("\n\nblog.html: " + $(value.postIDDOM).wpToEmoji().html());
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
