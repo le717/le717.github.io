@@ -40,12 +40,10 @@
 /* ------- Fade out animation ------- */
 
 .fadeout-ani {
-  -webkit-animation: fadeOutAni 0.8s ease-out;
-  -webkit-animation-iteration-count: 1;
+  -webkit-animation: fadeOutAni 1.5s ease-out;
   -webkit-animation-fill-mode: forwards;
 
-  animation: fadeOutAni 0.8s ease-out;
-  animation-iteration-count: 1;
+  animation: fadeOutAni 1.5s ease-out;
   animation-fill-mode: forwards;
 }
 
