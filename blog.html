@@ -22,8 +22,6 @@ layout: blogpost
     this.postIDDOM        = "#" + postID;
     this.postTitle        = postTitle;
     this.postURL          = postURL;
-
-    console.log($(this.postContent).html());
   }
 
   $(function() {
@@ -80,6 +78,7 @@ layout: blogpost
         $(".loading-ani").remove();
 
         // Finally, add the post content
+        console.log($(value.postContent).html());
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
