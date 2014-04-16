@@ -81,12 +81,13 @@ layout: blogpost
       $(".loading-ani").remove();
 
       // Convert all WordPress emoticons to Emoji
+      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
 //      $(value.postIDDOM + " .post-content").wpToEmoji();
 
       // Finally, add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
-      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
+//      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
       console.log("\n\nblog.html: " + newPostContent);
 
       // Run various cleanup functions
