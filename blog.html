@@ -68,7 +68,7 @@ layout: blogpost
 
       $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
       $(value.postIDDOM).append('<p class="post-info"><img class="post-author-avatar" />&nbsp;&nbsp;Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
-      $(value.postIDDOM).append('<div class="post-content"></div>');
+      $(value.postIDDOM).append('<div class="post-content" style="display: none;"></div>');
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);
       $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
@@ -81,14 +81,15 @@ layout: blogpost
       $(".loading-ani").remove();
 
       // Convert all WordPress emoticons to Emoji
-      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
 //      $(value.postIDDOM + " .post-content").wpToEmoji();
 
-      // Finally, add the post content
+      // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
-//      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
+      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
       console.log("\n\nblog.html: " + newPostContent);
+
+      $(value.postIDDOM + " .post-content").removeAttr("style");
 
       // Run various cleanup functions
       cleanupPost(value.postIDDOM);
