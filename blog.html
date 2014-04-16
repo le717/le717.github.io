@@ -55,39 +55,40 @@ layout: blogpost
       // Add the post container to the page
       $("body").append(value.postContainer);
 
-        /* Display post details in the following order:
-         *
-         * Post title
-         * Author avatar
-         * Publish date
-         * Author name
-         * Permalink (to WordPress)
-         */
+      var newPostContent = $(value.postIDDO).wpToEmoji().html();
+      console.log("\n\nblog.html: " + newPostContent);
 
-        $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
-        $(value.postIDDOM).append('<img class="post-author-avatar" />');
-        $(value.postIDDOM).append('<p class="post-info">Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
+      /* Display post details in the following order:
+       *
+       * Post title
+       * Author avatar
+       * Publish date
+       * Author name
+       * Permalink (to WordPress)
+       */
 
-        $(value.postIDDOM + " .post-title").html(value.postTitle);
-        $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
-        $(value.postIDDOM + " .post-date").html(value.postDate);
-        $(value.postIDDOM + " .post-author").html(value.postAuthor);
-        $(value.postIDDOM + " .post-url").attr("href", value.postURL);
+      $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
+      $(value.postIDDOM).append('<img class="post-author-avatar" />');
+      $(value.postIDDOM).append('<p class="post-info">Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
 
-        // Now that the content is ready, stop the loading animation
-        $(".loading-ani").addClass("fadeout-ani");
-        $(".loading-ani").remove();
+      $(value.postIDDOM + " .post-title").html(value.postTitle);
+      $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
+      $(value.postIDDOM + " .post-date").html(value.postDate);
+      $(value.postIDDOM + " .post-author").html(value.postAuthor);
+      $(value.postIDDOM + " .post-url").attr("href", value.postURL);
 
-        // Convert all WordPress emoticons to Emoji
-        $(value.postIDDOM).wpToEmoji();
-        var newPostContent = $(value.postIDDOM).wpToEmoji().html();
-        console.log("\n\nblog.html: " + newPostContent);
+      // Now that the content is ready, stop the loading animation
+      $(".loading-ani").addClass("fadeout-ani");
+      $(".loading-ani").remove();
 
-        // Finally, add the post content
-        $(value.postIDDOM).append(value.postContent);
+      // Convert all WordPress emoticons to Emoji
+      $(value.postIDDOM).wpToEmoji();
 
-        // Run various cleanup functions
-        cleanupPost(value.postIDDOM);
+      // Finally, add the post content
+      $(value.postIDDOM).append(value.postContent);
+
+      // Run various cleanup functions
+      cleanupPost(value.postIDDOM);
     });
   }
 
