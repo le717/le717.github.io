@@ -78,11 +78,11 @@ layout: blogpost
         $(".loading-ani").remove();
 
         // Finally, add the post content
-        console.log(value.postContent);
         $(value.postIDDOM).append(value.postContent);
 
         // Convert all WordPress emoticons to Emoji
         $(value.postIDDOM).wpToEmoji();
+        console.log(value.postContent);
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
@@ -116,10 +116,8 @@ layout: blogpost
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
 
-        // Add my own image styling to non-emotes
-        if (!$this.hasClass("emoji")) {
-          $this.addClass("img-shadow");
-        }
+        // Add my own image styling //FIXME to non-emotes
+        $this.addClass("img-shadow");
 
         // If this is a mobile browser, third the image sizes
         if ($.browser.mobile) {
@@ -132,9 +130,7 @@ layout: blogpost
       // Remove WordPress emote classes
       $(postContainer).find("span").each(function() {
         var $this = $(this);
-        $this.removeClass("emoji");
-        $this.stripClass("emoji-");
-        $this.removeClass("wp-smiley");
+        $this.removeAttr("class");
         $this.removeAttr("title");
       });
 
