@@ -37,7 +37,7 @@ layout: blogpost
         var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
         // Create the post object and store it
-        var myPost = new BlogPost(postInfo.author, postInfo.date, postID, postInfo.title, postInfo.guid, $(postInfo.content).wpToEmoji());
+        var myPost = new BlogPost(postInfo.author, postInfo.date, postID, postInfo.title, postInfo.guid, postInfo.content);
         allBlogPosts.push(myPost);
       });
 
@@ -77,14 +77,12 @@ layout: blogpost
         $(".loading-ani").addClass("fadeout-ani");
         $(".loading-ani").remove();
 
-        // Finally, add the post content
-//        $(value.postIDDOM).append(newPostContent);
-        $(value.postIDDOM).append(value.postContent.html());
-        console.log(value.postContent);
-
         // Convert all WordPress emoticons to Emoji
         var newPostContent = $(value.postIDDOM).wpToEmoji().html();
         console.log("\n\nblog.html: " + newPostContent);
+
+        // Finally, add the post content
+        $(value.postIDDOM).append(value.postContent);
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
