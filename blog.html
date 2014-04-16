@@ -5,6 +5,8 @@ layout: blogpost
 
 {% include loading.html %}
 
+<span>:stuck_out_tongue:</span>
+
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
@@ -79,6 +81,7 @@ layout: blogpost
 
         // Finally, add the post content
         $(value.postIDDOM).append(value.postContent);
+        $(value.postIDDOM).append('<span class="wp-smiley emoji emoji-tongue" title=":P">:stuck_out_tongue:</span>');
 
         // Convert all WordPress emoticons to Emoji
         $(value.postIDDOM).wpToEmoji();
