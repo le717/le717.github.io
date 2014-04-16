@@ -82,8 +82,7 @@ layout: blogpost
 
         // Convert all WordPress emoticons to Emoji
         $(value.postIDDOM).wpToEmoji();
-        console.log(value.postIDDOM);
-        console.log(value.postContent);
+//        console.log(value.postContent);
 
         // Run various cleanup functions
         cleanupPost(value.postIDDOM);
@@ -97,7 +96,7 @@ layout: blogpost
 
     $(function() {
 
-      $(".emoji-bigsmile").html(":smiley:");
+      //$(".emoji-bigsmile").html(":smiley:");
 
       // Remove WordPress image styling
       $("img").removeAttr("style");
