@@ -81,6 +81,7 @@ layout: blogpost
       $(".loading-ani").remove();
 
       //http://stackoverflow.com/a/327068
+      console.log($(document.createElement("div")).html(value.postContent).wpToEmoji());
 
       // Convert all WordPress emoticons to Emoji
 //      $(value.postIDDOM + " .post-content").wpToEmoji();
@@ -146,11 +147,11 @@ layout: blogpost
 
 
       // Remove WordPress emote classes
-      $(postContainer).find("span").each(function() {
+      /*$(postContainer).find("span").each(function() {
         var $this = $(this);
         $this.removeAttr("class");
         $this.removeAttr("title");
-      });
+      });*/
 
 
       // Remove any WordPress alignment classes and style attributes
