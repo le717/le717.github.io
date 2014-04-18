@@ -17,7 +17,7 @@ function makeAnnouncement(message) {
     $("body").append(announcementBox);
 
     // Add the message
-    $(".announcement a").html(message);
+    $("#announcement a").html(message);
 
     // Trigger the fade-in transitions
     $("#announcement").css("display", "block");
