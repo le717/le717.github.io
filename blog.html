@@ -4,8 +4,6 @@ layout: blogpost
 ---
 
 {% include loading.html %}
-<br><span>:stuck_out_tongue:</span>
-:stuck_out_tongue:
 
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
@@ -81,18 +79,8 @@ layout: blogpost
 //      $(".loading-ani").addClass("fadeout-ani");
       $(".loading-ani").remove();
 
-      //http://stackoverflow.com/a/327068
-
-      // Convert all WordPress emoticons to Emoji
-//      $(value.postIDDOM + " .post-content").wpToEmoji();
-
       // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
-
-      $(value.postIDDOM + " .post-content").wpToEmoji();
-
-//      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
-//      console.log("\n\nblog.html: " + newPostContent);
 
       // Run various cleanup functions
       cleanupPost(value.postIDDOM);
@@ -115,18 +103,18 @@ layout: blogpost
       $(".wp-caption").addClass("text-center");
 
       // Remove the nested paragraph in the blockquote
-      $("blockquote").html($("blockquote p").html());
+      $(postContainer + " blockquote").html($(postContainer + " blockquote p").html());
 
 
       // Remove any WordPress image-related classes
       $(postContainer).find("img").each(function() {
         var $this = $(this);
-//        $this.removeAttr("class");
+        $this.removeAttr("class");
 
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
 
-        // Add my own image styling //FIXME to non-emotes
+        // Add my own image styling
         $this.addClass("img-shadow");
 
         // If this is a mobile browser, third the image sizes
@@ -134,24 +122,24 @@ layout: blogpost
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
 
+        } else if ($.browser.desktop) {
+            console.log($this.width());
+            console.log($(window).width() / 4);
+            console.log($this.width() >= $(window).width() / 4);
 
-//        } else if ($.browser.desktop) {
-//            console.log($this.width());
-//            console.log($(window).width() / 4);
-//            console.log($this.width() >= $(window).width() / 4);
-//            if ($this.width() >= $(window).width() / 4) {
-//              $this.width($this.width() / 4);
-//            }
+            if ($this.width() >= $(window).width() / 4) {
+              $this.width($this.width() / 4);
+            }
         }
       });
 
 
       // Remove WordPress emote classes
-      /*$(postContainer).find("span").each(function() {
+      $(postContainer).find("span").each(function() {
         var $this = $(this);
         $this.removeAttr("class");
         $this.removeAttr("title");
-      });*/
+      });
 
 
       // Remove any WordPress alignment classes and style attributes
