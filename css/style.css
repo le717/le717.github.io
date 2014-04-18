@@ -18,26 +18,16 @@
   left: 50%;
 }
 
-.centered-transform {
-  position: relative;
-  left: 50%;
-  top: 50%;
-/*  -webkit-transform: translate3d(0%, 50%, 0);
-        -ms-transform: translate3d(0%, 50%, 0);
-          transform: translate3d(0%, 50%, 0);
-*/
-  -webkit-transform: translate3d(-50.8%, 30%, 0);
-      -ms-transform: translate3d(-50.8%, 30%, 0);
-          transform: translate3d(-50.8%, 30%, 0);
-}
-
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
 .text-center { text-align: center; }
 .text-right { text-align: center; }
 
 /* Kill the "border" around in the image in <= IE 10 */
-#my-logo-link { color: transparent; }
+#my-logo-link {
+  color: transparent;
+  text-shadow: none
+}
 
 
 /* ------- Announcement box styling ------- */
