@@ -63,7 +63,7 @@ layout: blogpost
       $(".blog-posts").append(value.postContainer);
 
       // TODO
-      $(".blog-posts").css("display", "none");
+      $(".blog-posts").hide();
 
       /* Display post details in the following order:
        *
@@ -176,7 +176,7 @@ layout: blogpost
   if (loadingDone) {
   // Now that the content is ready, stop the loading animation
     $(".loading-ani").addClass("fadeout-ani");
-    $(".blog-posts").css("display", "");
+    $(".blog-posts").show();
 //      $(".loading-ani").remove();
   }
 </script>
