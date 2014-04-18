@@ -10,7 +10,8 @@ layout: blogpost
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
   // Store all the blog post objects
-  var allBlogPosts = [];
+  var allBlogPosts = [],
+      loadingDone = false;
 
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
@@ -49,6 +50,7 @@ layout: blogpost
 
       // Now that the posts are stored, go through and display them
       showPosts();
+      loadingDone = true;
       });
     })();
 
@@ -171,12 +173,10 @@ layout: blogpost
    });
   }
 
-  $(function() {
-    "use strict";
-    // Now that the content is ready, stop the loading animation
-      $(".loading-ani").addClass("fadeout-ani");
-      $(".blog-posts").css("display", "");
+  if (loadingDone) {
+  // Now that the content is ready, stop the loading animation
+    $(".loading-ani").addClass("fadeout-ani");
+    $(".blog-posts").css("display", "");
 //      $(".loading-ani").remove();
-  });
-
+  }
 </script>
