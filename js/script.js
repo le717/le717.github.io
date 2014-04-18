@@ -62,8 +62,7 @@ function detectBrowser() {
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
   }
 
-//  else if ($.browser.mobile) {
-  else if ($.browser.mobile || $.browser.desktop) {
+  else if ($.browser.mobile) {
     // Mobile browsers
     theBrowser = "a mobile browser";
     /* jshint ignore:start */

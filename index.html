@@ -40,5 +40,6 @@ title: Home
   <!-- MIT License -->
   <a class="centered text-bold" id="mit-license" href="license/index.html">MIT License</a>
 {% include scripts.html %}
-  <script>makeAnnouncement("<span class='text-bold'>Triangle Land</span> is under active construction.<br>Things are currently and will be broken.<br>:wink:");</script>
+  <script>
+    if ($.browser.desktop) { makeAnnouncement("<span class='text-bold'>Triangle Land</span> is under active construction.<br>Things are currently and will be broken.<br>:wink:"); }</script>
   {% include footer.html %}
