@@ -1,6 +1,8 @@
 # [http://le717.github.io](http://le717.github.io) #
 
-[![Build Status](https://travis-ci.org/le717/le717.github.io.svg?branch=master)](https://travis-ci.org/le717/le717.github.io) [![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.png?theme=shields.io)](https://david-dm.org/le717/le717.github.io#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://travis-ci.org/le717/le717.github.io.svg?branch=master)](https://travis-ci.org/le717/le717.github.io) [![devDependency Status](https://david-dm.org/le717/le717.github.io/dev-status.svg)](https://david-dm.org/le717/le717.github.io#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+
+> // FIXME Most of this readme is out of date and needs to be rewritten. Please visit the site using the link above for a better description.
 
 Future home of my website which I will write from scratch. My current website is found on [WordPress.com](http://Triangle717.WordPress.com). In the mean time, I use this as a portal to my other projects that make use of [GitHub Pages](http://pages.github.com).
 
@@ -61,5 +63,5 @@ I've used some very nice third-party libraries and styling on my site. I recomme
 
 ## License ##
 
-Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](License.md).
+Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](license/LICENSE.md).
 
