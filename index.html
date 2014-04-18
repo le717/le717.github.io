@@ -29,16 +29,15 @@ title: Home
     </ul>
   </div>
 
-  <!--
-    Ionicons
-    http://ionicons.com/
-  -->
-  <a class="social-button-link" target="_blank" href="http://Triangle717.WordPress.com"><div class="icon ion-social-wordpress social-button centered" id="wp-button"></div></a>
-  <a class="social-button-link" target="_blank" href="{{ site.github.owner_url }}"><div class="icon ion-social-github social-button centered" id="gh-button"></div></a>
-  <a class="social-button-link" target="_blank" href="http://www.youtube.com/user/Triangle717"><div class="icon ion-social-youtube social-button centered" id="yt-button"></div></a>
+  <!-- Social buttons -->
+  <div id="social-button-container">
+    <a class="social-button-link" target="_blank" href="http://Triangle717.WordPress.com"><p class="icon ion-social-wordpress social-button centered" id="wp-button"></p></a>
+    <a class="social-button-link" target="_blank" href="{{ site.github.owner_url }}"><p class="icon ion-social-github social-button centered" id="gh-button"></p></a>
+    <a class="social-button-link" target="_blank" href="http://www.youtube.com/user/Triangle717"><p class="icon ion-social-youtube social-button centered" id="yt-button"></p></a>
+  </div>
 
   <!-- MIT License -->
-  <a class="centered text-bold" id="mit-license" href="license/index.html">MIT License</a>
+<!--  <a class="centered text-bold" id="mit-license" href="license/index.html">MIT License</a>-->
 {% include scripts.html %}
   <script>
     if ($.browser.desktop) { makeAnnouncement("<span class='text-bold'>Triangle Land</span> is under active construction.<br>Things are currently and will be broken.<br>:wink:"); }</script>
