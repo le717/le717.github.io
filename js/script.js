@@ -13,7 +13,7 @@ function makeAnnouncement(message) {
 
   // Add the box to the page only if one does not exist already
   var announcementBox = '<div id="announcement" onclick="hideAnnouncement();"><a></a></div>';
-  if (!$("body").find("#announcement").length >= 1) {
+  if ($("body").find("#announcement").length !== 1) {
     $("body").append(announcementBox);
 
     // Add the message
@@ -67,7 +67,7 @@ function detectBrowser() {
     // Mobile browsers
     theBrowser = "a mobile browser";
     /* jshint ignore:start */
-    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsing.';
+    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsing. :frowning:';
     /* jshint ignore:end */
   }
 
