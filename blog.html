@@ -4,6 +4,7 @@ layout: blogpost
 ---
 
 {% include loading.html %}
+<div class="blog-posts"></div>
 
 <script>
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
@@ -57,8 +58,10 @@ layout: blogpost
       $.each(allBlogPosts, function(key, value) {
 
       // Add the post container to the page
-      $("body").append(value.postContainer);
+      $(".blog-posts").append(value.postContainer);
 
+      // TODO
+      $(".blog-posts").css("display", "none");
 
       /* Display post details in the following order:
        *
@@ -79,10 +82,6 @@ layout: blogpost
       $(value.postIDDOM + " .post-date").html(value.postDate);
       $(value.postIDDOM + " .post-author").html(value.postAuthor);
       $(value.postIDDOM + " .post-url").attr("href", value.postURL);
-
-      // Now that the content is ready, stop the loading animation
-      $(".loading-ani").addClass("fadeout-ani");
-//      $(".loading-ani").remove();
 
       // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
@@ -171,4 +170,13 @@ layout: blogpost
       });
    });
   }
+
+  $(function() {
+    "use strict";
+    // Now that the content is ready, stop the loading animation
+      $(".loading-ani").addClass("fadeout-ani");
+      $(".blog-posts").css("display", "");
+//      $(".loading-ani").remove();
+  });
+
 </script>
