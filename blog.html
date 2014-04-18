@@ -81,8 +81,8 @@ layout: blogpost
       $(value.postIDDOM + " .post-url").attr("href", value.postURL);
 
       // Now that the content is ready, stop the loading animation
-//      $(".loading-ani").addClass("fadeout-ani");
-      $(".loading-ani").remove();
+      $(".loading-ani").addClass("fadeout-ani");
+//      $(".loading-ani").remove();
 
       // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
