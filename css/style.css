@@ -47,7 +47,7 @@
 
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 5px #000;
 
   transition-property: -webkit-transform, -ms-transform, transform;
   transition-duration: 1.5s;
@@ -93,6 +93,12 @@
 #subsites li:after {
   content: "\25B2";
   padding-left: 5px;
+}
+
+
+#social-button-container {
+  width: 13.1em;
+/*  outline: 10px solid #00F;*/
 }
 
 .social-button-link {
@@ -150,7 +156,7 @@
   display: inline-block;
   text-decoration: none;
   color: #fcf54a;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px #000;
 }
 #previous-link:hover { text-decoration: underline; }
 
@@ -175,7 +181,7 @@
 
 /* ------- Blog post styling ------- */
 
-.post-title { text-shadow: 1px 2px blue; }
+.post-title { text-shadow: 1px 2px #00f; }
 
 .post-info {
   display: inline;
@@ -184,7 +190,7 @@
 
 .publish-info {
   font-size: 0.82em;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px #000;
 }
 
 /* ------- Various styling ------- */
@@ -192,7 +198,7 @@
 .sitemap-active {
     font-size: 1.1em;
     color: #E4E1E8;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px #000;
 }
 
 #sitemap h3 { margin-bottom: 2px; }

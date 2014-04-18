@@ -91,10 +91,11 @@ $(function() {
     $(".loading-ani, .my-logo").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
   }
 
-  // Hide text on mobile browsers until I can work on them
+  // Hide non-mobile browsers ready elements
   if ($.browser.mobile) {
     $("#subpages").css("display", "none");
     $("#subsites").css("display", "none");
+    $(".no-mobile").css("display", "none");
   }
 
   // Fully center the items that need centering

@@ -39,16 +39,13 @@
   }
 
   #my-logo-404 {
-/*
-    margin-top: -2em;
-    margin-left: -11.2em;
-*/
     width: 360px;
     height: 360px;
   }
 }
 
 /* ------- 320px (iPhone <= 3) ------- */
+
 @media screen and (max-width: 320px) {
   .my-logo {
     width: 320px !important;
