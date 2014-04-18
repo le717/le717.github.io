@@ -11,16 +11,18 @@ function makeAnnouncement(message) {
   "use strict";
   /* Show announcement box */
 
-  // Add the box to the page
+  // Add the box to the page only if one does not exist already
   var announcementBox = '<div class="announcement" onclick="hideAnnouncement();"><a></a></div>';
-  $("body").append(announcementBox);
+  if (!$("body").find(".announcement")) {
+    $("body").append(announcementBox);
 
-  // Add the message
-  $(".announcement a").html(message);
+    // Add the message
+    $(".announcement a").html(message);
 
-  // Trigger the fade-in transitions
-  $(".announcement").css("display", "block");
-  $(".announcement").css("transform", "translate3d(0, 220px, 0)");
+    // Trigger the fade-in transitions
+    $(".announcement").css("display", "block");
+    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
+  }
 }
 
 function hideAnnouncement() {
