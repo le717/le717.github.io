@@ -13,7 +13,7 @@ function makeAnnouncement(message) {
 
   // Add the box to the page only if one does not exist already
   var announcementBox = '<div class="announcement" onclick="hideAnnouncement();"><a></a></div>';
-  if (!$("body").find(".announcement")) {
+  if (!$("body").find(".announcement").length >= 1) {
     $("body").append(announcementBox);
 
     // Add the message
