@@ -42,7 +42,7 @@
 
 /* ------- Announcement box styling ------- */
 
-.announcement {
+#announcement {
   position: fixed;
   display: none;
   right: 20px;
@@ -65,7 +65,7 @@
   transition-delay: 1s;
 }
 
-.announcement a {
+#announcement a {
   text-decoration: none;
   font-size: 0.9em;
 }

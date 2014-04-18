@@ -12,23 +12,23 @@ function makeAnnouncement(message) {
   /* Show announcement box */
 
   // Add the box to the page only if one does not exist already
-  var announcementBox = '<div class="announcement" onclick="hideAnnouncement();"><a></a></div>';
-  if (!$("body").find(".announcement").length >= 1) {
+  var announcementBox = '<div id="announcement" onclick="hideAnnouncement();"><a></a></div>';
+//  if (!$("body").find(".announcement").length >= 1) {
     $("body").append(announcementBox);
 
     // Add the message
     $(".announcement a").html(message);
 
     // Trigger the fade-in transitions
-    $(".announcement").css("display", "block");
-    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
-  }
+    $("#announcement").css("display", "block");
+    $("#announcement").css("transform", "translate3d(0, 220px, 0)");
+//  }
 }
 
 function hideAnnouncement() {
   "use strict";
   /* Hide announcement box */
-  $(".announcement").addClass("fadeout-ani");
+  $("#announcement").addClass("fadeout-ani");
 }
 
 
