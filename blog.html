@@ -89,6 +89,8 @@ layout: blogpost
       // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
+      $(value.postIDDOM + " .post-content").wpToEmoji();
+
 //      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
 //      console.log("\n\nblog.html: " + newPostContent);
 
@@ -105,7 +107,6 @@ layout: blogpost
     $(function() {
 
       //$(".emoji-bigsmile").html(":smiley:");
-      $(postContainer + " .post-content").wpToEmoji();
 
       // Remove WordPress image styling
       $("img").removeAttr("style");
