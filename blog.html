@@ -26,7 +26,7 @@ layout: blogpost
     this.postURL          = postURL;
   }
 
-  $(function() {
+  (function() {
     "use strict";
     /* Create a blog post object
      * Based on example from http://jsfiddle.net/hLWdH/334/
@@ -46,7 +46,7 @@ layout: blogpost
       // Now that the posts are stored, go through and display them
       showPosts();
       });
-    });
+    })();
 
     function showPosts() {
       "use strict";
@@ -91,8 +91,6 @@ layout: blogpost
 
 //      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
 //      console.log("\n\nblog.html: " + newPostContent);
-
-      $(value.postIDDOM + " .post-content").removeAttr("style");
 
       // Run various cleanup functions
       cleanupPost(value.postIDDOM);
