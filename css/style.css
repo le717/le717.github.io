@@ -26,7 +26,7 @@
 /* Kill the "border" around in the image in <= IE 10 */
 #my-logo-link {
   color: transparent;
-  text-shadow: none
+  text-shadow: none;
 }
 
 
