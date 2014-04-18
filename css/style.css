@@ -206,4 +206,8 @@
 
 #sitemap h3 { margin-bottom: 2px; }
 
-.loading-ani { z-index: 5; }
+/* Loading animation */
+.loading-ani {
+  position: absolute;
+  z-index: 5;
+}
