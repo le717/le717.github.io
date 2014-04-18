@@ -31,7 +31,7 @@ layout: blogpost
     /* Create a blog post object
      * Based on example from http://jsfiddle.net/hLWdH/334/
      */
-    $.getJSON("http://public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=7&callback=?", function(data) {
+    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=7&callback=?", function(data) {
       console.log("{0} blog posts retrieved".format(data.posts.length));
 
       data.posts.forEach(function(postInfo) {
@@ -82,7 +82,6 @@ layout: blogpost
       $(".loading-ani").remove();
 
       //http://stackoverflow.com/a/327068
-      console.log($(document.createElement("div")).html(value.postContent).wpToEmoji());
 
       // Convert all WordPress emoticons to Emoji
 //      $(value.postIDDOM + " .post-content").wpToEmoji();
@@ -90,8 +89,8 @@ layout: blogpost
       // Add the post content
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
-      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
-      console.log("\n\nblog.html: " + newPostContent);
+//      var newPostContent = $(value.postIDDOM + " .post-content").wpToEmoji().html();
+//      console.log("\n\nblog.html: " + newPostContent);
 
       $(value.postIDDOM + " .post-content").removeAttr("style");
 
@@ -108,6 +107,7 @@ layout: blogpost
     $(function() {
 
       //$(".emoji-bigsmile").html(":smiley:");
+      $(postContainer + " .post-content").wpToEmoji();
 
       // Remove WordPress image styling
       $("img").removeAttr("style");

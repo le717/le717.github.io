@@ -39,14 +39,12 @@
   }
 
   #my-logo-404 {
+/*
     margin-top: -2em;
     margin-left: -11.2em;
+*/
     width: 360px;
     height: 360px;
-  }
-
-  #sitemap-link {
-
   }
 }
 
@@ -76,17 +74,6 @@
     -webkit-transform: translate3d(-5px, 10px, 0);
         -ms-transform: translate3d(-5px, 10px, 0);
             transform: translate3d(-5px, 10px, 0);
-  }
-
-  #my-logo-404 {
-    margin-top: 0;
-    margin-left: -10em;
-  }
-
-  #sitemap-link {
-/*    margin-left: -22px;*/
-    top: 93%; /* FIXME Replace with transform */
-    font-size: 0.8em;
   }
 
   #my-avatar { margin-left: -1em; }
