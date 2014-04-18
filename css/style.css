@@ -97,7 +97,10 @@
 
 
 #social-button-container {
+  position: fixed;
+  bottom: 1em;
   width: 13.1em;
+  left: 50%;
 /*  outline: 10px solid #00F;*/
 }
 
