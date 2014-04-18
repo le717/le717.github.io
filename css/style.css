@@ -205,3 +205,5 @@
 }
 
 #sitemap h3 { margin-bottom: 2px; }
+
+.loading-ani { z-index: 5; }

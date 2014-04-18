@@ -16,8 +16,7 @@ layout: blogpost
     this.postAuthorAvatar = postAuthor.avatar_URL;
     this.postContainer    = '<div id="{0}"></div>'.format(postID);
     this.postContent      = postContent;
-    // FUTURE Convert to datestamp to keep time posted
-    this.postDate         = new Date(postDate).toLocaleDateString("en-US");
+    this.postDate         = postDate;
     this.postID           = postID;
     this.postIDDOM        = "#" + postID;
     this.postTitle        = postTitle;
@@ -36,8 +35,14 @@ layout: blogpost
         // Create a unique post ID
         var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
+        // Convert publishing date to a nicer format
+        var postDate = new Date(postInfo.date).toLocaleString().split(" ");
+        postDate[3] = postDate[3] + " at";
+        postDate[4] = postDate[4].substr(0, postDate[4].length - 3);
+        postDate = postDate.join(" ");
+
         // Create the post object and store it
-        var myPost = new BlogPost(postInfo.author, postInfo.date, postID, postInfo.title, postInfo.guid, postInfo.content);
+        var myPost = new BlogPost(postInfo.author, postDate, postID, postInfo.title, postInfo.guid, postInfo.content);
         allBlogPosts.push(myPost);
       });
 
