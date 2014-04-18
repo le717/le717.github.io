@@ -1,5 +1,5 @@
 name: Triangle Land
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 baseurl: //le717.github.io
 wpurl: http://Triangle717.WordPress.com
