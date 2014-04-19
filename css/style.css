@@ -23,17 +23,21 @@
 .text-center { text-align: center; }
 .text-right { text-align: center; }
 
+
+/* ------- Sidebar styling ------- */
+
 #sidebar {
-  background-color: rgba(128, 128, 128, 0.7);
-  border-left: 7px solid #800000;
-  width: 10em;
-  height: 10em;
-  right: 0;
   position: fixed;
   top: 0;
+  right: 0;
+  width: 9em;
+  height: 12em;
+  background-color: rgba(128, 128, 128, 0.7);
+  border-left: 7px solid #800000;
 }
 
-#sidebar li { font-size: 1.2em; }
+#sidebar ul { margin-left: -20px; }
+#sidebar li { font-size: 1.1em; }
 
 
 /* ------- Announcement box styling ------- */
