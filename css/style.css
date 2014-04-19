@@ -35,7 +35,11 @@
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
-  transition-property: -webkit-transform, -ms-transform, transform;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+
+  transition-property: -ms-transform, transform;
   transition-timing-function: ease-out;
   transition-duration: 0.5s;
 }
@@ -80,10 +84,13 @@
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 1px 1px 5px #000;
 
-  transition-property: -webkit-transform, -ms-transform, transform;
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 1.5s;
+  -webkit-transition-timing-function: ease-out;
+
+  transition-property: -ms-transform, transform;
   transition-duration: 1.5s;
   transition-timing-function: ease-out;
-  transition-delay: 1s;
 }
 
 .announcement a {
@@ -222,7 +229,12 @@
 
 #previous-button {
   font-size: 1.3em;
-  transition-property: -webkit-transform, -ms-transform, transform;
+
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+
+  transition-property: -ms-transform, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
