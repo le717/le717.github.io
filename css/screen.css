@@ -21,22 +21,10 @@
 }*/
 
 @media only screen and (max-width: 720px) {
-  .my-logo {
-    left: 58%;
-    top: 43%;
-  }
-
   .social-button {
     -webkit-transform: translate3d(0, 35px, 0);
         -ms-transform: translate3d(0, 35px, 0);
             transform: translate3d(0, 35px, 0);
-  }
-
-  #mit-license {
-    font-size: 1.1em;
-    -webkit-transform: translate3d(-5px, 45px, 0);
-        -ms-transform: translate3d(-5px, 45px, 0);
-            transform: translate3d(-5px, 45px, 0);
   }
 
   #my-logo-404 {
@@ -49,16 +37,22 @@
 
 @media only screen and (max-width: 320px) {
   .header-logo {
-    left: 7% !important;
-    top: 0;
+    top: 2%;
+    left: 3% !important;
   }
 
   .header-text {
-    top: 0;
-    left: 35% !important;
+    top: 4% !important;
+    left: 32% !important;
   }
 
   #sidebar { display: none; }
+  #sidebar-btn {
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    z-index: 2;
+  }
 
   .social-button {
     -webkit-transform: translate3d(40px, 0, 0);
