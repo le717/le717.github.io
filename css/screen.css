@@ -6,7 +6,7 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
-/* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+/* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
 /* Colorize social buttons only on touchscreens */
 /*@media only screen and (max-width: 720px) {
@@ -28,8 +28,8 @@
   }
 
   #my-logo-404 {
-    width: 360px;
-    height: 360px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -37,7 +37,7 @@
 
 @media only screen and (min-width: 321px) {
   .header-text {
-    left: 40% !important;
+    left: 40%;
   }
 
   .header-logo {
