@@ -23,11 +23,22 @@
 .text-center { text-align: center; }
 .text-right { text-align: center; }
 
-/* Kill the "border" around in the image in <= IE 10 */
 #my-logo-link {
-  color: transparent;
   text-shadow: none;
 }
+
+
+#sidebar {
+  background-color: rgba(128, 128, 128, 0.7);
+  border-left: 7px solid #0000C4;
+  width: 10em;
+  height: 10em;
+  right: 0;
+  position: fixed;
+  top: 0;
+}
+
+#sidebar li { font-size: 1.2em; }
 
 
 /* ------- Announcement box styling ------- */
@@ -99,7 +110,7 @@
 #social-button-container {
   position: fixed;
   bottom: 1em;
-  width: 13.1em;
+  width: 10em;
   left: 50%;
 /*  outline: 10px solid #00F;*/
 }
@@ -113,6 +124,7 @@
 .social-button {
   margin-left: none;
   margin-right: none;
+  position: relative;
 }
 
 .social-button:hover {
@@ -123,27 +135,22 @@
 /* GitHub social button */
 #gh-button {
   font-size: 3.1em;
-  margin-top: -22px;
   margin-left: -25px;
-  top: 77%;
 }
 #gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
 #wp-button {
   font-size: 3.75em;
-  margin-top: -27px;
   margin-left: -90px;
-  top: 77%;
 }
 #wp-button:hover { color: #1E8CBE; }
 
 /* YouTube social button */
 #yt-button {
   font-size: 3.125em;
-  margin-top: -23px;
-  margin-left: 37px;
-  top: 77%;
+  bottom: 0;
+  right: -2.5em;
 }
 #yt-button:hover { color: #CC181E; }
 
