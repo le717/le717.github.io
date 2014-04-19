@@ -45,7 +45,7 @@
 .announcement {
   position: fixed;
   display: none;
-  right: 20px;
+  left: 20px;
   top: -220px;
   z-index: 2;
   border-bottom-right-radius: 7px;
@@ -71,6 +71,12 @@
 }
 
 /* ------- Site index styling ------- */
+
+.header-text {
+  top: 0;
+  left: 47%;
+  font-size: 2.2em;
+}
 
 #subpages {
   position: relative;

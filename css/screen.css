@@ -48,29 +48,22 @@
 
 @media screen and (max-width: 320px) {
   .my-logo {
-    width: 320px !important;
-    height: 320px !important;
-    left: 58%;
-    top: 47%;
+    position: fixed;
+    left: 7%;
+    top: 0;
   }
+
+  .header-text {
+    top: 0;
+    left: 35%;
+  }
+
+  #sidebar { display: none; }
 
   .social-button {
-    -webkit-transform: translate3d(0, -5px, 0);
-        -ms-transform: translate3d(0, -5px, 0);
-            transform: translate3d(0, -5px, 0);
-  }
-
-  #wp-button { margin-left: -95px; }
-  #yt-button {
-    margin-top: -21px;
-    margin-left: 44px;
-  }
-
-   #mit-license {
-    font-size: 1.2em;
-    -webkit-transform: translate3d(-5px, 10px, 0);
-        -ms-transform: translate3d(-5px, 10px, 0);
-            transform: translate3d(-5px, 10px, 0);
+    -webkit-transform: translate3d(40px, 0, 0);
+        -ms-transform: translate3d(40px, 0, 0);
+            transform: translate3d(40px, 0, 0);
   }
 
   #my-avatar { margin-left: -1em; }
