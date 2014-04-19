@@ -97,7 +97,7 @@ layout: blogpost
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
       // Run various cleanup functions
-      cleanupPost(value.postIDDOM + " .post-content");
+      cleanupPost(value.postIDDOM);
     });
   }
 
@@ -121,7 +121,7 @@ layout: blogpost
 
 
       // Remove any WordPress image-related classes
-      $(postContainer).find("img").each(function() {
+      $(postContainer + " .post-content").find("img").each(function() {
         var $this = $(this);
         $this.removeAttr("class");
 
