@@ -89,6 +89,21 @@ function detectBrowser() {
   }
 }
 
+function shrinkImages() {
+  "use strict";
+  $(postContainer).find("img").each(function() {
+    var $this = $(this);
+
+    // If this is a mobile browser, third designated image sizes
+    if (!$this.hasClass("no-mobile-resize")) {
+      if ($.browser.mobile) {
+        $this.width($this.width() / 3);
+        $this.height($this.height() / 3);
+      }
+    }
+  });
+}
+
 
 $(function() {
   "use strict";
