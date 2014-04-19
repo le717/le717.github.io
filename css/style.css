@@ -35,8 +35,7 @@
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
-/*  transition-property: -webkit-transform, -ms-transform, transform;*/
-  transition-property: transform;
+  transition-property: -webkit-transform, -ms-transform, transform;
   transition-timing-function: ease-in;
   transition-duration: 0.5s;
 }

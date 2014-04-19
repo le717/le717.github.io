@@ -47,7 +47,6 @@
   }
 
   #sidebar {
-    display: none;
     -webkit-transform: translate3d(0, -13em, 0);
         -ms-transform: translate3d(0, -13em, 0);
             transform: translate3d(0, -13em, 0);

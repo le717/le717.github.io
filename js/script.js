@@ -9,10 +9,10 @@
 function showSidebar() {
   "use strict";
 
-  if ($("#sidebar").css("display") === "block") {
-    $("#sidebar").css({"display": "none", "transform": ""});
+  if ($("#sidebar").css("transform") === "matrix(1, 0, 0, 1, 0, 0)") {
+    $("#sidebar").css("transform", "");
   } else {
-    $("#sidebar").css({"display": "inline", "transform": "translate3d(0, 0, 0)"});
+    $("#sidebar").css("transform", "translate3d(0, 0, 0)");
   }
 }
 
