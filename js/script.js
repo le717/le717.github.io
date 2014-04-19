@@ -105,13 +105,12 @@ function shrinkImages() {
     }
   });
 }
+shrinkImages();
 
 
 $(function() {
   "use strict";
-  // Shrink images on mobile and run process
-  // to detect visitor's browser
-  shrinkImages();
+  // Run process to detect visitor's browser
   detectBrowser();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)

@@ -33,6 +33,19 @@
   }
 }
 
+/* ------- Smartphones (landscape) ------- */
+
+@media only screen and (min-width: 321px) {
+  .header-text {
+    left: 40% !important;
+  }
+
+  .header-logo {
+    top: -2%;
+    left: 21% !important;
+  }
+}
+
 /* ------- Smartphones (portrait) ------- */
 
 @media only screen and (max-width: 320px) {

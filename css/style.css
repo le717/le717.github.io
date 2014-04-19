@@ -40,11 +40,25 @@
   transition-duration: 0.5s;
 }
 
+.sidebar-hidden {
+    -webkit-transform: translate3d(0, -13em, 0);
+        -ms-transform: translate3d(0, -13em, 0);
+            transform: translate3d(0, -13em, 0);
+  }
+
 #sidebar ul { margin-left: -20px; }
 #sidebar li { font-size: 1.1em; }
 
 #sidebar-btn { display: none; }
 #sidebar-btn:active { transform: translate3d(0, -2px, 0); }
+
+.sidebar-btn-visible {
+  display: inline !important;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
 
 
 /* ------- Announcement box styling ------- */
