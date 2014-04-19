@@ -91,6 +91,8 @@ function detectBrowser() {
 
 function shrinkImages() {
   "use strict";
+  /* Resize images on mobile devices */
+
   $(postContainer).find("img").each(function() {
     var $this = $(this);
 
@@ -107,7 +109,9 @@ function shrinkImages() {
 
 $(function() {
   "use strict";
-  // Run process to detect visitor's browser
+  // Shrink images on mobile and run process
+  // to detect visitor's browser
+  shrinkImages();
   detectBrowser();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
@@ -116,7 +120,7 @@ $(function() {
     $(".loading-ani, .my-logo").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
   }
 
-  // Hide non-mobile browsers ready elements
+  // Hide non-mobile-ready elements
   if ($.browser.mobile) {
     $(".no-mobile").css("display", "none");
   }

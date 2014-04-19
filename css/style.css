@@ -36,7 +36,7 @@
   border-left: 7px solid #800000;
 
   transition-property: -webkit-transform, -ms-transform, transform;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-out;
   transition-duration: 0.5s;
 }
 
@@ -44,6 +44,7 @@
 #sidebar li { font-size: 1.1em; }
 
 #sidebar-btn { display: none; }
+#sidebar-btn:active { transform: translate3d(0, -2px, 0); }
 
 
 /* ------- Announcement box styling ------- */
@@ -129,13 +130,13 @@
   bottom: 0;
   width: 0;
   left: 50%;
-/*  outline: 10px solid #00F;*/
 }
 
 .social-button-link {
   text-decoration: none;
   text-shadow: none;
   color: #000;
+  display: block;
 }
 
 .social-button {
