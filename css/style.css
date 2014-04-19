@@ -100,7 +100,7 @@
 
 .header-logo {
   position: fixed;
-  left: 40%;
+  left: 40% !important;
 }
 
 #subpages {

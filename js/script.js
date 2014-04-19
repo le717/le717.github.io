@@ -10,7 +10,7 @@ function showSidebar() {
   "use strict";
   /* Display the site sidebar */
 
-    $("#sidebar").toggleClass("sidebar-hidden");
+  $("#sidebar").toggleClass("sidebar-hidden");
 }
 
 function showSidebarBtn() {
@@ -19,8 +19,8 @@ function showSidebarBtn() {
 
   if ($(window).width() >= 320 && $(window).width() <= 480 ) {
     $("#sidebar-btn").addClass("sidebar-btn-visible");
+  }
 }
-
 
 function makeAnnouncement(message) {
   "use strict";
