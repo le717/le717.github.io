@@ -105,7 +105,7 @@ function shrinkImages() {
     // If this is a mobile browser, third designated image sizes
     if (!$this.hasClass("no-mobile-resize")) {
       alert("no class no-mobile-resize");
-      if ($.browser.mobile) {
+      if ($.browser.mobile || $.browser.desktop) {
         alert("mobile device");
         $this.width($this.width() / 3);
         $this.height($this.height() / 3);
@@ -113,13 +113,13 @@ function shrinkImages() {
     }
   });
 }
-shrinkImages();
 
 
 $(function() {
   "use strict";
 
   showSidebarBtn();
+  shrinkImages();
   // Run process to detect visitor's browser
   detectBrowser();
 
