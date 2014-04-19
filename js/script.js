@@ -93,7 +93,7 @@ function shrinkImages() {
   "use strict";
   /* Resize images on mobile devices */
 
-  $(postContainer).find("img").each(function() {
+  $("body").find("img").each(function() {
     var $this = $(this);
 
     // If this is a mobile browser, third designated image sizes
