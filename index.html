@@ -1,7 +1,7 @@
 ---
 title: Home
 ---
-{% include header.html %}
+{% include head.html %}
 {% include base-style.html %}
 {% include bridge.html %}
   <!-- Site header -->
@@ -12,18 +12,7 @@ title: Home
     </a>
   </div>
 
-  <div id="sidebar-btn" onclick="showSidebar();"><img alt="Show/hide sidebar" width="40" height="40" src="img/lips.svg"></div>
-  <div id="sidebar">
-    <ul>
-      <li><a href="about/index.html">About</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="license/index.html">MIT License</a></li>
-      <br>
-      <li><a href="stories/index.html">Stories</a></li>
-      <li><a href="#">Tutorials</a></li>
-      </ul>
-  </div>
+  {% include sidebar.html %}
 
   <div class="centered no-mobile" id="featured-project">
     <h2>Featured Project</h2>
@@ -61,4 +50,4 @@ title: Home
   </div>
 
 {% include scripts.html %}
-  {% include footer.html %}
+  {% include foot.html %}
