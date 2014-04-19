@@ -59,20 +59,6 @@
     left: 32% !important;
   }
 
-  #sidebar {
-    -webkit-transform: translate3d(0, -13em, 0);
-        -ms-transform: translate3d(0, -13em, 0);
-            transform: translate3d(0, -13em, 0);
-  }
-
-  #sidebar-btn {
-    display: inline !important;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-  }
-
   .social-button {
     -webkit-transform: translate3d(40px, 0, 0);
         -ms-transform: translate3d(40px, 0, 0);

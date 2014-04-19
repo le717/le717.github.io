@@ -8,12 +8,17 @@
 
 function showSidebar() {
   "use strict";
+  /* Display the site sidebar */
 
-  if ($("#sidebar").css("transform") === "matrix(1, 0, 0, 1, 0, 0)") {
-    $("#sidebar").css("transform", "");
-  } else {
-    $("#sidebar").css("transform", "translate3d(0, 0, 0)");
-  }
+    $("#sidebar").toggleClass("sidebar-hidden");
+}
+
+function showSidebarBtn() {
+  "use strict";
+  /* Display the site sidebar button */
+
+  if ($(window).width() >= 320 && $(window).width() <= 480 ) {
+    $("#sidebar-btn").addClass("sidebar-btn-visible");
 }
 
 
@@ -110,6 +115,8 @@ shrinkImages();
 
 $(function() {
   "use strict";
+
+  showSidebarBtn();
   // Run process to detect visitor's browser
   detectBrowser();
 
