@@ -54,7 +54,7 @@
   }
 
   #sidebar-btn {
-    display: inline;
+    display: inline !important;
     position: fixed;
     top: 10px;
     right: 10px;

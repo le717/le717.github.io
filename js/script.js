@@ -6,12 +6,15 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
-$(function() {
+function showSidebar() {
   "use strict";
-  $("#sidebar").on("click", function() {
+
+  if ($("#sidebar").css("display") === "inline") {
+    $("#sidebar").css({"display": "none", "transform": ""});
+  } else {
     $("#sidebar").css({"display": "inline", "transform": "translate3d(0, 0, 0)"});
-  });
-});
+  }
+}
 
 
 function makeAnnouncement(message) {
