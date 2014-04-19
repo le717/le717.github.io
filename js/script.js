@@ -9,7 +9,7 @@
 function showSidebar() {
   "use strict";
 
-  if ($("#sidebar").css("display") === "inline") {
+  if ($("#sidebar").css("display") === "block") {
     $("#sidebar").css({"display": "none", "transform": ""});
   } else {
     $("#sidebar").css({"display": "inline", "transform": "translate3d(0, 0, 0)"});
