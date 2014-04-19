@@ -47,15 +47,14 @@
 /* ------- 320px (iPhone <= 3) ------- */
 
 @media screen and (max-width: 320px) {
-  .my-logo {
-    position: fixed;
+  .header-logo {
     left: 7%;
     top: 0;
   }
 
   .header-text {
     top: 0;
-    left: 35%;
+    left: 35% !important;
   }
 
   #sidebar { display: none; }
