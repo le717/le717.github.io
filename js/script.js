@@ -19,6 +19,7 @@ function showSidebarBtn() {
 
   if ($(window).width() >= 320 && $(window).width() <= 480 ) {
     $("#sidebar-btn").addClass("sidebar-btn-visible");
+    $("#sidebar").addClass("sidebar-hidden");
   }
 }
 

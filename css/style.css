@@ -103,6 +103,12 @@
   left: 40% !important;
 }
 
+#featured-project {
+  left: 30%;
+  top: 40%;
+  display: none;
+}
+
 #subpages {
   position: relative;
   top: 7.5em;
