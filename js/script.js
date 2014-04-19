@@ -76,7 +76,7 @@ function detectBrowser() {
     // Mobile browsers
     theBrowser = "a mobile browser";
     /* jshint ignore:start */
-    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsing. :frowning:';
+    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsing.';
     /* jshint ignore:end */
   }
 

@@ -38,8 +38,15 @@ layout: blogpost
 
         // Convert publishing date to a nicer format
         var postDate = new Date(postInfo.date).toLocaleString().split(" ");
-        postDate[3] = postDate[3] + " at";
-        postDate[4] = postDate[4].substr(0, postDate[4].length - 3);
+        if (postDate.length > 3) {
+          postDate[3] = postDate[3] + " at";
+          postDate[4] = postDate[4].substr(0, postDate[4].length - 3);
+
+          // Webkit converts the string differently
+        } else {
+          postDate[0] = postDate[0] + " at";
+          postDate[1] = postDate[1].substr(0, postDate[1].length - 3);
+        }
         postDate = postDate.join(" ");
 
         // Create the post object and store it
@@ -128,7 +135,7 @@ layout: blogpost
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
 
-        } else if ($.browser.desktop) {
+        } /*else if ($.browser.desktop) {
             console.log($this.width());
             console.log($(window).width() / 4);
             console.log($this.width() >= $(window).width() / 4);
@@ -136,7 +143,7 @@ layout: blogpost
             if ($this.width() >= $(window).width() / 4) {
               $this.width($this.width() / 4);
             }
-        }
+        }*/
       });
 
 
