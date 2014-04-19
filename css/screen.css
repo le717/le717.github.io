@@ -6,9 +6,10 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
+/* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
 
 /* Colorize social buttons only on touchscreens */
-/*@media screen and (max-width: 720px) {
+/*@media only screen and (max-width: 720px) {
   #gh-button:active { color: #BBBBBB; }
   #gh-button:hover { color: #000; }
 
@@ -19,7 +20,7 @@
   #yt-button:hover { color: #000; }
 }*/
 
-@media screen and (max-width: 720px) {
+@media only screen and (max-width: 720px) {
   .my-logo {
     left: 58%;
     top: 43%;
@@ -44,11 +45,11 @@
   }
 }
 
-/* ------- 320px (iPhone <= 3) ------- */
+/* ------- Smartphones (portrait) ------- */
 
-@media screen and (max-width: 320px) {
+@media only screen and (max-width: 320px) {
   .header-logo {
-    left: 7%;
+    left: 7% !important;
     top: 0;
   }
 

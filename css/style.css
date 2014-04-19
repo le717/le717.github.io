@@ -39,6 +39,8 @@
 #sidebar ul { margin-left: -20px; }
 #sidebar li { font-size: 1.1em; }
 
+#sidebar-btn { display: none; }
+
 
 /* ------- Announcement box styling ------- */
 
