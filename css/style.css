@@ -23,14 +23,9 @@
 .text-center { text-align: center; }
 .text-right { text-align: center; }
 
-#my-logo-link {
-  text-shadow: none;
-}
-
-
 #sidebar {
   background-color: rgba(128, 128, 128, 0.7);
-  border-left: 7px solid #0000C4;
+  border-left: 7px solid #800000;
   width: 10em;
   height: 10em;
   right: 0;
@@ -107,10 +102,12 @@
 }
 
 
+/* ------- Social buttons styling ------- */
+
 #social-button-container {
   position: fixed;
-  bottom: 1em;
-  width: 10em;
+  bottom: 0;
+  width: 0;
   left: 50%;
 /*  outline: 10px solid #00F;*/
 }
@@ -135,14 +132,16 @@
 /* GitHub social button */
 #gh-button {
   font-size: 3.1em;
-  margin-left: -25px;
+  bottom: -3em;
+  left: -1.7em;
 }
 #gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
 #wp-button {
   font-size: 3.75em;
-  margin-left: -90px;
+  right: 2.5em;
+  bottom: -5.23em;
 }
 #wp-button:hover { color: #1E8CBE; }
 
@@ -150,7 +149,7 @@
 #yt-button {
   font-size: 3.125em;
   bottom: 0;
-  right: -2.5em;
+  left: -0.5em;
 }
 #yt-button:hover { color: #CC181E; }
 
