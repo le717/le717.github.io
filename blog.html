@@ -97,7 +97,7 @@ layout: blogpost
       $(value.postIDDOM + " .post-content").append(value.postContent);
 
       // Run various cleanup functions
-      cleanupPost(value.postIDDOM);
+      cleanupPost(value.postIDDOM + " .post-content");
     });
   }
 

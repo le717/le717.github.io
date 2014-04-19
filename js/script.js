@@ -104,8 +104,7 @@ function shrinkImages() {
 
     // If this is a mobile browser, third designated image sizes
     if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
-      alert("Not hasClass no-mobile-resize");
-      if ($.browser.mobile || $.browser.desktop) {
+      if ($.browser.mobile) {
         $this.width($this.width() / 3);
         $this.height($this.height() / 3);
       }
