@@ -93,8 +93,8 @@ $(function() {
 
   // Hide non-mobile browsers ready elements
   if ($.browser.mobile) {
-    $("#subpages").css("display", "none");
-    $("#subsites").css("display", "none");
+//    $("#subpages").css("display", "none");
+//    $("#subsites").css("display", "none");
     $(".no-mobile").css("display", "none");
   }
 

@@ -49,9 +49,8 @@ layout: blogpost
 
       // Now that the posts are stored, go through and display them and stop the loading animation
       showPosts();
-      $(".loading-ani").addClass("fadeout-ani");
-      $(".blog-posts").show();
-      //$(".loading-ani").remove();
+      $(".loading-ani").remove();
+      $(".blog-posts").css("display", "");
       });
     })();
 
@@ -63,8 +62,8 @@ layout: blogpost
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
 
-      // TODO
-      $(".blog-posts").hide();
+      // Hide post content until it is ready
+      $(".blog-posts").css("display", "none");
 
       /* Display post details in the following order:
        *
