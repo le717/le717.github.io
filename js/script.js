@@ -6,6 +6,13 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
+$(function() {
+  "use strict";
+  $("#sidebar").on("click", function() {
+    $("#sidebar").css({"display": "inline", "transform": "translate3d(0, 0, 0)"});
+  });
+});
+
 
 function makeAnnouncement(message) {
   "use strict";
