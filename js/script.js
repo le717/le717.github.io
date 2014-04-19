@@ -71,8 +71,8 @@ function detectBrowser() {
     // IE 9 does not like the text-shadow
     $(".announcement a").css("color", "black");
 
-  } else if (!$.browser.chrome && !$.browser.mozilla &&
-             !$.browser.msie&& !$.browser.opr && !$.browser.cros) {
+  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.safari &&
+             !$.browser.msie && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "an unidentified browser";
     theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
@@ -104,7 +104,9 @@ function shrinkImages() {
 
     // If this is a mobile browser, third designated image sizes
     if (!$this.hasClass("no-mobile-resize")) {
+      alert("no class no-mobile-resize");
       if ($.browser.mobile) {
+        alert("mobile device");
         $this.width($this.width() / 3);
         $this.height($this.height() / 3);
       }
