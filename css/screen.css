@@ -41,8 +41,9 @@
   }
 
   .header-logo {
-    top: -2%;
-    left: 21% !important;
+    position: absolute;
+    top: 25%;
+    left: -12%;
   }
 }
 
@@ -50,13 +51,14 @@
 
 @media only screen and (max-width: 320px) {
   .header-logo {
-    top: 2%;
-    left: 3%;
+    margin-left: 3% !important;
+    margin-top: 1% !important;
   }
 
   .header-text {
-    top: 4% !important;
-    left: 32% !important;
+    position: absolute;
+    left: -12%;
+    top: 11%;
   }
 
   .social-button {

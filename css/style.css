@@ -101,13 +101,15 @@
 /* ------- Site index styling ------- */
 
 .header-text {
-  top: 0;
-  left: 47%;
+  margin-left: 47%;
+  display: inline;
 }
 
 .header-logo {
-  position: fixed;
-  left: 40% !important;
+  position: static;
+  display: inline-block;
+  margin-left: 39%;
+  margin-top: -4.5em;
 }
 
 #featured-project {
