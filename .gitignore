@@ -77,3 +77,4 @@ localhost.py
 *.psd
 test.html
 lib/zepto.min.js
+lib/prefixfree.min.js
