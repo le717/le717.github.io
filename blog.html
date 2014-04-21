@@ -10,7 +10,22 @@ layout: blogpost
   console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
   // Store all the blog post objects
-  var allBlogPosts = [];
+  var allBlogPosts = [],
+      // Month conversion table
+      months = {
+        "01": "January",
+        "02": "February",
+        "03": "March",
+        "04": "April",
+        "05": "May",
+        "06": "June",
+        "07": "July",
+        "08": "August",
+        "09": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December",
+      };
 
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
@@ -37,7 +52,11 @@ layout: blogpost
         var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
         // Convert publishing date to a nicer format
-        var postDate = postInfo.date.split("T")[0];
+        var postDateParts = postInfo.date.split("T")[0].split("-");
+        var dateFormat    = "{0} {1} {2}".format(postDateParts[2], postDateParts[1], postDateParts[0]).split(" ");
+//        dateFormat        = dateFormat.split(" ");
+        dateFormat[1]     = dateFormat[1].replace(dateFormat[1], months[dateFormat[1]]);
+        var postDate      = dateFormat.join(" ");
 
         // Create the post object and store it
         var myPost = new BlogPost(postInfo.author, postDate, postID, postInfo.title, postInfo.guid, postInfo.content);
@@ -74,7 +93,7 @@ layout: blogpost
        */
 
       $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
-      $(value.postIDDOM).append('<p class="post-info"><span class="post-date"></span><span class="post-author"></span>&nbsp;<img class="post-author-avatar no-mobile-resize" alt="Author avatar" />&nbsp;&nbsp;(<a class="post-url" target="_blank">Permalink</a>)</p>');
+      $(value.postIDDOM).append('<p class="post-info"><img class="post-author-avatar no-mobile-resize" alt="Author avatar" />&nbsp;Published <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
       $(value.postIDDOM).append('<div class="post-content" style="display: none;"></div>');
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);
