@@ -106,7 +106,7 @@ function shrinkImages() {
     if ($.browser.mobile) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
         // However, do it only if the image is wider than the screen
-        if ($this.width() > $(window).width()) {
+        if ($this.width() >= $(window).width()) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
         }
@@ -126,8 +126,8 @@ $(function() {
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {
-    var $imgSrc = $(".loading-ani, .my-logo").attr("src");
-    $(".loading-ani, .my-logo").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
+    var $imgSrc = $(".ie-svg").attr("src");
+    $(".ie-svg").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
   }
 
   // Hide non-mobile-ready elements

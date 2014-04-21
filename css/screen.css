@@ -26,11 +26,6 @@
         -ms-transform: translate3d(0, 35px, 0);
             transform: translate3d(0, 35px, 0);
   }
-
-  #my-logo-404 {
-    width: 300px;
-    height: 300px;
-  }
 }
 
 /* ------- Smartphones (landscape) ------- */
