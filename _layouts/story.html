@@ -3,6 +3,8 @@
 {% include bridge.html %}
   {% include header.html %}
   {% include sidebar.html %}
+  <h2>{{ page.title }}</h2>
+<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>
   {{ content }}
-{% if page.type != "Blog" %}{% include scripts.html %}{% endif %}
+{% include scripts.html %}
 {% include foot.html %}
