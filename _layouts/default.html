@@ -3,7 +3,7 @@
 {% include bridge.html %}
   {% include header.html %}
   {% include sidebar.html %}
-  <h2 {% if page.type != "Info" or if page.type != "Blog" %}class="text-center"{% endif %}>{{ page.title }}</h2>
+  <h2 {% if page.type != "Info" or "Blog" %}class="text-center"{% endif %}>{{ page.title }}</h2>
 {% if page.type == "Story" %}<p class="publish-info">Published on {{ page.publish-date }} by {{ page.author }}</p>{% endif %}
   {{ content }}
 {% if page.type != "Blog" %}{% include scripts.html %}{% endif %}
