@@ -3,13 +3,19 @@ title: Sitemap
 layout: default
 type: Info
 ---
-  <!-- FUTURE Sort list, tracking https://github.com/Shopify/liquid/pull/304 -->
   <nav id="sitemap">
-    <ul>
-    {% for p in site.pages %}{% if p.type == "Story" %}
-      <h3>Stories</h3>{% endif %}{% if p.type != 404 %}
-      <li>
-        <a {% if p.url == page.url %}class="sitemap-active" title="You are here!"{% endif %} href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a>
-      </li>{% endif %}{% endfor %}
+    <ul><a href="/">Home</a>
+    <ul><a href="/about/index.html">About</a>
+    <ul><a href="/blog.html">Blog</a>
+    <ul><a href="#">Contact</a>
+    <ul><a href="/license/index.html">MIT License</a>
+    <li><a id="sitemap-active" title="You are here!" href="#">Sitemap</a></li>
+    <br>
+    <h3>Stories</h3>
+    <li><a href="/stories/index.html">Stories</a></li>
+    <li><a href="/stories/giant.html">The Land of Giant</a></li>
+    <li><a href="/stories/fashion.html">The Fashion World Is Being Threatened!</a></li>
+    <br>
+    <h3>Tutorials</h3>
     </ul>
   </nav>
