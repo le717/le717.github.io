@@ -37,17 +37,7 @@ layout: blogpost
         var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
         // Convert publishing date to a nicer format
-        var postDate = new Date(postInfo.date).toLocaleString().split(" ");
-        if (postDate.length > 3) {
-          postDate[3] = postDate[3] + " at";
-          postDate[4] = postDate[4].substring(0, postDate[4].length - 3);
-
-          // Webkit converts the string differently
-        } else {
-          postDate[0] = postDate[0] + " at";
-          postDate[1] = postDate[1].substring(0, postDate[1].length - 3);
-        }
-        postDate = postDate.join(" ");
+        var postDate = postInfo.date.split("T")[0];
 
         // Create the post object and store it
         var myPost = new BlogPost(postInfo.author, postDate, postID, postInfo.title, postInfo.guid, postInfo.content);
@@ -84,7 +74,7 @@ layout: blogpost
        */
 
       $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
-      $(value.postIDDOM).append('<p class="post-info"><img class="post-author-avatar no-mobile-resize" alt="Author avatar" />&nbsp;&nbsp;Published on <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
+      $(value.postIDDOM).append('<p class="post-info"><span class="post-date"></span><span class="post-author"></span>&nbsp;<img class="post-author-avatar no-mobile-resize" alt="Author avatar" />&nbsp;&nbsp;(<a class="post-url" target="_blank">Permalink</a>)</p>');
       $(value.postIDDOM).append('<div class="post-content" style="display: none;"></div>');
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);
@@ -105,6 +95,7 @@ layout: blogpost
   function cleanupPost(postContainer) {
     "use strict";
     /* Remove WordPress classes, IDs, and other unnecessary clutter */
+    // NOTE Perhaps move this to the BlogPost prototype?
 
     $(function() {
 
