@@ -54,7 +54,11 @@
 #sidebar li { font-size: 1.1em; }
 
 #sidebar-btn { display: none; }
-#sidebar-btn:active { transform: translate3d(0, -2px, 0); }
+
+#sidebar-btn:active {
+  -webkit-transform: translate3d(0, -2px, 0);
+          transform: translate3d(0, -2px, 0);
+}
 
 .sidebar-btn-visible {
   display: inline !important;
@@ -101,15 +105,17 @@
 /* ------- Site index styling ------- */
 
 .header-text {
-  margin-left: 47%;
+  position: absolute;
   display: inline;
+  margin-left: 47%;
+  top: 0.4em;
 }
 
 .header-logo {
   position: static;
   display: inline-block;
   margin-left: 39%;
-  margin-top: -4.5em;
+  margin-top: -0.4em;
 }
 
 #featured-project {

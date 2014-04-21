@@ -35,7 +35,7 @@
 
 /* ------- Smartphones (landscape) ------- */
 
-@media only screen and (min-width: 321px) {
+/*@media only screen and (min-width: 321px) {
   .header-text {
     left: 40%;
   }
@@ -45,7 +45,7 @@
     top: 25%;
     left: -12%;
   }
-}
+}*/
 
 /* ------- Smartphones (portrait) ------- */
 

@@ -102,11 +102,14 @@ function shrinkImages() {
   $("body").find("img").each(function() {
     var $this = $(this);
 
-    // If this is a mobile browser, third designated image sizes
-    if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
-      if ($.browser.mobile) {
-        $this.width($this.width() / 3);
-        $this.height($this.height() / 3);
+    // If this is a mobile browser, third non-exempt image sizes
+    if ($.browser.mobile) {
+      if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
+        // However, do it only if the image is wider than the screen
+        if ($this.width() > $(window).width()) {
+          $this.width($this.width() / 3);
+          $this.height($this.height() / 3);
+        }
       }
     }
   });
