@@ -9,7 +9,6 @@
 function showSidebar() {
   "use strict";
   /* Display the site sidebar */
-
   $("#sidebar").toggleClass("sidebar-hidden");
 }
 
@@ -71,7 +70,7 @@ function detectBrowser() {
     // IE 9 does not like the text-shadow
     $(".announcement a").css("color", "black");
 
-  } else if (!$.browser.chrome && !$.browser.mozilla && !$.browser.safari &&
+  } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.safari &&
              !$.browser.msie && !$.browser.opr && !$.browser.cros) {
     // Some other browser
     theBrowser = "an unidentified browser";
@@ -106,6 +105,8 @@ function shrinkImages() {
     if ($.browser.mobile) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
         // However, do it only if the image is wider than the screen
+        console.log($this.width());
+        console.log($(window).width());
         if ($this.width() >= $(window).width()) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);

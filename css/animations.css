@@ -59,6 +59,7 @@
 
   100% {
     display: none;
+    opacity: 0;
   }
 }
 
@@ -74,5 +75,6 @@
 
   100% {
     display: none;
+    opacity: 0;
   }
 }
