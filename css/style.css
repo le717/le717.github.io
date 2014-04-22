@@ -286,4 +286,8 @@
 #sitemap h3 { margin-bottom: 2px; }
 
 /* Loading animation */
-.loading-ani { z-index: 5; }
+.loading-ani {
+  z-index: 5;
+  top: 15%;
+  left: 30%;
+}

@@ -53,7 +53,7 @@ redirect_from: /blog.html
     // Download a different number of posts on different platforms.
     // Downloading seven posts on mobile might be enough to crash the browser on mobile.
     var postsToDownload;
-    if ($.browser.deskop) {
+    if ($.browser.desktop) {
       postsToDownload = 7;
     } else {
       postsToDownload = 4;
@@ -79,8 +79,8 @@ redirect_from: /blog.html
       });
 
       // Now that the posts are stored, go through and display them and stop the loading animation
+      $(".loading-ani").addClass("fadeout-ani");
       showPosts();
-      $(".loading-ani").addClass("fadeout-Ani");
 //      $(".loading-ani").remove();
       $(".blog-posts").css("display", "");
 
