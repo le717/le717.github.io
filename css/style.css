@@ -75,13 +75,13 @@
   position: fixed;
   display: block;
   right: 20px;
-  bottom: 0;
+  bottom: -3px;
   z-index: 2;
 /*  border-top-right-radius: 7px;*/
 /*  border-top-left-radius: 7px;*/
 
   width: 2.5em;
-  height: 2.5em;
+  height: 2.7em;
   opacity: 1;
 
   text-align: center;
@@ -93,7 +93,7 @@
   -webkit-transition-timing-function: ease-out;
 
   transition-property: -ms-transform, transform;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
 
@@ -106,6 +106,7 @@
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
+}
 
 
 /* ------- Site index styling ------- */
