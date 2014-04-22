@@ -58,8 +58,9 @@ redirect_from: /blog.html
     } else {
       postsToDownload = 4;
     }
+    console.log("{0} blog posts to be retrieved".format(postsToDownload));
 
-    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number={0}&callback=?".format(postsToDownload), function(data) {
+    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + postsToDownload + "&callback=?", function(data) {
       console.log("{0} blog posts retrieved".format(postsToDownload));
 
       data.posts.forEach(function(postInfo) {
@@ -79,6 +80,7 @@ redirect_from: /blog.html
       });
 
       // Now that the posts are stored, go through and display them and stop the loading animation
+      $(".loading-ani").css({"top": "15%", "left": "30%"});
       $(".loading-ani").addClass("fadeout-ani");
       showPosts();
 //      $(".loading-ani").remove();

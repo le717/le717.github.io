@@ -27,7 +27,7 @@ function makeAnnouncement(message) {
   /* Show announcement box */
 
   // Add the box to the page only if one does not exist already
-  var announcementBox = '<div class="announcement" onclick="hideAnnouncement();"><a></a></div>';
+  var announcementBox = '<div class="announcement"><a></a></div>';
   if ($("body").find(".announcement").length !== 1) {
     $("body").append(announcementBox);
 
@@ -39,13 +39,6 @@ function makeAnnouncement(message) {
 //    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
   }
 }
-
-function hideAnnouncement() {
-  "use strict";
-  /* Hide announcement box */
-  $(".announcement").addClass("fadeout-ani");
-}
-
 
 function detectBrowser() {
   "use strict";
