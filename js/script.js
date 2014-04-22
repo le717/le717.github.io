@@ -32,7 +32,7 @@ function makeAnnouncement(message) {
     $("body").append(announcementBox);
 
     // Add the message
-    $(".announcement a").html(message);
+    $(".announcement a").html("^");
 
 //    // Trigger the fade-in transitions
 //    $(".announcement").css("display", "block");

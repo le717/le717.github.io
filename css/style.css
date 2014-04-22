@@ -80,8 +80,8 @@
 /*  border-top-right-radius: 7px;*/
 /*  border-top-left-radius: 7px;*/
 
-  width: 9.5em;
-  height: 9em;
+  width: 2.5em;
+  height: 2.5em;
   opacity: 1;
 
   text-align: center;
@@ -93,20 +93,20 @@
   -webkit-transition-timing-function: ease-out;
 
   transition-property: -ms-transform, transform;
-  transition-duration: 1.5s;
+  transition-duration: 0.5s;
   transition-timing-function: ease-out;
 }
 
 .announcement a {
   text-decoration: none;
-  font-size: 0.9em;
+  font-size: 2em;
 }
 
 .announcement:hover {
-  -webkit-transform: translate3d(0, -5px, 0);
-      -ms-transform: translate3d(0, -5px, 0);
-          transform: translate3d(0, -5px, 0);
-}
+  -webkit-transform: translate3d(0, -2px, 0);
+      -ms-transform: translate3d(0, -2px, 0);
+          transform: translate3d(0, -2px, 0);
+
 
 /* ------- Site index styling ------- */
 
