@@ -69,11 +69,12 @@
 }
 
 
-/* ------- Announcement box styling ------- */
+/* ------- Scroll to the top box styling ------- */
 
-.announcement {
+.scroll-up {
   position: fixed;
-  display: block;
+/*  display: block;*/
+  display: none;
   right: 20px;
   bottom: -0.3em;
   z-index: 2;
@@ -95,12 +96,12 @@
   transition-timing-function: ease-out;
 }
 
-.announcement a {
+.scroll-up a {
   text-decoration: none;
   font-size: 2em;
 }
 
-.announcement:hover {
+.scroll-up:hover {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);

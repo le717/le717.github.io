@@ -12,6 +12,7 @@ function showSidebar() {
   $("#sidebar").toggleClass("sidebar-hidden");
 }
 
+
 function showSidebarBtn() {
   "use strict";
   /* Display the site sidebar button */
@@ -28,70 +29,6 @@ function showSidebarBtn() {
   });
 }
 
-function makeAnnouncement(message) {
-  "use strict";
-  /* Show announcement box */
-
-  // Add the box to the page only if one does not exist already
-  var announcementBox = '<div class="announcement"><a></a></div>';
-  if ($("body").find(".announcement").length !== 1) {
-    $("body").append(announcementBox);
-
-    // Add the message
-    $(".announcement a").html("^");
-
-//    // Trigger the fade-in transitions
-//    $(".announcement").css("display", "block");
-//    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
-  }
-}
-
-function detectBrowser() {
-  "use strict";
-  /* Detect incompatible or unsupported browser
-   * and display message to that extent.
-   */
-
-  var finalMessage, theBrowser, theBrowserMessage;
-
-  // This is Safari 5 or lower
-  if ($.browser.safari && $.browser.versionNumber <= 5) {
-    theBrowser = "Safari";
-    theBrowserMessage = "Your Safari version does not support my site. " +
-    "Please visit browsehappy.com to research a modern browser.";
-
-  } else if ($.browser.msie && $.browser.versionNumber <= 9) {
-    // This is Internet Explorer 9 or lower
-    theBrowser = "Internet Explorer";
-    theBrowserMessage = "Your browser does not support my site. " +
-    "Please visit browsehappy.com to research a modern browser.";
-
-    // IE 9 does not like the text-shadow
-    $(".announcement a").css("color", "black");
-
-  } else if (!$.browser.chrome /*&& !$.browser.mozilla*/ && !$.browser.safari &&
-             !$.browser.msie && !$.browser.opr && !$.browser.cros) {
-    // Some other browser
-    theBrowser = "an unidentified browser";
-    theBrowserMessage = "Please submit an issue on GitHub with compatibility results. :)";
-  }
-
-  else if ($.browser.mobile) {
-    // Mobile browsers
-    theBrowser = "a mobile browser";
-    /* jshint ignore:start */
-    theBrowserMessage = '<span class="text-bold">Triangle Land</span> is not yet optimized for mobile browsing.';
-    /* jshint ignore:end */
-  }
-
-  // Create final message
-  finalMessage = 'You are using<br>{0}.<br>{1}'.format(theBrowser, theBrowserMessage);
-
-  // Make the announcement if there is one to make
-  if (theBrowser !== undefined) {
-    makeAnnouncement(finalMessage);
-  }
-}
 
 function shrinkImages() {
   "use strict";
@@ -123,8 +60,6 @@ $(function() {
   showSidebarBtn();
 
   shrinkImages();
-  // Run process to detect visitor's browser
-  //detectBrowser();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {

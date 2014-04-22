@@ -5,5 +5,5 @@
   {% include sidebar.html %}
   {{ content }}
 {% if page.type != "Blog" %}{% include scripts.html %}{% endif %}
-{% include scrollup.html %}
+{% if page.title != "Home" %}{% include scrollup.html %}{% endif %}
 {% include foot.html %}
