@@ -34,9 +34,9 @@ function makeAnnouncement(message) {
     // Add the message
     $(".announcement a").html(message);
 
-    // Trigger the fade-in transitions
-    $(".announcement").css("display", "block");
-    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
+//    // Trigger the fade-in transitions
+//    $(".announcement").css("display", "block");
+//    $(".announcement").css("transform", "translate3d(0, 220px, 0)");
   }
 }
 
