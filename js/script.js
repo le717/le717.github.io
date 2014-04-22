@@ -20,6 +20,10 @@ function showSidebarBtn() {
     if ($(window).width() >= 320 && $(window).width() <= 480 ) {
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
+
+    } else {
+      $("#sidebar-btn").removeClass("sidebar-btn-visible");
+      $("#sidebar").removeClass("sidebar-hidden");
     }
   });
 }
@@ -120,7 +124,7 @@ $(function() {
 
   shrinkImages();
   // Run process to detect visitor's browser
-  detectBrowser();
+  //detectBrowser();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {
