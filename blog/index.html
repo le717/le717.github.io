@@ -82,8 +82,8 @@ redirect_from: /blog.html
       // Now that the posts are stored, go through and display them and stop the loading animation
       $(".loading-ani").css({"top": "15%", "left": "30%"});
       $(".loading-ani").addClass("fadeout-ani");
+      $(".loading-ani").remove();
       showPosts();
-//      $(".loading-ani").remove();
       $(".blog-posts").css("display", "");
 
       // Shrink the images down a bit
@@ -96,7 +96,7 @@ redirect_from: /blog.html
       /* Display each blog post */
       $.each(allBlogPosts, function(key, value) {
 
-      value.cleanUp();
+//      value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
@@ -132,10 +132,10 @@ redirect_from: /blog.html
     });
   }
 
-  BlogPost.prototype.cleanUp = function() {
+  /*BlogPost.prototype.cleanUp = function() {
    "use strict";
     console.log(this);
-  };
+  };*/
 
 
   function cleanupPost(postContainer) {
