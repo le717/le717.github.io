@@ -16,10 +16,12 @@ function showSidebarBtn() {
   "use strict";
   /* Display the site sidebar button */
 
-  if ($(window).width() >= 320 && $(window).width() <= 480 ) {
-    $("#sidebar-btn").addClass("sidebar-btn-visible");
-    $("#sidebar").addClass("sidebar-hidden");
-  }
+  $(window).resize(function() {
+    if ($(window).width() >= 320 && $(window).width() <= 480 ) {
+      $("#sidebar-btn").addClass("sidebar-btn-visible");
+      $("#sidebar").addClass("sidebar-hidden");
+    }
+  });
 }
 
 function makeAnnouncement(message) {
@@ -113,7 +115,9 @@ function shrinkImages() {
 $(function() {
   "use strict";
 
+  // Display sidebar toggle button if needed
   showSidebarBtn();
+
   shrinkImages();
   // Run process to detect visitor's browser
   detectBrowser();
