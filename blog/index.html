@@ -8,7 +8,7 @@ redirect_from: /blog.html
 <div class="blog-posts"></div><br>
 <p class="text-center" style="font-size: 1.1em;">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
-  <a target="_blank" href="http:/Triangle717.WordPress.com">full blog</a> and read to your heart's content. :smiley:
+  <a target="_blank" href="http://Triangle717.WordPress.com/">full blog</a> and read to your heart's content. :smiley:
 </p>
 
 <script>
@@ -52,10 +52,11 @@ redirect_from: /blog.html
 
     // Download a different number of posts on different platforms.
     // Downloading seven posts on mobile might be enough to crash the browser on mobile.
+    var postsToDownload;
     if ($.browser.deskop) {
-      var postsToDownload = 7;
+      postsToDownload = 7;
     } else {
-      var postsToDownload = 4;
+      postsToDownload = 4;
     }
 
     $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number={0}&callback=?".format(postsToDownload), function(data) {
@@ -79,7 +80,8 @@ redirect_from: /blog.html
 
       // Now that the posts are stored, go through and display them and stop the loading animation
       showPosts();
-      $(".loading-ani").remove();
+      $(".loading-ani").addClass("fadeout-Ani");
+//      $(".loading-ani").remove();
       $(".blog-posts").css("display", "");
 
       // Shrink the images down a bit
