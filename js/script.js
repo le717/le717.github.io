@@ -18,7 +18,7 @@ function showSidebarBtn() {
   /* Display the site sidebar button */
 
   $(window).resize(function() {
-    if ($(window).width() <= 320 && $(window).width() <= 480 ) {
+    if ($(window).width() <= 320 && $(window).width() <= 720) {
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
 
