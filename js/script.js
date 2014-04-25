@@ -30,19 +30,18 @@ function shrinkImages() {
   $("body").find("img").each(function() {
     var $this = $(this);
 
-    // If this is a mobile browser, third non-exempt image sizes
+    // If this is a mobile browser, scale down non-exempt image sizes
     if ($.browser.mobile || $.browser.desktop) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
 
         // However, do it only if the image is wider than the screen
-        console.log("Image width:" + $this.width());
-        console.log("Image src:" + $this.attr("src"));
-        console.log("Window Width:" + $(window).width());
+        console.log("Image width: " + $this.width());
+        console.log("Image src: " + $this.attr("src"));
+        console.log("Window Width: " + $(window).width());
 
-        // NOTE: Maybe use transform: scale instead?
-        if ($this.width() >= $(window).width()) {
-          $this.width($this.width() / 3);
-          $this.height($this.height() / 3);
+//        if ($this.width() >= $(window).width()) {
+        if ($(window).width() % $this.width() >= 100) {
+          $this.css("transform", "scale(0.8)");
         }
       }
     }
