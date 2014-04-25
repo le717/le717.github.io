@@ -21,10 +21,15 @@
 }*/
 
 @media only screen and (max-width: 720px) {
-  .social-button {
-    -webkit-transform: translate3d(0, 35px, 0);
-        -ms-transform: translate3d(0, 35px, 0);
-            transform: translate3d(0, 35px, 0);
+  .header-logo {
+    margin-left: 6% !important;
+    margin-top: -6% !important;
+  }
+
+  .header-text {
+    position: absolute;
+    left: -12%;
+    top: 1em !important;
   }
 }
 
@@ -54,12 +59,6 @@
     position: absolute;
     left: -12%;
     top: 1em !important;
-  }
-
-  .social-button {
-    -webkit-transform: translate3d(40px, 0, 0);
-        -ms-transform: translate3d(40px, 0, 0);
-            transform: translate3d(40px, 0, 0);
   }
 
   #my-avatar { margin-left: -1em; }
