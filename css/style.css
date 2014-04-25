@@ -31,7 +31,7 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 13em;
+  height: 14em;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
@@ -45,9 +45,9 @@
 }
 
 .sidebar-hidden {
-    -webkit-transform: translate3d(0, -13.5em, 0);
-        -ms-transform: translate3d(0, -13.5em, 0);
-            transform: translate3d(0, -13.5em, 0);
+    -webkit-transform: translate3d(0, -14.5em, 0);
+        -ms-transform: translate3d(0, -14.5em, 0);
+            transform: translate3d(0, -14.5em, 0);
   }
 
 #sidebar ul {
@@ -206,9 +206,8 @@
 
 /* WordPress social button */
 #wp-button {
-  font-size: 3.75em;
-  right: 2.5em;
-  bottom: -5.23em;
+  font-size: 2em;
+  margin-top: -5em;
 }
 #wp-button:hover { color: #1E8CBE; }
 

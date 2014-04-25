@@ -1,9 +1,13 @@
 {
-    "maxlen" : 100,
-    "indent" : 2,
-    "globals" : [
-        "$",
-        "document",
-        "window"
-    ]
+  "indent":     2,
+  "jquery":     true,
+  "maxlen":     100,
+  "quotmark":   "double",
+  "strict":     true,
+  "undef":      true,
+  "unused":     true,
+  "globals": {
+    "document": true,
+    "window":   true
+  }
 }
