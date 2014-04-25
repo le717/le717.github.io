@@ -171,13 +171,6 @@
 
 /* ------- Social buttons styling ------- */
 
-#social-button-container {
-  position: fixed;
-  bottom: 0;
-  width: 0;
-  left: 50%;
-}
-
 .social-button-link {
   text-decoration: none;
   text-shadow: none;
@@ -187,12 +180,9 @@
 .social-button-link:hover { text-decoration: none; }
 
 .social-button {
-/*
-  margin-left: none;
-  margin-right: none;
-*/
   position: relative;
   display: inline;
+  margin: 0 !important;
 }
 
 .social-button:hover {
@@ -204,23 +194,23 @@
 #wp-button {
   font-size: 2em;
   top: -0.4em;
-  left: -1.1em;
+  left: 0.35em
 }
 #wp-button:hover { color: #1E8CBE; }
 
 /* GitHub social button */
 #gh-button {
   font-size: 1.65em;
-  top: -1.65em;
-  left: 0.5em;
+  top: -0.6em;
+  left: 0.9em;
 }
 #gh-button:hover { color: #BBBBBB; }
 
 /* YouTube social button */
 #yt-button {
   font-size: 1.8em;
-  top: -2.45em;
-  left: 1.75em;
+  top: -0.5em;
+  left: 1.3em;
 }
 #yt-button:hover { color: #CC181E; }
 
