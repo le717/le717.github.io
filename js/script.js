@@ -7,7 +7,8 @@
  */
 
 
-function showSidebarBtn() {
+//function showSidebarBtn() {
+(function() {
   "use strict";
   /* Display the site sidebar button */
 
@@ -23,8 +24,8 @@ function showSidebarBtn() {
       $("#sidebar").removeClass("sidebar-hidden");
     }
   });
-}
-showSidebarBtn();
+})();
+//showSidebarBtn();
 
 
 function shrinkImages() {
