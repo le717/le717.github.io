@@ -19,10 +19,12 @@ function showSidebarBtn() {
 
   $(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
+      alert("Hide sidebar");
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
 
     } else {
+      alert("Show sidebar");
       $("#sidebar-btn").removeClass("sidebar-btn-visible");
       $("#sidebar").removeClass("sidebar-hidden");
     }
