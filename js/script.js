@@ -12,9 +12,11 @@
   /* Display the site sidebar button */
 
   $(window).resize(function() {
-    if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 730) {
-      $("#sidebar-btn").addClass("sidebar-btn-visible");
-      $("#sidebar").addClass("sidebar-hidden");
+    if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
+      if (!$("#sidebar").hasClass("sidebar-hidden")) {
+        $("#sidebar-btn").addClass("sidebar-btn-visible");
+        $("#sidebar").addClass("sidebar-hidden");
+      }
 
     } else {
       $("#sidebar-btn").removeClass("sidebar-btn-visible");
