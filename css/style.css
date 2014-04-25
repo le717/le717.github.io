@@ -214,9 +214,9 @@
 
 /* YouTube social button */
 #yt-button {
-  font-size: 3.125em;
-  bottom: 0;
-  left: -0.5em;
+  font-size: 1.8em;
+  top: -1.57em;
+  left: 2.4em;
 }
 #yt-button:hover { color: #CC181E; }
 
