@@ -6,19 +6,13 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
-function showSidebar() {
-  "use strict";
-  /* Display the site sidebar */
-  $("#sidebar").toggleClass("sidebar-hidden");
-}
-
 
 function showSidebarBtn() {
   "use strict";
   /* Display the site sidebar button */
 
   $(window).resize(function() {
-    if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
+    if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 730) {
       alert("Hide sidebar");
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
