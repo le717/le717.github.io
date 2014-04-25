@@ -37,10 +37,10 @@ function shrinkImages() {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
 
         // However, do it only if the image is wider than the screen
-        console.log("Image width: " + $imgWidth);
-        console.log("Image src: " + $this.attr("src"));
-        console.log("Window Width: " + $(window).width());
-        console.log($(window).width() % $imgWidth >= 100);
+//        console.log("Image width: " + $imgWidth);
+//        console.log("Image src: " + $this.attr("src"));
+//        console.log("Window Width: " + $(window).width());
+//        console.log($(window).width() % $imgWidth >= 100);
 
         if ($(window).width() % $imgWidth >= 100) {
           $this.width($imgWidth - ($(window).width() % $imgWidth));

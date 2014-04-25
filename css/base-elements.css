@@ -30,8 +30,8 @@ blockquote:after {
   margin-left: 0.1em;
 }
 
-/* Use custom (Unicode only!) triangle bullet point */
-li:before {
+/* Use custom (Unicode only!) triangle bullet point on unordered lists */
+ul li:before {
   content: "\25B2";
   padding-right: 5px;
 }
