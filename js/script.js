@@ -40,9 +40,9 @@ function shrinkImages() {
         console.log("Window Width: " + $(window).width());
         console.log("Calculation: " + $(window).width() % $this.width() >= 100);
 
-//        if ($this.width() >= $(window).width()) {
         if ($(window).width() % $this.width() >= 100) {
-          $this.css("transform", "scale(0.8)");
+          $this.width(this.width() - ($(window).width() % $this.width()));
+          $this.height(this.height() - ($(window).height() % $this.height()));
         }
       }
     }
