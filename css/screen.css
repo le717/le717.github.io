@@ -47,13 +47,13 @@
 @media only screen and (max-width: 320px) {
   .header-logo {
     margin-left: 3% !important;
-    margin-top: 1% !important;
+    margin-top: -6% !important;
   }
 
   .header-text {
     position: absolute;
     left: -12%;
-    top: 11%;
+    top: 1em !important;
   }
 
   .social-button {

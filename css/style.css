@@ -184,6 +184,7 @@
   color: #000;
   position: relative;
 }
+.social-button-link:hover { text-decoration: none; }
 
 .social-button {
   margin-left: none;
