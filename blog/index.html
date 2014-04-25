@@ -6,7 +6,7 @@ redirect_from: /blog.html
 
 {% include loading.html %}
 <div class="blog-posts"></div><br>
-<p class="text-center" style="font-size: 1.1em;">
+<p class="text-center" id="end-of-posts">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
   <a target="_blank" href="http://Triangle717.WordPress.com/">full blog</a> and read to your heart's content. :smiley:
 </p>
@@ -82,6 +82,7 @@ redirect_from: /blog.html
       $(".loading-ani").remove();
       showPosts();
       $(".blog-posts").css("display", "");
+      $("#end-of-posts").css("display", "block");
 
       // Shrink the images down a bit
       shrinkImages();

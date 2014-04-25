@@ -46,7 +46,7 @@ pre {
   padding: 10px;
   margin-left: 2.5em;
   margin-right: 2.5em;
-  width: 100%;
+  width: auto;
   overflow: hidden;
   background-color: rgba(51, 51, 51, 0.7);
   font-size: 0.93em;

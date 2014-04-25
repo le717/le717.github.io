@@ -193,7 +193,7 @@
 /* WordPress social button */
 #wp-button {
   font-size: 2em;
-  top: -0.4em;
+  top: -0.45em;
   left: 0.35em
 }
 #wp-button:hover { color: #1E8CBE; }
@@ -264,6 +264,11 @@
 .publish-info {
   font-size: 0.85em;
   text-shadow: 1px 1px 2px #000;
+}
+
+#end-of-posts {
+  display: none;
+  font-size: 1.1em;
 }
 
 /* ------- Various styling ------- */
