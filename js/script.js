@@ -28,7 +28,7 @@ function shrinkImages() {
   /* Resize images on mobile devices */
 
   $("body").find("img").each(function() {
-    var $this = $(this)
+    var $this = $(this),
     $imgWidth = $this.width(),
     $imgHeight = $this.height();
 
