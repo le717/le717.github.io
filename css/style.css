@@ -189,6 +189,7 @@
   margin-left: none;
   margin-right: none;
   position: relative;
+  display: inline-block;
 }
 
 .social-button:hover {
@@ -198,16 +199,16 @@
 
 /* GitHub social button */
 #gh-button {
-  font-size: 3.1em;
-  bottom: -3em;
-  left: -1.7em;
+  font-size: 1.7em;
+  top: -3.25em;
+  left: 1.3em;
 }
 #gh-button:hover { color: #BBBBBB; }
 
 /* WordPress social button */
 #wp-button {
   font-size: 2em;
-  margin-top: -5em;
+  margin-top: -1.25em;
 }
 #wp-button:hover { color: #1E8CBE; }
 

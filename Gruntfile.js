@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
-    banner: '/* <%= pkg.name %> - v<%= pkg.version %>\n' +
+    banner: "/* <%= pkg.name %> - v<%= pkg.version %>\n" +
     '<%= pkg.homepage ? "" + pkg.homepage + "\\n" : "" %>' +
     'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
     'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
