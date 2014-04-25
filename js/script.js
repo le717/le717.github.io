@@ -28,21 +28,23 @@ function shrinkImages() {
   /* Resize images on mobile devices */
 
   $("body").find("img").each(function() {
-    var $this = $(this);
+    var $this = $(this)
+    $imgWidth = $this.width(),
+    $imgHeight = $this.height();
 
     // If this is a mobile browser, scale down non-exempt image sizes
     if ($.browser.mobile || $.browser.desktop) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
 
         // However, do it only if the image is wider than the screen
-        console.log("Image width: " + $this.width());
+        console.log("Image width: " + $imgWidth);
         console.log("Image src: " + $this.attr("src"));
         console.log("Window Width: " + $(window).width());
-        console.log($(window).width() % $this.width() >= 100);
+        console.log($(window).width() % $imgWidth >= 100);
 
-        if ($(window).width() % $this.width() >= 100) {
-          $this.width(this.width() - ($(window).width() % $this.width()));
-          $this.height(this.height() - ($(window).height() % $this.height()));
+        if ($(window).width() % $imgWidth >= 100) {
+          $this.width($imgWidth - ($(window).width() % $imgWidth));
+          $this.height($imgHeight - ($(window).height() % $imgHeight));
         }
       }
     }
