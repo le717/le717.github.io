@@ -38,7 +38,7 @@ function shrinkImages() {
         console.log("Image width: " + $this.width());
         console.log("Image src: " + $this.attr("src"));
         console.log("Window Width: " + $(window).width());
-        console.log("Calculation: " + $(window).width() % $this.width() >= 100);
+        console.log($(window).width() % $this.width() >= 100);
 
         if ($(window).width() % $this.width() >= 100) {
           $this.width(this.width() - ($(window).width() % $this.width()));
