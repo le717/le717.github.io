@@ -36,6 +36,7 @@ function shrinkImages() {
         // However, do it only if the image is wider than the screen
         console.log("Image width:" + $this.width());
         console.log("Window Width:" + $(window).width());
+        // NOTE: Maybe use transform: scale instead?
         if ($this.width() >= $(window).width()) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);

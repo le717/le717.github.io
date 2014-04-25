@@ -45,8 +45,12 @@ p {
 pre {
   border-left: 4px solid #DDD;
   padding: 2px 5px;
-  background-color: rgb(12, 120, 120);
+  background-color: #333;
   font-size: 0.95em;
+  font-family: "Share Tech Mono", sans-serif;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3) inset,
+              0 1px 0 rgba(255, 255, 255, 0.1),
+              0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* Remove unordered list bullet point in favor of custom one :D */
