@@ -31,7 +31,7 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 12em;
+  height: 13em;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
@@ -50,7 +50,10 @@
             transform: translate3d(0, -13em, 0);
   }
 
-#sidebar ul { margin-left: -20px; }
+#sidebar ul {
+  margin-top: -7px;
+  margin-left: -25px;
+}
 #sidebar li { font-size: 1.1em; }
 
 #sidebar-btn { display: none; }
