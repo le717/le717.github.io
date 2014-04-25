@@ -24,6 +24,7 @@ function showSidebarBtn() {
     }
   });
 }
+showSidebarBtn();
 
 
 function shrinkImages() {
@@ -53,7 +54,7 @@ $(function() {
   "use strict";
 
   // Display sidebar toggle button if needed
-  showSidebarBtn();
+  //showSidebarBtn();
 
   shrinkImages();
 
