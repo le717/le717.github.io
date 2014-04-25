@@ -13,8 +13,10 @@
 
   $(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
+      $("#sidebar-btn").addClass("sidebar-btn-visible");
       if (!$("#sidebar").hasClass("sidebar-hidden")) {
-        $("#sidebar-btn").addClass("sidebar-btn-visible");
+        $("#sidebar").addClass("sidebar-hidden");
+      } else {
         $("#sidebar").addClass("sidebar-hidden");
       }
 
