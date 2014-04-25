@@ -31,7 +31,7 @@ function shrinkImages() {
     var $this = $(this);
 
     // If this is a mobile browser, third non-exempt image sizes
-    if ($.browser.mobile) {
+    if ($.browser.mobile || $.browser.desktop) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
         // However, do it only if the image is wider than the screen
         console.log("Image width:" + $this.width());
