@@ -7,26 +7,21 @@
  */
 
 
-//function showSidebarBtn() {
 (function() {
   "use strict";
   /* Display the site sidebar button */
 
   $(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 730) {
-      alert("Hide sidebar");
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
 
     } else {
-      alert("Show sidebar");
       $("#sidebar-btn").removeClass("sidebar-btn-visible");
       $("#sidebar").removeClass("sidebar-hidden");
     }
   });
 })();
-//showSidebarBtn();
-
 
 function shrinkImages() {
   "use strict";
@@ -53,9 +48,6 @@ function shrinkImages() {
 
 $(function() {
   "use strict";
-
-  // Display sidebar toggle button if needed
-  //showSidebarBtn();
 
   shrinkImages();
 
