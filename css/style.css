@@ -45,21 +45,23 @@
 }
 
 .sidebar-hidden {
-    -webkit-transform: translate3d(0, -13em, 0);
-        -ms-transform: translate3d(0, -13em, 0);
-            transform: translate3d(0, -13em, 0);
+    -webkit-transform: translate3d(0, -13.5em, 0);
+        -ms-transform: translate3d(0, -13.5em, 0);
+            transform: translate3d(0, -13.5em, 0);
   }
 
 #sidebar ul {
-  margin-top: -7px;
+  margin-top: 5px;
   margin-left: -25px;
 }
 #sidebar li { font-size: 1.1em; }
 
 #sidebar-btn { display: none; }
 
-#sidebar-btn:active {
+#sidebar-btn:active,
+#sidebar-btn:hover {
   -webkit-transform: translate3d(0, -2px, 0);
+      -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
 }
 
