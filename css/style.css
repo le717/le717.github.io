@@ -31,7 +31,7 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 14em;
+  height: 14.2em;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
@@ -45,9 +45,9 @@
 }
 
 .sidebar-hidden {
-    -webkit-transform: translate3d(0, -14.5em, 0);
-        -ms-transform: translate3d(0, -14.5em, 0);
-            transform: translate3d(0, -14.5em, 0);
+    -webkit-transform: translate3d(0, -14.7em, 0);
+        -ms-transform: translate3d(0, -14.7em, 0);
+            transform: translate3d(0, -14.7em, 0);
   }
 
 #sidebar ul {
@@ -200,7 +200,7 @@
 /* GitHub social button */
 #gh-button {
   font-size: 1.7em;
-  top: -0.64em;
+  top: -0.54em;
   left: -0.8em;
 }
 #gh-button:hover { color: #BBBBBB; }
@@ -208,14 +208,14 @@
 /* WordPress social button */
 #wp-button {
   font-size: 2em;
-  top: -0.5em;
+  top: -0.4em;
 }
 #wp-button:hover { color: #1E8CBE; }
 
 /* YouTube social button */
 #yt-button {
   font-size: 1.8em;
-  top: -1.57em;
+  top: -1.47em;
   left: 2.4em;
 }
 #yt-button:hover { color: #CC181E; }
