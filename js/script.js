@@ -14,11 +14,7 @@
   $(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
       $("#sidebar-btn").addClass("sidebar-btn-visible");
-      if (!$("#sidebar").hasClass("sidebar-hidden")) {
-        $("#sidebar").addClass("sidebar-hidden");
-      } else {
-        $("#sidebar").addClass("sidebar-hidden");
-      }
+      $("#sidebar").addClass("sidebar-hidden");
 
     } else {
       $("#sidebar-btn").removeClass("sidebar-btn-visible");
@@ -38,8 +34,8 @@ function shrinkImages() {
     if ($.browser.mobile) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
         // However, do it only if the image is wider than the screen
-        console.log($this.width());
-        console.log($(window).width());
+        console.log("Image width:" + $this.width());
+        console.log("Window Width:" + $(window).width());
         if ($this.width() >= $(window).width()) {
           $this.width($this.width() / 3);
           $this.height($this.height() / 3);
