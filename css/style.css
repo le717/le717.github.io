@@ -283,3 +283,5 @@
 
 /* Loading animation */
 .loading-ani { z-index: 5; }
+
+.generated-data { border-bottom: 1px dashed white; }

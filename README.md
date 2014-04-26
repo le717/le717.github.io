@@ -63,5 +63,5 @@ I've used some very nice third-party libraries and styling on my site. I recomme
 
 ## License ##
 
-Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](license/LICENSE.md).
+Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](license/LICENSE).
 
