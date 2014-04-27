@@ -183,12 +183,12 @@ redirect_from: /blog.html
       // Remove nested paragraph in blockquotes
       $(postContainer).find("blockquote").each(function() {
         var $this = $(this);
-        $this.html($(this + " p").html());
+        $this.html($(this.selector + " p").html());
       });
 
 
       // Remove any WordPress alignment classes and style attributes
-      $(postContainer).find("blockquote").each(function() {
+      $(postContainer).find("div").each(function() {
         var $this = $(this);
         $this.removeClass("alignnone");
         $this.removeClass("alignleft");
