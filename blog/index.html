@@ -94,7 +94,7 @@ redirect_from: /blog.html
       /* Display each blog post */
       $.each(allBlogPosts, function(key, value) {
 
-//      value.cleanUp();
+      value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
@@ -130,10 +130,10 @@ redirect_from: /blog.html
     });
   }
 
-  /*BlogPost.prototype.cleanUp = function() {
+  BlogPost.prototype.cleanUp = function() {
    "use strict";
-    console.log(this);
-  };*/
+    console.log(this.selector);
+  };
 
 
   function cleanupPost(postContainer) {
@@ -148,9 +148,6 @@ redirect_from: /blog.html
 
       // Center the images that have captions applied
       $(".wp-caption").addClass("text-center");
-
-      // Remove the nested paragraph in the blockquote
-      $(postContainer + " blockquote").html($(postContainer + " blockquote p").html());
 
 
       // Remove any WordPress image-related classes
@@ -183,9 +180,15 @@ redirect_from: /blog.html
         $this.removeAttr("title");
       });
 
+      // Remove nested paragraph in blockquotes
+      $(postContainer).find("blockquote").each(function() {
+        var $this = $(this);
+        $this.html($(this + " p").html());
+      });
+
 
       // Remove any WordPress alignment classes and style attributes
-      $(postContainer).find("div").each(function() {
+      $(postContainer).find("blockquote").each(function() {
         var $this = $(this);
         $this.removeClass("alignnone");
         $this.removeClass("alignleft");

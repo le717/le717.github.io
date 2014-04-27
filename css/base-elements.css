@@ -30,6 +30,9 @@ blockquote:after {
   margin-left: 0.1em;
 }
 
+/* Remove unordered list bullet point in favor of custom one :D */
+ul { list-style: none; }
+
 /* Use custom (Unicode only!) triangle bullet point on unordered lists */
 ul li:before {
   content: "\25B2";
@@ -48,7 +51,7 @@ pre {
   margin-right: 2.5em;
   width: auto;
   overflow: auto;
-  background-color: rgba(51, 51, 51, 0.7);
+  background-color: rgb(70, 66, 66);
   font-size: 0.93em;
   font-family: "Share Tech Mono", sans-serif;
   text-shadow: 1px 1px black;
@@ -56,6 +59,3 @@ pre {
               0 1px 0 rgba(255, 255, 255, 0.1),
               0 -1px 0 rgba(0, 0, 0, 0.5);
 }
-
-/* Remove unordered list bullet point in favor of custom one :D */
-ul { list-style: none; }
