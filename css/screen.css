@@ -8,8 +8,9 @@
 
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
-/* Colorize social buttons only on touchscreens */
-/*@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 800px) {
+  
+  /* Colorize social buttons only on touchscreens
   #gh-button:active { color: #BBBBBB; }
   #gh-button:hover { color: #000; }
 
@@ -17,8 +18,9 @@
   #wp-button:hover { color: #000; }
 
   #yt-button:active { color: #CC181E; }
-  #yt-button:hover { color: #000; }
-}*/
+  #yt-button:hover { color: #000; }*/
+
+}
 
 @media only screen and (max-width: 720px) {
   .header-logo {

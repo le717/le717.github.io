@@ -58,7 +58,12 @@
 
 #sidebar-btn { display: none; }
 
-#sidebar-btn:active,
+#sidebar-btn:active {
+  -webkit-transform: translate3d(0, -4px, 0);
+      -ms-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+}
+
 #sidebar-btn:hover {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
