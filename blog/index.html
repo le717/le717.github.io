@@ -94,7 +94,7 @@ redirect_from: /blog.html
       /* Display each blog post */
       $.each(allBlogPosts, function(key, value) {
 
-      value.cleanUp();
+      //value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
@@ -130,10 +130,10 @@ redirect_from: /blog.html
     });
   }
 
-  BlogPost.prototype.cleanUp = function() {
+  /*BlogPost.prototype.cleanUp = function() {
    "use strict";
     console.log(this.selector);
-  };
+  };*/
 
 
   function cleanupPost(postContainer) {
