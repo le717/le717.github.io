@@ -271,6 +271,11 @@
   text-shadow: 1px 1px 2px #000;
 }
 
+blockquote p {
+  display: inline;
+  margin: 0;
+}
+
 #end-of-posts {
   display: none;
   font-size: 1.1em;

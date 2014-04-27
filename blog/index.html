@@ -180,13 +180,6 @@ redirect_from: /blog.html
         $this.removeAttr("title");
       });
 
-      // Remove nested paragraph in blockquotes
-      $(postContainer).find("blockquote").each(function() {
-        var $this = $(this);
-        $this.html($(this.selector + " p").html());
-      });
-
-
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
