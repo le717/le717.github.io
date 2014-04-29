@@ -6,4 +6,5 @@ wpurl: http://Triangle717.WordPress.com
 gems:
  - jekyll-mentions
  - jekyll-redirect-from
+ - jekyll-sitemap
  - jemoji
