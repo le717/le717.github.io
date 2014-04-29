@@ -54,7 +54,12 @@
   margin-top: 5px;
   margin-left: -25px;
 }
-#sidebar li { font-size: 1em; }
+
+#sidebar li { font-size: 0.95em; }
+
+#sidebar li:nth-child(4) {
+  padding-bottom: 0.5em;
+}
 
 #sidebar-btn { display: none; }
 
@@ -295,13 +300,3 @@
 .loading-ani { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed white; }
-
-.responsive-img-container {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.responsive-img {
-    width: 100%;
-    height: auto;
-}

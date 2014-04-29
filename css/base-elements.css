@@ -55,7 +55,4 @@ pre {
   font-size: 0.93em;
   font-family: "Share Tech Mono", sans-serif;
   text-shadow: 1px 1px black;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3) inset,
-              0 1px 0 rgba(255, 255, 255, 0.1),
-              0 -1px 0 rgba(0, 0, 0, 0.5);
 }
