@@ -271,7 +271,7 @@
   text-shadow: 1px 1px 2px #000;
 }
 
-blockquote p {
+.post-content blockquote p {
   display: inline;
   margin: 0;
 }
@@ -295,3 +295,13 @@ blockquote p {
 .loading-ani { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed white; }
+
+.responsive-img-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
