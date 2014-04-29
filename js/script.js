@@ -44,7 +44,6 @@ function shrinkImages() {
 
         if ($(window).width() % $imgWidth >= 100) {
           $this.width($imgWidth - ($(window).width() % $imgWidth));
-          $this.height($imgHeight - ($(window).height() % $imgHeight));
         }
       }
     }
