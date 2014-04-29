@@ -33,7 +33,8 @@ function shrinkImages() {
     $imgHeight = $this.height();
 
     // If this is a mobile browser, scale down non-exempt image sizes
-    if ($.browser.mobile || $.browser.desktop) {
+//    if ($.browser.mobile || $.browser.desktop) {
+    if ($.browser.mobile) {
       if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
 
         // However, do it only if the image is wider than the screen
