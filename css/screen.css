@@ -22,8 +22,15 @@
     left: -12%;
     top: 1em !important;
   }
-  
-  #sidebar li { font-size: 1.05em; }
+
+  #sidebar {
+    padding-bottom: 0.7em;
+  }
+
+  #sidebar li {
+    font-size: 1.05em;
+    margin-left: -5px;
+  }
 }
 
 /* ------- Smartphones (landscape) ------- */
