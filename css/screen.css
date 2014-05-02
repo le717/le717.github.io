@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 320px) {
   .header-logo {
-    margin-left: -4.1% !important;
+    margin-left: 0 !important;
     margin-top: -1% !important;
   }
 
@@ -55,5 +55,4 @@
   }
 
   #my-avatar { margin-left: -1em; }
-
 }

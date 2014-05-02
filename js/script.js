@@ -7,11 +7,11 @@
  */
 
 
-(function() {
-  "use strict";
+/*(function() {
+  "use strict";*/
   /* Display the site sidebar button */
 
-  $(window).resize(function() {
+  /*$(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
       $("#sidebar-btn").addClass("sidebar-btn-visible");
       $("#sidebar").addClass("sidebar-hidden");
@@ -21,7 +21,7 @@
       $("#sidebar").removeClass("sidebar-hidden");
     }
   });
-})();
+})();*/
 
 function shrinkImages() {
   "use strict";
@@ -29,8 +29,7 @@ function shrinkImages() {
 
   $("body").find("img").each(function() {
     var $this = $(this),
-    $imgWidth = $this.width(),
-    $imgHeight = $this.height();
+    $imgWidth = $this.width();
 
     // If this is a mobile browser, scale down non-exempt image sizes
 //    if ($.browser.mobile || $.browser.desktop) {
@@ -43,8 +42,8 @@ function shrinkImages() {
 //        console.log("Window Width: " + $(window).width());
 //        console.log($(window).width() % $imgWidth >= 100);
 
-        if ($(window).width() % $imgWidth >= 100) {
-          $this.width($imgWidth - ($(window).width() % $imgWidth));
+        if ($(window).width() % $imgWidth >= 50) {
+          $this.width($imgWidth - ($(window).width() / 2));
         }
       }
     }

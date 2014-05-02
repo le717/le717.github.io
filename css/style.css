@@ -55,13 +55,16 @@
   margin-left: -25px;
 }
 
-#sidebar li { font-size: 0.95em; }
-
-#sidebar li:nth-child(4) {
-  padding-bottom: 0.5em;
+#sidebar li {
+  font-size: 0.95em;
+  padding-bottom: 0.1em;
 }
 
-#sidebar-btn { display: none; }
+#sidebar li:nth-child(4) {
+  padding-bottom: 0.6em;
+}
+
+/*#sidebar-btn { display: none; }*/
 
 #sidebar-btn:active {
   -webkit-transform: translate3d(0, -4px, 0);
