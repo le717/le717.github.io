@@ -170,10 +170,10 @@
 #subsites ul { text-align: right; }
 
 /* Remove the triangle from the left */
-#subsites li:before { content: none; }
+#subsites li::before { content: none; }
 
 /* Restore the triangle, but this time on the right */
-#subsites li:after {
+#subsites li::after {
   content: "\25B2";
   padding-left: 5px;
 }
