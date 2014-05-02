@@ -18,10 +18,12 @@
   left: 50%;
 }
 
+/* Basic type styling options */
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
+.text-left { text-align: left; }
 .text-center { text-align: center; }
-.text-right { text-align: center; }
+.text-right { text-align: right; }
 
 
 /* ------- Sidebar styling ------- */
@@ -31,7 +33,7 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 14.2em;
+  height: 13.5em;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
 
@@ -45,13 +47,13 @@
 }
 
 .sidebar-hidden {
-    -webkit-transform: translate3d(0, -14.7em, 0);
-        -ms-transform: translate3d(0, -14.7em, 0);
-            transform: translate3d(0, -14.7em, 0);
+    -webkit-transform: translate3d(0, -13.7em, 0);
+        -ms-transform: translate3d(0, -13.7em, 0);
+            transform: translate3d(0, -13.7em, 0);
   }
 
 #sidebar ul {
-  margin-top: 5px;
+  margin-top: 7px;
   margin-left: -25px;
 }
 
@@ -66,13 +68,13 @@
 
 /*#sidebar-btn { display: none; }*/
 
-#sidebar-btn:active {
-  -webkit-transform: translate3d(0, -4px, 0);
-      -ms-transform: translate3d(0, -4px, 0);
-          transform: translate3d(0, -4px, 0);
+#sidebar-btn:hover {
+  -webkit-transform: translate3d(0, -2px, 0);
+      -ms-transform: translate3d(0, -2px, 0);
+          transform: translate3d(0, -2px, 0);
 }
 
-#sidebar-btn:hover {
+#sidebar-btn:active {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
