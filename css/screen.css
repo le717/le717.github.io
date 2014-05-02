@@ -8,19 +8,8 @@
 
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
-@media only screen and (max-width: 800px) {
-  
-  /* Colorize social buttons only on touchscreens
-  #gh-button:active { color: #BBBBBB; }
-  #gh-button:hover { color: #000; }
-
-  #wp-button:active { color: #1E8CBE; }
-  #wp-button:hover { color: #000; }
-
-  #yt-button:active { color: #CC181E; }
-  #yt-button:hover { color: #000; }*/
-
-}
+/*@media only screen and (max-width: 800px) {
+}/*/
 
 @media only screen and (max-width: 720px) {
   .header-logo {
@@ -55,14 +44,14 @@
 
 @media only screen and (max-width: 320px) {
   .header-logo {
-    margin-left: 3% !important;
-    margin-top: -6% !important;
+    margin-left: -4.1% !important;
+    margin-top: -1% !important;
   }
 
   .header-text {
     position: absolute;
-    left: -12%;
-    top: 1em !important;
+    left: -17%;
+    top: 1.1em !important;
   }
 
   #my-avatar { margin-left: -1em; }
