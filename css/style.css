@@ -28,7 +28,7 @@
 
 /* ------- Sidebar styling ------- */
 
-#sidebar {
+.sidebar {
   position: fixed;
   top: 0;
   right: 0;
@@ -52,29 +52,29 @@
             transform: translate3d(0, -14.3em, 0);
   }
 
-#sidebar ul {
+.sidebar ul {
   margin-top: 7px;
   margin-left: -25px;
 }
 
-#sidebar li {
+.sidebar li {
   font-size: 0.95em;
   padding-bottom: 0.1em;
 }
 
-#sidebar li:nth-child(4) {
+.sidebar li:nth-child(4) {
   padding-bottom: 0.6em;
 }
 
-/*#sidebar-btn { display: none; }*/
+/*.sidebar-btn { display: none; }*/
 
-#sidebar-btn:hover {
+.sidebar-btn:hover {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
 }
 
-#sidebar-btn:active {
+.sidebar-btn:active {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);

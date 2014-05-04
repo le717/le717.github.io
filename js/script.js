@@ -10,7 +10,7 @@
 (function() {
   "use strict";
   /* Show sidebar once button is clicked/tapped */
-  $("#sidebar-btn").on("click", function() {
+  $(".sidebar-btn").on("click", function() {
     $(".sidebar").toggleClass("sidebar-hidden");
   });
 
