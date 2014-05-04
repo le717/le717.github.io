@@ -7,9 +7,12 @@
  */
 
 
-/*(function() {
-  "use strict";*/
-  /* Display the site sidebar button */
+(function() {
+  "use strict";
+  /* Show sidebar once button is clicked/tapped */
+  $("#sidebar-btn").on("click", function() {
+    $(".sidebar").toggleClass("sidebar-hidden");
+  });
 
   /*$(window).resize(function() {
     if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
@@ -20,8 +23,8 @@
       $("#sidebar-btn").removeClass("sidebar-btn-visible");
       $("#sidebar").removeClass("sidebar-hidden");
     }
-  });
-})();*/
+  });*/
+})();
 
 function shrinkImages() {
   "use strict";

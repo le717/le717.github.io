@@ -4,6 +4,7 @@ Website: http://le717.github.io, http://Triangle717.WordPress.com
 GitHub: @le717
 
 /* SITE */
+Name: Triangle Land
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3, JavaScript, SVG, Jekyll, Responsive design
