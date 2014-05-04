@@ -80,6 +80,18 @@
           transform: translate3d(0, -2px, 0);
 }
 
+.sidebar-btn-rotate {
+  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-duration: 0.7s;
+
+  transition-property: -webkit-transform, -ms-transform, transform;
+  transition-duration: 0.7s;
+
+  -webkit-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
 .sidebar-btn-visible {
   display: inline !important;
   position: fixed;

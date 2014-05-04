@@ -12,6 +12,7 @@
   /* Show sidebar once button is clicked/tapped */
   $(".sidebar-btn").on("click", function() {
     $(".sidebar").toggleClass("sidebar-hidden");
+    $(".sidebar-btn").toggleClass("sidebar-btn-rotate");
   });
 
   /*$(window).resize(function() {
