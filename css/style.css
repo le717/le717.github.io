@@ -80,13 +80,15 @@
           transform: translate3d(0, -2px, 0);
 }*/
 
-.sidebar-btn-rotate {
+.sidebar-btn {
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 0.5s;
 
   transition-property: -webkit-transform, -ms-transform, transform;
   transition-duration: 0.5s;
+}
 
+.sidebar-btn-rotate {
   -webkit-transform: rotateX(180deg);
       -ms-transform: rotateX(180deg);
           transform: rotateX(180deg);
