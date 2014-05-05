@@ -8,8 +8,8 @@
  */
 
 
-/* Small box-shadow for images */
-.img-shadow { box-shadow: 1px 1px 5px 1px #000; }
+/* Small shadow for images */
+.img-shadow { box-shadow: 0 0 6px 1px #fff; }
 
 .centered,
 .fully-centered {
@@ -111,10 +111,10 @@
 
 /* ------- Scroll to the top box styling ------- */
 
+.scroll-up { display: none; }
 /*.scroll-up {
   position: fixed;
 /*  display: block;
-  display: none;
   right: 20px;
   bottom: -0.3em;
   z-index: 2;
