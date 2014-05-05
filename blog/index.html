@@ -131,23 +131,30 @@ redirect_from: /blog.html
   }
 
   BlogPost.prototype.cleanUp = function() {
-   "use strict";
-    console.log(this.postContainer);
+   "use strict"
+   /* Remove WordPress classes, IDs, and other unnecessary clutter */
+
+    $(function() {
+      // Remove WordPress image styling
+      $("img").removeAttr("style");
+
+      // Center the images that have captions applied
+      $(".wp-caption").addClass("text-center");
+    });
   };
 
 
   function cleanupPost(postContainer) {
     "use strict";
     /* Remove WordPress classes, IDs, and other unnecessary clutter */
-    // NOTE Perhaps move this to the BlogPost prototype?
+    // TODO Move this to the BlogPost prototype
 
     $(function() {
-
       // Remove WordPress image styling
-      $("img").removeAttr("style");
+      //$("img").removeAttr("style");
 
       // Center the images that have captions applied
-      $(".wp-caption").addClass("text-center");
+      //$(".wp-caption").addClass("text-center");
 
 
       // Remove any WordPress image-related classes
