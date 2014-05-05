@@ -75,14 +75,22 @@ $(function() {
   var $centered = $(".fully-centered");
   $centered.css("margin-left", -$centered.width() / 2);
   $centered.css("margin-top", -$centered.height() / 2);
-  
+
+  // Get the featured content feed
   $.ajax({
     dataType: "json",
-    url: "http://le717.github.io/json/featured.json",
+    url: "/json/featured.json",
     success: function(data) {
+
+      // Display the featured code snippet
       $("#featured-code-box").css("display", "block");
       $("#featured-code-box").html(data.featuredCode[0].snippet);
       $("#featured-code-desc").html(data.featuredCode[0].description);
+
+      // Display the featured project
+      $("#featured-project-desc").html(" " + data.featuredProject[0].description);
+      $("#featured-project-name").html(data.featuredProject[0].name);
+      $("#featured-project-version").html(data.featuredProject[0].version);
     }
   });
 
