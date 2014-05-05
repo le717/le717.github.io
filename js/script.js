@@ -93,7 +93,7 @@ $(function() {
         "<a target='_blank' href='{0}'></a>".format(data.featuredProject[0].url));
 
       $("#featured-project-version").html(data.featuredProject[0].version);
-      $("#featured-project-desc").append(" " + data.featuredProject[0].description);
+      $("#featured-project-desc").html(" " + data.featuredProject[0].description);
     }
   });
 
