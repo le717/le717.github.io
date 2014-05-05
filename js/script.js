@@ -75,6 +75,16 @@ $(function() {
   var $centered = $(".fully-centered");
   $centered.css("margin-left", -$centered.width() / 2);
   $centered.css("margin-top", -$centered.height() / 2);
+  
+  $.ajax({
+    dataType: "json",
+    url: "http://le717.github.io/json/featured.json",
+    success: function(data) {
+      $("#featured-code-box").css("display", "block");
+      $("#featured-code-box").html(data.featuredCode[0].snippet);
+      $("#featured-code-desc").html(data.featuredCode[0].description);
+    }
+  });
 
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
