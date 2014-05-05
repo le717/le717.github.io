@@ -31,9 +31,13 @@
     font-size: 1.05em;
     margin-left: -5px;
   }
-  
+
   #featured-code-box {
     width: auto;
+  }
+
+  #featured-project {
+    margin-top: 0;
   }
 }
 

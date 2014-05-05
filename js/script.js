@@ -66,8 +66,9 @@ $(function() {
     $(".ie-svg").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
   }
 
-  // Hide non-mobile-ready elements
+  // Mobile-only actions
   if ($.browser.mobile) {
+    // Hide not-mobile-ready elements
     $(".no-mobile").css("display", "none");
   }
 
