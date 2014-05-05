@@ -134,13 +134,18 @@ redirect_from: /blog.html
    "use strict"
    /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
-    $(function() {
+   consoe.log(this.postIDDOM);
+   this.postIDDOM.forEach(function(value, index) {
+     console.log(value);
+   });
+
+    /*$(function() {
       // Remove WordPress image styling
       $("img").removeAttr("style");
 
       // Center the images that have captions applied
       $(".wp-caption").addClass("text-center");
-    });
+    });*/
   };
 
 
@@ -151,10 +156,10 @@ redirect_from: /blog.html
 
     $(function() {
       // Remove WordPress image styling
-      //$("img").removeAttr("style");
+      $("img").removeAttr("style");
 
       // Center the images that have captions applied
-      //$(".wp-caption").addClass("text-center");
+      $(".wp-caption").addClass("text-center");
 
 
       // Remove any WordPress image-related classes
