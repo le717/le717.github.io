@@ -89,8 +89,11 @@ $(function() {
 
       // Display the featured project
       $("#featured-project-name").html(data.featuredProject[0].name);
+      $("#featured-project-name").wrap(
+        "<a target='_blank' href='{0}'></a>".format(data.featuredProject[0].url));
+
       $("#featured-project-version").html(data.featuredProject[0].version);
-      $("#featured-project-desc").html(" " + data.featuredProject[0].description);
+      $("#featured-project-desc").append(" " + data.featuredProject[0].description);
     }
   });
 
