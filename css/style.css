@@ -9,7 +9,7 @@
 
 
 /* Small box-shadow for images */
-.img-shadow { box-shadow: 1px 1px 5px 1px black; }
+.img-shadow { box-shadow: 1px 1px 5px 1px #000; }
 
 .centered,
 .fully-centered {
@@ -62,11 +62,8 @@
   padding-bottom: 0.1em;
 }
 
-.sidebar li:nth-child(4) {
-  padding-bottom: 0.6em;
-}
-
-/*.sidebar-btn { display: none; }*/
+/* Small divider between link categories */
+.sidebar li:nth-child(4) { padding-bottom: 0.6em; }
 
 /*.sidebar-btn:hover {
   -webkit-transform: translate3d(0, -2px, 0);
@@ -80,6 +77,7 @@
           transform: translate3d(0, -2px, 0);
 }*/
 
+/* Sidebar toggle button */
 .sidebar-btn {
   width: 0;
   height: 0;
@@ -101,8 +99,9 @@
           transform: rotateX(180deg);
 }
 
+/* Makes the button visible */
 .sidebar-btn-visible {
-  display: inline !important;
+  display: inline;
   position: fixed;
   top: 10px;
   right: 10px;
@@ -112,9 +111,9 @@
 
 /* ------- Scroll to the top box styling ------- */
 
-.scroll-up {
+/*.scroll-up {
   position: fixed;
-/*  display: block;*/
+/*  display: block;
   display: none;
   right: 20px;
   bottom: -0.3em;
@@ -146,10 +145,10 @@
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
-}
+}*/
 
 
-/* ------- Site index styling ------- */
+/* ------- Site header  ------- */
 
 .header-text {
   position: absolute;
@@ -165,11 +164,19 @@
   margin-top: -2em;
 }
 
-#featured-project {
-  margin-top: -13%;
+/* ------- Featured item displays ------- */
+
+#featured-project { margin-top: -13%; }
+
+#featured-code-box {
+  width: 47%;
+  margin-top: -10px;
+  display: none;
 }
 
-#subpages {
+#featured-code-desc { margin-top: -10px; }
+
+/*#subpages {
   position: relative;
   top: 7.5em;
   left: 57%;
@@ -181,26 +188,7 @@
   top: 0.65em;
   margin-left: 25%;
   text-align: left;
-}
-
-#subsites {
-  position: relative;
-  left: 3%;
-  top: 11em;
-  display: inline-block;
-}
-
-#subsites h2,
-#subsites ul { text-align: right; }
-
-/* Remove the triangle from the left */
-#subsites li::before { content: none; }
-
-/* Restore the triangle, but this time on the right */
-#subsites li::after {
-  content: "\25B2";
-  padding-left: 5px;
-}
+}*/
 
 
 /* ------- Social buttons styling ------- */
@@ -300,6 +288,8 @@
   text-shadow: 1px 1px 2px #000;
 }
 
+.post-content { border-bottom: 4px dotted #fff; }
+
 .post-content blockquote p {
   display: inline;
   margin: 0;
@@ -313,9 +303,9 @@
 /* ------- Various styling ------- */
 
 #sitemap-active {
-    font-size: 1.1em;
-    color: #E4E1E8;
-    text-shadow: 2px 2px 2px #000;
+  font-size: 1.1em;
+  color: #E4E1E8;
+  text-shadow: 2px 2px 2px #000;
 }
 
 #sitemap h3 { margin-bottom: 2px; }
@@ -323,14 +313,4 @@
 /* Loading animation */
 .loading-ani { z-index: 5; }
 
-.generated-data { border-bottom: 1px dashed white; }
-
-#featured-code-box {
-  width: 47%;
-  margin-top: -10px;
-  display: none;
-}
-
-#featured-code-desc {
-  margin-top: -10px;
-}
+.generated-data { border-bottom: 1px dashed #fff; }
