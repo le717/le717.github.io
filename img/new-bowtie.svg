@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="96"
-   height="96"
+   width="335.37064"
+   height="292.18661"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="13.898074"
-     inkscape:cy="43.138844"
+     inkscape:zoom="0.7"
+     inkscape:cx="187.05853"
+     inkscape:cy="276.56677"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -34,7 +34,11 @@
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -43,7 +47,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -51,27 +54,12 @@
      inkscape:label="Background"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-956.36218)">
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.92449086999999996;stroke-opacity:1"
-       id="rect3002"
-       width="79.075508"
-       height="9.0755091"
-       x="8.462245"
-       y="971.8244" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.92449086999999996;stroke-opacity:1"
-       id="rect3002-1"
-       width="79.075508"
-       height="9.0755091"
-       x="8.462245"
-       y="1027.8245" />
-    <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.92449086999999996;stroke-opacity:1"
-       id="rect3002-1-7"
-       width="79.075508"
-       height="9.0755091"
-       x="8.462245"
-       y="998.8244" />
+     transform="translate(-101.015,-760.17557)">
+    <path
+       style="fill:#ffff00;fill-opacity:1;stroke:none"
+       d="m 268.70032,760.17557 167.68532,292.18663 -335.37064,0 z"
+       id="rect2990"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
   </g>
 </svg>
