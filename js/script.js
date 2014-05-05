@@ -88,9 +88,9 @@ $(function() {
       $("#featured-code-desc").html(data.featuredCode[0].description);
 
       // Display the featured project
-      $("#featured-project-desc").html(" " + data.featuredProject[0].description);
       $("#featured-project-name").html(data.featuredProject[0].name);
       $("#featured-project-version").html(data.featuredProject[0].version);
+      $("#featured-project-desc").html(" " + data.featuredProject[0].description);
     }
   });
 
