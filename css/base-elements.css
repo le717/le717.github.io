@@ -16,7 +16,7 @@ blockquote {
   background-color: rgb(128, 128, 128);
   font-size: 1.05em;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  quotes: "\201C""\201D""\2018""\2019";
+  quotes: "\201C""\201D""\201C""\201D";
 }
 
 blockquote::before {
