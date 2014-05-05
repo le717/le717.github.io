@@ -31,6 +31,10 @@
     font-size: 1.05em;
     margin-left: -5px;
   }
+  
+  #featured-code-box {
+    width: auto;
+  }
 }
 
 /* ------- Smartphones (landscape) ------- */

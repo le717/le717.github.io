@@ -1,8 +1,16 @@
 {
-  "featuredProject": {
-    "name": "Brackets HTML Skeleton",
-    "url": "http://github.com/le717/brackets-html-skeleton#readme",
-    "current_version": "v1.1.5",
-    "description": "is a <a href=\"http:\/\/brackets.io\" target=\"_blank\">Brackets<\/a> extension that allows you to add various HTML elements straight into your document, freeing you from typing it yourself."
-  }
+  "featuredProject": [
+    {
+      "name": "Brackets HTML Skeleton",
+      "url": "http://github.com/le717/brackets-html-skeleton#readme",
+      "current_version": "v1.1.5",
+      "description": "is a <a href=\"http://brackets.io\" target=\"_blank\">Brackets</a> extension that allows you to add various HTML elements straight into your document, freeing you from typing it yourself."
+    }
+  ],
+  "featuredCode": [
+    {
+      "code": "var $imgSrc = $(\".ie-svg\").attr(\"src\");\n$(\".ie-svg\").attr(\"src\", $imgSrc.substring(0, $imgSrc.length - 3) + \"png\");",
+      "description": "This small bit of jQuery simply gets the <code>src</code> attribute of the <code>ie-svg</code> class<br>and replaces it with a PNG image counterpart already on the server.<br>It works well for working around some of Internet Explorer's issues with SVG vector graphics."
+    }
+  ]
 }
