@@ -2,12 +2,6 @@
 layout: default
 title: Home
 ---
-<div class="centered no-mobile" id="featured-project">
-  <h2>Featured Project</h2>
-  <span id="featured-project-name"></span> <span id="featured-project-version"></span>
-  <p id="featured-project-desc"></p>
-</div>
-
 <p class="text-center">
   Welcome to Triangle Land! :smiley:<br>This site is still in development,<br>and as such things <span class="text-italic">will be</span> broken and missing.<br>
   Thank you for your patience as I work to build this site up<br>to its greatest potential!
@@ -17,6 +11,19 @@ title: Home
   For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
   <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans&nbsp;1:16a&nbsp;(NKJV)</a>
 </blockquote>
+<br>
+<div id="featured-code"> <!-- class="no-mobile" -->
+  <h2>Code Snippet</h2>
+  <pre id="featured-code-box">
+    var $imgSrc = $(".ie-svg").attr("src");
+    $(".ie-svg").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
+  </pre>
+  <p id="featured-code-desc">
+    This small bit of jQuery simply gets the <code>src</code> attribute of the <code>ie-svg</code> class<br>
+    and replaces it with a PNG image counterpart already on the server.<br>
+    It works well for working around some of Internet Explorer's issues with SVG vector graphics.
+  </p>
+</div>
 
 <!-- <div class="centered" id="subpages">
   <h2>Pages</h2>

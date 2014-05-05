@@ -326,3 +326,12 @@
 .loading-ani { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed white; }
+
+#featured-code-box {
+  width: 45%;
+  margin-top: -10px;
+}
+
+#featured-code-desc {
+  margin-top: -10px;
+}
