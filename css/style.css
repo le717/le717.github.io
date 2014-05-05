@@ -330,6 +330,7 @@
 #featured-code-box {
   width: 47%;
   margin-top: -10px;
+  display: none;
 }
 
 #featured-code-desc {
