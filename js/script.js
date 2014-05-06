@@ -46,8 +46,8 @@ function shrinkImages() {
 //        console.log("Window Width: " + $(window).width());
 //        console.log($(window).width() % $imgWidth >= 100);
 
-        if ($(window).width() % $imgWidth >= 50) {
-          $this.width($imgWidth - ($(window).width() / 2));
+        if ($imgWidth % $imgWidth >= 50) {
+          $this.width($imgWidth - ($imgWidth / 2));
         }
       }
     }
@@ -63,7 +63,7 @@ $(function() {
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
   if ($.browser.msie) {
     var $imgSrc = $(".ie-svg").attr("src");
-    $(".ie-svg").attr("src", $imgSrc.substring(0, $imgSrc.length - 3) + "png");
+    $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
   }
 
   // Mobile-only actions

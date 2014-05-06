@@ -7,7 +7,7 @@ redirect_from: /about.html
   <p>Hello! I am <span class="text-bold">Triangle717</span> (pronounced <span class="text-bold">Triangle seven one seven</span>), sometimes known as
     <span class="text-bold">le717</span> (pronounced <span class="text-bold">lee seven seventeen</span>).
     I am <span class="generated-data" id="i-am-age" title="My age is calculated automatically. :D"></span> years old, harkening from Triangle Land, Georgia, USA.</p>
-  <p>I am also a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.</p>
+  <p>I am a Christian, born and raised in a Christian home, and I am not afraid to publicly proclaim my faith in God the Father, God the Son (Jesus Christ), and God the Holy Spirit.</p>
 
   <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
   <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans&nbsp;1:16a&nbsp;(NKJV)</a></blockquote>
@@ -28,6 +28,7 @@ I discovered what I been developing the mental capacity to accomplish since I wa
   <h1 class="text-center">About this site</h1>
   <p><span class="text-bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="{{ site.github.repository_url }}">open-source</a>
     under the <a href="/license/index.html">MIT License</a>), written from scratch by yours truly.</p>
+
   <p>As of March 31, 2014, <span class="text-bold">Triangle Land</span> is under heavy construction, and things will change, break, and move around without notice. I am sorry for any inconvenience this may cause.</p>
 
   <script>
@@ -46,7 +47,7 @@ I discovered what I been developing the mental capacity to accomplish since I wa
     if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
       myAge -= 1;
     }
-    document.getElementById("i-am-age").innerHTML = myAge;
+    $("#i-am-age").html(myAge);
 
 
     /* ------- List the coding languages I know ------ */
@@ -64,5 +65,5 @@ I discovered what I been developing the mental capacity to accomplish since I wa
 
     // Remove generated trailing space and comma
     listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
-    document.getElementById("code-i-know").innerHTML = listAllTheCodes;
+    $("#code-i-know").html(listAllTheCodes);
   </script>
