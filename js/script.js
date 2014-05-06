@@ -106,25 +106,44 @@ $(function() {
 
   // Get the height of the content to be spoilered now,
   // as once we hide the text it cannot be restored.
-  var $spoilerClass = $(".spoiler"),
-      $spoilerHeight = $spoilerClass.css("height");
+  // Add 5px for a bit of extra space to prevent text getting cutting off
+  var spoilerID      = 1,
+      spoilerBtnID   = 1,
+      $spoilerClass  = $(".spoiler"),
+      $spoilerHeight = parseInt($spoilerClass.css("height").slice(0, -2)) + 5 + "px";
+
+  // Add IDs to each spoiler
+  $spoilerClass.each(function(index, value) {
+    $(value).attr("id", "spoiler-" + spoilerID);
+    spoilerID += 1;
+  });
 
   // Add the toggle button (we need it for this to even work :P)
   $spoilerClass.before("<div class='spoiler-btn'><span>Spoiler</span></div>");
 
+  // Add matching IDs to each toggle button
+  $(".spoiler-btn").each(function(index, value) {
+      $(value).attr("id", "spoiler-btn-" + spoilerBtnID);
+      spoilerBtnID += 1;
+    });
+
   // Now that we have the height, hide the text
   $spoilerClass.css("height", "0");
 
-  // Upon clicking the spoiler button,
-  // if the content is hidden, reveal it.
-  // Otherwise, hide it.
+
   $(".spoiler-btn").on("click", function() {
-    if ($spoilerClass.hasClass("spoiler-shown")) {
-      $spoilerClass.css("height", "0");
+    // Get the ID for the clicked spoiler button so only that one is triggered
+    var $thisSpoilerID = $("#" + $(this).attr("id").replace(/-btn/, ""));
+
+    // Upon clicking the spoiler button,
+    // if the content is hidden, reveal it.
+    // Otherwise, hide it.
+    if ($thisSpoilerID.hasClass("spoiler-shown")) {
+      $thisSpoilerID.css("height", "0");
     } else {
-      $spoilerClass.css("height", $spoilerHeight);
+      $thisSpoilerID.css("height", $spoilerHeight);
     }
-    $spoilerClass.toggleClass("spoiler-shown");
+    $thisSpoilerID.toggleClass("spoiler-shown");
   });
 
 //  // Get date of last commit using GitHub Pages API
