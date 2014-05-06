@@ -71,7 +71,7 @@ $(function() {
     // Hide not-mobile-ready elements
     $(".no-mobile").css("display", "none");
     $(".sidebar").addClass("sidebar-hidden");
-    $(".sidebar-btn").addClass("sidebar-btn-rotate");
+    $(".sidebar-btn").removeClass("sidebar-btn-rotate");
   }
 
   // Fully center the items that need centering
