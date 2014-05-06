@@ -70,6 +70,8 @@ $(function() {
   if ($.browser.mobile) {
     // Hide not-mobile-ready elements
     $(".no-mobile").css("display", "none");
+    $(".sidebar").addClass("sidebar-hidden");
+    $(".sidebar-btn").addClass("sidebar-btn-rotate");
   }
 
   // Fully center the items that need centering
