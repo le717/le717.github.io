@@ -314,3 +314,13 @@
 .loading-ani { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed #fff; }
+
+.portfolio-img { border-radius: 50%; }
+
+.portfolio-img-desc { margin-left: 2em; }
+
+#portfolio-crtc { margin-left: 8em; }
+
+#portfolio-robox { margin-left: 5.5em; }
+
+#portfolio-teevee { margin-left: 6em; }
