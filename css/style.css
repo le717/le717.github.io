@@ -28,6 +28,7 @@
 
 /* ------- Sidebar styling ------- */
 
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -111,6 +112,7 @@
 
 /* ------- Scroll to the top box styling ------- */
 
+
 .scroll-up { display: none; }
 /*.scroll-up {
   position: fixed;
@@ -150,6 +152,7 @@
 
 /* ------- Site header  ------- */
 
+
 .header-text {
   position: absolute;
   display: inline;
@@ -164,7 +167,9 @@
   margin-top: -2em;
 }
 
+
 /* ------- Featured item displays ------- */
+
 
 #featured-project { margin-top: -13%; }
 
@@ -192,6 +197,7 @@
 
 
 /* ------- Social buttons styling ------- */
+
 
 .social-button-link {
   text-decoration: none;
@@ -239,6 +245,7 @@
 
 /* ------- Previous button styling ------- */
 
+
 #previous-link {
   margin-left: 10px;
   margin-top: -5px;
@@ -276,6 +283,7 @@
 
 /* ------- Blog post styling ------- */
 
+
 .post-title { text-shadow: 1px 2px #00f; }
 
 .post-info {
@@ -300,7 +308,44 @@
   font-size: 1.1em;
 }
 
+
+/* ------- Spoiler styling------- */
+
+/* The spoilered content */
+.spoiler {
+  overflow: hidden;
+  transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
+}
+
+/* Spoiler button */
+.spoiler-btn {
+  width: 4em;
+  height: 2em;
+  background-color: yellow;
+  display: inline-block;
+  border-radius: 5px;
+  color: black;
+
+  transition-property: background-color, color;
+  transition-duration: 0.5s, 0.7s;
+  transition-timing-function: ease;
+}
+
+.spoiler-btn:hover {
+  color: #fff;
+  background-color: #0000C4;
+}
+
+/* "Spoiler" text */
+.spoiler-btn span {
+  position: relative;
+  left: 0.5em;
+  top: 0.2em;
+}
+
+
 /* ------- Various styling ------- */
+
 
 #sitemap-active {
   font-size: 1.1em;

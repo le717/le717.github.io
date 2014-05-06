@@ -66,6 +66,7 @@ $(function() {
     $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
   }
 
+
   // Mobile-only actions
   if ($.browser.mobile) {
     // Hide not-mobile-ready elements
@@ -74,10 +75,12 @@ $(function() {
     $(".sidebar-btn").removeClass("sidebar-btn-rotate");
   }
 
+
   // Fully center the items that need centering
   var $centered = $(".fully-centered");
   $centered.css("margin-left", -$centered.width() / 2);
   $centered.css("margin-top", -$centered.height() / 2);
+
 
   // Get the featured content feed
   $.ajax({
@@ -98,6 +101,30 @@ $(function() {
       $("#featured-project-version").html(data.featuredProject[0].version);
       $("#featured-project-desc").html(" " + data.featuredProject[0].description);
     }
+  });
+
+
+  // Get the height of the content to be spoilered now,
+  // as once we hide the text it cannot be restored.
+  var $spoilerClass = $(".spoiler"),
+      $spoilerHeight = $spoilerClass.css("height");
+
+  // Add the toggle button (we need it for this to even work :P)
+  $spoilerClass.before("<div class='spoiler-btn'><span>Spoiler</span></div>");
+
+  // Now that we have the height, hide the text
+  $spoilerClass.css("height", "0");
+
+  // Upon clicking the spoiler button,
+  // if the content is hidden, reveal it.
+  // Otherwise, hide it.
+  $(".spoiler-btn").on("click", function() {
+    if ($spoilerClass.hasClass("spoiler-shown")) {
+      $spoilerClass.css("height", "0");
+    } else {
+      $spoilerClass.css("height", $spoilerHeight);
+    }
+    $spoilerClass.toggleClass("spoiler-shown");
   });
 
 //  // Get date of last commit using GitHub Pages API
