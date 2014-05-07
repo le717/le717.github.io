@@ -335,8 +335,7 @@
   transition-timing-function: ease;
 }
 
-.spoiler-btn:hover,
-.spoiler-btn:active {
+.spoiler-btn-active {
   color: #fff;
   background-color: #0000C4;
 }

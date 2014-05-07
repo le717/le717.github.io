@@ -105,9 +105,9 @@ $(function() {
 
   /* ------- Spoiler handling ------- */
 
-  var spoilerID      = 1,
-      spoilerBtnID   = 1,
-      spoilerHeights = [],
+  var spoilerHeights = [],
+      spoilerID      = 0,
+      spoilerBtnID   = 0,
       $spoilerClass  = $(".spoiler");
 
   // Add IDs to each spoiler
@@ -126,29 +126,30 @@ $(function() {
 
   // Add matching IDs to each toggle button
   $(".spoiler-btn").each(function(index, value) {
-      $(value).attr("id", "spoiler-btn-" + spoilerBtnID);
-      spoilerBtnID += 1;
-    });
+    $(value).attr("id", "spoiler-btn-" + spoilerBtnID);
+    spoilerBtnID += 1;
+  });
 
   // Now that we have the height, hide the text
   $spoilerClass.css("height", "0");
 
   $(".spoiler-btn").on("click", function() {
     // Get the ID for the clicked spoiler button so only that one is triggered
-      var thisSpoilerID = "#" + $(this).attr("id").replace(/-btn/, ""),
-          thisSpoilerNumber = thisSpoilerID.slice(thisSpoilerID.length - 1),
-          $thisSpoiler  = $(thisSpoilerID);
+    var thisSpoilerID = "#" + $(this).attr("id").replace(/-btn/, ""),
+        thisSpoilerNumber = thisSpoilerID.slice(thisSpoilerID.length - 1),
+        $thisSpoiler  = $(thisSpoilerID);
 
-      // Upon clicking the spoiler button,
-      // if the content is hidden, reveal it.
-      // Otherwise, hide it.
-      if ($thisSpoiler.hasClass("spoiler-shown")) {
-        $thisSpoiler.css("height", "0");
-      } else {
-        $thisSpoiler.css("height", spoilerHeights[thisSpoilerNumber]);
-      }
-      $thisSpoiler.toggleClass("spoiler-shown");
-    });
+    // Upon clicking the spoiler button,
+    // if the content is hidden, reveal it.
+    // Otherwise, hide it.
+    if ($thisSpoiler.hasClass("spoiler-shown")) {
+      $thisSpoiler.css("height", "0");
+    } else {
+      $thisSpoiler.css("height", spoilerHeights[thisSpoilerNumber]);
+    }
+    $thisSpoiler.toggleClass("spoiler-shown");
+    $(this).toggleClass("spoiler-btn-active");
+  });
 
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
