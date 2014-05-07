@@ -315,6 +315,10 @@
 .spoiler {
   overflow: hidden;
   transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  padding-left: 5px;
+  margin-top: 5px;
 }
 
 /* Spoiler button */
@@ -331,7 +335,8 @@
   transition-timing-function: ease;
 }
 
-.spoiler-btn:hover {
+.spoiler-btn:hover,
+.spoiler-btn:active {
   color: #fff;
   background-color: #0000C4;
 }

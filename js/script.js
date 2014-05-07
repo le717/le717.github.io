@@ -103,19 +103,22 @@ $(function() {
     }
   });
 
+  /* ------- Spoiler handling ------- */
 
-  // Get the height of the content to be spoilered now,
-  // as once we hide the text it cannot be restored.
-  // Add 5px for a bit of extra space to prevent text getting cutting off
   var spoilerID      = 1,
       spoilerBtnID   = 1,
-      $spoilerClass  = $(".spoiler"),
-      $spoilerHeight = parseInt($spoilerClass.css("height").slice(0, -2)) + 5 + "px";
+      spoilerHeights = [],
+      $spoilerClass  = $(".spoiler");
 
   // Add IDs to each spoiler
   $spoilerClass.each(function(index, value) {
     $(value).attr("id", "spoiler-" + spoilerID);
     spoilerID += 1;
+
+    // Get the height of the content to be spoilered now,
+    // as once we hide the text it cannot be restored.
+    // Add 5px for a bit of extra space to prevent text getting cutting off
+    spoilerHeights.push(parseInt($(value).css("height").slice(0, -2)) + 5 + "px");
   });
 
   // Add the toggle button (we need it for this to even work :P)
@@ -130,21 +133,22 @@ $(function() {
   // Now that we have the height, hide the text
   $spoilerClass.css("height", "0");
 
-
   $(".spoiler-btn").on("click", function() {
     // Get the ID for the clicked spoiler button so only that one is triggered
-    var $thisSpoilerID = $("#" + $(this).attr("id").replace(/-btn/, ""));
+      var thisSpoilerID = "#" + $(this).attr("id").replace(/-btn/, ""),
+          thisSpoilerNumber = thisSpoilerID.slice(thisSpoilerID.length - 1),
+          $thisSpoiler  = $(thisSpoilerID);
 
-    // Upon clicking the spoiler button,
-    // if the content is hidden, reveal it.
-    // Otherwise, hide it.
-    if ($thisSpoilerID.hasClass("spoiler-shown")) {
-      $thisSpoilerID.css("height", "0");
-    } else {
-      $thisSpoilerID.css("height", $spoilerHeight);
-    }
-    $thisSpoilerID.toggleClass("spoiler-shown");
-  });
+      // Upon clicking the spoiler button,
+      // if the content is hidden, reveal it.
+      // Otherwise, hide it.
+      if ($thisSpoiler.hasClass("spoiler-shown")) {
+        $thisSpoiler.css("height", "0");
+      } else {
+        $thisSpoiler.css("height", spoilerHeights[thisSpoilerNumber]);
+      }
+      $thisSpoiler.toggleClass("spoiler-shown");
+    });
 
 //  // Get date of last commit using GitHub Pages API
 //  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
