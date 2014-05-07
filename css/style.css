@@ -328,6 +328,7 @@
   display: inline-block;
   border-radius: 5px;
   color: #000;
+  cursor: pointer;
 
   transition-property: background-color, color;
   transition-duration: 0.5s, 0.7s;
