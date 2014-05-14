@@ -29,7 +29,7 @@ redirect_from: /blog.html
         "09": "September",
         "10": "October",
         "11": "November",
-        "12": "December",
+        "12": "December"
       };
 
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
@@ -58,8 +58,12 @@ redirect_from: /blog.html
     } else {
       postsToDownload = 4;
     }
-
-    $.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + postsToDownload + "&callback=?", function(data) {
+    
+    $.ajax({
+    dataType: "json",
+    url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + postsToDownload + "&callback=?",
+    success: function(data) {
+    //$.getJSON("//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + postsToDownload + "&callback=?", function(data) {
       console.log("{0} blog posts retrieved".format(postsToDownload));
 
       data.posts.forEach(function(postInfo) {
@@ -86,6 +90,7 @@ redirect_from: /blog.html
 
       // Shrink the images down a bit
       shrinkImages();
+    }
       });
     })();
 
@@ -131,7 +136,7 @@ redirect_from: /blog.html
   }
 
   BlogPost.prototype.cleanUp = function() {
-   "use strict"
+   "use strict";
    /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
    console.log(this.postIDDOM);
