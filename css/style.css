@@ -21,6 +21,7 @@
 /* Basic type styling options */
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
+.text-underline { text-decoration: underline; }
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
