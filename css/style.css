@@ -114,10 +114,10 @@
 /* ------- Scroll to the top box styling ------- */
 
 
-.scroll-up { display: none; }
-/*.scroll-up {
+.scroll-up {
   position: fixed;
-/*  display: block;
+  display: block;
+  /*display: none;*/
   right: 20px;
   bottom: -0.3em;
   z-index: 2;
@@ -148,7 +148,7 @@
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
-}*/
+}
 
 
 /* ------- Site header  ------- */
