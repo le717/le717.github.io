@@ -55,11 +55,6 @@ pre {
   text-shadow: 1px 1px black;
 }
 
-table {
-  box-shadow: 0 0 5px 2px #BBBBBB;
-  border-radius: 5px;
-}
-
 td {
   outline: 0.1em dashed #E4E1E8;
   padding: 5px;

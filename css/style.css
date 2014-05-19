@@ -365,7 +365,15 @@
 
 .generated-data { border-bottom: 1px dashed #fff; }
 
-.portfolio-img { border-radius: 50%; }
+.portfolio-img-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.portfolio-img { 
+  width: 100%;
+  height: auto;
+}
 
 .portfolio-img-desc { margin-left: 2em; }
 
