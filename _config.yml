@@ -8,3 +8,5 @@ gems:
  - jekyll-redirect-from
  - jekyll-sitemap
  - jemoji
+#sass:
+#    style: :compressed

@@ -87,19 +87,20 @@
   margin-top: 5px;
   border-style: solid;
   border-width: 0 22.5px 35px 22.5px;
-  border-color: transparent transparent #FFFF00;
+  border-color: transparent transparent #FF0 transparent;
 
-  -webkit-transition-property: -webkit-transform;
+  -webkit-transition-property: border-width, border-color;
   -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease;
 
-  transition-property: -webkit-transform, -ms-transform, transform;
+  transition-property: border-width, border-color;
   transition-duration: 0.5s;
+  transition-timing-function: ease;
 }
 
 .sidebar-btn-rotate {
-  -webkit-transform: rotateX(180deg);
-      -ms-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  border-width: 35px 22.5px 0 22.5px;
+  border-color: #FF0 transparent transparent transparent;
 }
 
 /* Makes the button visible */
