@@ -39,6 +39,14 @@
   #featured-project {
     margin-top: 0;
   }
+  
+.portfolio-wip a::before {
+    top: 1.2em;
+    left: 1em;
+    width: 50%;
+    padding: 0 0.5em 0.1em 1.6em;
+    font-size: auto;
+  }
 }
 
 /* ------- Smartphones (landscape) ------- */
