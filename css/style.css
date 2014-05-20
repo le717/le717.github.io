@@ -35,7 +35,7 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 13.5em;
+  height: 12em;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
   z-index: 1;
@@ -49,10 +49,11 @@
   transition-duration: 0.5s;
 }
 
+/* Sidebar show/hide movement */
 .sidebar-hidden {
-    -webkit-transform: translate3d(0, -14.3em, 0);
-        -ms-transform: translate3d(0, -14.3em, 0);
-            transform: translate3d(0, -14.3em, 0);
+    -webkit-transform: translate3d(0, -13.3em, 0);
+        -ms-transform: translate3d(0, -13.3em, 0);
+            transform: translate3d(0, -13.3em, 0);
   }
 
 .sidebar ul {
@@ -67,6 +68,36 @@
 
 /* Prevent Ionicons from changing the actual text's font */
 .sidebar .icon a { font-family: "Noto Sans", "Open Sans", Arial, sans-serif; }
+
+/* ------- Line up sidebar icons ------- */
+
+
+/* About */
+.sidebar li:nth-child(1)::before {
+  font-size: 1.25em;
+  margin-left: -2px;
+}
+
+/* Contact */
+.sidebar li:nth-child(4)::before {
+  font-size: 1.1em;
+  margin-left: -1px;
+}
+
+/* MIT License */
+.sidebar li:nth-child(5)::before { font-size: 1.3em; }
+
+/* Code */
+.sidebar li:nth-child(6)::before {
+  font-size: 1.1em;
+  margin-left: -2px;
+}
+
+/* Portfolio */
+.sidebar li:nth-child(8)::before {
+  font-size: 1.5em;
+  margin-left: 1px;
+}
 
 /* Small divider between link categories */
 .sidebar li:nth-child(4) { padding-bottom: 0.6em; }
