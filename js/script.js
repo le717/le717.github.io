@@ -66,6 +66,10 @@ $(function() {
     $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
   }
 
+  // Scroll to top button
+  $(".scroll-up").on("click", function() {
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  });
 
   // Mobile-only actions
   if ($.browser.mobile) {
@@ -75,12 +79,10 @@ $(function() {
     $(".sidebar-btn").removeClass("sidebar-btn-rotate");
   }
 
-
   // Fully center the items that need centering
   var $centered = $(".fully-centered");
   $centered.css("margin-left", -$centered.width() / 2);
   $centered.css("margin-top", -$centered.height() / 2);
-
 
   // Get the featured content feed
   $.ajax({
@@ -103,7 +105,9 @@ $(function() {
     }
   });
 
+
   /* ------- Spoiler handling ------- */
+
 
   var spoilerHeights = [],
       spoilerID      = 0,

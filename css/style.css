@@ -132,8 +132,8 @@
   opacity: 1;
 
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  /*box-shadow: 1px 1px 5px #000;*/
+  background-color: rgba(128, 128, 128, 0.7);
+  border-left: 3px solid #800000;
 
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1.5s;
@@ -147,6 +147,7 @@
 .scroll-up a {
   text-decoration: none;
   font-size: 2em;
+  text-shadow: 0 0 1px black;
 }
 
 .scroll-up:hover {
