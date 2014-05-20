@@ -108,6 +108,20 @@ $(function() {
   });
 
 
+  $(window).scroll(function () {
+//    if ($("html, body").scrollTop() > 100) {
+
+    // Show the scroll up button
+    if ($(window).scrollTop() > 100) {
+      $(".scroll-up").css("transform", "auto");
+
+      // Hide the button
+    } else {
+      $(".scroll-up").css("transform", "");
+    }
+  });
+
+
   /* ------- Spoiler handling ------- */
 
 
