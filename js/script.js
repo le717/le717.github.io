@@ -68,7 +68,18 @@ $(function() {
     $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
   }
 
-  // Scroll to top button
+    $(window).scroll(function () {
+    // Show the scroll up button
+    if ($(window).scrollTop() > 100) {
+      $(".scroll-up").css("transform", "translate3d(0, 0, 0)");
+
+      // Hide the button
+    } else {
+      $(".scroll-up").css("transform", "");
+    }
+  });
+
+  // Scroll up button action
   $(".scroll-up").on("click", function() {
     $("html, body").animate({ scrollTop: 0 }, 500);
   });
@@ -104,20 +115,6 @@ $(function() {
 
       $("#featured-project-version").html(data.featuredProject[0].version);
       $("#featured-project-desc").html(" " + data.featuredProject[0].description);
-    }
-  });
-
-
-  $(window).scroll(function () {
-//    if ($("html, body").scrollTop() > 100) {
-
-    // Show the scroll up button
-    if ($(window).scrollTop() > 100) {
-      $(".scroll-up").css("transform", "translate3d(0, 0, 0)");
-
-      // Hide the button
-    } else {
-      $(".scroll-up").css("transform", "");
     }
   });
 
