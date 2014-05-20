@@ -37,6 +37,10 @@ ul li::before {
   padding-right: 5px;
 }
 
+ul li:nth-child(7)::before {
+  content: "\f2d0";
+}
+
 p {
   margin-left: 1.5em;
   margin-right: 1.5em;
