@@ -40,12 +40,12 @@
     margin-top: 0;
   }
   
-.portfolio-wip a::before {
-    top: 1.2em;
-    left: 1em;
-    width: 50%;
+  .portfolio-wip a::before {
+    top: 1.7em;
+    left: 2em;
+    width: 42%;
     padding: 0 0.5em 0.1em 1.6em;
-    font-size: auto;
+    font-size: inherit;
   }
 }
 
