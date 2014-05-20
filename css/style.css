@@ -144,19 +144,19 @@
   transition-timing-function: ease-out;
 }
 
-.scroll-up a {
-  text-decoration: none;
-  font-size: 2em;
-  text-shadow: 0 0 1px black;
-}
-
 .scroll-up:hover {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
 }
 
-.scroll-up a {
+.scroll-up span {
+  text-decoration: none;
+  font-size: 2em;
+  text-shadow: 0 0 1px black;
+}
+
+.scroll-up span {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);

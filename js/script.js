@@ -58,6 +58,8 @@ function shrinkImages() {
 $(function() {
   "use strict";
 
+  //http://briancray.com/posts/scroll-to-top-link-jquery-css/
+
   shrinkImages();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
