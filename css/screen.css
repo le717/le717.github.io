@@ -14,7 +14,8 @@
 @media only screen and (max-width: 720px) {
   .header-logo {
     margin-left: 6% !important;
-    margin-top: -4% !important;
+/*    margin-top: -4% !important;*/
+    margin-top: 4% !important;
   }
 
   .header-text {
@@ -68,7 +69,8 @@
 @media only screen and (max-width: 320px) {
   .header-logo {
     margin-left: 0 !important;
-    margin-top: -1% !important;
+/*    margin-top: -1% !important;*/
+    margin-top: 7% !important;
   }
 
   .header-text {
