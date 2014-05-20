@@ -65,6 +65,9 @@
   padding-bottom: 0.1em;
 }
 
+/* Prevent Ionicons from changing the actual text's font */
+.sidebar .icon a { font-family: "Noto Sans", "Open Sans", Arial, sans-serif; }
+
 /* Small divider between link categories */
 .sidebar li:nth-child(4) { padding-bottom: 0.6em; }
 
