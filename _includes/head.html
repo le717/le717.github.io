@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-precomposed.png">
   <link rel="shortcut icon" sizes="152x152" href="/favicon.png">
   <link type="text/plain" rel="author" href="/humans.txt">
-  <meta name="application-name" content="&nbsp;"/>
+  <meta name="application-name" content="">
 
   <!--
     Triangle Land
@@ -20,4 +20,4 @@
     <http:{{ site.baseurl }}/license/index.html>
   -->
 
-  <title>Triangle Land - {{ page.title }}</title>
+  <title>Triangle Land | {% if page.title != "Home" %}{{ page.title }}{% else %}Christian, Programmer, LEGO Fan{% endif %}</title>
