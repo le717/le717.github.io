@@ -9,7 +9,10 @@
 
 
 /* Small shadow for images */
-.img-shadow { box-shadow: 0 0 6px 1px #fff; }
+.img-shadow {
+  -webkit-box-shadow: 0 0 6px 1px #fff;
+          box-shadow: 0 0 6px 1px #fff;
+}
 
 .centered,
 .fully-centered {
@@ -267,20 +270,20 @@
 }
 
 /* WordPress social button */
-#wp-button {
+.wp-button {
   font-size: 2em;
   top: -0.45em;
   left: 0.35em
 }
-#wp-button:hover { color: #1E8CBE; }
+.wp-button:hover { color: #1E8CBE; }
 
 /* GitHub social button */
-#gh-button {
+.gh-button {
   font-size: 1.65em;
   top: -0.6em;
   left: 0.9em;
 }
-#gh-button:hover { color: #BBBBBB; }
+.gh-button:hover { color: #BBBBBB; } 
 
 /* YouTube social button */
 #yt-button {
@@ -362,9 +365,11 @@
 /* The spoilered content */
 .spoiler {
   overflow: hidden;
-  transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
+  -webkit-transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
+          transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
   border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
   margin-top: 5px;
 }
 
@@ -377,6 +382,10 @@
   border-radius: 5px;
   color: #000;
   cursor: pointer;
+
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 0.5s, 0.7s;
+  -webkit-transition-timing-function: ease;
 
   transition-property: background-color, color;
   transition-duration: 0.5s, 0.7s;
@@ -434,7 +443,8 @@
   padding: 0.1em 4em 0.1em 4em;
   color: white;
   font-size: 3em;
-  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
 }
 
 .portfolio-img-desc { margin-left: 2em; }
