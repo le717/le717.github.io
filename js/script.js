@@ -58,15 +58,9 @@ function shrinkImages() {
 $(function() {
   "use strict";
 
-  //http://briancray.com/posts/scroll-to-top-link-jquery-css/
-
   shrinkImages();
 
-  // Replace the SVG with a PNG on IE (IE HATES SVGs)
-//  if ($.browser.msie) {
-//    var $imgSrc = $(".ie-svg").attr("src");
-//    $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
-//  }
+  //http://briancray.com/posts/scroll-to-top-link-jquery-css/
 
     $(window).scroll(function () {
     // Show the scroll up button
