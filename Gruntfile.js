@@ -4,9 +4,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     banner: "/* <%= pkg.name %> - v<%= pkg.version %>\n" +
-    '<%= pkg.homepage ? "" + pkg.homepage + "\\n" : "" %>' +
-    'Created <%= grunt.template.today("yyyy") %> <%= pkg.author %>; ' +
-    'Licensed under the <%= _.pluck(pkg.licenses, "type").join(", ") %>\n*/\n',
+    " * <%= pkg.homepage ? '' + pkg.homepage + '\\n' : '' %>" +
+    " * Created <%= grunt.template.today('yyyy') %> <%= pkg.author %>;\n" +
+    " * Licensed under the <%= _.pluck(pkg.licenses, 'type').join(', ') %>\n */\n",
     cssfiles: ["css/*.css", "!css/*.min.css"],
     jsfiles: ["js/*.js", "!js/*.min.js"],
 
@@ -85,7 +85,8 @@ module.exports = function(grunt) {
       options: {
         banner: "<%= banner %>",
         compress: true,
-        report: "min"
+        report: "min",
+        sourceMap: true
       },
       my_target: {
         files: {
@@ -102,15 +103,15 @@ module.exports = function(grunt) {
   });
 
   // Load all the plugins required to perform our tasks
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', 'List commands', function () {
+  grunt.registerTask("default", "List of commands", function() {
     grunt.log.writeln("");
-    grunt.log.writeln('Run "grunt copy" to copy any dependencies');
-    grunt.log.writeln('Run "grunt lint" to lint the source files');
-    grunt.log.writeln('Run "grunt build" to minify the source files');
-    grunt.log.writeln('Run "grunt devUpdate" to update the devDependencies');
-    grunt.log.writeln('Run "grunt all" to run all tasks except "devUpdate"');
+    grunt.log.writeln("Run 'grunt copy' to copy any dependencies");
+    grunt.log.writeln("Run 'grunt lint' to lint the source files");
+    grunt.log.writeln("Run 'grunt build' to minify the source files");
+    grunt.log.writeln("Run 'grunt devUpdate' to update the devDependencies");
+    grunt.log.writeln("Run 'grunt all' to run all tasks except 'devUpdate'");
   });
 
   // Define the tasks
