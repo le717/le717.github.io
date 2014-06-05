@@ -63,10 +63,10 @@ $(function() {
   shrinkImages();
 
   // Replace the SVG with a PNG on IE (IE HATES SVGs)
-  if ($.browser.msie) {
-    var $imgSrc = $(".ie-svg").attr("src");
-    $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
-  }
+//  if ($.browser.msie) {
+//    var $imgSrc = $(".ie-svg").attr("src");
+//    $(".ie-svg").attr("src", $imgSrc.substr(0, $imgSrc.length - 3) + "png");
+//  }
 
     $(window).scroll(function () {
     // Show the scroll up button
