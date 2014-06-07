@@ -13,7 +13,7 @@ redirect_from: /about.html
   <blockquote>For I am not ashamed of the gospel of Christ, for it is the power of God to salvation for everyone who believes...
   <a target="_blank" href="http://bible.com/114/rom.1.16.nkjv">Romans&nbsp;1:16a&nbsp;(NKJV)</a></blockquote>
 
-  <p>I am a programmer of nearly one and a half years. After discovering the world of programming in October 2013 by completing the <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="text-italic">A Byte of Python</span></a> book by <a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
+  <p>I am a programmer of <span id="i-am-programmer"></span> years. After discovering the world of programming in October 2013 by completing the <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="text-italic">A Byte of Python</span></a> book by <a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
 I discovered what I been developing the mental capacity to accomplish since I was 4 years old. I am CompTIA Security+ certified, and am presently knowledgeable in <span id="code-i-know" title="This list is also automatically generated. :D"></span>, but I plan on learning more.</p>
 
   <p>I am attending technical college to obtain my associates degree in website design and development. Currently projected graduation date is 2015.</p>
@@ -53,20 +53,11 @@ I discovered what I been developing the mental capacity to accomplish since I wa
     }
 
     // Calculate my age
+    // UTC month value is zero-based
     calcDate([1995, 2, 13], "#i-am-age")
 
-
-//    var myYear   = 1995,
-//        myMonth  = 2, // UTC month value is zero-based
-//        myDay    = 13;
-//
-//    var myAge    = curYear % myYear;
-//    // Do not update my age unless it is my birthday
-//    if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
-//      myAge -= 1;
-//    }
-//    $("#i-am-age").html(myAge);
-
+    // Calculate how long I have been a programmer
+    calcDate([2013, 0, 26], "#i-am-programmer")
 
     /* ------- List the coding languages I know ------ */
     var listAllTheCodes = "",
