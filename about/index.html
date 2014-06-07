@@ -32,22 +32,40 @@ I discovered what I been developing the mental capacity to accomplish since I wa
   <p>As of March 31, 2014, <span class="text-bold">Triangle Land</span> is under heavy construction, and things will change, break, and move around without notice. I am sorry for any inconvenience this may cause.</p>
 
   <script>
-    /* ------- Calculate my age ------- */
-    var curDate  = new Date();
-    var curYear  = curDate.getUTCFullYear(),
-        curMonth = curDate.getUTCMonth(),
-        curDay   = curDate.getUTCDate();
 
-    var myYear   = 1995,
-        myMonth  = 2, // UTC month value is zero-based
-        myDay    = 13;
+    function calcDate(date, element) {
+      /* Calculate the difference between two dates
+       * as specfied in `date` array and display it in the `element`...
+       * HTML element.
+       */
 
-    var myAge    = curYear % myYear;
-    // Do not update my age unless it is my birthday
-    if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
-      myAge -= 1;
+      var curDate         = new Date();
+      var curYear         = curDate.getUTCFullYear(),
+          curMonth        = curDate.getUTCMonth(),
+          curDay          = curDate.getUTCDate(),
+          dateDifference  = curYear % date[0];
+
+      // Do not update the date unless it is time
+      if (curMonth < date[1] && curDay < date[2] || curMonth < date[1] && curDay === date[2] || curMonth == date[1] && curDay < date[2]) {
+        dateDifference -= 1;
+      }
+      $(element).html(dateDifference);
     }
-    $("#i-am-age").html(myAge);
+
+    // Calculate my age
+    calcDate([1995, 2, 13], "#i-am-age")
+
+
+//    var myYear   = 1995,
+//        myMonth  = 2, // UTC month value is zero-based
+//        myDay    = 13;
+//
+//    var myAge    = curYear % myYear;
+//    // Do not update my age unless it is my birthday
+//    if (curMonth < myMonth && curDay < myDay || curMonth < myMonth && curDay === myDay || curMonth == myMonth && curDay < myDay) {
+//      myAge -= 1;
+//    }
+//    $("#i-am-age").html(myAge);
 
 
     /* ------- List the coding languages I know ------ */
