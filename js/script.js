@@ -6,6 +6,32 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
+function shrinkImages() {
+  "use strict";
+  /* Resize images on mobile devices */
+
+  jQuery("body").find("img").each(function() {
+    var $this = jQuery(this),
+    $imgWidth = $this.width();
+
+    // If this is a mobile browser, scale down qualified images
+    if (jQuery.browser.mobile) {
+      if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
+
+        // However, do it only if the image is wider than the screen
+//        console.log("Image width: " + $imgWidth);
+//        console.log("Image src: " + $this.attr("src"));
+//        console.log("Window Width: " + jQuery(window).width());
+//        console.log(jQuery(window).width() % $imgWidth >= 100);
+
+        if ($imgWidth % $imgWidth >= 50) {
+          $this.width($imgWidth - ($imgWidth / 2));
+        }
+      }
+    }
+  });
+}
+
 (function($) {
   "use strict";
 
@@ -27,33 +53,6 @@
       }
     });*/
   })();
-
-  function shrinkImages() {
-    /* Resize images on mobile devices */
-
-    $("body").find("img").each(function() {
-      var $this = $(this),
-      $imgWidth = $this.width();
-
-      // If this is a mobile browser, scale down non-exempt image sizes
-  //    if ($.browser.mobile || $.browser.desktop) {
-      if ($.browser.mobile) {
-        if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
-
-          // However, do it only if the image is wider than the screen
-  //        console.log("Image width: " + $imgWidth);
-  //        console.log("Image src: " + $this.attr("src"));
-  //        console.log("Window Width: " + $(window).width());
-  //        console.log($(window).width() % $imgWidth >= 100);
-
-          if ($imgWidth % $imgWidth >= 50) {
-            $this.width($imgWidth - ($imgWidth / 2));
-          }
-        }
-      }
-    });
-  }
-
 
   $(function() {
 

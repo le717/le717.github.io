@@ -14,7 +14,6 @@
 @media only screen and (max-width: 720px) {
   .header-logo {
     margin-left: 6% !important;
-/*    margin-top: -4% !important;*/
     margin-top: 4% !important;
   }
 
@@ -40,7 +39,7 @@
   #featured-project {
     margin-top: 0;
   }
-  
+
   .portfolio-wip a::before {
     top: 1.7em;
     left: 2em;
@@ -69,7 +68,6 @@
 @media only screen and (max-width: 320px) {
   .header-logo {
     margin-left: 0 !important;
-/*    margin-top: -1% !important;*/
     margin-top: 7% !important;
   }
 
@@ -80,4 +78,12 @@
   }
 
   #my-avatar { margin-left: -1em; }
+
+  .contact-field p { position: relative; }
+
+  .contact-field > a:nth-child(2) {
+    left: 1.95em;
+  }
+
+  .contact-field > a:nth-child(2) > p:nth-child(1) { font-size: 5.4em; }
 }
