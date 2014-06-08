@@ -34,6 +34,7 @@ I discovered what I been developing the mental capacity to accomplish since I wa
   <script>
 
     function calcDate(date, element) {
+      "use strict";
       /* Calculate the difference between two dates
        * as specfied in `date` array and display it in the `element`...
        * HTML element.
@@ -44,6 +45,25 @@ I discovered what I been developing the mental capacity to accomplish since I wa
           curMonth        = curDate.getUTCMonth(),
           curDay          = curDate.getUTCDate(),
           dateDifference  = curYear % date[0];
+
+      var yearDifference  = curYear % date[0],
+          monthDifference = curMonth - date[1],
+          dayDifference   = date[2] - curDay;
+
+      // This is the same month and day increase the year
+      if (monthDifference === 0 && dayDifference === 0) {
+        yearDifference += 1;
+      }
+
+      // The current month is later than the milestone month.
+      if (monthDifference < 0 && monthDifference >= -7) {
+         monthDifference = monthDifference.toString().substr(1);
+     }
+
+      // There is four or less months until the milestone month
+      /*if (monthDifference > 0 && monthDifference <= 4) {
+         //TODO Something
+     }*/
 
       // Do not update the date unless it is time
       if (curMonth < date[1] && curDay < date[2] || curMonth < date[1] && curDay === date[2] || curMonth == date[1] && curDay < date[2]) {
