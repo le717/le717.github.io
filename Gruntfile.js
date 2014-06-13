@@ -17,7 +17,11 @@ module.exports = function(grunt) {
           // Do not mention already updated dependencies
           reportUpdated: false,
           // Prompt asking if the dependency should be updated
-          updateType : "prompt"
+          updateType : "prompt",
+          packages: {
+            devDependencies: true,
+            dependencies: true
+          },
         }
       }
     },
