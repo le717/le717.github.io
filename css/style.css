@@ -8,6 +8,15 @@
  */
 
 
+
+/* Link decoration */
+a,
+.faux-link {
+  text-decoration: none;
+  color: #fcf54a;
+  text-shadow: 1px 1px 2px black;
+}
+
 /* Small shadow for images */
 .img-shadow {
   -webkit-box-shadow: 0 0 6px 1px #fff;

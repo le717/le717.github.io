@@ -10,6 +10,8 @@
 ::-moz-selection { background-color: rgba(255, 255, 255, 0.63); }
      ::selection { background-color: rgba(255, 255, 255, 0.63); }
 
+a:hover { text-decoration: underline; }
+
 blockquote {
   border-left: 7px solid rgb(0, 0, 196);
   padding: 10px 15px;
@@ -24,6 +26,17 @@ blockquote::before {
   font-size: 1.6em;
   padding-right: 0.1em;
 }
+
+body {
+  font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: #f8f8f8;
+/*  background: #272727 url("/img/newbg.png") repeat fixed;*/
+  background-color: #272727;
+}
+
+html { min-width: 320px; }
 
 /* Remove unordered list bullet point in favor of custom one :D */
 ul {
