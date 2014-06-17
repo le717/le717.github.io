@@ -76,7 +76,7 @@ redirect_from: /blog.html
         var postDate      = dateFormat.join(" ");
 
         // Create the post object and store it
-        var myPost = new BlogPost(postInfo.author, postDate, postID, postInfo.title, postInfo.guid, postInfo.content);
+        var myPost = new BlogPost(postInfo.author, postDate, postID, postInfo.title, postInfo.short_URL, postInfo.content);
         allBlogPosts.push(myPost);
       });
 
