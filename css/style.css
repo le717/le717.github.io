@@ -426,7 +426,7 @@ a,
 #sitemap h3 { margin-bottom: 2px; }
 
 /* Loading animation */
-.loading-ani { z-index: 5; }
+.ani-loading { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed #fff; }
 

@@ -81,8 +81,8 @@ redirect_from: /blog.html
       });
 
       // Now that the posts are stored, go through and display them and stop the loading animation
-      $(".loading-ani").css({"top": "15%", "left": "30%"});
-      $(".loading-ani").remove();
+      $(".ani-loading").css({"top": "15%", "left": "30%"});
+      $(".ani-loading").remove();
       showPosts();
       $(".blog-posts").css("display", "");
       $("#end-of-posts").css("display", "block");
