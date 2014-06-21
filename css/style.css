@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/**
  * Created 2014 Triangle717
  * <http://Triangle717.WordPress.com/>
  *
@@ -213,19 +213,21 @@ a,
 /* ------- Site header  ------- */
 
 
-.header-text {
+/*.header-text {
   position: absolute;
   display: inline;
   margin-left: 47%;
   top: 0.4em;
-}
+}*/
 
-.header-logo {
+.header-logo { margin-bottom: -2em; }
+
+/*.header-logo {
   position: static;
   display: inline-block;
-  margin-left: 39%;
+  margin-left: 39%;*/
 /*  margin-top: -2em;*/
-}
+/*}*/
 
 
 /* ------- Featured item displays ------- */
@@ -292,7 +294,7 @@ a,
   top: -0.6em;
   left: 0.9em;
 }
-.gh-button:hover { color: #BBBBBB; } 
+.gh-button:hover { color: #BBBBBB; }
 
 /* YouTube social button */
 #yt-button {

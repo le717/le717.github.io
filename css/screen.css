@@ -12,7 +12,7 @@
 }/*/
 
 @media only screen and (max-width: 720px) {
-  .header-logo {
+  /*.header-logo {
     margin-left: 6% !important;
     margin-top: 4% !important;
   }
@@ -21,7 +21,7 @@
     position: absolute;
     left: -12%;
     top: 1em !important;
-  }
+  }*/
 
   .sidebar {
     padding-bottom: 0.7em;
@@ -66,7 +66,7 @@
 /* ------- Smartphones (portrait) ------- */
 
 @media only screen and (max-width: 320px) {
-  .header-logo {
+  /*.header-logo {
     margin-left: 0 !important;
     margin-top: 7% !important;
   }
@@ -75,7 +75,7 @@
     position: absolute;
     left: -17%;
     top: 1.1em !important;
-  }
+  }*/
 
   #my-avatar { margin-left: -1em; }
 
