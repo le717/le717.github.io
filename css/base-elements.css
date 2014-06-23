@@ -1,11 +1,12 @@
 @charset "UTF-8";
-/*
-  Created 2014 Triangle717
-  <http://Triangle717.WordPress.com/>
+/**
+ * Created 2014 Triangle717
+ * <http://Triangle717.WordPress.com/>
+ *
+ * Licensed under The MIT License
+ * <http://opensource.org/licenses/MIT/>
+ */
 
-  Licensed under The MIT License
-  <http://opensource.org/licenses/MIT/>
-*/
 
 ::-moz-selection { background-color: rgba(255, 255, 255, 0.63); }
      ::selection { background-color: rgba(255, 255, 255, 0.63); }

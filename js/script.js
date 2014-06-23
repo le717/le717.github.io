@@ -1,36 +1,10 @@
-/*
+/**
  * Created 2014 Triangle717
  * <http://Triangle717.WordPress.com/>
  *
  * Licensed under The MIT License
  * <http://opensource.org/licenses/MIT/>
  */
-
-function shrinkImages() {
-  "use strict";
-  /* Resize images on mobile devices */
-
-  jQuery("body").find("img").each(function() {
-    var $this = jQuery(this),
-    $imgWidth = $this.width();
-
-    // If this is a mobile browser, scale down qualified images
-    if (jQuery.browser.mobile) {
-      if (!$this.hasClass("no-mobile-resize") && !$this.hasClass("emoji")) {
-
-        // However, do it only if the image is wider than the screen
-//        console.log("Image width: " + $imgWidth);
-//        console.log("Image src: " + $this.attr("src"));
-//        console.log("Window Width: " + jQuery(window).width());
-//        console.log(jQuery(window).width() % $imgWidth >= 100);
-
-        if ($imgWidth % $imgWidth >= 50) {
-          $this.width($imgWidth - ($imgWidth / 2));
-        }
-      }
-    }
-  });
-}
 
 (function($) {
   "use strict";
@@ -55,12 +29,9 @@ function shrinkImages() {
   })();
 
   $(function() {
-
-    //shrinkImages();
-
-    //http://briancray.com/posts/scroll-to-top-link-jquery-css/
-
-      $(window).scroll(function () {
+    // Scroll to top button
+    // http://briancray.com/posts/scroll-to-top-link-jquery-css/
+    $(window).scroll(function() {
       // Show the scroll up button
       if ($(window).scrollTop() > 100) {
         $(".scroll-up").css("transform", "translate3d(0, 0, 0)");

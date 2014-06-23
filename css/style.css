@@ -8,7 +8,6 @@
  */
 
 
-
 /* Link decoration */
 a,
 .faux-link {
@@ -390,11 +389,6 @@ a,
   padding-bottom: 0.5em;
   position: relative;
   display: block;
-}
-
-.portfolio-img {
-  width: 100%;
-  height: auto;
 }
 
 .portfolio-wip a::before {
