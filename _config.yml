@@ -1,9 +1,9 @@
 name: Triangle Land
 markdown: kramdown
-pygments: true
+pygments: false
 url: http://le717.github.io
 baseurl: ""
-wp_url: //Triangle717.WordPress.com
+wpurl: http://Triangle717.WordPress.com
 gems:
  - jekyll-mentions
  - jekyll-redirect-from

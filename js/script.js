@@ -56,7 +56,7 @@ function shrinkImages() {
 
   $(function() {
 
-    shrinkImages();
+    //shrinkImages();
 
     //http://briancray.com/posts/scroll-to-top-link-jquery-css/
 

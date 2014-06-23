@@ -7,7 +7,6 @@
  */
 
 /* ------- Loading animation ------- */
-
 .ani-loading {
   -webkit-animation: aniLoading 2s linear;
   -webkit-animation-iteration-count: infinite;
@@ -16,12 +15,12 @@
   animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes aniLoading { 0% { -webkit-transform: rotateY(0deg); } 100% { -webkit-transform: rotateY(360deg); } }
+@-webkit-keyframes aniLoading { 0% { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); } 100% { -webkit-transform: rotateY(360deg); transform: rotateY(360deg); } }
 
 @keyframes aniLoading { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
 
-/* ------- Fade out animation ------- */
 
+/* ------- Fade out animation ------- */
 .ani-fadeout {
   -webkit-animation: aniFadeOut 1.5s ease-out;
   -webkit-animation-fill-mode: forwards;

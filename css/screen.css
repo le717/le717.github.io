@@ -8,37 +8,26 @@
 
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
-/*@media only screen and (max-width: 800px) {
-}/*/
+/*@media only screen and (max-width: 800px) {}*/
 
 @media only screen and (max-width: 720px) {
-  /*.header-logo {
-    margin-left: 6% !important;
-    margin-top: 4% !important;
+
+  /* Create responsive images only on mobile devices */
+  .img-responsive {
+    width: 100%;
+    height: auto
   }
 
-  .header-text {
-    position: absolute;
-    left: -12%;
-    top: 1em !important;
-  }*/
-
-  .sidebar {
-    padding-bottom: 0.7em;
-  }
+  .sidebar { padding-bottom: 0.7em; }
 
   .sidebar li {
     font-size: 1.05em;
     margin-left: -5px;
   }
 
-  #featured-code-box {
-    width: auto;
-  }
+  #featured-code-box { width: auto; }
 
-  #featured-project {
-    margin-top: 0;
-  }
+  #featured-project { margin-top: 0; }
 
   .portfolio-wip a::before {
     top: 1.7em;
@@ -51,39 +40,17 @@
 
 /* ------- Smartphones (landscape) ------- */
 
-/*@media only screen and (min-width: 321px) {
-  .header-text {
-    left: 40%;
-  }
-
-  .header-logo {
-    position: absolute;
-    top: 25%;
-    left: -12%;
-  }
-}*/
+/*@media only screen and (min-width: 321px) {}*/
 
 /* ------- Smartphones (portrait) ------- */
 
 @media only screen and (max-width: 320px) {
-  /*.header-logo {
-    margin-left: 0 !important;
-    margin-top: 7% !important;
-  }
-
-  .header-text {
-    position: absolute;
-    left: -17%;
-    top: 1.1em !important;
-  }*/
 
   #my-avatar { margin-left: -1em; }
 
   .contact-field p { position: relative; }
 
-  .contact-field > a:nth-child(2) {
-    left: 1.95em;
-  }
+  .contact-field > a:nth-child(2) { left: 1.95em; }
 
   .contact-field > a:nth-child(2) > p:nth-child(1) { font-size: 5.4em; }
 }

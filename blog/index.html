@@ -8,11 +8,11 @@ redirect_from: /blog.html
 <div class="blog-posts"></div><br>
 <p class="text-center" id="end-of-posts">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
-  <a target="_blank" href="http://Triangle717.WordPress.com/">main blog</a> and read to your heart's content. :smiley:
+  <a target="_blank" href="{{ site.wpurl }}">actual blog</a> and read to your heart's content. :smiley:
 </p>
 
 <script>
-  console.log("Loading blog feed from http://Triangle717.WordPress.com");
+  //console.log("Loading blog feed from http://Triangle717.WordPress.com");
 
   // Store all the blog post objects
   var allBlogPosts = [],
@@ -63,7 +63,7 @@ redirect_from: /blog.html
     dataType: "json",
     url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + postsToDownload + "&callback=?",
     success: function(data) {
-      console.log("{0} blog posts retrieved".format(postsToDownload));
+      //console.log("{0} blog posts retrieved".format(postsToDownload));
 
       data.posts.forEach(function(postInfo) {
         // Create a unique post ID
@@ -88,7 +88,7 @@ redirect_from: /blog.html
       $("#end-of-posts").css("display", "block");
 
       // Shrink the images down a bit
-      shrinkImages();
+      //shrinkImages();
     }
       });
     })();
@@ -173,6 +173,7 @@ redirect_from: /blog.html
 
         // Add my own image styling
         $this.addClass("img-shadow");
+        $this.addClass("img-responsive");
 
         /*if ($.browser.desktop) {
             console.log($this.width());

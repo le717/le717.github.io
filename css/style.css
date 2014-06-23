@@ -40,8 +40,6 @@ a,
 
 
 /* ------- Sidebar styling ------- */
-
-
 .sidebar {
   position: fixed;
   top: 0;
@@ -83,8 +81,6 @@ a,
 
 
 /* ------- Line up sidebar icons ------- */
-
-
 /* About */
 .sidebar li:nth-child(1)::before {
   font-size: 1.25em;
@@ -156,10 +152,7 @@ a,
   z-index: 2;
 }
 
-
 /* ------- Scroll to the top box styling ------- */
-
-
 .scroll-up {
   position: fixed;
   display: block;
@@ -211,28 +204,10 @@ a,
 
 
 /* ------- Site header  ------- */
-
-
-/*.header-text {
-  position: absolute;
-  display: inline;
-  margin-left: 47%;
-  top: 0.4em;
-}*/
-
 .header-logo { margin-bottom: -2em; }
-
-/*.header-logo {
-  position: static;
-  display: inline-block;
-  margin-left: 39%;*/
-/*  margin-top: -2em;*/
-/*}*/
 
 
 /* ------- Featured item displays ------- */
-
-
 #featured-project { margin-top: -13%; }
 
 #featured-code-box {
@@ -243,24 +218,7 @@ a,
 
 #featured-code-desc { margin-top: -10px; }
 
-/*#subpages {
-  position: relative;
-  top: 7.5em;
-  left: 57%;
-  display: inline-block;
-}
-
-#subpages h2 {
-  position: relative;
-  top: 0.65em;
-  margin-left: 25%;
-  text-align: left;
-}*/
-
-
 /* ------- Social buttons styling ------- */
-
-
 .social-button-link {
   text-decoration: none;
   text-shadow: none;
@@ -372,8 +330,6 @@ a,
 
 
 /* ------- Spoiler styling------- */
-
-/* The spoilered content */
 .spoiler {
   overflow: hidden;
   -webkit-transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
@@ -384,7 +340,6 @@ a,
   margin-top: 5px;
 }
 
-/* Spoiler button */
 .spoiler-btn {
   width: 4em;
   height: 2em;
@@ -408,7 +363,6 @@ a,
   background-color: #0000C4;
 }
 
-/* "Spoiler" text */
 .spoiler-btn span {
   position: relative;
   left: 0.5em;
@@ -417,8 +371,6 @@ a,
 
 
 /* ------- Various styling ------- */
-
-
 .you-are-here {
   font-size: 1.1em;
   color: #E4E1E8;
