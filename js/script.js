@@ -71,10 +71,16 @@
         $("#featured-code-box").html(data.featuredCode[0].snippet);
         $("#featured-code-desc").html(data.featuredCode[0].description);
 
+        // Open links in featured descriptions in a new tab/window
+        $("featured-code-desc").find("a").each(function() {
+          var $this = jQuery(this);
+          $this.attr("target", "_blank");
+        });
+
         // Display the featured project
         $("#featured-project-name").html(data.featuredProject[0].name);
-        $("#featured-project-name").wrap(
-          "<a target='_blank' href='{0}'></a>".format(data.featuredProject[0].url));
+        $("#featured-project-name").wrap("<a target='_blank' href='{0}'></a>".format(
+          data.featuredProject[0].url));
 
         $("#featured-project-version").html(data.featuredProject[0].version);
         $("#featured-project-desc").html(" " + data.featuredProject[0].description);
@@ -130,12 +136,5 @@
       $thisSpoiler.toggleClass("spoiler-shown");
       $(this).toggleClass("spoiler-btn-active");
     });
-
-  //  // Get date of last commit using GitHub Pages API
-  //  $.getJSON("https://api.github.com/repos/le717/le717.github.io", function(data) {
-  //      var lastUpdate = data.updated_at.replace(/(T(.*))$/g, "");
-  //      //var lastUpdate = "Right now";
-  //      $("#last-update").text("Last update: {0}".format(lastUpdate));
-  //    });
   });
 })(jQuery);

@@ -1,5 +1,6 @@
 {
   "adjoining-classes": false,
+  "box-model": false,
   "compatible-vendor-prefixes": false,
   "fallback-colors": false,
   "ids": false,
