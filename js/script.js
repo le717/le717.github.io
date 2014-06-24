@@ -71,19 +71,20 @@
         $("#featured-code-box").html(data.featuredCode[0].snippet);
         $("#featured-code-desc").html(data.featuredCode[0].description);
 
-        // Open links in featured descriptions in a new tab/window
-        $("#featured-project-desc").find("a").each(function() {
-          var $this = jQuery(this);
-          $this.attr("target", "_blank");
-        });
-
         // Display the featured project
         $("#featured-project-name").html(data.featuredProject[0].name);
         $("#featured-project-name").wrap("<a target='_blank' href='{0}'></a>".format(
           data.featuredProject[0].url));
 
+        // Add the version and description
         $("#featured-project-version").html(data.featuredProject[0].version);
         $("#featured-project-desc").html(" " + data.featuredProject[0].description);
+
+        // Open links in featured descriptions in a new tab/window
+        $("#featured-project-desc").find("a").each(function() {
+          var $this = jQuery(this);
+          $this.attr("target", "_blank");
+        });
       }
     });
 
