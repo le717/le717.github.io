@@ -10,7 +10,7 @@
   "featuredCode": [
     {
       "snippet": "@media only screen and (max-width: 720px) {\n  .img-responsive {\n    width: 100%;\n    height: auto;\n }",
-      "description": ""
+      "description": "Primarily from a tutorial on <a href=\"http://www.kirupa.com/html5/preserve_an_image_aspect_ratio_when_resized.htm\" target=\"_blank\">kirupa.com</a>, this little bit of CSS makes all images with the class responsive.<br>I added to the awesomeness by wrapping it in a media query, making only take effect on mobile devices. I am using this code here on Triangle Land, it is works like a charm!"
     },
     {
       "snippet": "var $imgSrc = jQuery(\".ie-svg\").attr(\"src\");\njQuery(\".ie-svg\").attr(\"src\", $imgSrc.substr(0, $imgSrc.length - 3) + \"png\");",
