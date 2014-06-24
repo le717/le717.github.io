@@ -1,6 +1,12 @@
 {
   "featuredProject": [
     {
+      "name": "SCSS @mixins",
+      "url": "https://github.com/le717/scss-mixins#readme",
+      "version": "v0.5.0",
+      "description": "are simply a collection of my own little <a href='http://sass-lang.com'' target='_blank'>SCSS</a> mixins.<br>While there are only mixins for CSS transitions and box-shadows right now, I do add more as I need them, and I never know when that will be!"
+    },
+    {
       "name": "HTML Skeleton",
       "url": "http://github.com/le717/brackets-html-skeleton#readme",
       "version": "v1.1.5",
