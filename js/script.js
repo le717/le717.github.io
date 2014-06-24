@@ -81,7 +81,7 @@
         $("#featured-project-desc").html(" " + data.featuredProject[0].description);
 
         // Open links in featured descriptions in a new tab/window
-        $("#featured-project-desc").find("a").each(function() {
+        $("#featured-project-desc, #featured-code-desc").find("a").each(function() {
           var $this = jQuery(this);
           $this.attr("target", "_blank");
         });
