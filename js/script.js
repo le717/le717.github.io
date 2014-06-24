@@ -6,31 +6,26 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
+
 (function($) {
   "use strict";
 
+  /**
+   * Show sidebar once button is clicked/tapped
+  */
   (function() {
-    /* Show sidebar once button is clicked/tapped */
     $(".sidebar-btn").on("click", function() {
       $(".sidebar").toggleClass("sidebar-hidden");
       $(".sidebar-btn").toggleClass("sidebar-btn-rotate");
     });
-
-    /*$(window).resize(function() {
-      if (($(window).width() >= 320 || $(window).width() <= 320) && $(window).width() <= 720) {
-        $("#sidebar-btn").addClass("sidebar-btn-visible");
-        $("#sidebar").addClass("sidebar-hidden");
-
-      } else {
-        $("#sidebar-btn").removeClass("sidebar-btn-visible");
-        $("#sidebar").removeClass("sidebar-hidden");
-      }
-    });*/
   })();
 
+  /**
+   * Scroll to top button
+   * Based on example from
+   * http://briancray.com/posts/scroll-to-top-link-jquery-css/
+   */
   $(function() {
-    // Scroll to top button
-    // http://briancray.com/posts/scroll-to-top-link-jquery-css/
     $(window).scroll(function() {
       // Show the scroll up button
       if ($(window).scrollTop() > 100) {
@@ -88,9 +83,7 @@
       }
     });
 
-
     /* ------- Spoiler handling ------- */
-
 
     var spoilerHeights = [],
         spoilerID      = 0,
