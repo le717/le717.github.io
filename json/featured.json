@@ -9,6 +9,10 @@
   ],
   "featuredCode": [
     {
+      "snippet": "@media only screen and (max-width: 720px) {\n  .img-responsive {\n    width: 100%;\n    height: auto;\n }",
+      "description": ""
+    },
+    {
       "snippet": "var $imgSrc = jQuery(\".ie-svg\").attr(\"src\");\njQuery(\".ie-svg\").attr(\"src\", $imgSrc.substr(0, $imgSrc.length - 3) + \"png\");",
       "description": "This small bit of jQuery simply gets the <code>src</code> attribute of the <code>ie-svg</code> class<br>and replaces it with a PNG image counterpart already on the server.<br>It works well for working around some of Internet Explorer's issues with SVG vector graphics."
     }

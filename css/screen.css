@@ -16,7 +16,7 @@
   /* Create responsive images only on mobile devices */
   .img-responsive {
     width: 100%;
-    height: auto
+    height: auto;
   }
 
   .sidebar { padding-bottom: 0.7em; }
