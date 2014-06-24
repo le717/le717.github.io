@@ -339,7 +339,7 @@ a,
   margin-top: 5px;
 }
 
-.btn-spoiler {
+.spoiler-btn {
   width: 4em;
   height: 2em;
   background-color: yellow;
@@ -357,12 +357,12 @@ a,
   transition-timing-function: ease;
 }
 
-.btn-spoiler-active {
+.spoiler-btn-active {
   color: #fff;
   background-color: #0000C4;
 }
 
-.btn-spoiler span {
+.spoiler-btn span {
   position: relative;
   left: 0.5em;
   top: 0.2em;
