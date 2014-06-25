@@ -20,7 +20,8 @@
   "homepage": "http://le717.github.io",
   "dependencies": {
     "string-format": ">=0.2.1",
-    "jquery.browser": ">=0.0.6"
+    "jquery.browser": ">=0.0.6",
+    "jquery-spoiler": "git://github.com/le717/jquery-spoiler.git"
   },
   "devDependencies": {
     "grunt": ">=0.4.5",
