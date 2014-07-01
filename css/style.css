@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/**
+/*
  * Created 2014 Triangle717
  * <http://Triangle717.WordPress.com/>
  *
@@ -357,7 +357,7 @@ a,
   transition-timing-function: ease;
 }
 
-.btn-spoiler span {
+.btn-spoiler div {
   position: relative;
   left: 0.5em;
   top: 0.2em;
@@ -411,10 +411,6 @@ a,
 
 #portfolio-teevee { margin-left: 6em; }
 
-.contact-field p {
-  font-size: 5em;
-}
+.contact-field p { font-size: 5em; }
 
-.contact-field a {
-  color: white;
-}
+.contact-field a { color: #fff; }

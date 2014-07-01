@@ -1,4 +1,4 @@
-/**
+/*
  * Created 2014 Triangle717
  * <http://Triangle717.WordPress.com/>
  *
@@ -13,7 +13,10 @@
   /**
    * Initialize jQuery Spoiler
    */
-  $(".spoiler").spoiler();
+  $(".spoiler").spoiler({
+    includePadding: false,
+    buttonActiveName: "Hide"
+  });
 
   /**
    * Show sidebar once button is clicked/tapped
@@ -44,7 +47,7 @@
 
     // Scroll up button action
     $(".scroll-up").on("click", function() {
-      $("html, body").animate({ scrollTop: 0 }, 500);
+      $("html, body").animate({scrollTop: 0}, 500);
     });
 
     // Mobile-only actions
