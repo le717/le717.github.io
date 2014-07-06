@@ -46,8 +46,6 @@
 
 @media only screen and (max-width: 320px) {
 
-  #my-avatar { margin-left: -1em; }
-
   .contact-field p { position: relative; }
 
   .contact-field > a:nth-child(2) { left: 1.95em; }
