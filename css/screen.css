@@ -9,16 +9,15 @@
 
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
-/*@media only screen and (max-width: 800px) {}*/
-
-@media only screen and (max-width: 720px) {
-
+@media only screen and (max-width: 800px) {
   /* Create responsive images only on mobile devices */
   .img-responsive {
-    width: 100%;
+    max-width: 100%;
     height: auto;
   }
+}
 
+@media only screen and (max-width: 720px) {
   .sidebar { padding-bottom: 0.7em; }
 
   .sidebar li {
