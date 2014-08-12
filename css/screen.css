@@ -23,6 +23,10 @@
   table, thead, tbody, th, td, tr {
     display: block;
   }
+
+  /* Pull the contact buttons closer together */
+  .contact-field td { margin-bottom: -40%; }
+  .contact-email { margin-top: 0; }
 }
 
 @media only screen and (max-width: 720px) {

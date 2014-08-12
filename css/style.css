@@ -272,16 +272,17 @@ a,
 .contact-wp:hover { color: #1E8CBE; }
 .contact-yt:hover { color: #CC181E; }
 
+/* Icon size and color */
+.contact-field p { font-size: 5em; }
+.contact-field a { color: #fff; }
+
 /* Overwrite the default table stying */
 .contact-field td {
   outline: none;
   padding: 0;
 }
 
-
 /* ------- Previous button styling ------- */
-
-
 #previous-link {
   margin-left: 10px;
   margin-top: -5px;
@@ -316,10 +317,7 @@ a,
           transform: translate3d(-5px, 0, 0);
 }
 
-
 /* ------- Blog post styling ------- */
-
-
 .post-title { text-shadow: 1px 2px #00f; }
 
 .post-info {
@@ -427,7 +425,3 @@ a,
 #portfolio-robox { margin-left: 5.5em; }
 
 #portfolio-teevee { margin-left: 6em; }
-
-.contact-field p { font-size: 5em; }
-
-.contact-field a { color: #fff; }
