@@ -6,4 +6,5 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
-sidebar { display: none; }
+.sidebar,
+.sidebar-btn { display: none; }
