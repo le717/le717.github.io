@@ -6,7 +6,11 @@
 // Licensed under The MIT License
 // <http://opensource.org/licenses/MIT/>
 
+// Remove all text shadows
+* { text-shadow: none; }
+
 .navbar,
 .btn-navbar,
-.scroll-up,
-.end-of-posts { display: none; }
+.scroll-up { display: none; }
+
+.end-of-posts { display: none !important; }
