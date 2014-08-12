@@ -13,7 +13,7 @@
    * Show sidebar once button is clicked/tapped
    */
   (function() {
-    $(".navbar-btn").on("click", function() {
+    $(".btn-navbar").on("click", function() {
       $(".navbar").toggleClass("navbar-hidden");
       $(".btn-navbar").toggleClass("btn-navbar-rotate");
     });

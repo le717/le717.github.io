@@ -271,7 +271,10 @@ a, .faux-link {
 .contact-yt:hover { color: #CC181E; }
 
 /* Icon size and color */
-.contact-field p { font-size: 5em; }
+.contact-field p {
+  font-size: 5em;
+  margin-bottom: -4%;
+}
 .contact-field a { color: #fff; }
 
 /* Overwrite the default table stying */
