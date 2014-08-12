@@ -254,12 +254,12 @@ a,
 .gh-button:hover { color: #BBBBBB; }
 
 /* YouTube social button */
-#yt-button {
+#twitter-button {
   font-size: 1.8em;
   top: -0.5em;
   left: 1.3em;
 }
-#yt-button:hover { color: #CC181E; }
+#twitter-button:hover { color: #55ACEE; }
 
 
 /* ------- Previous button styling ------- */
