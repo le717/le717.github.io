@@ -7,7 +7,12 @@
 // <http://opensource.org/licenses/MIT/>
 
 // Remove all text shadows
-* { text-shadow: none; }
+a, p, h1 { text-shadow: none; }
+
+img {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
 
 .navbar,
 .btn-navbar,
