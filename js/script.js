@@ -13,9 +13,9 @@
    * Show sidebar once button is clicked/tapped
    */
   (function() {
-    $(".sidebar-btn").on("click", function() {
-      $(".sidebar").toggleClass("sidebar-hidden");
-      $(".sidebar-btn").toggleClass("sidebar-btn-rotate");
+    $(".navbar-btn").on("click", function() {
+      $(".navbar").toggleClass("navbar-hidden");
+      $(".btn-navbar").toggleClass("btn-navbar-rotate");
     });
   })();
 
@@ -45,8 +45,8 @@
     if ($.browser.mobile) {
       // Hide not-mobile-ready elements
       $(".no-mobile").css("display", "none");
-      $(".sidebar").addClass("sidebar-hidden");
-      $(".sidebar-btn").removeClass("sidebar-btn-rotate");
+      $(".navbar").addClass("navbar-hidden");
+      $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
 
     // Fully center the items that need centering
@@ -59,7 +59,6 @@
       dataType: "json",
       url: "/json/featured.json",
       success: function(data) {
-
         // Display the featured code snippet
         $("#featured-code-box").css("display", "block");
         $("#featured-code-box").html(data.featuredCode[0].snippet);
@@ -76,8 +75,7 @@
 
         // Open links in featured descriptions in a new tab/window
         $("#featured-project-desc, #featured-code-desc").find("a").each(function() {
-          var $this = jQuery(this);
-          $this.attr("target", "_blank");
+          $(this).attr("target", "_blank");
         });
       }
     });

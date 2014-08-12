@@ -9,8 +9,7 @@
 
 
 /* Link decoration */
-a,
-.faux-link {
+a, .faux-link {
   text-decoration: none;
   color: #fcf54a;
   text-shadow: 1px 1px 2px black;
@@ -22,8 +21,7 @@ a,
           box-shadow: 0 0 6px 1px #fff;
 }
 
-.centered,
-.fully-centered {
+.centered, .fully-centered {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -38,8 +36,8 @@ a,
 .text-right { text-align: right; }
 
 
-/* ------- Sidebar styling ------- */
-.sidebar {
+/* ------- Navbar styling ------- */
+.navbar {
   position: fixed;
   top: 0;
   right: 0;
@@ -58,69 +56,69 @@ a,
   transition-duration: 0.5s;
 }
 
-/* Sidebar show/hide movement */
-.sidebar-hidden {
+/* Navbar show/hide movement */
+.navbar-hidden {
     -webkit-transform: translate3d(0, -13.3em, 0);
         -ms-transform: translate3d(0, -13.3em, 0);
             transform: translate3d(0, -13.3em, 0);
   }
 
-.sidebar ul {
+.navbar ul {
   margin-top: 7px;
   margin-left: -25px;
 }
 
-.sidebar li {
+.navbar li {
   font-size: 0.95em;
   padding-bottom: 0.1em;
 }
 
 /* Prevent Ionicons from changing the actual text's font */
-.sidebar .ion a { font-family: "Noto Sans", "Open Sans", Arial, sans-serif; }
+.navbar .ion a { font-family: "Noto Sans", "Open Sans", Arial, sans-serif; }
 
 
-/* ------- Line up sidebar icons ------- */
+/* ------- Line up navbar icons ------- */
 /* About */
-.sidebar li:nth-child(1)::before {
+.navbar li:nth-child(1)::before {
   font-size: 1.25em;
   margin-left: -2px;
 }
 
 /* Contact */
-.sidebar li:nth-child(4)::before {
+.navbar li:nth-child(4)::before {
   font-size: 1.1em;
   margin-left: -1px;
 }
 
 /* MIT License */
-.sidebar li:nth-child(5)::before { font-size: 1.3em; }
+.navbar li:nth-child(5)::before { font-size: 1.3em; }
 
 /* Code */
-.sidebar li:nth-child(6)::before {
+.navbar li:nth-child(6)::before {
   font-size: 1.1em;
   margin-left: -1px;
 }
 
 /* Portfolio */
-.sidebar li:nth-child(8)::before {
+.navbar li:nth-child(8)::before {
   font-size: 1.5em;
   margin-left: 1px;
 }
 
-/*.sidebar-btn:hover {
+/*.btn-navbar:hover {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
 }
 
-.sidebar-btn:active {
+.btn-navbar:active {
   -webkit-transform: translate3d(0, -2px, 0);
       -ms-transform: translate3d(0, -2px, 0);
           transform: translate3d(0, -2px, 0);
 }*/
 
-/* Sidebar toggle button */
-.sidebar-btn {
+/* Navbar toggle button */
+.btn-navbar {
   width: 0;
   height: 0;
   margin-top: 5px;
@@ -137,13 +135,13 @@ a,
   transition-timing-function: ease;
 }
 
-.sidebar-btn-rotate {
+.btn-navbar-rotate {
   border-width: 35px 22.5px 0 22.5px;
   border-color: #FF0 transparent transparent transparent;
 }
 
 /* Makes the button visible */
-.sidebar-btn-visible {
+.btn-navbar-visible {
   display: inline;
   position: fixed;
   top: 10px;
@@ -337,7 +335,7 @@ a,
   margin: 0;
 }
 
-#end-of-posts {
+.end-of-posts {
   display: none;
   font-size: 1.1em;
 }
