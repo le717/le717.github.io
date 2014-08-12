@@ -9,15 +9,6 @@
 
 (function($) {
   "use strict";
-
-  /**
-   * Initialize jQuery Spoiler
-   */
-  $(".spoiler").spoiler({
-    includePadding: false,
-    buttonActiveName: "Hide"
-  });
-
   /**
    * Show sidebar once button is clicked/tapped
    */
