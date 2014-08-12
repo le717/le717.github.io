@@ -270,6 +270,8 @@ a, .faux-link {
 .contact-wp:hover { color: #1E8CBE; }
 .contact-yt:hover { color: #CC181E; }
 
+.contact-field p { font-size: 4em; }
+
 /* Icon size and color */
 .contact-field span {
   font-size: 5em;
