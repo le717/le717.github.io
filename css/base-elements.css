@@ -71,6 +71,11 @@ pre {
   text-shadow: 1px 1px black;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 td {
   outline: 0.1em dashed #E4E1E8;
   padding: 5px;
