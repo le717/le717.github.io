@@ -61,7 +61,10 @@ redirect_from: /blog.html
 
           // Convert publishing date to a nicer format
           var postDateParts = postInfo.date.split("T")[0].split("-");
-          var dateFormat    = "{0} {1} {2},".format(postDateParts[2], postDateParts[1], postDateParts[0]).split(" ");
+          // Index 0 = Year
+          // Index 1 = Month
+          // Index 2 = Day
+          var dateFormat    = "{0} {1} {2}".format(postDateParts[2], postDateParts[1], postDateParts[0]).split(" ");
           dateFormat[1]     = "{0},".format(dateFormat[1].replace(dateFormat[1], months[dateFormat[1]]));
           var postDate      = dateFormat.join(" ");
 
