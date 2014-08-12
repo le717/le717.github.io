@@ -7,7 +7,7 @@
 // <http://opensource.org/licenses/MIT/>
 
 // Remove all text shadows
-a, p, h1 { text-shadow: none; }
+a, blockquote p, em h1, h2, p, pre { text-shadow: none; }
 
 img {
   -webkit-box-shadow: none;
