@@ -8,9 +8,9 @@
 
 // Remove all text shadows
 a, blockquote, em h1, h2, p, pre,
-.post-title, .youtube-player { text-shadow: none; }
+.post-title { text-shadow: none; }
 
-img {
+img, .youtube-player {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
