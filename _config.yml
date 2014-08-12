@@ -3,11 +3,14 @@ markdown: kramdown
 pygments: false
 url: http://le717.github.io
 baseurl: ""
+
 wpurl: http://Triangle717.WordPress.com
 gems:
- - jekyll-mentions
- - jekyll-redirect-from
- - jekyll-sitemap
- - jemoji
-#sass:
-#    style: :compressed
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji
+
+sass:
+  style: :compressed
+  sass_dir: css
