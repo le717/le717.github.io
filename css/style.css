@@ -237,37 +237,42 @@ a,
                0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
+/* Email */
+.contact-email {
+
+}
+
 /* WordPress */
-.wp-button {
+.contact-wp {
   font-size: 2em;
   top: -0.45em;
   left: 0.35em
 }
-.wp-button:hover { color: #1E8CBE; }
+.contact-wp:hover { color: #1E8CBE; }
 
 /* GitHub */
-.gh-button {
-  font-size: 1.65em;
+.contact-gh {
+  font-size: 1.7em;
   top: -0.6em;
   left: 0.9em;
 }
-.gh-button:hover { color: #BBBBBB; }
+.contact-gh:hover { color: #BBBBBB; }
 
 /* YouTube */
-.yt-button {
+.contact-yt {
   font-size: 1.8em;
   top: -0.5em;
   left: 1.3em;
 }
-.yt-button:hover { color: #CC181E; }
+.contact-yt:hover { color: #CC181E; }
 
 /* Twitter */
-.twitter-button {
+.contact-twitter {
   font-size: 1.8em;
   top: -0.5em;
   left: 1.3em;
 }
-.twitter-button:hover { color: #55ACEE; }
+.contact-twitter:hover { color: #55ACEE; }
 
 
 /* ------- Previous button styling ------- */
