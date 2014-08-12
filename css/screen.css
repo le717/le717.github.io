@@ -42,12 +42,13 @@
 
   #featured-project { margin-top: 0; }
 
-  .portfolio-wip a::before {
-    top: 1.7em;
-    left: 2em;
-    width: 42%;
-    padding: 0 0.5em 0.1em 1.6em;
-    font-size: inherit;
+  .portfolio-wip:before {
+/*    top: 1.7em;*/
+    left: 10%;
+    font-size: 1.3em;
+/*    width: 42%;*/
+/*    padding: 0 0.5em 0.1em 1.6em;*/
+/*    font-size: inherit;*/
   }
 }
 
