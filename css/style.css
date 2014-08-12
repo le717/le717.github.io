@@ -237,11 +237,6 @@ a,
                0 -1px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* Email */
-.navbar-email {
-
-}
-
 /* WordPress */
 .navbar-wp {
   font-size: 2em;
@@ -271,6 +266,7 @@ a,
 }
 
 /* Colorize the icons upon hover */
+.contact-email:hover { color: #0072C6; }
 .contact-gh:hover { color: #BBBBBB; }
 .contact-twitter:hover { color: #55ACEE; }
 .contact-wp:hover { color: #1E8CBE; }
