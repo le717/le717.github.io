@@ -7,4 +7,6 @@
  */
 
 .sidebar,
-.sidebar-btn { display: none; }
+.sidebar-btn,
+.scroll-up,
+#end-of-posts { display: none; }
