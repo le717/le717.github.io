@@ -271,7 +271,7 @@ a, .faux-link {
 .contact-yt:hover { color: #CC181E; }
 
 /* Icon size and color */
-.contact-field p {
+.contact-field span {
   font-size: 5em;
   margin-bottom: -4%;
 }

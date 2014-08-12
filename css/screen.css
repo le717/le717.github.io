@@ -25,7 +25,7 @@
   }
 
   /* Pull the contact buttons closer together */
-  .contact-field p:first { font-size: 2em; }
+  .contact-field p { font-size: 2em; }
   .contact-field td { margin-top: 10%; }
   .contact-email { margin-top: 0; }
 }
