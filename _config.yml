@@ -1,6 +1,6 @@
 name: Triangle Land
 markdown: kramdown
-pygments: false
+highlighter: null
 url: http://le717.github.io
 baseurl: ""
 
@@ -13,4 +13,4 @@ gems:
 
 sass:
   style: :compressed
-  sass_dir: css
+  sass_dir: css/
