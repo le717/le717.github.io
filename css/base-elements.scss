@@ -9,11 +9,6 @@
 
 @import "variables";
 
-::-moz-selection { background-color: rgba(255, 255, 255, 0.63); }
-     ::selection { background-color: rgba(255, 255, 255, 0.63); }
-
-a:hover { text-decoration: underline; }
-
 blockquote {
   border-left: 7px solid rgb(0, 0, 196);
   padding: 10px 15px;
@@ -29,34 +24,6 @@ blockquote::before {
   padding-right: 0.1em;
 }
 
-body {
-  font-family: $font-family;
-  font-weight: 400;
-  letter-spacing: -0.5px;
-  color: $color-text;
-  /*background: $background*/
-  background-color: $color-bg-gray;
-}
-
-html { min-width: 320px; }
-
-/* Remove unordered list bullet point in favor of custom one :D */
-ul {
-  list-style: none;
-  margin-left: -1.313em;
-}
-
-/* Use custom (Unicode only!) triangle bullet point on unordered lists */
-ul li::before {
-  content: "\25B2";
-  padding-right: 5px;
-}
-
-p {
-  margin-left: 1.2em;
-  margin-right: 1.2em;
-}
-
 pre {
   border-left: 7px solid #DDD;
   padding: 10px;
@@ -70,7 +37,7 @@ pre {
   text-shadow: 1px 1px $color-black;
 }
 
-/* Create collapsible tables */
+// Create collapsible tables
 table {
   width: 100%;
   border-collapse: collapse;

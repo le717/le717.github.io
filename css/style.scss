@@ -1,49 +1,25 @@
 ---
 ---
 @charset "UTF-8";
-/*
- * Created 2014 Triangle717
- * <http://Triangle717.WordPress.com/>
- *
- * Licensed under The MIT License
- * <http://opensource.org/licenses/MIT/>
- */
+// Created 2014 Triangle717
+// <http://Triangle717.WordPress.com/>
+// Licensed under The MIT License
+// <http://opensource.org/licenses/MIT/>
 
 
-/* Link decoration */
-a, .faux-link {
-  text-decoration: none;
-  color: #fcf54a;
-  text-shadow: 1px 1px 2px black;
-}
+@import "common";
+@import "variables";
+@import "mixins/transform";
+//@import "mixins/transition-short";
+//@import "mixins/transition-long";
+//@import "mixins/webkit-transition-long";
 
-/* Small shadow for images */
-.img-shadow {
-  -webkit-box-shadow: 0 0 6px 1px #fff;
-          box-shadow: 0 0 6px 1px #fff;
-}
-
-/* Image centering */
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .centered, .fully-centered {
   position: fixed;
   top: 50%;
   left: 50%;
 }
-
-/* Basic type styling options */
-.text-bold { font-weight: 700; }
-.text-italic { font-style: italic; }
-.text-underline { text-decoration: underline; }
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-
 
 /* ------- Navbar styling ------- */
 .navbar {
@@ -66,11 +42,7 @@ a, .faux-link {
 }
 
 /* Navbar show/hide movement */
-.navbar-hidden {
-  -webkit-transform: translate3d(0, -13.3em, 0);
-      -ms-transform: translate3d(0, -13.3em, 0);
-          transform: translate3d(0, -13.3em, 0);
-}
+.navbar-hidden { @include transform(translate3d(0, -13.3em, 0)); }
 
 .navbar ul {
   margin-top: 7px;
@@ -83,7 +55,7 @@ a, .faux-link {
 }
 
 /* Prevent Ionicons from changing the actual text's font */
-.navbar .ion a { font-family: "Noto Sans", "Open Sans", Arial, sans-serif; }
+.navbar .ion a { font-family: $font-family; }
 
 
 /* ------- Line up navbar icons ------- */
@@ -173,9 +145,7 @@ a, .faux-link {
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 3px solid #800000;
 
-  -webkit-transform: translate3d(0, 2.9em, 0);
-      -ms-transform: translate3d(0, 2.9em, 0);
-          transform: translate3d(0, 2.9em, 0);
+  @include transform(translate3d(0, 2.9em, 0));
 
   -webkit-transition-property: -webkit-transform;
   -webkit-transition-duration: 1.5s;
@@ -188,13 +158,12 @@ a, .faux-link {
 
 /* Small triangle in box */
 .scroll-up span {
+  @extend a;
   text-decoration: none;
   font-size: 2em;
   text-shadow: 0 0 1px black;
 
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  @include transform(rotate(-90deg));
 }
 
 /* ------- Site header  ------- */
@@ -219,7 +188,7 @@ a, .faux-link {
   color: #000;
   position: relative;
 }
-.social-button-link:hover { text-decoration: none; }
+.social-button-link:hover { @extend .text-decoration-none; }
 
 .social-button {
   position: relative;
@@ -274,7 +243,7 @@ a, .faux-link {
   font-size: 5em;
   margin-bottom: -4%;
 }
-.contact-field a { color: #fff; }
+.contact-field a { color: $color-white; }
 
 /* Overwrite the default table stying */
 .contact-field td {
@@ -292,7 +261,7 @@ a, .faux-link {
   color: #fcf54a;
   text-shadow: 1px 1px 2px #000;
 }
-#previous-link:hover { text-decoration: underline; }
+#previous-link:hover { @ extend .text-decoration-underline; }
 
 #previous-link span {
   font-size: 1.2em;
@@ -311,11 +280,7 @@ a, .faux-link {
   transition-timing-function: ease-out;
 }
 
-#previous-button:hover {
-  -webkit-transform: translate3d(-5px, 0, 0);
-      -ms-transform: translate3d(-5px, 0, 0);
-          transform: translate3d(-5px, 0, 0);
-}
+#previous-button:hover { @include transform(translate3d(-5px, 0, 0)); }
 
 /* ------- Blog post styling ------- */
 .post-title { text-shadow: 1px 2px #00f; }
@@ -349,8 +314,7 @@ a, .faux-link {
   -webkit-transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
           transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
   margin-top: 5px;
 }
 
@@ -387,13 +351,13 @@ a, .faux-link {
 .you-are-here {
   font-size: 1.1em;
   color: #E4E1E8;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 2px 2px 2px $color-black;
 }
 
 /* Loading animation */
 .ani-loading { z-index: 5; }
 
-.generated-data { border-bottom: 1px dashed #fff; }
+.generated-data { border-bottom: 1px dashed $color-white; }
 
 .portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);

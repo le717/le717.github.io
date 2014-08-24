@@ -1,0 +1,92 @@
+// Created 2014 Triangle717
+// <http://Triangle717.WordPress.com/>
+// Licensed under The MIT License
+// <http://opensource.org/licenses/MIT/>
+
+
+@import "mixins/box-shadow";
+@import "mixins/img-responsive";
+
+::-moz-selection { text-shadow: none; background-color: rgba(255, 255, 255, 0.63); }
+     ::selection { text-shadow: none; background-color: rgba(255, 255, 255, 0.63); }
+
+// Commonly used alignments and type styles
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-normal { font-weight: 400; }
+.text-bold { font-weight: 700; }
+.text-italic { font-style: italic; }
+.text-decoration-none { text-decoration: none; }
+.text-decoration-underline { text-decoration: underline; }
+.text-small { font-size: 0.8em; }
+.text-smaller { font-size: 0.7em; }
+
+a, .faux-link {
+  @extend .text-decoration-none;
+  color: $color-yellow-light;
+  text-shadow: 1px 1px 2px $color-black;
+
+  &:hover { @extend .text-decoration-underline; }
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: $color-text;
+  //background: $background
+  background-color: $color-bg-gray;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  min-width: 320px;
+}
+
+// <kbd> element styling from http://meta.superuser.com/q/4788
+// with minor changes
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  @include box-shadow((0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $color-white inset));
+  color: #333;
+  display: inline-block;
+  font-family: $font-family;
+  font-size: 0.688em;
+  line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 $color-white;
+}
+
+// Images
+@include img-responsive(720px);
+
+.img-link { border: none; }
+.img-shadow { @include box-shadow(0 0 6px 1px $color-white); }
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  margin-left: 1.2em;
+  margin-right: 1.2em;
+}
+
+// Remove unordered list bullet point in favor of custom one :D
+ul {
+  list-style: none;
+  margin-left: -1.313em;
+}
+
+// Use custom (Unicode only!) triangle bullet point on unordered lists
+ul li::before {
+  content: "\25B2";
+  padding-right: 5px;
+}
