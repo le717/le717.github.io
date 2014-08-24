@@ -27,7 +27,8 @@
   top: 0;
   right: 0;
   width: 9em;
-  height: 12em;
+//  height: 12em;
+  height: auto;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
   z-index: 1;
@@ -100,12 +101,13 @@
 
 /* Navbar toggle button */
 .btn-navbar {
+  cursor: pointer;
   width: 0;
   height: 0;
   margin-top: 5px;
   border-style: solid;
   border-width: 0 22.5px 35px 22.5px;
-  border-color: transparent transparent #FF0 transparent;
+  border-color: $color-yellow transparent transparent transparent;
 
   -webkit-transition-property: border-width, border-color;
   -webkit-transition-duration: 0.5s;
@@ -118,7 +120,7 @@
 
 .btn-navbar-rotate {
   border-width: 35px 22.5px 0 22.5px;
-  border-color: #FF0 transparent transparent transparent;
+  border-color: transparent transparent $color-yellow transparent;
 }
 
 /* Makes the button visible */
