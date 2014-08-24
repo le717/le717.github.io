@@ -15,7 +15,8 @@
 //@import "mixins/webkit-transition-long";
 
 
-.centered, .fully-centered {
+.centered,
+.fully-centered {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -40,20 +41,20 @@
   transition-property: -webkit-transform, -ms-transform, transform;
   transition-timing-function: ease-out;
   transition-duration: 0.5s;
+
+  ul {
+    margin-top: 7px;
+    margin-left: -25px;
+  }
+
+  li {
+    font-size: 0.95em;
+    padding-bottom: 0.1em;
+  }
 }
 
 /* Navbar show/hide movement */
 .navbar-hidden { @include transform(translate3d(0, -13.3em, 0)); }
-
-.navbar ul {
-  margin-top: 7px;
-  margin-left: -25px;
-}
-
-.navbar li {
-  font-size: 0.95em;
-  padding-bottom: 0.1em;
-}
 
 /* Prevent Ionicons from changing the actual text's font */
 .navbar .ion a { font-family: $font-family; }
@@ -156,16 +157,15 @@
   transition-property: -webkit-transform, -ms-transform, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
-}
 
-/* Small triangle in box */
-.scroll-up span {
-  @extend a;
-  text-decoration: none;
-  font-size: 2em;
-  text-shadow: 0 0 1px black;
+  span {
+    @extend a;
+    text-decoration: none;
+    font-size: 2em;
+    text-shadow: 0 0 1px black;
 
-  @include transform(rotate(-90deg));
+    @include transform(rotate(-90deg));
+  }
 }
 
 /* ------- Site header  ------- */
