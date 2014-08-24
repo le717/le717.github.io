@@ -263,12 +263,12 @@ a, .faux-link {
   left: 1.3em;
 }
 
-/* Colorize the icons upon hover */
-.contact-email:hover { color: #0072C6; }
-.contact-gh:hover { color: #BBBBBB; }
-.contact-twitter:hover { color: #55ACEE; }
-.contact-wp:hover { color: #1E8CBE; }
-.contact-yt:hover { color: #CC181E; }
+/* Colorize the icons */
+.contact-email { color: #0072C6; }
+.contact-gh { color: #BBBBBB; }
+.contact-twitter { color: #55ACEE; }
+.contact-wp { color: #1E8CBE; }
+.contact-yt { color: #CC181E; }
 
 .contact-field p { font-size: 4em; }
 
