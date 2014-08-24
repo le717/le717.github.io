@@ -185,7 +185,7 @@
 .social-button-link {
   text-decoration: none;
   text-shadow: none;
-  color: #000;
+  color: $color-black;
   position: relative;
 }
 .social-button-link:hover { @extend .text-decoration-none; }
@@ -259,9 +259,9 @@
   display: inline-block;
   text-decoration: none;
   color: #fcf54a;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 2px $color-black;
 }
-#previous-link:hover { @ extend .text-decoration-underline; }
+#previous-link:hover { @extend .text-decoration-underline; }
 
 #previous-link span {
   font-size: 1.2em;
@@ -292,10 +292,10 @@
 
 .publish-info {
   font-size: 0.85em;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: 1px 1px 2px $color-black;
 }
 
-.post-content { border-bottom: 4px dotted #fff; }
+.post-content { border-bottom: 4px dotted $color-white; }
 
 .post-content blockquote p {
   display: inline;
@@ -324,7 +324,7 @@
   background-color: yellow;
   display: inline-block;
   border-radius: 5px;
-  color: #000;
+  color: $color-black;
   cursor: pointer;
 
   -webkit-transition-property: background-color, color;
@@ -343,7 +343,7 @@
 }
 
 .btn-spoiler-active {
-  color: #fff;
+  color: $color-white;
   background-color: #0000C4;
 }
 
@@ -366,12 +366,10 @@
   border-radius: 5px;
   left: 36%;
   padding: 0.1em 2em 0.1em 2em;
-  color: #fff;
+  color: $color-white;
   font-size: 2em;
   z-index: 2;
   display: inline-block;
 }
 
-.portfolio-wip:hover {
-  text-decoration: none;
-}
+.portfolio-wip:hover { @extend .text-decoration-none; }
