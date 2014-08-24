@@ -191,10 +191,7 @@ a, .faux-link {
   text-decoration: none;
   font-size: 2em;
   text-shadow: 0 0 1px black;
-}
 
-/* Rotate the triangle to the proper orientation */
-.scroll-up span {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);

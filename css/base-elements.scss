@@ -9,8 +9,8 @@
 
 @import "variables";
 
-::-moz-selection { background-color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0.63); }
-     ::selection { background-color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0.63); }
+::-moz-selection { background-color: rgba(255, 255, 255, 0.63); }
+     ::selection { background-color: rgba(255, 255, 255, 0.63); }
 
 a:hover { text-decoration: underline; }
 
