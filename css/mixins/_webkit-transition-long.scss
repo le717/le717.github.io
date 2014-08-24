@@ -1,0 +1,8 @@
+// CSS longhand WebKit-prefix transition property
+// SCSS mixin from https://github.com/le717/scss-mixins
+
+@mixin webkit-transition-long($webkitProperty, $duration, $easing) {
+  -webkit-transition-property: $webkitProperty;
+  -webkit-transition-duration: $duration;
+  -webkit-transition-timing-function: $easing;
+}

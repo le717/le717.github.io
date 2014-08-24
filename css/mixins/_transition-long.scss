@@ -1,0 +1,8 @@
+// CSS longhand unprefixed transition property
+// SCSS mixin from https://github.com/le717/scss-mixins
+
+@mixin transition-long($property, $duration, $easing) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $easing;
+}

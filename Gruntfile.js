@@ -26,16 +26,27 @@ module.exports = function(grunt) {
       }
     },
 
-    // Copy JavaScript dependencies to the proper location
+    // Copy dependencies to their proper locations
     copy: {
       main: {
-        expand: true,
-        cwd: "node_modules/",
-        src: ["jquery.browser/dist/*.min.js", "string-format/lib/*", "jquery-spoiler/jquery.spoiler.min.js"],
-        dest: "lib/",
-        flatten: true,
-        filter: "isFile"
-      },
+        files: [
+          {
+            expand: true,
+            cwd: "node_modules/",
+            src: ["jquery.browser/dist/*.min.js", "string-format/lib/*"],
+            dest: "lib/",
+            flatten: true,
+            filter: "isFile"
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: "node_modules/",
+            src: "scss-mixins/mixins/*",
+            dest: "css/mixins/",
+          },
+        ]
+      }
     },
 
     // Lint the HTML using HTMLHint
@@ -48,7 +59,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Lint the CSS using CSS Lint
+    // Lint CSS using CSS Lint
     csslint: {
       strict: {
         options: {
@@ -59,22 +70,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Minify any CSS using CSSMin
-    cssmin: {
-      add_banner: {
-        options: {
-          banner: "<%= banner %>"
-        },
-        files: {
-          //"css/<%= pkg.name %>.min.css": "<%= cssfiles %>"
-          // FIXME THIS IS NOT IDEAL
-          "css/not-pong.min.css": "css/not-pong.css",
-          "css/<%= pkg.name %>.min.css": "css/style.css"
-        }
-      }
-    },
-
-    // Lint the JavaScript using JSHint
+    // Lint JavaScript using JSHint
     jshint: {
       src: {
         options: {
@@ -84,7 +80,7 @@ module.exports = function(grunt) {
       },
     },
 
-    // Minify any JavaScript using Uglify
+    // Minify JavaScript using Uglify
     uglify: {
       options: {
         banner: "<%= banner %>",
@@ -120,7 +116,7 @@ module.exports = function(grunt) {
 
   // Define the tasks
   grunt.registerTask("lint", ["htmlhint", "jshint", "csslint"]);
-  grunt.registerTask("build", ["cssmin", "uglify"]);
+  grunt.registerTask("build", "uglify");
   grunt.registerTask("all", ["lint", "build"]);
 
   // Always use --force to stop csslint from killing the task
