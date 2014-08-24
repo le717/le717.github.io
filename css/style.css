@@ -65,10 +65,10 @@ a, .faux-link {
 
 /* Navbar show/hide movement */
 .navbar-hidden {
-    -webkit-transform: translate3d(0, -13.3em, 0);
-        -ms-transform: translate3d(0, -13.3em, 0);
-            transform: translate3d(0, -13.3em, 0);
-  }
+  -webkit-transform: translate3d(0, -13.3em, 0);
+      -ms-transform: translate3d(0, -13.3em, 0);
+          transform: translate3d(0, -13.3em, 0);
+}
 
 .navbar ul {
   margin-top: 7px;
@@ -396,7 +396,7 @@ a, .faux-link {
 
 .generated-data { border-bottom: 1px dashed #fff; }
 
-.portfolio-wip:before {
+.portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);
   content: "Work in Progress";
   position: relative;
@@ -406,6 +406,7 @@ a, .faux-link {
   color: #fff;
   font-size: 2em;
   z-index: 2;
+  display: inline-block;
 }
 
 .portfolio-wip:hover {
