@@ -88,18 +88,6 @@
   margin-left: 1px;
 }
 
-/*.btn-navbar:hover {
-  -webkit-transform: translate3d(0, -2px, 0);
-      -ms-transform: translate3d(0, -2px, 0);
-          transform: translate3d(0, -2px, 0);
-}
-
-.btn-navbar:active {
-  -webkit-transform: translate3d(0, -2px, 0);
-      -ms-transform: translate3d(0, -2px, 0);
-          transform: translate3d(0, -2px, 0);
-}*/
-
 /* Navbar toggle button */
 .btn-navbar {
   cursor: pointer;
@@ -107,7 +95,7 @@
   height: 0;
   margin-top: 5px;
   border-style: solid;
-  border-width: 0 22.5px 35px 22.5px;
+  border-width: 35px 22.5px 0 22.5px;
   border-color: $color-yellow transparent transparent transparent;
 
   -webkit-transition-property: border-width, border-color;
@@ -120,7 +108,7 @@
 }
 
 .btn-navbar-rotate {
-  border-width: 35px 22.5px 0 22.5px;
+  border-width: 0 22.5px 35px 22.5px;
   border-color: transparent transparent $color-yellow transparent;
 }
 
@@ -189,18 +177,19 @@
   text-shadow: none;
   color: $color-black;
   position: relative;
+
+  &:hover { @extend .text-decoration-none; }
 }
-.social-button-link:hover { @extend .text-decoration-none; }
 
 .social-button {
   position: relative;
   display: inline;
   margin: 0 !important;
-}
 
-.social-button:hover {
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),
-               0 -1px 0 rgba(0, 0, 0, 0.4);
+  &:hover {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),
+                 0 -1px 0 rgba(0, 0, 0, 0.4);
+  }
 }
 
 /* WordPress */
@@ -238,19 +227,21 @@
 .contact-wp { color: #1E8CBE; }
 .contact-yt { color: #CC181E; }
 
-.contact-field p { font-size: 4em; }
+.contact-field {
+  a { color: $color-white; }
+  p { font-size: 4em; }
 
-/* Icon size and color */
-.contact-field span {
-  font-size: 5em;
-  margin-bottom: -4%;
-}
-.contact-field a { color: $color-white; }
+  // Icon size and color
+  span {
+    font-size: 5em;
+    margin-bottom: -4%;
+  }
 
-/* Overwrite the default table stying */
-.contact-field td {
-  outline: none;
-  padding: 0;
+  // Overwrite the default table stying
+   td {
+    outline: none;
+    padding: 0;
+  }
 }
 
 /* ------- Previous button styling ------- */
@@ -262,13 +253,15 @@
   text-decoration: none;
   color: #fcf54a;
   text-shadow: 1px 1px 2px $color-black;
-}
-#previous-link:hover { @extend .text-decoration-underline; }
 
-#previous-link span {
-  font-size: 1.2em;
-  margin-left: 10px;
+  span {
+    font-size: 1.2em;
+    margin-left: 10px;
+  }
+
+  &:hover { @extend .text-decoration-underline; }
 }
+
 
 #previous-button {
   font-size: 1.3em;
@@ -280,9 +273,9 @@
   transition-property: -ms-transform, transform;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
-}
 
-#previous-button:hover { @include transform(translate3d(-5px, 0, 0)); }
+  &:hover { @include transform(translate3d(-5px, 0, 0)); }
+}
 
 /* ------- Blog post styling ------- */
 .post-title { text-shadow: 1px 2px #00f; }
@@ -336,12 +329,12 @@
   transition-property: background-color, color;
   transition-duration: 0.5s, 0.7s;
   transition-timing-function: ease;
-}
 
-.btn-spoiler div {
-  position: relative;
-  left: 0.5em;
-  top: 0.2em;
+  div {
+    position: relative;
+    left: 0.5em;
+    top: 0.2em;
+  }
 }
 
 .btn-spoiler-active {
@@ -372,6 +365,6 @@
   font-size: 2em;
   z-index: 2;
   display: inline-block;
-}
 
-.portfolio-wip:hover { @extend .text-decoration-none; }
+  &:hover { @extend .text-decoration-none; }
+}
