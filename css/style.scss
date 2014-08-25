@@ -101,7 +101,7 @@
   border-width: 35px 22.5px 0 22.5px;
   border-color: $color-yellow transparent transparent transparent;
 
-  @include transtion((border-width, border-color), 0.5s, ease);
+  @include transition((border-width, border-color), 0.5s, ease);
 
 //  -webkit-transition-property: border-width, border-color;
 //  -webkit-transition-duration: 0.5s;
