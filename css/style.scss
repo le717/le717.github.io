@@ -50,6 +50,7 @@
   li {
     font-size: 0.95em;
     padding-bottom: 0.1em;
+    display: list-item;
   }
 }
 
@@ -62,27 +63,24 @@
 
 /* ------- Line up navbar icons ------- */
 // About
-//.navbar li:nth-child(1)::before {
-//  font-size: 1.25em;
-//  margin-left: -2px;
-//}
+.navbar li:nth-child(1)::before {
+  font-size: 1.25em;
+  margin-left: -2px;
+}
 
 // Contact
-//.navbar li:nth-child(3)::before {
-//  font-size: 1.1em;
-//  margin-left: -1px;
-//}
+.navbar li:nth-child(3)::before {
+  font-size: 1.1em;
+  margin-left: -1px;
+}
 
-/* MIT License */
-//.navbar li:nth-child(5)::before { font-size: 1.3em; }
-
-/* Code */
+// Code
 //.navbar li:nth-child(6)::before {
 //  font-size: 1.1em;
 //  margin-left: -1px;
 //}
 
-/* Portfolio */
+// Portfolio
 //.navbar li:nth-child(7)::before {
 //  font-size: 1.5em;
 //  margin-left: 1px;
