@@ -61,31 +61,31 @@
 
 
 /* ------- Line up navbar icons ------- */
-/* About */
-.navbar li:nth-child(1)::before {
-  font-size: 1.25em;
-  margin-left: -2px;
-}
+// About
+//.navbar li:nth-child(1)::before {
+//  font-size: 1.25em;
+//  margin-left: -2px;
+//}
 
-/* Contact */
-.navbar li:nth-child(4)::before {
-  font-size: 1.1em;
-  margin-left: -1px;
-}
+// Contact
+//.navbar li:nth-child(3)::before {
+//  font-size: 1.1em;
+//  margin-left: -1px;
+//}
 
 /* MIT License */
-.navbar li:nth-child(5)::before { font-size: 1.3em; }
+//.navbar li:nth-child(5)::before { font-size: 1.3em; }
 
 /* Code */
-.navbar li:nth-child(6)::before {
-  font-size: 1.1em;
-  margin-left: -1px;
-}
+//.navbar li:nth-child(6)::before {
+//  font-size: 1.1em;
+//  margin-left: -1px;
+//}
 
 /* Portfolio */
-.navbar li:nth-child(7)::before {
-  font-size: 1.5em;
-  margin-left: 1px;
+//.navbar li:nth-child(7)::before {
+//  font-size: 1.5em;
+//  margin-left: 1px;
 }
 
 /* Navbar toggle button */
