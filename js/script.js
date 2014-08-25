@@ -19,6 +19,7 @@
     });
   })();
 
+
   /**
    * Scroll to top button
    * Based on example from
@@ -44,15 +45,13 @@
     // Mobile-only actions
     if ($.browser.mobile) {
       // Hide not-mobile-ready elements
-      $(".no-mobile").css("display", "none");
       $(".navbar").addClass("navbar-hidden");
       $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
 
     // Fully center the items that need centering
     var $centered = $(".fully-centered");
-    $centered.css("margin-left", -$centered.width() / 2);
-    $centered.css("margin-top", -$centered.height() / 2);
+    $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
 
     // Get the featured content feed
     $.ajax({
