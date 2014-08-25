@@ -10,12 +10,12 @@
 @import "common";
 @import "variables";
 @import "mixins/transform";
-//@import "mixins/transition-short";
+@import "mixins/transition";
+@import "mixins/transition-short";
 //@import "mixins/transition-long";
 //@import "mixins/webkit-transition-long";
 
 
-.centered,
 .fully-centered {
   position: fixed;
   top: 50%;
@@ -48,7 +48,6 @@
   }
 
   li {
-//    font-size: 0.95em;
     padding-bottom: 0.1em;
     display: list-item;
 
@@ -79,13 +78,13 @@
   }
 }
 
-/* Navbar show/hide movement */
+// Navbar show/hide movement
 .navbar-hidden { @include transform(translate3d(0, -13.3em, 0)); }
 
-/* Prevent Ionicons from changing the actual text's font */
+// Prevent Ionicons from changing the actual text's font
 .navbar .ion a { font-family: $font-family; }
 
-/* Navbar toggle button */
+/. Navbar toggle button
 .btn-navbar {
   cursor: pointer;
   width: 0;
@@ -102,13 +101,15 @@
   border-width: 35px 22.5px 0 22.5px;
   border-color: $color-yellow transparent transparent transparent;
 
-  -webkit-transition-property: border-width, border-color;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease;
+  @include transtion((border-width, border-color), 0.5s, ease);
 
-  transition-property: border-width, border-color;
-  transition-duration: 0.5s;
-  transition-timing-function: ease;
+//  -webkit-transition-property: border-width, border-color;
+//  -webkit-transition-duration: 0.5s;
+//  -webkit-transition-timing-function: ease;
+//
+//  transition-property: border-width, border-color;
+//  transition-duration: 0.5s;
+//  transition-timing-function: ease;
 }
 
 .btn-navbar-rotate {
@@ -188,6 +189,13 @@
   }
 }
 
+// Colorize the icons
+.contact-email { color: #0072C6; }
+.contact-gh { color: #BBBBBB; }
+.contact-twitter { color: #55ACEE; }
+.contact-wp { color: #1E8CBE; }
+.contact-yt { color: #CC181E; }
+
 // WordPress
 .navbar-wp {
   color: $color-text;
@@ -218,13 +226,6 @@
   top: -0.5em;
   left: 1.3em;
 }
-
-// Colorize the icons
-.contact-email { color: #0072C6; }
-.contact-gh { color: #BBBBBB; }
-.contact-twitter { color: #55ACEE; }
-.contact-wp { color: #1E8CBE; }
-.contact-yt { color: #CC181E; }
 
 .contact-field {
   a { color: $color-white; }
@@ -305,17 +306,16 @@
 /* ------- Spoiler styling------- */
 .spoiler {
   overflow: hidden;
-  -webkit-transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
-          transition: height 1s cubic-bezier(.27, 1.15, .93, .85);
   border-radius: 10px;
-  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
   margin-top: 5px;
+  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+  @include transition-short(height 1s cubic-bezier(.27, 1.15, .93, .85));
 }
 
 .btn-spoiler {
   width: 4em;
   height: 2em;
-  background-color: yellow;
+  background-color: $color-yellow;
   display: inline-block;
   border-radius: 5px;
   color: $color-black;
