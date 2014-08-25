@@ -11,9 +11,9 @@
 @import "variables";
 @import "mixins/transform";
 @import "mixins/transition";
+@import "mixins/transition-long";
 @import "mixins/transition-short";
-//@import "mixins/transition-long";
-//@import "mixins/webkit-transition-long";
+@import "mixins/webkit-transition-long";
 
 
 .fully-centered {
@@ -34,13 +34,12 @@
   border-left: 7px solid #800000;
   z-index: 1;
 
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-timing-function: ease-out;
-  -webkit-transition-duration: 0.5s;
+  @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
+  @include transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
 
-  transition-property: -webkit-transform, -ms-transform, transform;
-  transition-timing-function: ease-out;
-  transition-duration: 0.5s;
+//  @include webkit-transition-long(-webkit-transform, 1s, ease-out);
+//  @include transition-long(transform, 1s, ease-out);
+//  @media only screen and (max-width: 720px) { @include transform(translate3d(97.5%, 0, 0)); }
 
   ul {
     margin-top: 7px;
@@ -80,6 +79,7 @@
 
 // Navbar show/hide movement
 .navbar-hidden { @include transform(translate3d(0, -13.3em, 0)); }
+//.nav-hidden { @include transform(translate3d(0, 0, 0)); }
 
 // Prevent Ionicons from changing the actual text's font
 .navbar .ion a { font-family: $font-family; }
@@ -102,14 +102,6 @@
   border-color: $color-yellow transparent transparent transparent;
 
   @include transition((border-width, border-color), 0.5s, ease);
-
-//  -webkit-transition-property: border-width, border-color;
-//  -webkit-transition-duration: 0.5s;
-//  -webkit-transition-timing-function: ease;
-//
-//  transition-property: border-width, border-color;
-//  transition-duration: 0.5s;
-//  transition-timing-function: ease;
 }
 
 .btn-navbar-rotate {
@@ -198,7 +190,7 @@
 
 // WordPress
 .navbar-wp {
-  color: $color-text;
+  color: $color-white;
   font-size: 2em;
   top: -0.45em;
   left: 0.35em
@@ -206,7 +198,7 @@
 
 // GitHub
 .navbar-gh {
-  color: $color-text;
+  color: $color-white;
   font-size: 1.7em;
   top: -0.6em;
   left: 0.9em;
@@ -221,7 +213,7 @@
 
 // Twitter
 .navbar-twitter {
-  color: $color-text;
+  color: $color-white;
   font-size: 1.8em;
   top: -0.5em;
   left: 1.3em;
