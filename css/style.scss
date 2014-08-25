@@ -48,13 +48,33 @@
   }
 
   li {
-    font-size: 0.95em;
+//    font-size: 0.95em;
     padding-bottom: 0.1em;
     display: list-item;
 
+    // Line up navbar icons
+    // About
     &:nth-child(1)::before {
       font-size: 1.25em;
       margin-left: -2px;
+    }
+
+    // Contact
+    &:nth-child(3)::before {
+      font-size: 1.1em;
+      margin-left: -1px;
+    }
+
+    // Code
+    &:nth-child(4)::before {
+      font-size: 1.1em;
+      margin-left: -1px;
+    }
+
+    // Portfolio
+    &:nth-child(5)::before {
+      font-size: 1.5em;
+      margin-left: 1px;
     }
   }
 }
@@ -64,32 +84,6 @@
 
 /* Prevent Ionicons from changing the actual text's font */
 .navbar .ion a { font-family: $font-family; }
-
-
-/* ------- Line up navbar icons ------- */
-// About
-//.navbar li:nth-child(1)::before {
-//  font-size: 1.25em;
-//  margin-left: -2px;
-//}
-
-// Contact
-.navbar li:nth-child(3)::before {
-  font-size: 1.1em;
-  margin-left: -1px;
-}
-
-// Code
-.navbar li:nth-child(4)::before {
-  font-size: 1.1em;
-  margin-left: -1px;
-}
-
-// Portfolio
-.navbar li:nth-child(5)::before {
-  font-size: 1.5em;
-  margin-left: 1px;
-}
 
 /* Navbar toggle button */
 .btn-navbar {
@@ -194,35 +188,38 @@
   }
 }
 
-/* WordPress */
+// WordPress
 .navbar-wp {
+  color: $color-text;
   font-size: 2em;
   top: -0.45em;
   left: 0.35em
 }
 
-/* GitHub */
+// GitHub
 .navbar-gh {
+  color: $color-text;
   font-size: 1.7em;
   top: -0.6em;
   left: 0.9em;
 }
 
-/* YouTube */
-.navbar-yt {
-  font-size: 1.8em;
-  top: -0.5em;
-  left: 1.3em;
-}
+// YouTube
+//.navbar-yt {
+//  font-size: 1.8em;
+//  top: -0.5em;
+//  left: 1.3em;
+//}
 
-/* Twitter */
+// Twitter
 .navbar-twitter {
+  color: $color-text;
   font-size: 1.8em;
   top: -0.5em;
   left: 1.3em;
 }
 
-/* Colorize the icons */
+// Colorize the icons
 .contact-email { color: #0072C6; }
 .contact-gh { color: #BBBBBB; }
 .contact-twitter { color: #55ACEE; }
