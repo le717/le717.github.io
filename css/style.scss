@@ -35,7 +35,7 @@
   z-index: 1;
 
   @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
-  @include transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
+  @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
 
 //  @include webkit-transition-long(-webkit-transform, 1s, ease-out);
 //  @include transition-long(transform, 1s, ease-out);
@@ -233,6 +233,11 @@
    td {
     outline: none;
     padding: 0;
+
+    @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
+    @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
+
+    &:hover { @include transform(scale(1.1)); }
   }
 }
 
