@@ -46,7 +46,7 @@
     if ($.browser.mobile) {
       // Hide non-mobile-ready elements
 //      $(".navbar").addClass("navbar-hidden");
-//      $(".btn-navbar").removeClass("btn-navbar-rotate");
+      $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
 
     // Fully center the items that need centering
