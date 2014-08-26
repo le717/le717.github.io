@@ -37,27 +37,19 @@
 }
 
 @media only screen and (max-width: 720px) {
-  .navbar {
-    @include transform(translate3d(0, -100%, 0));
-
-    li {
-      font-size: 1.05em;
-      margin-left: -5px;
-    }
+.  navbar li {
+    font-size: 1.05em;
+    margin-left: -5px;
   }
 
   #featured-code-box { width: auto; }
 
   #featured-project { margin-top: 0; }
 
-//  .portfolio-wip:before {
-///*    top: 1.7em;*/
-//    left: 10%;
-//    font-size: 1.3em;
-///*    width: 42%;*/
-///*    padding: 0 0.5em 0.1em 1.6em;*/
-///*    font-size: inherit;*/
-//  }
+  .portfolio-wip {
+    padding: 0.1em;
+    font-size: 1.3em;
+  }
 }
 
 /* ------- Smartphones (portrait) ------- */
