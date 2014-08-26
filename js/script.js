@@ -44,7 +44,7 @@
 
     // Mobile-only actions
     if ($.browser.mobile) {
-      // Hide not-mobile-ready elements
+      // Hide non-mobile-ready elements
       $(".navbar").addClass("navbar-hidden");
       $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
@@ -52,6 +52,8 @@
     // Fully center the items that need centering
     var $centered = $(".fully-centered");
     $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
+
+    $(".portfolio-wip").html("Work in Progress");
 
     // Get the featured content feed
     $.ajax({
