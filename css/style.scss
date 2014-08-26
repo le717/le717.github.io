@@ -77,7 +77,10 @@
 }
 
 // Navbar show/hide movement
-.navbar-hidden { @include transform(translate3d(0, 0, 0)); }
+.navbar-hidden {
+  @include transform(translate3d(0, -100%, 0));
+  @media only screen and (max-width: 720px) { @include transform(translate3d(0, 0, 0)); }
+}
 
 // Navbar toggle button
 .btn-navbar {

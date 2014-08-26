@@ -19,7 +19,6 @@
     });
   })();
 
-
   /**
    * Scroll to top button
    * Based on example from
@@ -27,11 +26,9 @@
    */
   $(function() {
     $(window).scroll(function() {
-      // Show the scroll up button
+      // Show/how the scroll up button
       if ($(window).scrollTop() > 100) {
         $(".scroll-up").css("transform", "translate3d(0, 0, 0)");
-
-        // Hide the button
       } else {
         $(".scroll-up").css("transform", "");
       }
