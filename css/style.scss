@@ -29,7 +29,7 @@
   right: 0;
   width: 9em;
 //  height: 12em;
-  height: auto;
+//  height: auto;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 7px solid #800000;
   z-index: 1;
@@ -39,10 +39,10 @@
 
 //  @include webkit-transition-long(-webkit-transform, 1s, ease-out);
 //  @include transition-long(transform, 1s, ease-out);
-  @media only screen and (max-width: 720px) { @include transform(translate3d(97.5%, 0, 0)); }
+  @media only screen and (max-width: 720px) { @include transform(translate3d(0, 97.5%, 0)); }
   
   // Prevent Ionicons from changing the actual text's font
-// .ion a { font-family: $font-family; }
+ .ion a { font-family: $font-family; }
 
   ul {
     margin-top: 7px;
