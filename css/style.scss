@@ -36,7 +36,7 @@
   @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
 
   @media only screen and (max-width: 720px) { @include transform(translate3d(0, 0, 0)); }
-  
+
   // Prevent Ionicons from changing the actual text's font
  .ion a { font-family: $font-family; }
 
