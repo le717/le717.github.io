@@ -204,13 +204,6 @@
   left: 0.9em;
 }
 
-// YouTube
-//.navbar-yt {
-//  font-size: 1.8em;
-//  top: -0.5em;
-//  left: 1.3em;
-//}
-
 // Twitter
 .navbar-twitter {
   color: $color-white;
@@ -237,7 +230,7 @@
     @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
     @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
 
-    &:hover { @include transform(scale(1.1)); }
+    &:hover { @include transform(scale(1.05)); }
   }
 }
 
