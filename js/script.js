@@ -49,7 +49,8 @@
     $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
 
     // Add text to WIP label
-    $(".portfolio-wip").html("Work in Progress");
+    $(".portfolio-wip").wrap("<div class='text-center'/>")
+                       .html("Work in Progress");
 
     // Get the featured content feed
     $.ajax({
