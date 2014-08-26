@@ -39,10 +39,10 @@
 
 //  @include webkit-transition-long(-webkit-transform, 1s, ease-out);
 //  @include transition-long(transform, 1s, ease-out);
-//  @media only screen and (max-width: 720px) { @include transform(translate3d(97.5%, 0, 0)); }
+  @media only screen and (max-width: 720px) { @include transform(translate3d(97.5%, 0, 0)); }
   
   // Prevent Ionicons from changing the actual text's font
- .ion a { font-family: $font-family; }
+// .ion a { font-family: $font-family; }
 
   ul {
     margin-top: 7px;
@@ -82,7 +82,7 @@
 
 // Navbar show/hide movement
 //.navbar-hidden { @include transform(translate3d(0, -13.3em, 0)); }
-.nav-hidden { @include transform(translate3d(0, 0, 0)); }
+.navbar-hidden { @include transform(translate3d(0, 0, 0)); }
 
 // Navbar toggle button
 .btn-navbar {
