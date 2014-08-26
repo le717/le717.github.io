@@ -336,13 +336,10 @@
 
 .portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);
-  content: "Work in Progress";
-  position: relative;
   border-radius: 5px;
   padding: 0.1em 2em 0.1em 2em;
   color: $color-white;
   font-size: 2em;
-  z-index: 2;
   display: inline-block;
 
   &:hover { @extend .text-decoration-none; }
