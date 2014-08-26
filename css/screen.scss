@@ -9,8 +9,6 @@
  */
 
 
-@import "mixins/transform";
-
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
 @media only screen and (max-width: 800px) {
@@ -37,13 +35,12 @@
 }
 
 @media only screen and (max-width: 720px) {
-.  navbar li {
+  .navbar li {
     font-size: 1.05em;
     margin-left: -5px;
   }
 
   #featured-code-box { width: auto; }
-
   #featured-project { margin-top: 0; }
 
   .portfolio-wip {
