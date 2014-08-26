@@ -77,7 +77,7 @@
 }
 
 // Navbar show/hide movement
-.navbar-hidden { @include transform(translate3d(0, -100%, 0)); }
+//.navbar-hidden { @include transform(translate3d(0, -100%, 0)); }
 
 // Navbar toggle button
 .btn-navbar {

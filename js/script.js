@@ -46,13 +46,14 @@
     if ($.browser.mobile) {
       // Hide non-mobile-ready elements
 //      $(".navbar").addClass("navbar-hidden");
-      $(".btn-navbar").removeClass("btn-navbar-rotate");
+//      $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
 
     // Fully center the items that need centering
     var $centered = $(".fully-centered");
     $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
 
+    // Add text to WIP label
     $(".portfolio-wip").html("Work in Progress");
 
     // Get the featured content feed
