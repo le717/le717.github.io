@@ -8,8 +8,8 @@
 @import "mixins/box-shadow";
 @import "mixins/img-responsive";
 
-::-moz-selection { text-shadow: none; background-color: rgba(255, 255, 255, 0.63); }
-     ::selection { text-shadow: none; background-color: rgba(255, 255, 255, 0.63); }
+::-moz-selection { text-shadow: none; background-color: #B0B0B0; }
+     ::selection { text-shadow: none; background-color: #B0B0B0; }
 
 // Commonly used alignments and type styles
 .text-left { text-align: left; }
