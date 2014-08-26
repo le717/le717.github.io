@@ -12,46 +12,50 @@
 /* NOTE http://css-tricks.com/snippets/css/media-queries-for-standard-devices/ http://nmsdvid.com/snippets/ */
 
 @media only screen and (max-width: 800px) {
-  /* Create responsive images only on mobile devices */
+  // Create responsive images only on mobile devices
   .img-responsive {
     max-width: 100%;
     height: auto;
   }
 }
 
-/* http://css-tricks.com/responsive-data-tables/ */
+// http://css-tricks.com/responsive-data-tables/ 
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {
   table, thead, tbody, th, td, tr {
     display: block;
   }
 
-  /* Pull the contact buttons closer together */
-  .contact-field p { font-size: 2em; }
-  .contact-field td { margin-top: 10%; }
+  // Pull the contact buttons closer together 
+  .contact-field {
+    p { font-size: 2em; }
+    td { margin-top: 10%; }
+  }
   .contact-email { margin-top: 0; }
 }
 
 @media only screen and (max-width: 720px) {
-//  .navbar { padding-bottom: 0.7em; }
+  .navbar {
+    @include transform(translate3d(0, -100%, 0));
 
-  .navbar li {
-    font-size: 1.05em;
-    margin-left: -5px;
+    li {
+      font-size: 1.05em;
+      margin-left: -5px;
+    }
   }
 
   #featured-code-box { width: auto; }
 
   #featured-project { margin-top: 0; }
 
-  .portfolio-wip:before {
-/*    top: 1.7em;*/
-    left: 10%;
-    font-size: 1.3em;
-/*    width: 42%;*/
-/*    padding: 0 0.5em 0.1em 1.6em;*/
-/*    font-size: inherit;*/
-  }
+//  .portfolio-wip:before {
+///*    top: 1.7em;*/
+//    left: 10%;
+//    font-size: 1.3em;
+///*    width: 42%;*/
+///*    padding: 0 0.5em 0.1em 1.6em;*/
+///*    font-size: inherit;*/
+//  }
 }
 
 /* ------- Smartphones (portrait) ------- */

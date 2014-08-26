@@ -10,7 +10,7 @@
 (function($) {
   "use strict";
   /**
-   * Show sidebar once button is clicked/tapped
+   * Show sidebar once button upon click/tap
    */
   (function() {
     $(".btn-navbar").on("click", function() {
@@ -41,8 +41,6 @@
 
     // Mobile-only actions
     if ($.browser.mobile) {
-      // Hide non-mobile-ready elements
-//      $(".navbar").addClass("navbar-hidden");
       $(".btn-navbar").removeClass("btn-navbar-rotate");
     }
 

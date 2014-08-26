@@ -23,7 +23,7 @@
 .text-small { font-size: 0.8em; }
 .text-smaller { font-size: 0.7em; }
 
-a, .faux-link {
+a {
   @extend .text-decoration-none;
   color: $color-yellow-light;
   text-shadow: 1px 1px 2px $color-black;
