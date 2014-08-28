@@ -263,9 +263,8 @@
 .post-url {
 
   &:hover {
-//    @extend .text-decor-none;
-//    border-bottom: 1px soild $color-white;
-    text-decoration-color: $color-white;
+    @extend .text-decor-none;
+    border-bottom: 1px soild $color-white;
   }
 
   .post-title {
