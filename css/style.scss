@@ -261,15 +261,16 @@
 /* ------- Blog post styling ------- */
 
 .post-url {
-
   &:hover {
     @extend .text-decor-none;
-    border-bottom: 1px soild $color-white;
+//    border-bottom: 1px soild $color-white;
   }
 
   .post-title {
     text-shadow: 1px 2px #00f;
     color: $color-white;
+    
+    &:hover { border-bottom: 1px soild $color-white; }
   }
 }
 
@@ -284,7 +285,7 @@
 }
 
 .post-content {
-  border-bottom: 4px dotted $color-white;
+  border-bottom: 0.25em dotted $color-white;
 
   blockquote p {
     display: inline;
