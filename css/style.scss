@@ -258,20 +258,10 @@
   &:hover { @include transform(translate3d(-5px, 0, 0)); }
 }
 
-/* ------- Blog post styling ------- */
-
-.post-url {
-  &:hover {
-    @extend .text-decor-none;
-//    border-bottom: 1px soild $color-white;
-  }
-
-  .post-title {
-    text-shadow: 1px 2px #00f;
-    color: $color-white;
-    
-    &:hover { border-bottom: 1px soild $color-white; }
-  }
+// ------- Blog post styling
+.post-title {
+  text-shadow: 1px 2px #00f;
+  color: $color-white;
 }
 
 .post-info {
