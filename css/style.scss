@@ -262,11 +262,11 @@
 .post-title {
   text-shadow: 1px 2px #00f;
   color: $color-white;
+}
 
-  &:hover {
-    @extend .text-decor-none;
-    border-bottom: 1px solid $color-white;
-  }
+a > .post-title:hover {
+  @extend .text-decor-none;
+  border-bottom: 1px solid $color-white;
 }
 
 .post-info {
