@@ -1,8 +1,8 @@
 ---
 layout: script
 title: Blog
-redirect_from: /blog.html
 ---
+
 {% include loading.html %}
 <div class="blog-posts"></div><br>
 <p class="text-center end-of-posts">
@@ -33,7 +33,7 @@ redirect_from: /blog.html
    */
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
-    this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=40");
+    this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=24");
     this.postContainer    = '<div id="' + postID + '"></div>';
     this.postContent      = postContent;
     this.postDate         = postDate;
@@ -83,9 +83,11 @@ redirect_from: /blog.html
     });
   })();
 
+  /**
+   *  Display each blog post
+   */
   function showPosts() {
     "use strict";
-    /* Display each blog post */
     $.each(posts, function(key, value) {
 
   //      value.cleanUp();
@@ -104,9 +106,9 @@ redirect_from: /blog.html
       // Permalink (back to WordPress)
       // Post content
 
-      $(value.postIDDOM).append('<h1 class="text-center post-title"></h1>');
-      $(value.postIDDOM).append('<p class="post-info"><img class="post-author-avatar no-mobile-resize" alt="Author avatar" />&nbsp;Published <span class="post-date"></span> by <span class="post-author"></span> (<a class="post-url" target="_blank">Permalink</a>)</p>');
-      $(value.postIDDOM).append('<div class="post-content" style="display: none;"></div>');
+      $(value.postIDDOM).append("<h1 class='text-center post-title'></h1>");
+      $(value.postIDDOM).append("<p class='post-info'><span class='post-date'></span>&nbsp;<img class='post-author-avatar' alt='Author avatar' width='24' height='24' /> <span class='post-author'></span> (<a class='post-url' target='_blank'>Permalink</a>)</p>");
+      $(value.postIDDOM).append("<div class='post-content' style='display: none;'></div>");
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);
       $(value.postIDDOM + " .post-author-avatar").attr("src", value.postAuthorAvatar);
@@ -115,16 +117,19 @@ redirect_from: /blog.html
       $(value.postIDDOM + " .post-url").attr("href", value.postURL);
 
       // Add the post content
-      $(value.postIDDOM + " .post-content").append(value.postContent);
+      $(value.postIDDOM + " .post-content").html(value.postContent);
 
       // Run various cleanup functions
       cleanupPost(value.postIDDOM);
     });
   }
 
+
+  /**
+   * Remove WordPress classes, IDs, and other unnecessary clutter
+   */
   BlogPost.prototype.cleanUp = function() {
    "use strict";
-   /* Remove WordPress classes, IDs, and other unnecessary clutter */
 
    console.log(this.postIDDOM);
 
@@ -138,9 +143,11 @@ redirect_from: /blog.html
   };
 
 
+  /**
+   * Remove WordPress classes, IDs, and other unnecessary clutter
+   */
   function cleanupPost(postContainer) {
     "use strict";
-    /* Remove WordPress classes, IDs, and other unnecessary clutter */
     // TODO Move this into the BlogPost prototype
 
     $(function() {
