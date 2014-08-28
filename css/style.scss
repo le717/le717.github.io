@@ -264,18 +264,16 @@
   color: $color-white;
 }
 
-.post-info {
+.post-meta {
   display: inline;
   font-size: 0.9em;
-}
-
-.publish-info {
-  font-size: 0.85em;
-  text-shadow: 1px 1px 2px $color-black;
+  text-shadow: 1px 2px 2px $color-black;
 }
 
 .post-content {
-  border-bottom: 0.25em dotted $color-white;
+//  border-bottom: 0.25em dotted $color-white;
+  padding-bottom: 1.5em;
+  background: transparent url('/img/blog-bottom.png') repeat-x bottom left;
 
   blockquote p {
     display: inline;
