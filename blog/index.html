@@ -33,7 +33,7 @@ title: Blog
    */
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
-    this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=36");
+    this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=24");
     this.postContainer    = '<div id="' + postID + '"></div>';
     this.postContent      = postContent;
     this.postDate         = postDate;
@@ -107,7 +107,7 @@ title: Blog
       // Post content
 
       $(value.postIDDOM).append("<a class='post-url' target='_blank'><h1 class='text-center post-title'></h1></a>");
-      $(value.postIDDOM).append("<p class='post-info'><span class='post-date'></span>&nbsp;<img class='post-author-avatar' alt='Author avatar' width='36' height='36' /> <span class='post-author'></span></p>");
+      $(value.postIDDOM).append("<p class='post-info'><span class='post-date'></span>&nbsp;<img class='post-author-avatar' alt='Author avatar' width='24' height='24' /> <span class='post-author'></span></p>");
       $(value.postIDDOM).append("<div class='post-content' style='display: none;'></div>");
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);

@@ -259,14 +259,19 @@
 }
 
 /* ------- Blog post styling ------- */
-.post-title {
-  text-shadow: 1px 2px #00f;
-  color: $color-white;
-}
 
-a > .post-title:hover {
-  @extend .text-decor-none;
-  border-bottom: 1px solid $color-white;
+.post-url {
+
+  &:hover {
+//    @extend .text-decor-none;
+//    border-bottom: 1px soild $color-white;
+    text-decoration-color: $color-white;
+  }
+
+  .post-title {
+    text-shadow: 1px 2px #00f;
+    color: $color-white;
+  }
 }
 
 .post-info {
