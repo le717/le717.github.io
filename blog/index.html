@@ -106,8 +106,8 @@ title: Blog
       // Permalink (back to WordPress)
       // Post content
 
-      $(value.postIDDOM).append("<h1 class='text-center post-title'></h1>");
-      $(value.postIDDOM).append("<p class='post-info'><span class='post-date'></span>&nbsp;<img class='post-author-avatar' alt='Author avatar' width='24' height='24' /> <span class='post-author'></span> (<a class='post-url' target='_blank'>Permalink</a>)</p>");
+      $(value.postIDDOM).append("<a class='post-url' target='_blank'><h1 class='text-center post-title'></h1></a>");
+      $(value.postIDDOM).append("<p class='post-info'><span class='post-date'></span>&nbsp;<img class='post-author-avatar' alt='Author avatar' width='24' height='24' /> <span class='post-author'></span></p>");
       $(value.postIDDOM).append("<div class='post-content' style='display: none;'></div>");
 
       $(value.postIDDOM + " .post-title").html(value.postTitle);

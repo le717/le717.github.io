@@ -271,11 +271,13 @@
   text-shadow: 1px 1px 2px $color-black;
 }
 
-.post-content { border-bottom: 4px dotted $color-white; }
+.post-content {
+  border-bottom: 4px dotted $color-white;
 
-.post-content blockquote p {
-  display: inline;
-  margin: 0;
+  blockquote p {
+    display: inline;
+    margin: 0;
+  }
 }
 
 .end-of-posts {
