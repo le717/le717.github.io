@@ -18,17 +18,17 @@
 .text-normal { font-weight: 400; }
 .text-bold { font-weight: 700; }
 .text-italic { font-style: italic; }
-.text-decoration-none { text-decoration: none; }
-.text-decoration-underline { text-decoration: underline; }
+.text-decor-none { text-decoration: none; }
+.text-decor-underline { text-decoration: underline; }
 .text-small { font-size: 0.8em; }
 .text-smaller { font-size: 0.7em; }
 
 a {
-  @extend .text-decoration-none;
+  @extend .text-decor-none;
   color: $color-yellow-light;
   text-shadow: 1px 1px 2px $color-black;
 
-  &:hover { @extend .text-decoration-underline; }
+  &:hover { @extend .text-decor-underline; }
 }
 
 body {

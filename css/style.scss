@@ -158,7 +158,7 @@
   color: $color-black;
   position: relative;
 
-  &:hover { @extend .text-decoration-none; }
+  &:hover { @extend .text-decor-none; }
 }
 
 .social-button {
@@ -240,7 +240,7 @@
     margin-left: 10px;
   }
 
-  &:hover { @extend .text-decoration-underline; }
+  &:hover { @extend .text-decor-underline; }
 }
 
 
@@ -259,7 +259,15 @@
 }
 
 /* ------- Blog post styling ------- */
-.post-title { text-shadow: 1px 2px #00f; }
+.post-title {
+  text-shadow: 1px 2px #00f;
+  color: $color-white;
+
+  &:hover {
+    @extend .text-decor-none;
+    border-bottom: 1px solid $color-white;
+  }
+}
 
 .post-info {
   display: inline;
@@ -344,5 +352,5 @@
   font-size: 2em;
   display: inline-block;
 
-  &:hover { @extend .text-decoration-none; }
+  &:hover { @extend .text-decor-none; }
 }
