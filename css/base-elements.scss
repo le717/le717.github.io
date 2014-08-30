@@ -101,7 +101,7 @@ ul {
 }
 
 // Use custom (Unicode only!) triangle bullet point on unordered lists
-ul li::before {
+ul > li::before {
   content: "\25B2";
-  padding-right: 5px;
+  padding-right: 0.313em;
 }

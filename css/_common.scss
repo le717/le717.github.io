@@ -6,6 +6,7 @@
 
 @import "variables";
 @import "mixins/box-shadow";
+@import "mixins/ie-img-link";
 @import "mixins/img-responsive";
 
 
@@ -37,8 +38,8 @@ a {
 
 // Images
 @include img-responsive(720px);
+@include ie-img-link();
 
-.img-link { border: none; }
 .img-shadow { @include box-shadow(0 0 6px 1px $color-white); }
 
 .img-center {
