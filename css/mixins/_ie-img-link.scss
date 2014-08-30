@@ -2,5 +2,5 @@
 // SCSS mixin from https://github.com/le717/scss-mixins
 
 @mixin ie-img-link() {
-  a img { border: none; }
+  a > img { border: none; }
 }
