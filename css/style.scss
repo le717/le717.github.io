@@ -78,29 +78,18 @@
 
 // Navbar toggle button
 .btn-navbar {
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  margin-top: 5px;
+  width: 2.5em;
+  height: 2.5em;
 
-  display: inline;
   position: fixed;
   top: 5px;
-  right: 10px;
+  right: 0.7em;
   z-index: 2;
 
+  cursor: pointer;
   background-image: url("/img/bowtie.svg");
 
-//  border-style: solid;
-//  border-width: 35px 22.5px 0 22.5px;
-//  border-color: $color-yellow transparent transparent transparent;
-
-//  @include transition((border-width, border-color), 0.5s, ease);
-}
-
-.btn-navbar-rotate {
-//  border-width: 0 22.5px 35px 22.5px;
-//  border-color: transparent transparent $color-yellow transparent;
+  &:hover { @include transform(translate3d(0, 5px, 0)); }
 }
 
 

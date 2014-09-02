@@ -15,7 +15,6 @@
   (function() {
     $(".btn-navbar").on("click", function() {
       $(".navbar").toggleClass("navbar-hidden");
-      $(".btn-navbar").toggleClass("btn-navbar-rotate");
     });
   })();
 
@@ -27,6 +26,7 @@
   $(function() {
     $(window).scroll(function() {
       // Show/how the scroll up button
+      // TODO This is bugged if the page is reloaded when visible
       if ($(window).scrollTop() > 100) {
         $(".scroll-up").css("transform", "translate3d(0, 0, 0)");
       } else {
@@ -40,9 +40,8 @@
     });
 
     // Mobile-only actions
-    if ($.browser.mobile) {
-      $(".btn-navbar").removeClass("btn-navbar-rotate");
-    }
+    //if ($.browser.mobile) {
+    //}
 
     // Fully center the items that need centering
     var $centered = $(".fully-centered");
