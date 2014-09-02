@@ -9,13 +9,20 @@
 a, blockquote, em h1, h2, p, pre,
 .post-title { text-shadow: none; }
 
+// Remove shadows on images
 img {
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
+// Further shrink images when printing
+.img-responsive {
+  max-width: 50%;
+  height: auto;
+}
+
+// Hide any nonessential elements
 .navbar,
 .btn-navbar,
 .scroll-up { display: none; }
-
 .end-of-posts { display: none !important; }
