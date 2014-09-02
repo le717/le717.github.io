@@ -45,26 +45,26 @@
 
     // Line up navbar icons
     // About
-    &:nth-child(1)::before {
+    &:nth-child(1):before {
       font-size: 1.25em;
       margin-left: -2px;
     }
 
     // Contact
-    &:nth-child(3)::before {
+    &:nth-child(3):before {
       font-size: 1.1em;
       margin-left: -1px;
     }
 
     // Code
-    &:nth-child(4)::before {
-      font-size: 1.1em;
+    &:nth-child(4):before {
+      font-size: 1.05em;
       margin-left: -1px;
     }
 
     // Portfolio
-    &:nth-child(5)::before {
-      font-size: 1.5em;
+    &:nth-child(5):before {
+      font-size: 1.45em;
       margin-left: 1px;
     }
   }
@@ -79,26 +79,28 @@
 // Navbar toggle button
 .btn-navbar {
   cursor: pointer;
-  width: 0;
-  height: 0;
+  width: 35px;
+  height: 35px;
   margin-top: 5px;
 
   display: inline;
   position: fixed;
-  top: 10px;
+  top: 5px;
   right: 10px;
   z-index: 2;
 
-  border-style: solid;
-  border-width: 35px 22.5px 0 22.5px;
-  border-color: $color-yellow transparent transparent transparent;
+  background-image: url("/img/bowtie.svg");
 
-  @include transition((border-width, border-color), 0.5s, ease);
+//  border-style: solid;
+//  border-width: 35px 22.5px 0 22.5px;
+//  border-color: $color-yellow transparent transparent transparent;
+
+//  @include transition((border-width, border-color), 0.5s, ease);
 }
 
 .btn-navbar-rotate {
-  border-width: 0 22.5px 35px 22.5px;
-  border-color: transparent transparent $color-yellow transparent;
+//  border-width: 0 22.5px 35px 22.5px;
+//  border-color: transparent transparent $color-yellow transparent;
 }
 
 
@@ -210,13 +212,15 @@
 
 // ------- Blog post styling
 
-.post-url:hover { @extend .text-decor-none; }
+.post-url {
+  &:hover { @extend .text-decor-none; }
 
-.post-title {
-  text-shadow: 1px 2px #00f;
-  color: $color-white;
+  .post-title {
+    text-shadow: 1px 2px #00f;
+    color: $color-white;
 
-  &:active { @include transform(translate3d(0, 2px, 0)); }
+    &:active { @include transform(translate3d(0, 2px, 0)); }
+  }
 }
 
 .post-meta {
