@@ -89,7 +89,7 @@
   cursor: pointer;
   background-image: url("/img/bowtie.svg");
 
-  &:hover { @include transform(translate3d(0, 5px, 0)); }
+  &:active { @include transform(translateY(1px)); }
 }
 
 
