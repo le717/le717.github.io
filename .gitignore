@@ -74,8 +74,6 @@ Testing
 #demo
 img/awdd
 _site
-localhost.py
 *.psd
 test.html
-lib/zepto.min.js
-lib/prefixfree.min.js
+localhost.py

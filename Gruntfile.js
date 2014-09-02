@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         banner: "<%= banner %>",
         compress: true,
         report: "min",
-        sourceMap: true
+        sourceMap: false
       },
       my_target: {
         files: {
