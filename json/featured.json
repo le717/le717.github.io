@@ -3,8 +3,8 @@
     {
       "name": "SCSS @mixins",
       "url": "https://github.com/le717/scss-mixins#readme",
-      "version": "v0.5.7",
-      "description": "are simply a collection of my own little <a href='http://sass-lang.com'>SCSS</a> mixins.<br>While there are only mixins for CSS transitions and box-shadows right now,<br>I do add more as I need them, and I never know when that will be!"
+      "version": "v0.6.1",
+      "description": "are simply a collection of my own little <a href='http://sass-lang.com'>SCSS</a> mixins.<br>While there are only a small number of mixins right now,<br>I do add more as I need them, and I never know when that will be!"
     },
     {
       "name": "HTML Skeleton",

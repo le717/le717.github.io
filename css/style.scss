@@ -40,7 +40,7 @@
   }
 
   li {
-    padding-bottom: 0.1em;
+    padding-bottom: 0.3em;
     display: list-item;
 
     // Line up navbar icons
@@ -131,11 +131,11 @@
   }
 }
 
-/* ------- Site header  ------- */
+// ------- Site header
 .header-logo { margin-bottom: -2em; }
 
 
-/* ------- Featured item displays ------- */
+// ------- Featured item displays
 #featured-project { margin-top: -13%; }
 
 #featured-code-box {
@@ -146,60 +146,16 @@
 
 #featured-code-desc { margin-top: -10px; }
 
-/* ------- Social buttons styling ------- */
-.social-button-link {
-  text-decoration: none;
-  text-shadow: none;
-  color: $color-black;
-  position: relative;
+// ------- Social buttons styling
 
-  &:hover { @extend .text-decor-none; }
-}
-
-.social-button {
-  position: relative;
-  display: inline;
-  margin: 0 !important;
-
-  &:hover {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4),
-                 0 -1px 0 rgba(0, 0, 0, 0.4);
-  }
-}
-
-// Colorize the icons
 .contact-email { color: $color-yellow-light; }
 .contact-gh { color: #e5e5e5; }
 .contact-twitter { color: #55ACEE; }
 .contact-wp { color: #1E8CBE; }
 .contact-yt { color: #CC181E; }
 
-// WordPress
-.navbar-wp {
-  color: $color-white;
-  font-size: 2em;
-  top: -0.45em;
-  left: 0.35em
-}
-
-// GitHub
-.navbar-gh {
-  color: $color-white;
-  font-size: 1.7em;
-  top: -0.6em;
-  left: 0.9em;
-}
-
-// Twitter
-.navbar-twitter {
-  color: $color-white;
-  font-size: 1.8em;
-  top: -0.5em;
-  left: 1.3em;
-}
-
 .contact-field {
-  a { color: $color-white; }
+  a { text-shadow: none; }
   p { font-size: 4em; }
 
   // Icon size and color
@@ -298,13 +254,7 @@
   color: $color-black;
   cursor: pointer;
 
-  -webkit-transition-property: background-color, color;
-  -webkit-transition-duration: 0.5s, 0.7s;
-  -webkit-transition-timing-function: ease;
-
-  transition-property: background-color, color;
-  transition-duration: 0.5s, 0.7s;
-  transition-timing-function: ease;
+  @include transition((background-color, color), (0.5s, 0.7s), ease);
 
   div {
     position: relative;
