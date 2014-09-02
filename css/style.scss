@@ -209,9 +209,14 @@
 }
 
 // ------- Blog post styling
+
+.post-url:hover { @extend .text-decor-none; }
+
 .post-title {
   text-shadow: 1px 2px #00f;
   color: $color-white;
+
+  &:active { @include transform(translate3d(0, 2px, 0)); }
 }
 
 .post-meta {
