@@ -6,10 +6,7 @@ google_font: Open+Sans:400,700
   <!-- Inspired by http://i.imgur.com/WmdsdL3.jpg -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={{ page.google_font }}">
   <style>
-    body {
-      font-family: "Open Sans", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    body { font-family: "Open Sans", sans-serif; }
 
     #full-answer { font-weight: 700; }
     #input-box {
@@ -18,7 +15,8 @@ google_font: Open+Sans:400,700
               box-shadow: -0.4px -0.5px 0.5px 0.1px black;
     }
 
-    /* Mac-style CSS button from
+    /*
+     * Mac-style CSS button from
      * http://calebogden.com/safari-css-submit-button
      */
     #submit-button {
@@ -38,20 +36,31 @@ google_font: Open+Sans:400,700
 
       border-radius: 18px;
       background: linear-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(40%,#f3f3f3), color-stop(100%,#ededed));
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.15), 0 -2px 3px 0px #FFF inset, 0 -10px 0 0 #ededed inset;
+      -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 1px 0 0 rgba(0, 0, 0, 0.15),
+          0 -2px 3px 0px #FFF inset,
+          0 -10px 0 0 #ededed inset;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 1px 0 0 rgba(0, 0, 0, 0.15),
+          0 -2px 3px 0px #FFF inset,
+          0 -10px 0 0 #ededed inset;
     }
 
     #submit-button:active {
       border-color: #323d9f #3365b4 #3365b4 #6f6f6f;
       background: #7cb0de;
       background: linear-gradient(linear, left top, left bottom, color-stop(0%,#a7c7e1), color-stop(40%,#9dc2e1), color-stop(100%,#7cb0de));
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.05), 0 -2px 3px 0px rgba(182, 226, 244, 1) inset, 0 -10px 0 0 #73abda inset;
+      -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 1px 0 0 rgba(0, 0, 0, 0.05),
+          0 -2px 3px 0px rgba(182, 226, 244, 1) inset,
+          0 -10px 0 0 #73abda inset;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
+          0 1px 0 0 rgba(0, 0, 0, 0.05),
+          0 -2px 3px 0px rgba(182, 226, 244, 1) inset,
+          0 -10px 0 0 #73abda inset;
     }
   </style>
-  <link rel="stylesheet" media="all" href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css">
-  <link rel="stylesheet" media="all" href="/css/style.css">
 {% include bridge.html %}
-{% include previous-button.html %}
   <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
     Please type the correct sequence of characters into the field below.</p>
   <br>
@@ -61,25 +70,24 @@ google_font: Open+Sans:400,700
     <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
   </form>
 
-  <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+  {% include jquery.html %}
+
   <script>
-    function selectRandom(myArray) {
+    function _selectRandom(myArray) {
       "use strict";
-      /* Select a random item from `myArray` */
+      /* Select a random item */
       return myArray[Math.floor(Math.random() * myArray.length)];
     }
 
     (function() {
       "use strict";
-      var answers = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
-          prefix = "{{ site.baseurl }}/img/captcha/",
-          template = "<img class='captcha-image' src='prefix-image' /><br><br>",
-          images = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"];
+      var prefix          = "{{ site.url }}/img/captcha/",
+          images          = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"],
+          answers         = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
+          template        = "<img class='captcha-image' src='prefix-image' /><br><br>",
+          selectedAnswer = _selectRandom(answers);
 
-      var selectedAnswer = selectRandom(answers);
-      var selectedAnswerIndex = answers.indexOf(selectedAnswer);
-
-      if (selectedAnswerIndex === 0) {
+      if (selectedAnswer.indexOf("forest fires") > -1) {
         $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[0]));
         $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[1]));
 
@@ -92,21 +100,17 @@ google_font: Open+Sans:400,700
       selectedAnswer = selectedAnswer.replace(/input-box/, '<input id="input-box" autocomplete="off" />');
       $("#full-answer").html(selectedAnswer);
 
-      window.selectedAnswerIndex = selectedAnswerIndex;
+      window.selectedAnswer = selectedAnswer;
     })();
 
     function checkInput() {
       "use strict";
-      var theRightAnswer,
-        userInput = $("#input-box").val();
-
-      if (selectedAnswerIndex === 0) {
-        theRightAnswer = "you're";
-      } else {
-        theRightAnswer = "there";
-      }
+       var userInput      = $("#input-box").val(),
+           theRightAnswer = selectedAnswer.indexOf("forest fires") > -1 ? "you're" : "there";
 
       if (userInput.toLowerCase() === theRightAnswer) {
+        window.location.href = "http://google.com";
+      } else {
         $("body").empty();
       }
     }
