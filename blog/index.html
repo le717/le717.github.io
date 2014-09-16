@@ -4,10 +4,12 @@ title: Blog
 ---
 
 {% include loading.html %}
-<noscript class="center-div">
+
+<noscript>
   Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
   <a target="_blank" href="{{ site.wpurl }}">blog directly</a> and read to your heart's content. :smiley:
 </noscript>
+
 <div class="blog-posts"></div><br>
 <p class="end-of-posts">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
@@ -77,8 +79,8 @@ title: Blog
           posts.push(myPost);
         });
 
-        // Now that the posts are stored, go through and display them and stop the loading animation
-        // $(".ani-loading").css({"top": "15%", "left": "30%"});
+        // Now that the posts are stored, go through and display them
+        // and stop the loading animation
         $(".ani-loading").remove();
         showPosts();
         $(".blog-posts").css("display", "");
@@ -131,20 +133,13 @@ title: Blog
 
   /**
    * Remove WordPress classes, IDs, and other unnecessary clutter
+   * TODO Make this work
    */
-  BlogPost.prototype.cleanUp = function() {
+  /*BlogPost.prototype.cleanUp = function() {
    "use strict";
 
-   console.log(this.postIDDOM);
-
-    /*$(function() {
-      // Remove WordPress image styling
-      $("img").removeAttr("style");
-
-      // Center the images that have captions applied
-      $(".wp-caption").addClass("text-center");
-    });*/
-  };
+   // console.log(this.postIDDOM);
+  };*/
 
 
   /**
@@ -155,9 +150,6 @@ title: Blog
     // TODO Move this into the BlogPost prototype
 
     $(function() {
-      // Remove WordPress image styling
-      $("img").removeAttr("style");
-
       // Center the images that have captions applied
       $(".wp-caption").addClass("text-center");
 
@@ -165,6 +157,7 @@ title: Blog
       $(postContainer + " .post-content").find("img").each(function() {
         var $this = $(this);
         $this.removeAttr("class");
+        $this.removeAttr("style");
 
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
