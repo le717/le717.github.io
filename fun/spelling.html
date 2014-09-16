@@ -107,7 +107,7 @@ google_font: Open+Sans:400,700
        var userInput      = $("#input-box").val(),
            theRightAnswer = selectedAnswer.indexOf("forest fires") > -1 ? "you're" : "there";
 
-      if (userInput === theRightAnswer) {
+      if (userInput.toLowerCase() === theRightAnswer) {
         window.location.href = "http://google.com";
       } else {
         $("body").empty();
