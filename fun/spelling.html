@@ -80,13 +80,15 @@ google_font: Open+Sans:400,700
       return myArray[Math.floor(Math.random() * myArray.length)];
     }
 
+    var selectedAnswer;
+
     (function() {
       "use strict";
       var prefix          = "{{ site.url }}/img/captcha/",
           images          = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"],
           answers         = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
-          template        = "<img class='captcha-image' src='prefix-image' /><br><br>",
-          selectedAnswer = _selectRandom(answers);
+          template        = "<img class='captcha-image' height='100' src='prefix-image' /><br><br>";
+      selectedAnswer  = _selectRandom(answers).replace(/input-box/, '<input id="input-box" autocomplete="off" />');
 
       if (selectedAnswer.indexOf("forest fires") > -1) {
         $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[0]));
@@ -97,11 +99,7 @@ google_font: Open+Sans:400,700
         $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[3]));
         $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[4]));
       }
-      $(".captcha-image").attr("height", "100");
-      selectedAnswer = selectedAnswer.replace(/input-box/, '<input id="input-box" autocomplete="off" />');
       $("#full-answer").html(selectedAnswer);
-
-      window.selectedAnswer = selectedAnswer;
     })();
 
     function checkInput() {
@@ -109,7 +107,7 @@ google_font: Open+Sans:400,700
        var userInput      = $("#input-box").val(),
            theRightAnswer = selectedAnswer.indexOf("forest fires") > -1 ? "you're" : "there";
 
-      if (userInput.toLowerCase() === theRightAnswer) {
+      if (userInput === theRightAnswer) {
         window.location.href = "http://google.com";
       } else {
         $("body").empty();
