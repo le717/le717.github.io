@@ -3,11 +3,8 @@
 {% include bridge.html %}
   {% include header.html %}
   {% include navbar.html %}
-  <div class="page-content">
-    {{ content }}
-  </div>
-{% if page.type != "Scripts" %}{% include scripts.html %}{% endif %}
-{% if page.title != "Home" %}{% include scrollup.html %}{% endif %}
+  {{ content }}
+{% include scripts.html %}
 {% include analytics.html %}
 {% include footer.html %}
 {% include foot.html %}
