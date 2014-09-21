@@ -108,7 +108,7 @@
   opacity: 0;
   background-color: rgba(128, 0, 0, 0.7);
   border-radius: 50%;
-  @include transition-short(opacity, 0.3s, ease-out);
+  @include transition-short(opacity 0.3s ease-out);
 
   span {
     @extend a;
