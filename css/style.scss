@@ -211,7 +211,10 @@
 
 // ------- Blog post styling
 
-.single-post { @extend .page-content; }
+.single-post {
+  @extend .page-content;
+  margin-bottom: 1.7em;
+}
 
 .post-url {
   &:hover { @extend .text-decor-none; }
@@ -230,9 +233,6 @@
 }
 
 .post-content {
-  padding-bottom: 1.7em;
-  // background: transparent url('/img/blog-bottom.svg') repeat-x bottom left;
-
   blockquote p {
     display: inline;
     margin: 0;
