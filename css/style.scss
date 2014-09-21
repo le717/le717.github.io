@@ -214,7 +214,6 @@
   &:hover { @extend .text-decor-none; }
 
   .post-title {
-    text-shadow: 1px 2px #00f;
     color: $color-white;
 
     &:active { @include transform(translate3d(0, 2px, 0)); }
@@ -225,6 +224,7 @@
   display: inline;
   font-size: 0.9em;
   text-shadow: 1px 2px 2px $color-black;
+  color: $color-white;
 }
 
 .post-content {
