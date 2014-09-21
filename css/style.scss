@@ -17,16 +17,6 @@
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
 
-.page-content {
-  @extend .block-center;
-  background-color: $color-blue-bg;
-  border-radius: 1.5em;
-  width: 75%;
-  padding-bottom: 0.2em;
-
-  &:last-of-type { margin-bottom: -1em; }
-}
-
 // ------- Navbar styling
 .navbar {
   position: fixed;
@@ -104,7 +94,7 @@
 }
 
 
-/* ------- Scroll to the top box styling ------- */
+// ------- Scroll to the top box styling
 .scroll-up {
   @extend .text-center;
   position: fixed;
@@ -117,7 +107,7 @@
   height: 2.7em;
   opacity: 1;
   background-color: rgba(128, 0, 0, 0.7);
-  border-left: 3px solid rgba(128, 20, 20, 0.8);
+  border-left: 3px solid $color-yellow-light;
 
   @include transform(translate3d(0, 2.9em, 0));
   @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
@@ -213,7 +203,7 @@
 // ------- Blog post styling
 
 .single-post {
-  @extend .page-content;
+  @extend .page-section;
   border-radius: 0.5em;
   background-color: $color-blue-bg;
 }
@@ -223,7 +213,7 @@
 
   .post-title {
     @extend .text-center;
-    color: #09f;
+    color: $color-blue-header;
     padding-top: 0.2em;
     &:active { @include transform(translate3d(0, 2px, 0)); }
   }

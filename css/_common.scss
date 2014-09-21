@@ -16,6 +16,15 @@
   margin-left: auto;
   margin-right: auto;
 }
+.page-section {
+  @extend .block-center;
+  background-color: $color-blue-bg;
+  border-radius: 1.5em;
+  width: 75%;
+  padding-bottom: 0.2em;
+
+  &:last-of-type { margin-bottom: -1em; }
+}
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
