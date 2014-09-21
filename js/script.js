@@ -37,12 +37,7 @@
 
     // Scroll up button action
     $(".scroll-up").on("click", function() {
-      $(window).css("transition", "0.5s ease-in");
-      $(window).scrollTop(0);
-      if ($(window).scrollTop() === 0) {
-        $(window).css("transition", "");
-      }
-      // $("html, body").animate({scrollTop: 0}, 500);
+      $(window).animate({scrollTop: 0}, 500);
     });
 
     // Mobile-only actions
