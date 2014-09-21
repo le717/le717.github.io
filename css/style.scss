@@ -108,21 +108,15 @@
   opacity: 0;
   background-color: rgba(128, 0, 0, 0.7);
   border-radius: 50%;
-  // border-left: 3px solid $color-yellow-light;
-
-  // @include transform(translate3d(0, 2.9em, 0));
-  // @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
-  // @include        transition-long((-webkit-transform, -ms-transform, transform), 0.2s, ease-out);
-  @include transition(opacity, 0.2s, ease-out);
+  @include transition-short(opacity, 0.3s, ease-out);
 
   span {
     @extend a;
     text-decoration: none;
     font-size: 2.3em;
     text-shadow: 0 0 1px $color-black;
-
-//     @include transform(rotate(-90deg));
-     @include transform(translate3d(0, 3px, 0) rotate(-90deg));
+    margin-top: 3px;
+    @include transform(rotate(-90deg));
   }
 }
 
@@ -164,7 +158,6 @@
    td {
     outline: none;
     padding: 0;
-
     @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
     @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
 
@@ -192,14 +185,8 @@
 
 #previous-button {
   font-size: 1.3em;
-
-  -webkit-transition-property: -webkit-transform;
-  -webkit-transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-out;
-
-  transition-property: -ms-transform, transform;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
+  @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
+  @include        transition-long((-webkit-transform, -ms-transform, transform), 0.2s, ease-out);
 
   &:hover { @include transform(translate3d(-5px, 0, 0)); }
 }
@@ -217,7 +204,7 @@
 
   .post-title {
     @extend .text-center;
-    color: $color-blue-header;
+    // color: $color-blue-header;
     padding-top: 0.2em;
     &:active { @include transform(translate3d(0, 2px, 0)); }
   }
@@ -244,7 +231,7 @@
 }
 
 
-/* ------- Spoiler styling------- */
+// ------- Spoiler styling
 .spoiler {
   overflow: hidden;
   border-radius: 10px;
@@ -261,7 +248,6 @@
   border-radius: 5px;
   color: $color-black;
   cursor: pointer;
-
   @include transition((background-color, color), (0.5s, 0.7s), ease);
 
   div {
@@ -276,20 +262,16 @@
   background-color: #0000C4;
 }
 
-/* ------- Various styling ------- */
+// ------- Various styling
 .you-are-here {
   font-size: 1.1em;
   color: #E4E1E8;
   text-shadow: 2px 2px 2px $color-black;
 }
 
-/* Loading animation */
-.ani-loading { z-index: 5; }
-
 .generated-data { border-bottom: 1px dashed $color-white; }
 
 .portfolio h3 { @extend .text-center; }
-
 .portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: 5px;

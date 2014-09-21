@@ -5,6 +5,7 @@
 
 // ------- Loading animation
 .ani-loading {
+  z-index: 5;
   -webkit-animation: aniLoading 2s linear;
           animation: aniLoading 2s linear;
   -webkit-animation-iteration-count: infinite;

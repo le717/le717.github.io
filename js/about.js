@@ -1,4 +1,13 @@
 /*
+ * Created 2014 Triangle717
+ * <http://Triangle717.WordPress.com/>
+ *
+ * Licensed under The MIT License
+ * <http://opensource.org/licenses/MIT/>
+ */
+
+
+/**
  * Calculate and display the difference between two dates
  * @param {array} date
  * @param {selector} element ID or Class selector
