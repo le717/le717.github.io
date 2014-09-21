@@ -37,7 +37,7 @@
 
     // Scroll up button action
     $(".scroll-up").on("click", function() {
-      $(window).animate({scrollTop: 0}, 500);
+      $("html, body").animate({scrollTop: 0}, 500);
     });
 
     // Mobile-only actions
