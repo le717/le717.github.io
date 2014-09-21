@@ -263,6 +263,13 @@
 // ------- Portfolio
 .portfolio-item {
   @extend .page-section;
+  width: 97%;
+
+  h3 {
+    position: relative;
+    top: 0.2em;
+    left: 0.5em;
+  }
 }
 
 .portfolio-wip {
