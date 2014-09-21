@@ -2,7 +2,7 @@
 layout: script
 title: About
 ---
-<div class="page-content">
+<div class="page-section">
   <h2 class="text-center">About</h2>
   <p>Hello! I am <span class="text-bold">Triangle717</span> (pronounced <span class="text-bold">Triangle seven one seven</span>), sometimes known as
     <span class="text-bold">le717</span> (pronounced <span class="text-bold">lee seven seventeen</span>).
@@ -16,7 +16,7 @@ title: About
   <p>I am a programmer of <span id="i-am-programmer">one and a half</span> years. After discovering the world of programming in October 2013 by completing the <a target="_blank" href="http://www.codecademy.com">Codecademy HTML Fundamentals</a> track and <a target="_blank" href="http://swaroopch.com/notes/python/"><span class="text-italic">A Byte of Python</span></a> book by <a target="_blank" href="http://swaroopch.com/">Swaroop C H</a>,
 I discovered what I been developing the mental capacity to accomplish since I was 4 years old. I am CompTIA Security+ certified, and am presently knowledgeable in <span id="code-i-know" title="This list is also automatically generated. :D"></span>, but I plan on learning more.</p>
 
-  <p>I am attending technical college to obtain my associates degree in website design and development. Currently projected graduation date is Summer 2015.</p>
+  <p>I am currently attending technical college to obtain my associates degree in website design and development. My projected graduation date is Summer 2015.</p>
 
   <p>I am a strong supporter of open-source programming. That is why you will find all my programming work on <a target="_blank" href="{{ site.github.owner_url }}">GitHub</a>.
     Links to various projects and downloads for them can be found on the <a target="_blank" href="{{ site.wpurl }}/code/">Source Code</a> and <a target="_blank" href="{{ site.wpurl }}/downloads/">Downloads</a> pages on my WordPress.com
@@ -26,76 +26,10 @@ I discovered what I been developing the mental capacity to accomplish since I wa
   <p class="text-center"><img class="img-responsive img-shadow" alt="Triangle717" src="http://1.gravatar.com/avatar/3493f5b364f9958db51194a6fc629a46?size=400" width="400" height="400" /></p>
 
   <h2 class="text-center">About this site</h2>
-  <p><span class="text-bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a> (and is 100% <a target="_blank" href="{{ site.github.repository_url }}">open-source</a>
+  <p><span class="text-bold">Triangle Land</span>, as it is called, is a <a target="_blank" href="http://jekyllrb.com/">Jekyll-powered</a> HTML5 site hosted on <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+    (and is 100% <a target="_blank" href="{{ site.github.repository_url }}">open-source</a>
     under the <a href="/license/index.html">MIT License</a>), written from scratch by yours truly.</p>
 
   <p>As of March 31, 2014, <span class="text-bold">Triangle Land</span> is under heavy construction, and things will change, break, and move around without notice. I am sorry for any inconvenience this may cause.</p>
 </div>
-
-  <script>
-    function calcDate(date, element) {
-      "use strict";
-      /* Calculate the difference between two dates
-       * as specfied in `date` array and display it in the `element`...
-       * HTML element.
-       */
-
-      var curDate         = new Date();
-      var curYear         = curDate.getUTCFullYear(),
-          curMonth        = curDate.getUTCMonth(),
-          curDay          = curDate.getUTCDate(),
-          dateDifference  = curYear % date[0];
-
-      var yearDifference  = curYear % date[0],
-          monthDifference = curMonth - date[1],
-          dayDifference   = date[2] - curDay;
-
-      // This is the same month and day increase the year
-      if (monthDifference === 0 && dayDifference === 0) {
-        yearDifference += 1;
-      }
-
-      // There is four or less months until the milestone month
-      if (monthDifference > 0 && monthDifference <= 4) {
-        monthDifference = 12 - Math.abs(monthDifference);
-      }
-
-      // The current month is later than the milestone month.
-      if (monthDifference < 0 && monthDifference >= -7) {
-        monthDifference = Math.abs(monthDifference);
-      }
-
-      //TODO There is no such thing as 1.12th years, 1.10 === 2 years
-      // 12 / 1.2 === 10, so how do I calculate every 1.2 months?
-
-      // Do not update the date unless it is time
-      if (curMonth < date[1] && curDay < date[2] || curMonth < date[1] && curDay === date[2] || curMonth === date[1] && curDay < date[2]) {
-        dateDifference -= 1;
-      }
-      $(element).html(dateDifference);
-    }
-
-    // Calculate my age
-    // UTC month value is zero-based
-    calcDate([1995, 2, 13], "#i-am-age");
-
-    // Calculate how long I have been a programmer
-    //calcDate([2013, 0, 26], "#i-am-programmer");
-
-    /* ------- List the coding languages I know ------ */
-    var listAllTheCodes = "",
-        codingIKnow = ["Python", "HTML/CSS", "JavaScript"];
-
-    codingIKnow.forEach(function(value, index) {
-      listAllTheCodes += value + ", ";
-
-      // Make it grammatically correct
-      if (index === codingIKnow.length - 2) {
-        listAllTheCodes += "and ";
-      }
-    });
-
-    // Remove generated trailing space and comma
-    listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
-    $("#code-i-know").html(listAllTheCodes);
-  </script>
+<script src="/js/about.js"></script>
