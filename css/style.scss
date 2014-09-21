@@ -19,7 +19,7 @@
 
 .page-content {
   @extend .block-center;
-  background-color: $color-gray-lighter;
+  background-color: $color-blue-bg;
   border-radius: 1.5em;
   width: 75%;
   padding-bottom: 0.2em;
@@ -215,7 +215,7 @@
 .single-post {
   @extend .page-content;
   border-radius: 0.5em;
-  background-color: rgba(5, 5, 20, 0.8);
+  background-color: $color-blue-bg;
 }
 
 .post-url {
