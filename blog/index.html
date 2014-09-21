@@ -40,7 +40,7 @@ title: Blog
   function BlogPost(postAuthor, postDate, postID, postTitle, postURL, postContent) {
     this.postAuthor       = postAuthor.name;
     this.postAuthorAvatar = postAuthor.avatar_URL.replace(/s=96/, "s=24");
-    this.postContainer    = '<div id="' + postID + '"></div>';
+    this.postContainer    = '<div class="single-post" id="' + postID + '"></div>';
     this.postContent      = postContent;
     this.postDate         = postDate;
     this.postID           = postID;
