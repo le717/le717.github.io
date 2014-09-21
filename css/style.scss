@@ -222,6 +222,7 @@
   &:hover { @extend .text-decor-none; }
 
   .post-title {
+    @extend .text-center;
     color: #09f;
     padding-top: 0.2em;
     &:active { @include transform(translate3d(0, 2px, 0)); }
@@ -229,6 +230,7 @@
 }
 
 .post-meta {
+  @extend .text-center;
   color: #ff4;
   margin-top: -0.5em;
 }
