@@ -230,7 +230,7 @@
 
 
 // ------- Spoiler styling
-.spoiler {
+/*.spoiler {
   overflow: hidden;
   border-radius: 10px;
   margin-top: 5px;
@@ -258,18 +258,13 @@
 .btn-spoiler-active {
   color: $color-white;
   background-color: #0000C4;
+}*/
+
+// ------- Portfolio
+.portfolio-item {
+  @extend .page-section;
 }
 
-// ------- Various styling
-.you-are-here {
-  font-size: 1.1em;
-  color: #E4E1E8;
-  text-shadow: 2px 2px 2px $color-black;
-}
-
-.generated-data { border-bottom: 1px dashed $color-white; }
-
-.portfolio h3 { @extend .text-center; }
 .portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: 5px;
@@ -280,3 +275,12 @@
 
   &:hover { @extend .text-decor-none; }
 }
+
+// ------- Various styling
+.you-are-here {
+  font-size: 1.1em;
+  color: #E4E1E8;
+  text-shadow: 2px 2px 2px $color-black;
+}
+
+.generated-data { border-bottom: 1px dashed $color-white; }
