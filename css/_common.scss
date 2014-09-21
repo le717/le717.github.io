@@ -11,7 +11,7 @@
 
 
 // Commonly used alignments and type styles
-.center-div {
+.block-center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -46,9 +46,3 @@ a {
 @include ie-img-link();
 
 .img-shadow { @include box-shadow(0 0 6px 1px $color-white); }
-
-.img-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}

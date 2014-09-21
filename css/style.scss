@@ -17,6 +17,14 @@
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
 
+.post-content {
+  @extend .block-center;
+  background-color: $color-gray-lighter;
+  border-radius: 1.5em;
+  width: 75%;
+  padding-bottom: 0.1em;
+}
+
 
 // ------- Navbar styling
 .navbar {
@@ -96,6 +104,7 @@
 
 /* ------- Scroll to the top box styling ------- */
 .scroll-up {
+  @extend .text-center;
   position: fixed;
   display: block;
   cursor: pointer;
@@ -105,7 +114,6 @@
   width: 2.5em;
   height: 2.7em;
   opacity: 1;
-  text-align: center;
   background-color: rgba(128, 128, 128, 0.7);
   border-left: 3px solid #800000;
 
@@ -279,6 +287,8 @@
 .ani-loading { z-index: 5; }
 
 .generated-data { border-bottom: 1px dashed $color-white; }
+
+.portfolio h3 { @extend .text-center; }
 
 .portfolio-wip {
   background-color: rgba(255, 0, 0, 0.5);
