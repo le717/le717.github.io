@@ -100,26 +100,29 @@
   position: fixed;
   display: block;
   cursor: pointer;
-  right: 20px;
-  bottom: -0.3em;
+  right: 1.5em;
+  bottom: 1em;
   z-index: 2;
-  width: 2.5em;
-  height: 2.7em;
-  opacity: 1;
+  width: 3em;
+  height: 3em;
+  opacity: 0;
   background-color: rgba(128, 0, 0, 0.7);
-  border-left: 3px solid $color-yellow-light;
+  border-radius: 50%;
+  // border-left: 3px solid $color-yellow-light;
 
-  @include transform(translate3d(0, 2.9em, 0));
-  @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
-  @include        transition-long((-webkit-transform, -ms-transform, transform), 0.2s, ease-out);
+  // @include transform(translate3d(0, 2.9em, 0));
+  // @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
+  // @include        transition-long((-webkit-transform, -ms-transform, transform), 0.2s, ease-out);
+  @include transition(opacity, 0.2s, ease-out);
 
   span {
     @extend a;
     text-decoration: none;
-    font-size: 2em;
-    text-shadow: 0 0 1px black;
+    font-size: 2.3em;
+    text-shadow: 0 0 1px $color-black;
 
-    @include transform(rotate(-90deg));
+//     @include transform(rotate(-90deg));
+     @include transform(translate3d(0, 3px, 0) rotate(-90deg));
   }
 }
 

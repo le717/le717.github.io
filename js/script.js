@@ -29,9 +29,9 @@
       // TODO This is bugged if the page is reloaded when visible
       // but for some reason it only occurs on the portfolio page. :S
       if ($(window).scrollTop() >= 100) {
-        $(".scroll-up").css("transform", "translate3d(0, 0, 0)");
+        $(".scroll-up").css("opacity", "1");
       } else {
-        $(".scroll-up").css("transform", "");
+        $(".scroll-up").css("opacity", "");
       }
     });
 
