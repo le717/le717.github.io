@@ -211,6 +211,8 @@
 
 // ------- Blog post styling
 
+.single-post { @extend .page-content; }
+
 .post-url {
   &:hover { @extend .text-decor-none; }
 
