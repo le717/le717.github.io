@@ -23,8 +23,9 @@
   border-radius: 1.5em;
   width: 75%;
   padding-bottom: 0.2em;
-}
 
+  &:last-of-type { margin-bottom: 0; }
+}
 
 // ------- Navbar styling
 .navbar {
@@ -213,7 +214,7 @@
 
 .single-post {
   @extend .page-content;
-  margin-bottom: 1.7em;
+  margin-bottom: 2em;
 }
 
 .post-url {
