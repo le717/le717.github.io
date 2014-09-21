@@ -116,7 +116,7 @@
   width: 2.5em;
   height: 2.7em;
   opacity: 1;
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: rgba(128, 0, 0, 0.7);
   border-left: 3px solid #800000;
 
   @include transform(translate3d(0, 2.9em, 0));
@@ -214,23 +214,23 @@
 
 .single-post {
   @extend .page-content;
-  margin-bottom: 2em;
+  border-radius: 0.5em;
+  background-color: rgba(5, 5, 20, 0.8);
 }
 
 .post-url {
   &:hover { @extend .text-decor-none; }
 
   .post-title {
-    color: $color-white;
+    color: #09f;
+    padding-top: 0.2em;
     &:active { @include transform(translate3d(0, 2px, 0)); }
   }
 }
 
 .post-meta {
-  display: inline;
-  font-size: 0.9em;
-  text-shadow: 1px 2px 2px $color-black;
-  color: $color-white;
+  color: #ff4;
+  margin-top: -0.5em;
 }
 
 .post-content {

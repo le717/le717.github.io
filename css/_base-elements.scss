@@ -17,8 +17,8 @@ body {
   font-weight: 400;
   letter-spacing: -0.5px;
   color: $color-text;
-  //background: $background
-  background-color: $color-gray-bg;
+  background: $background
+//  background-color: $color-gray-bg;
 }
 
 blockquote {
@@ -66,8 +66,8 @@ kbd {
 }
 
 p {
-  margin-left: 1.2em;
-  margin-right: 1.2em;
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 pre {
