@@ -1,11 +1,11 @@
-{% include head.html %}
-{% include base-style.html %}
-{% include bridge.html %}
-  {% include header.html %}
-  {% include navbar.html %}
+{% include top.html %}
+{% include header.html %}
+
     {{ content }}
-{% if page.type != "Scripts" %}{% include scripts.html %}{% endif %}
-{% if page.title != "Home" %}{% include scrollup.html %}{% endif %}
-{% include analytics.html %}
-{% include footer.html %}
-{% include foot.html %}
+
+  {% if page.type != "Scripts" %}{% include scripts.html %}{% endif %}
+  {% if page.title != "Home" %}{% include scrollup.html %}{% endif %}
+  {% include analytics.html %}
+  {% include footer.html %}
+</body>
+</html>

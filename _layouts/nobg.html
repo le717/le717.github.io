@@ -1,13 +1,11 @@
-{% include head.html %}
-{% include base-style.html %}
-</head>
+{% include top.html %}
+{% include header.html %}
 
-<body>
-  {% include header.html %}
-  {% include navbar.html %}
-  {{ content }}
-{% include scripts.html %}
-{% include analytics.html %}
-{% include footer.html %}
+    {{ content }}
+
+  {% if page.type != "Scripts" %}{% include scripts.html %}{% endif %}
+  {% if page.title != "Home" %}{% include scrollup.html %}{% endif %}
+  {% include analytics.html %}
+  {% include footer.html %}
 </body>
 </html>
