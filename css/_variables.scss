@@ -13,11 +13,9 @@ $color-red-border: #800000;
 $color-gray-bg: #272727;
 $color-gray-lighter: #393939;
 $color-gray-trans: rgba(51, 51, 51, 0.7);
-// TODO Remove this
-$color-text: #fff;
 
 // Site-wide
 $font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
-$font-color: $color-text;
+$font-color: $color-white;
 $background-color: $color-gray-bg;
 $background: $color-gray-bg url("http://www.vectortiles.com/wp-content/uploads/triangle-patterns-07-600x600.jpg") repeat fixed;
