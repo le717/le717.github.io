@@ -275,11 +275,12 @@
 
   img {
     @extend .img-responsive;
+    @extend .block-center;
   }
 
-  .portfolio-description {
+  /*.portfolio-description {
 
-  }
+  }*/
 }
 
 .portfolio-wip {
