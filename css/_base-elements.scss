@@ -9,8 +9,8 @@
 @import "mixins/box-shadow";
 
 
-::-moz-selection { text-shadow: none; background-color: $color-gray-dark-bg; }
-     ::selection { text-shadow: none; background-color: $color-gray-dark-bg; }
+::-moz-selection { text-shadow: none; background-color: $color-black; color: $color-white; }
+     ::selection { text-shadow: none; background-color: $color-black; color: $color-white; }
 
 body {
   font-family: $font-family;
