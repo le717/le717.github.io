@@ -24,10 +24,12 @@
    * http://briancray.com/posts/scroll-to-top-link-jquery-css/
    */
   $(function() {
+    console.log("scrollTop() value #1: " + $(window).scrollTop());
     $(window).scroll(function() {
-      // Show/how the scroll up button
+      // Show/hide the scroll up button
       // TODO This is bugged if the page is reloaded when visible
       // but for some reason it only occurs on the portfolio page. :S
+      console.log("scrollTop() value #2: " + $(window).scrollTop());
       if ($(window).scrollTop() >= 100) {
         $(".scroll-up").css("opacity", "1");
       } else {
