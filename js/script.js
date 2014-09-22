@@ -24,7 +24,6 @@
    * http://briancray.com/posts/scroll-to-top-link-jquery-css/
    */
   function toggleScrollUp() {
-    console.log("Called!");
     if ($(window).scrollTop() >= 100) {
       $(".scroll-up").css("opacity", "1");
     } else {
@@ -33,13 +32,12 @@
   }
 
   $(function() {
-    console.log("scrollTop() value #1: " + $(window).scrollTop());
+    // NOTE Work around a weird bug affecting only the Portfolio page
+    // where the button does not reappear when the page is scrolled
+    // to visibility then reloaded.
     toggleScrollUp();
     $(window).scroll(function() {
-      // Show/hide the scroll up button
-      // TODO This is bugged if the page is reloaded when visible
-      // but for some reason it only occurs on the portfolio page. :S
-      console.log("scrollTop() value #2: " + $(window).scrollTop());
+      // Of course, call it when the page is scrolled too
       toggleScrollUp();
     });
 
