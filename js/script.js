@@ -34,6 +34,7 @@
 
   $(function() {
     console.log("scrollTop() value #1: " + $(window).scrollTop());
+    toggleScrollUp();
     $(window).scroll(function() {
       // Show/hide the scroll up button
       // TODO This is bugged if the page is reloaded when visible
