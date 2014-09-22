@@ -263,12 +263,23 @@
 // ------- Portfolio
 .portfolio-item {
   @extend .page-section;
+  padding-left: 0.7em;
+  padding-bottom: 0.7em;
   width: 97%;
 
   h3 {
     position: relative;
     top: 0.2em;
     left: 0.5em;
+  }
+
+  img {
+    @extend .img-responsive;
+    float: left;
+  }
+
+  .portfolio-description {
+    float: right;
   }
 }
 
