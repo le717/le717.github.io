@@ -24,6 +24,7 @@
    * http://briancray.com/posts/scroll-to-top-link-jquery-css/
    */
   function toggleScrollUp() {
+    console.log("Called!");
     if ($(window).scrollTop() >= 100) {
       $(".scroll-up").css("opacity", "1");
     } else {
