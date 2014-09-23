@@ -13,6 +13,7 @@
 @import "base-elements";
 @import "mixins/transform";
 @import "mixins/transition";
+@import "mixins/img-responsive";
 @import "mixins/transition-long";
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
@@ -82,12 +83,10 @@
 .btn-navbar {
   width: 2.5em;
   height: 2.5em;
-
   position: fixed;
-  top: 5px;
+  top: 0.313em;
   right: 0.7em;
   z-index: 2;
-
   cursor: pointer;
   background-image: url("/img/bowtie.svg");
 
@@ -101,7 +100,7 @@
   position: fixed;
   display: block;
   cursor: pointer;
-  right: 1.5em;
+  right: 0.5em;
   bottom: 1em;
   z-index: 2;
   width: 3em;
@@ -275,6 +274,7 @@
   }
 
   img {
+    @include img-responsive(720px, 93%);
     @extend .img-responsive;
     @extend .block-center;
   }
@@ -301,5 +301,3 @@
   color: #E4E1E8;
   text-shadow: 2px 2px 2px $color-black;
 }
-
-.generated-data { border-bottom: 1px dashed $color-white; }
