@@ -274,9 +274,11 @@
   }
 
   img {
-    @include img-responsive(720px, 93%);
     @extend .img-responsive;
+    @extend .img-shadow;
     @extend .block-center;
+    // This has no effect on the desktop
+    max-width: 93%;
   }
 
   /*.portfolio-description {

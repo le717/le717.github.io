@@ -54,4 +54,4 @@ a {
 @include img-responsive(720px);
 @include ie-img-link();
 
-.img-shadow { @include box-shadow(0 0 6px 1px $color-white); }
+.img-shadow { @include box-shadow(0 0 3px 2px $color-black); }
