@@ -8,14 +8,11 @@
 @import "mixins/box-shadow";
 @import "mixins/ie-img-link";
 @import "mixins/img-responsive";
+@import "mixins/block-center";
 
 
 // Commonly used alignments and type styles
-.block-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+@include block-center();
 .page-section {
   @extend .block-center;
   background-color: $color-blue-bg;
