@@ -9,7 +9,7 @@ title: Blog
   <a target="_blank" href="{{ site.wpurl }}">blog directly</a> and read to your heart's content. :smiley:
 </noscript>
 
-<div class="blog-posts"></div>
+<div class="blog-posts" style="display: none;"></div>
 <p class="end-of-posts">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
   <a target="_blank" href="{{ site.wpurl }}">actual blog</a> and read to your heart's content. :smiley:
@@ -80,7 +80,7 @@ title: Blog
         // and stop the loading animation
         $(".ani-loading").remove();
         showPosts();
-        $(".blog-posts").css("display", "");
+        $(".blog-posts").removeAttr("style");
         $(".end-of-posts").css("display", "block");
       }
     });
@@ -92,14 +92,10 @@ title: Blog
   function showPosts() {
     "use strict";
     $.each(posts, function(key, value) {
-      console.log(value);
       value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
-
-      // Hide post content until it is ready
-      $(".blog-posts").css("display", "none");
 
       // Display post details in the following order:
       // Post title/ permalink to WordPress
@@ -129,8 +125,8 @@ title: Blog
    */
   BlogPost.prototype.cleanUp = function() {
    "use strict";
-
-   console.log(this.postTitle);
+    this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright|wp-caption)/gi, "");
+    console.log(this.postContent);
   };
 
 
@@ -169,11 +165,11 @@ title: Blog
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
-        $this.removeClass("alignnone");
-        $this.removeClass("alignleft");
-        $this.removeClass("aligncenter");
-        $this.removeClass("alignright");
-        $this.removeClass("wp-caption");
+        // $this.removeClass("alignnone");
+        // $this.removeClass("alignleft");
+        // $this.removeClass("aligncenter");
+        // $this.removeClass("alignright");
+        // $this.removeClass("wp-caption");
         $this.removeAttr("id");
         $this.removeAttr("style");
       });
