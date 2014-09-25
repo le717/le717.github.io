@@ -126,6 +126,8 @@ title: Blog
   BlogPost.prototype.cleanUp = function() {
    "use strict";
     this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright|wp-caption)/gi, "");
+    this.postContent = this.postContent.replace(/class=""\s)/gi, "");
+    this.postContent = this.postContent.replace(/<div id="\w*")/gi, "<div");
     console.log(this.postContent);
   };
 
@@ -165,12 +167,7 @@ title: Blog
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
-        // $this.removeClass("alignnone");
-        // $this.removeClass("alignleft");
-        // $this.removeClass("aligncenter");
-        // $this.removeClass("alignright");
-        // $this.removeClass("wp-caption");
-        $this.removeAttr("id");
+        // $this.removeAttr("id");
         $this.removeAttr("style");
       });
 
