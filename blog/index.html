@@ -140,9 +140,8 @@ title: Blog
     this.content = this.content.replace(/span title='.*?'/g, "span");
     
     // Blank attributes
-    // this.content = this.content.replace(/\sclass=".*?"/g, "");
-    this.content = this.content.replace(/\sclass="\s*"/g, "");
-    this.content = this.content.replace(/\sstyle=".*?"/g, "");
+    this.content = this.content.replace(/\sclass=".*?"/g, "");
+    this.content = this.content.replace(/\sstyle="\s?"/g, "");
     // console.log(this.content);
   };
 
