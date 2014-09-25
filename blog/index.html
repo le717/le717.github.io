@@ -92,9 +92,8 @@ title: Blog
   function showPosts() {
     "use strict";
     $.each(posts, function(key, value) {
-      console.log(key);
-      key.cleanUp();
-  //      value.cleanUp();
+      console.log(value);
+      value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
