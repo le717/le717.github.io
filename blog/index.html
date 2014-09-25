@@ -135,8 +135,8 @@ title: Blog
     this.content = this.content.replace(/img style=".*?"/gi, "img");
 
     // Spans (WordPress emotes)
-    this.content = this.content.replace(/span class=".*?"/gi, "span");
-    this.content = this.content.replace(/span title=".*?"/gi, "span");
+    this.content = this.content.replace(/span class='.*?'/gi, "span");
+    this.content = this.content.replace(/span title='.*?'/gi, "span");
     // console.log(this.content);
   };
 
