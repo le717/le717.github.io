@@ -92,7 +92,8 @@ title: Blog
   function showPosts() {
     "use strict";
     $.each(posts, function(key, value) {
-
+      console.log(key);
+      key.cleanUp();
   //      value.cleanUp();
 
       // Add the post container to the page
@@ -127,11 +128,11 @@ title: Blog
    * Remove WordPress classes, IDs, and other unnecessary clutter
    * TODO Make this work
    */
-  /*BlogPost.prototype.cleanUp = function() {
+  BlogPost.prototype.cleanUp = function() {
    "use strict";
 
-   // console.log(this.postIDDOM);
-  };*/
+   console.log(this.postTitle);
+  };
 
 
   /**
