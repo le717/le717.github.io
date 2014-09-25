@@ -138,6 +138,10 @@ title: Blog
     // Spans (WordPress emotes)
     this.content = this.content.replace(/span class='.*?'/g, "span");
     this.content = this.content.replace(/span title='.*?'/g, "span");
+    
+    // Blank attributes
+    this.content = this.content.replace(/\sclass=".*?"/g, "");
+    this.content = this.content.replace(/\sstyle=".*?"/g, "");
     // console.log(this.content);
   };
 
