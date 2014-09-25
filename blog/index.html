@@ -63,10 +63,10 @@ title: Blog
           var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
 
           // Convert publishing date to a nicer format
-          var postDateParts = postInfo.date.split("T")[0].split("-");
           // Index 0 = Year
           // Index 1 = Month
           // Index 2 = Day
+          var postDateParts = postInfo.date.split("T")[0].split("-");
           var dateFormat    = "{0} {1} {2}".format(postDateParts[2], postDateParts[1], postDateParts[0]).split(" ");
           dateFormat[1]     = "{0},".format(dateFormat[1].replace(dateFormat[1], months[dateFormat[1]]));
           var postDate      = dateFormat.join(" ");
@@ -126,7 +126,8 @@ title: Blog
   BlogPost.prototype.cleanUp = function() {
    "use strict";
     // Divs
-    this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright|wp-caption)/gi, "");
+    this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright)/gi, "");
+    this.postContent = this.postContent.replace(/wp-caption(?!-text)/gi, "text-center");
     this.postContent = this.postContent.replace(/div id="\w*"/gi, "div");
 
     // Images
@@ -145,7 +146,7 @@ title: Blog
 
     $(function() {
       // Center the images that have captions applied
-      $(".wp-caption").addClass("text-center");
+      // $(".wp-caption").addClass("text-center");
 
       // Remove any WordPress image-related classes
       $(postContainer + " .post-content").find("img").each(function() {
@@ -157,8 +158,8 @@ title: Blog
         $this.parent("p").addClass("text-center");
 
         // Style and resize images
-        $this.addClass("img-shadow");
-        $this.addClass("img-responsive");
+        // $this.addClass("img-shadow");
+        // $this.addClass("img-responsive");
       });
 
       // Remove WordPress emote classes
@@ -171,7 +172,6 @@ title: Blog
       // Remove any WordPress alignment classes and style attributes
       $(postContainer).find("div").each(function() {
         var $this = $(this);
-        // $this.removeAttr("id");
         $this.removeAttr("style");
       });
 

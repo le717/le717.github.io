@@ -221,6 +221,12 @@
     display: inline;
     margin: 0;
   }
+
+  // Blog post images
+  img {
+    @extend .img-shadow;
+    @extend .img-responsive;
+  }
 }
 
 .end-of-posts {
