@@ -121,7 +121,6 @@ title: Blog
 
   /**
    * Remove WordPress classes, IDs, and other unnecessary clutter
-   * TODO Make this work
    */
   BlogPost.prototype.cleanUp = function() {
    "use strict";
@@ -132,7 +131,7 @@ title: Blog
 
     // Images
     this.postContent = this.postContent.replace(/img class="\w*"/gi, "img");
-    this.postContent = this.postContent.replace(/wp-image-\d{4}/gi, "");
+    // this.postContent = this.postContent.replace(/wp-image-\d{4}/gi, "");
     console.log(this.postContent);
   };
 
@@ -151,15 +150,11 @@ title: Blog
       // Remove any WordPress image-related classes
       $(postContainer + " .post-content").find("img").each(function() {
         var $this = $(this);
-        // $this.removeAttr("class");
         $this.removeAttr("style");
+        $this.addClass("img-responsive");
 
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
-
-        // Style and resize images
-        // $this.addClass("img-shadow");
-        // $this.addClass("img-responsive");
       });
 
       // Remove WordPress emote classes
@@ -179,7 +174,7 @@ title: Blog
       $(postContainer).find("p").each(function() {
         var $this = $(this);
         if ($this.hasClass("wp-caption-text")) {
-          $this.removeClass("wp-caption-text");
+          $this.removeAttr("class");
           $this.css("text-align", "inherit");
         }
       });
