@@ -123,20 +123,20 @@ title: Blog
   BlogPost.prototype.cleanUp = function() {
    "use strict";
     // Alignment and captions
-    this.content = this.content.replace(/(alignnone|alignleft|aligncenter|alignright)/gi, "");
-    this.content = this.content.replace(/wp-caption(?!-text)/gi, "text-center");
+    this.content = this.content.replace(/alignnone|alignleft|aligncenter|alignright/g, "");
+    this.content = this.content.replace(/wp-caption(?!-text)/g, "text-center");
 
     // Divs
-    this.content = this.content.replace(/div id=".*?"/gi, "div");
-    this.content = this.content.replace(/div style=".*?"/gi, "div");
+    this.content = this.content.replace(/div id=".*?"/g, "div");
+    this.content = this.content.replace(/div style=".*?"/g, "div");
 
     // Images
-    this.content = this.content.replace(/img class=".*?"/gi, "img");
-    this.content = this.content.replace(/img style=".*?"/gi, "img");
+    this.content = this.content.replace(/img class=".*?"/g, "img");
+    this.content = this.content.replace(/img style=".*?"/g, "img");
 
     // Spans (WordPress emotes)
-    this.content = this.content.replace(/span class='.*?'/gi, "span");
-    this.content = this.content.replace(/span title='.*?'/gi, "span");
+    this.content = this.content.replace(/span class='.*?'/g, "span");
+    this.content = this.content.replace(/span title='.*?'/g, "span");
     // console.log(this.content);
   };
 
