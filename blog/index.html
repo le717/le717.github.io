@@ -125,9 +125,13 @@ title: Blog
    */
   BlogPost.prototype.cleanUp = function() {
    "use strict";
+    // Divs
     this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright|wp-caption)/gi, "");
-    this.postContent = this.postContent.replace(/class=""\s)/gi, "");
-    this.postContent = this.postContent.replace(/<div id="\w*")/gi, "<div");
+    this.postContent = this.postContent.replace(/div id="\w*"/gi, "div");
+
+    // Images
+    this.postContent = this.postContent.replace(/img class="\w*"/gi, "img");
+    this.postContent = this.postContent.replace(/wp-image-\d{4}/gi, "");
     console.log(this.postContent);
   };
 
@@ -146,7 +150,7 @@ title: Blog
       // Remove any WordPress image-related classes
       $(postContainer + " .post-content").find("img").each(function() {
         var $this = $(this);
-        $this.removeAttr("class");
+        // $this.removeAttr("class");
         $this.removeAttr("style");
 
         // Center non-captioned images
