@@ -123,7 +123,8 @@ title: Blog
   BlogPost.prototype.cleanUp = function() {
    "use strict";
     // Alignment and captions
-    // this.content = this.content.replace(/alignnone|alignleft|aligncenter|alignright/g, "");
+    this.content = this.content.replace(/alignnone|alignleft|aligncenter|alignright/g, "");
+    this.content = this.content.replace(/size-(?:thumbnail|full|medium|large)/g, "");
     this.content = this.content.replace(/wp-caption(?!-text)/g, "text-center");
 
     // Divs
