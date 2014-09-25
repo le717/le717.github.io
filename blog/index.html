@@ -1,9 +1,8 @@
 ---
-layout: root
+layout: script
 title: Blog
 ---
 {% include loading.html %}
-
 <noscript>
   Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
   <a target="_blank" href="{{ site.wpurl }}">blog directly</a> and read to your heart's content. :smiley:
@@ -15,7 +14,6 @@ title: Blog
   <a target="_blank" href="{{ site.wpurl }}">actual blog</a> and read to your heart's content. :smiley:
 </p>
 
-{% include scripts.html %}
 <script>
   var posts  = [],
       months = {
@@ -61,7 +59,7 @@ title: Blog
       success: function(data) {
         data.posts.forEach(function(postInfo) {
           // Create a unique post ID
-          var postID  = "post-{0}".format(postInfo.guid.substring(postInfo.guid.indexOf("?p=") + 3, postInfo.guid.length));
+          var postID  = "post-{0}".format(postInfo.guid.substr(-4));
 
           // Convert publishing date to a nicer format
           // Index 0 = Year
@@ -135,6 +133,10 @@ title: Blog
     // Images
     this.content = this.content.replace(/img class=".*?"/gi, "img");
     this.content = this.content.replace(/img style=".*?"/gi, "img");
+
+    // Spans (WordPress emotes)
+    this.content = this.content.replace(/span class=".*?"/gi, "span");
+    this.content = this.content.replace(/span title=".*?"/gi, "span");
     // console.log(this.content);
   };
 
@@ -145,24 +147,7 @@ title: Blog
   function cleanupPost(postContainer) {
     "use strict";
     // TODO Move this into the BlogPost prototype
-
     $(function() {
-      // Remove any WordPress image-related classes
-      $(postContainer + " .post-content").find("img").each(function() {
-        var $this = $(this);
-        // $this.removeAttr("style");
-
-        // Center non-captioned images
-        $this.parent("p").addClass("text-center");
-      });
-
-      // Remove WordPress emote classes
-      $(postContainer).find("span").each(function() {
-        var $this = $(this);
-        $this.removeAttr("class");
-        $this.removeAttr("title");
-      });
-
       // Apply alignment for image caption text
       $(postContainer).find("p").each(function() {
         var $this = $(this);

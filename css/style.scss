@@ -217,6 +217,7 @@
 }
 
 .post-content {
+  // Flatten blockquotes
   blockquote p {
     display: inline;
     margin: 0;
@@ -226,6 +227,7 @@
   img {
     @extend .img-shadow;
     @extend .img-responsive;
+    @extend .block-center;
   }
 }
 
