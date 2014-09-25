@@ -1,5 +1,5 @@
 ---
-layout: script
+layout: root
 title: Blog
 ---
 {% include loading.html %}
@@ -15,6 +15,7 @@ title: Blog
   <a target="_blank" href="{{ site.wpurl }}">actual blog</a> and read to your heart's content. :smiley:
 </p>
 
+{% include scripts.html %}
 <script>
   var posts  = [],
       months = {
@@ -36,14 +37,14 @@ title: Blog
    * @constructor
    * Create a blog post object
    */
-  function BlogPost(postDate, postID, postTitle, postURL, postContent) {
-    this.postContainer    = '<div class="single-post" id="' + postID + '"></div>';
-    this.postContent      = postContent;
-    this.postDate         = postDate;
-    this.postID           = postID;
-    this.postIDDOM        = "#" + postID;
-    this.postTitle        = postTitle;
-    this.postURL          = postURL;
+  function BlogPost(date, id, title, address, content) {
+    this.id        = id;
+    this.date      = date;
+    this.title     = title;
+    this.address   = address;
+    this.content   = content;
+    this.selector  = "#" + id;
+    this.container = '<div class="single-post" id="' + id + '"></div>';
   }
 
   /**
@@ -81,6 +82,7 @@ title: Blog
         $(".ani-loading").remove();
         showPosts();
         $(".blog-posts").removeAttr("style");
+        $(".post-content").removeAttr("style");
         $(".end-of-posts").css("display", "block");
       }
     });
@@ -92,29 +94,27 @@ title: Blog
   function showPosts() {
     "use strict";
     $.each(posts, function(key, value) {
-      // value.cleanUp();
+      // Perform initial cleanup measures
+      value.cleanUp();
 
       // Add the post container to the page
-      $(".blog-posts").append(value.postContainer);
+      $(".blog-posts").append(value.container);
 
       // Display post details in the following order:
-      // Post title/ permalink to WordPress
+      // Post title/permalink to WordPress
       // Publish date
       // Post content
+      $(value.selector).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
+      $(value.selector).append("<p class='post-meta'><span class='post-date'></span></p>");
+      $(value.selector).append("<div class='post-content' style='display: none;'></div>");
 
-      $(value.postIDDOM).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
-      $(value.postIDDOM).append("<p class='post-meta'><span class='post-date'></span></p>");
-      $(value.postIDDOM).append("<div class='post-content' style='display: none;'></div>");
+      $(value.selector + " .post-title").html(value.title);
+      $(value.selector + " .post-url").attr("href", value.address);
+      $(value.selector + " .post-date").html(value.date);
+      $(value.selector + " .post-content").html(value.content);
 
-      $(value.postIDDOM + " .post-title").html(value.postTitle);
-      $(value.postIDDOM + " .post-date").html(value.postDate);
-      $(value.postIDDOM + " .post-url").attr("href", value.postURL);
-
-      // Add the post content
-      $(value.postIDDOM + " .post-content").html(value.postContent);
-
-      // Run various cleanup functions
-      cleanupPost(value.postIDDOM);
+      // Perform post-DOM addition cleanup
+      cleanupPost(value.selector);
     });
   }
 
@@ -124,15 +124,18 @@ title: Blog
    */
   BlogPost.prototype.cleanUp = function() {
    "use strict";
+    // Alignment and captions
+    this.content = this.content.replace(/(alignnone|alignleft|aligncenter|alignright)/gi, "");
+    this.content = this.content.replace(/wp-caption(?!-text)/gi, "text-center");
+
     // Divs
-    this.postContent = this.postContent.replace(/(alignnone|alignleft|aligncenter|alignright)/gi, "");
-    this.postContent = this.postContent.replace(/wp-caption(?!-text)/gi, "text-center");
-    this.postContent = this.postContent.replace(/div id=".*?"/gi, "div");
-    this.postContent = this.postContent.replace(/div style=".*?"/gi, "div");
+    this.content = this.content.replace(/div id=".*?"/gi, "div");
+    this.content = this.content.replace(/div style=".*?"/gi, "div");
 
     // Images
-    this.postContent = this.postContent.replace(/img class=".*?"/gi, "img");
-    // console.log(this.postContent);
+    this.content = this.content.replace(/img class=".*?"/gi, "img");
+    this.content = this.content.replace(/img style=".*?"/gi, "img");
+    // console.log(this.content);
   };
 
 
@@ -144,13 +147,10 @@ title: Blog
     // TODO Move this into the BlogPost prototype
 
     $(function() {
-      // Center the images that have captions applied
-      // $(".wp-caption").addClass("text-center");
-
       // Remove any WordPress image-related classes
       $(postContainer + " .post-content").find("img").each(function() {
         var $this = $(this);
-        $this.removeAttr("style");
+        // $this.removeAttr("style");
 
         // Center non-captioned images
         $this.parent("p").addClass("text-center");
