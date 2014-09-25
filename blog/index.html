@@ -92,7 +92,7 @@ title: Blog
   function showPosts() {
     "use strict";
     $.each(posts, function(key, value) {
-      value.cleanUp();
+      // value.cleanUp();
 
       // Add the post container to the page
       $(".blog-posts").append(value.postContainer);
@@ -131,7 +131,7 @@ title: Blog
     this.postContent = this.postContent.replace(/div style=".*?"/gi, "div");
 
     // Images
-    // this.postContent = this.postContent.replace(/img class=".*?"/gi, "img");
+    this.postContent = this.postContent.replace(/img class=".*?"/gi, "img");
     // console.log(this.postContent);
   };
 
