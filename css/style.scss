@@ -195,6 +195,7 @@
   @extend .page-section;
   width: 75%;
   border-radius: 0.5em;
+  padding-top: 0;
   background-color: $color-blue-bg;
 }
 
@@ -203,8 +204,8 @@
 
   .post-title {
     @extend .text-center;
-    // color: $color-blue-header;
     padding-top: 0.2em;
+
     &:active { @include transform(translate3d(0, 2px, 0)); }
   }
 }
