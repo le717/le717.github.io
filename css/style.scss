@@ -193,6 +193,7 @@
 
 .single-post {
   @extend .page-section;
+  width: 75%;
   border-radius: 0.5em;
   background-color: $color-blue-bg;
 }
@@ -265,7 +266,6 @@
   @extend .page-section;
   padding-left: 0.7em;
   padding-bottom: 0.7em;
-  width: 75%;
 
   h2 {
     position: relative;
