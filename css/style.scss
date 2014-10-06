@@ -124,7 +124,14 @@
 .header-logo { margin-bottom: -2em; }
 
 // ------- Featured item displays
-#featured-project { margin-top: -13%; }
+#featured-project {
+  margin-top: -19%;
+
+  p {
+    max-width: 45%;
+    float: right;
+  }
+}
 
 #featured-code-box {
   width: 47%;
@@ -132,7 +139,10 @@
   display: none;
 }
 
-#featured-code-desc { margin-top: -10px; }
+#featured-code-desc {
+  margin-top: -0.5em;
+  max-width: 53%;
+}
 
 // ------- Social buttons styling
 
