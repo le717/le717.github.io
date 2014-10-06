@@ -4,23 +4,23 @@
       "name": "SCSS @mixins",
       "url": "https://github.com/le717/scss-mixins#readme",
       "version": "v0.7.1",
-      "description": "are simply a collection of my own little <a href='http://sass-lang.com'>SCSS</a> mixins.<br>While there are only a small number of mixins right now,<br>I do add more as I need them, and I never know when that will be!"
+      "description": "are simply a collection of my own little <a href='http://sass-lang.com'>SCSS</a> mixins. While there are only a small number of mixins right now, I do add more as I need them, and I never know when that will be!"
     },
     {
       "name": "HTML Skeleton",
       "url": "http://github.com/le717/brackets-html-skeleton#readme",
       "version": "v1.1.5",
-      "description": "is a <a href='http://brackets.io'>Brackets</a> extension that allows you to<br>insert a variety of HTML elements into your document with ease."
+      "description": "is a <a href='http://brackets.io'>Brackets</a> extension that allows you to insert a variety of HTML elements into your document with ease."
     }
   ],
   "featuredCode": [
     {
       "snippet": "@media only screen and (max-width: 800px) {\n  .img-responsive {\n    max-width: 100%;\n    height: auto;\n  }\n}",
-      "description": "Primarily from a tutorial on <a href='http://www.kirupa.com/html5/preserve_an_image_aspect_ratio_when_resized.htm'>kirupa.com</a> with a slight change by <a href='https://github.com/rioforce'>@rioforce</a>, this little bit of CSS makes all<br>images assigned to the class responsive. I added to the awesomeness by wrapping it in a media query,<br>making only take effect on mobile devices, while rioforce fixed a scaling issue.<br>I am using this code here on Triangle Land, it is works like a charm!"
+      "description": "Primarily from a tutorial on <a href='http://www.kirupa.com/html5/preserve_an_image_aspect_ratio_when_resized.htm'>kirupa.com</a> with a slight change by <a href='https://github.com/rioforce'>@rioforce</a>, this little bit of CSS makes all images assigned to the class responsive. I added to the awesomeness by wrapping it in a media query, making only take effect on mobile devices, while rioforce fixed a scaling issue. I am using this code here on Triangle Land, it is works like a charm!"
     },
     {
       "snippet": "var $imgSrc = jQuery(\".ie-svg\").attr(\"src\");\njQuery(\".ie-svg\").attr(\"src\", $imgSrc.substr(0, $imgSrc.length - 3) + \"png\");",
-      "description": "This small bit of jQuery simply gets the <code>src</code> attribute of the <code>ie-svg</code> class<br>and replaces it with a PNG image counterpart already on the server.<br>It works well for working around some of Internet Explorer's issues with SVG vector graphics."
+      "description": "This small bit of jQuery simply gets the <code>src</code> attribute of the <code>ie-svg</code> class and replaces it with a PNG image counterpart already on the server. It works well for working around some of Internet Explorer's issues with SVG vector graphics."
     }
   ]
 }
