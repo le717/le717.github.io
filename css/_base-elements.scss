@@ -18,6 +18,7 @@ body {
   letter-spacing: -0.5px;
   color: $font-color;
   background: $background;
+  margin-bottom: 8em;
 }
 
 blockquote {
@@ -36,9 +37,15 @@ blockquote::before {
 }
 
 // ------- Footer
+// Sticky footer from http://mystrd.at/modern-clean-css-sticky-footer
 footer {
   @extend .text-center;
   font-size: 0.95em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 7.8em;
+  width: 100%;
 }
 
 html {
