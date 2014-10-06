@@ -8,7 +8,6 @@
 @import "variables";
 @import "mixins/box-shadow";
 
-
 ::-moz-selection { text-shadow: none; background-color: $color-white; color: $color-black; }
      ::selection { text-shadow: none; background-color: $color-white; color: $color-black; }
 
@@ -18,7 +17,7 @@ body {
   letter-spacing: -0.5px;
   color: $font-color;
   background: $background;
-  margin-bottom: 8em;
+  margin-bottom: 4em;
 }
 
 blockquote {
@@ -38,15 +37,26 @@ blockquote::before {
 
 // ------- Footer
 // Sticky footer from http://mystrd.at/modern-clean-css-sticky-footer
+
 footer {
   @extend .text-center;
-  font-size: 0.95em;
+  @extend .text-small;
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 7.8em;
+  height: 3.8em;
   width: 100%;
 }
+
+//footer {
+//  @extend .text-center;
+//  font-size: 0.95em;
+//  position: absolute;
+//  left: 0;
+//  bottom: 0;
+//  height: 7.8em;
+//  width: 100%;
+//}
 
 html {
   position: relative;
