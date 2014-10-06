@@ -3,9 +3,9 @@
 
     {{ content }}
 
+  {% include footer.html %}
   {% if page.type != "script" %}{% include scripts.html %}{% endif %}
   {% if page.type != "home" %}{% include scrollup.html %}{% endif %}
   {% include analytics.html %}
-  {% include footer.html %}
 </body>
 </html>
