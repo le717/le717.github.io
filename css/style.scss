@@ -60,13 +60,13 @@
     }
 
     // Code
-    &:nth-child(4):before {
-      font-size: 1.05em;
-      margin-left: -1px;
-    }
+//    &:nth-child(4):before {
+//      font-size: 1.05em;
+//      margin-left: -1px;
+//    }
 
     // Portfolio
-    &:nth-child(5):before {
+    &:nth-child(4):before {
       font-size: 1.45em;
       margin-left: 1px;
     }
@@ -285,7 +285,7 @@
 .portfolio-item {
   @extend .page-section;
   padding-left: 0.7em;
-  padding-bottom: 0.7em;
+  padding-bottom: 1em;
 
   h2 {
     position: relative;
