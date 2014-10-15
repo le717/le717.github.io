@@ -70,6 +70,18 @@ module.exports = function(grunt) {
       }
     },
 
+    // Minify any CSS using CSSMin
+    cssmin: {
+      add_banner: {
+        options: {
+          banner: "<%= banner %>"
+        },
+        files: {
+          "css/not-pong.min.css": "css/not-pong.css",
+        }
+      }
+    },
+
     // Lint JavaScript using JSHint
     jshint: {
       src: {
@@ -117,7 +129,7 @@ module.exports = function(grunt) {
 
   // Define the tasks
   grunt.registerTask("lint", ["htmlhint", "jshint", "csslint"]);
-  grunt.registerTask("build", "uglify");
+  grunt.registerTask("build", "cssmin", "uglify");
   grunt.registerTask("all", ["lint", "build"]);
 
   // Always use --force to stop csslint from killing the task
