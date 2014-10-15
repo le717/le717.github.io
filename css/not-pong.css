@@ -6,26 +6,28 @@
  * <http://opensource.org/licenses/MIT/>
  */
 
+body {
+  background-color: #272727;
+  color: #fff;
+}
+
 /* "Not Pong" text */
 #game-name {
   font-family: "Press Start 2P", "Courier New", monospace;
   font-weight: bold;
   font-size: 35px;
-  color: #fff;
   text-shadow: 1px 1px 2px #000;
-  -webkit-transform: translateX(18rem);
-      -ms-transform: translateX(18rem);
-          transform: translateX(18rem);
+  text-align: center;
 }
 
 /* Wrap the animation for proper display on different sized screens */
 #wrapper {
   position: absolute;
-  width: 53.125rem;
-  height: 37.30rem;
+  width: 53.125em;
+  height: 37.30em;
   overflow: hidden;
-  left: 10rem;
-  top: 2.2rem;
+  left: 10em;
+  top: 2.2em;
 }
 
 /* Define racket size and color */
@@ -65,187 +67,95 @@
 
 /* Triangle717 ball branding */
 #loading p {
-  /* Alignment settings  */
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 
-  /* Font settings */
-  font-size: 1.7em;
-  font-weight: bold;
-  color: #fff;
+  font-size: 1.6em;
+  font-weight: 700;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
 }
-
-
-/* ------ Animation settings ------ */
 
 
 /* ---- Sliding animation ---- */
 
 .slide-ani {
-  /* Webkit-only rules */
-  -webkit-animation-name: slide;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: linear;
-
-  /* All other browsers */
-  animation-name: slide;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: linear;
+  -webkit-animation: slide 2s linear infinite alternate;
+          animation: slide 2s linear infinite alternate;
 }
 
 /* ---- Rotating animation ---- */
 
 .rotate-ani {
-  /* Webkit-only rules */
-  -webkit-animation-name: rotate;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-
-  /* All other browsers */
-  animation-name: rotate;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation: rotate 3s linear infinite;
+          animation: rotate 3s linear infinite;
 }
 
 /* ---- Rackets animation ---- */
 
 .racket-ani {
-  /* Webkit-only rules */
-  -webkit-animation-name: racket;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-
-  /* All other browsers */
-  animation-name: racket;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  -webkit-animation: racket 2s linear infinite;
+          animation: racket 2s linear infinite;
 }
 
 /* ------ Animation keyframes ------ */
 
-
-/* ---- Begin sliding animation ---- */
-
-/* Move the ball across the screen, Webkit-only rules */
+/* Move the ball across the screen */
 @-webkit-keyframes slide {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-  }
-  50% {
-    -webkit-transform: translate3d(20rem, 25rem, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(41.2rem, 0rem, 0);
-  }
+  0% { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  50% { -webkit-transform: translate3d(20em, 25em, 0); transform: translate3d(20em, 25em, 0); }
+  100% { -webkit-transform: translate3d(41.2em, 0em, 0); transform: translate3d(41.2em, 0em, 0); }
 }
 
-/* Move the ball across the screen, all other browsers */
 @keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(20rem, 25rem, 0);
-  }
-  100% {
-    transform: translate3d(41.2rem, 0rem, 0);
-  }
+  0% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(20em, 25em, 0); }
+  100% { transform: translate3d(41.2em, 0em, 0); }
 }
 
-/* ---- End sliding animation ---- */
-
-
-/* ---- Begin rotating animation ---- */
-
 /* Constantly rotate ball branding text
-creating the illusion of a spinning ball,
-Webkit-only rules */
+creating the illusion of a spinning ball */
 @-webkit-keyframes rotate {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  50% {
-    -webkit-transform: rotate(180deg);
-  }
-  100% {
-      -webkit-transform: rotate(360deg);
-}
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  50% { -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
-/* Constantly rotate ball branding text
-creating the illusion of a spinning ball,
-all other browsers */
 @keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* ---- End rotating animation ---- */
-
-
-/* ---- Begin rackets animation ---- */
-
-/* Move the rackets up and down, Webkit-only rules */
+/* Move the rackets up and down */
 @-webkit-keyframes racket {
   0% {
     -webkit-transform: translate3d(0, 0%, 0);
+            transform: translate3d(0, 0%, 0);
     /* Solid yellow racket upon fullest impact */
     background-color: #ff0;
   }
-  1% {
-    /* Gradually build up to impact */
-    background-color: rgba(255, 255, 0, 0.9);
-  }
-  2% {
-    /* Kick back to gray to create a flash effect */
-    background-color: #bcacac;
-  }
-  50% {
-    -webkit-transform: translate3d(0, 150%, 0);
-  }
-  100% {
-    -webkit-transform: translate3d(0, 300%, 0);
-  }
+  /* Gradually build up to impact */
+  1% { background-color: rgba(255, 255, 0, 0.9); }
+
+  /* Kick back to gray to create a flash effect */
+  2% { background-color: #bcacac; }
+  50% { -webkit-transform: translate3d(0, 150%, 0); transform: translate3d(0, 150%, 0); }
+  100% { -webkit-transform: translate3d(0, 300%, 0); transform: translate3d(0, 300%, 0); }
 }
 
-/* Move the rackets up and down, all other browsers */
 @keyframes racket {
   0% {
     transform: translate3d(0, 0%, 0);
     /* Solid yellow racket upon fullest impact */
     background-color: #ff0;
   }
-  1% {
-    /* Gradually build up to impact */
-    background-color: rgba(255, 255, 0, 0.9);
-  }
-  2% {
-    /* Kick back to gray to create a flash effect */
-    background-color: #bcacac;
-  }
-  50% {
-    transform: translate3d(0, 150%, 0);
-  }
-  100% {
-    transform: translate3d(0, 300%, 0);
-  }
-}
+  /* Gradually build up to impact */
+  1% { background-color: rgba(255, 255, 0, 0.9); }
 
-/* ---- End rackets animation ---- */
+  /* Kick back to gray to create a flash effect */
+  2% { background-color: #bcacac; }
+  50% { transform: translate3d(0, 150%, 0); }
+  100% { transform: translate3d(0, 300%, 0); }
+}
