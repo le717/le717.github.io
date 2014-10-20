@@ -97,13 +97,14 @@ module.exports = function(grunt) {
       options: {
         banner: "<%= banner %>",
         compress: true,
+        mangle: true,
         report: "min",
-        sourceMap: false,
-        mangle: true
+        sourceMap: false
       },
       my_target: {
         files: {
-          "js/<%= pkg.name %>.min.js": "<%= jsfiles %>",
+//          "js/<%= pkg.name %>.min.js": "<%= jsfiles %>"
+          "js/tinycolor-min2.js": "js/tinycolor-mod.js"
         }
       }
     },
