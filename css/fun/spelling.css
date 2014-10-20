@@ -1,6 +1,16 @@
 body { font-family: "Open Sans", sans-serif; }
 .text-center { text-align: center; }
 
+#captcha-image-container { padding-top: 1em; }
+
+.captcha-image {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-bottom: 2em;
+}
+.captcha-image:last-child { padding-bottom: 0; }
+
 #full-answer {
   font-weight: 700;
   quotes: "\201C""\201D""\201C""\201D";
@@ -9,6 +19,8 @@ body { font-family: "Open Sans", sans-serif; }
 #full-answer::after { content: close-quote; }
 
 #input-box {
+  margin-left: 0.5em;
+  margin-right: 0.3em;
   outline-color: transparent;
   -webkit-box-shadow: -0.4px -0.5px 0.5px 0.1px #000;
           box-shadow: -0.4px -0.5px 0.5px 0.1px #000;

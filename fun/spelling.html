@@ -5,115 +5,66 @@ google_font: Open+Sans:400,700
 {% include head.html %}
   <!-- Inspired by http://i.imgur.com/WmdsdL3.jpg -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={{ page.google_font }}">
-  <style>
-    body { font-family: "Open Sans", sans-serif; }
-
-    .text-center { text-align: center; }
-    #full-answer { font-weight: 700; }
-    #input-box {
-      outline-color: transparent;
-      -webkit-box-shadow: -0.4px -0.5px 0.5px 0.1px black;
-              box-shadow: -0.4px -0.5px 0.5px 0.1px black;
-    }
-
-    /*
-     * Mac-style CSS button from
-     * http://calebogden.com/safari-css-submit-button
-     */
-    #submit-button {
-      border-width: 1px;
-      border-style: solid;
-      border-color: #5e5e5e #888 #696969 #888;
-      font: 11px/16px 'Lucida Grande', Sans-serif;
-      color: #000;
-      text-decoration: none;
-      padding: 0 8px;
-      background: #FCFCFC;
-      cursor: default;
-      position: relative;
-      display: inline-block;
-      overflow: hidden;
-      font-family: "Open Sans", sans-serif;
-
-      border-radius: 18px;
-      background: linear-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(40%,#f3f3f3), color-stop(100%,#ededed));
-      -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
-          0 1px 0 0 rgba(0, 0, 0, 0.15),
-          0 -2px 3px 0px #FFF inset,
-          0 -10px 0 0 #ededed inset;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
-          0 1px 0 0 rgba(0, 0, 0, 0.15),
-          0 -2px 3px 0px #FFF inset,
-          0 -10px 0 0 #ededed inset;
-    }
-
-    #submit-button:active {
-      border-color: #323d9f #3365b4 #3365b4 #6f6f6f;
-      background: #7cb0de;
-      background: linear-gradient(linear, left top, left bottom, color-stop(0%,#a7c7e1), color-stop(40%,#9dc2e1), color-stop(100%,#7cb0de));
-      -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
-          0 1px 0 0 rgba(0, 0, 0, 0.05),
-          0 -2px 3px 0px rgba(182, 226, 244, 1) inset,
-          0 -10px 0 0 #73abda inset;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15),
-          0 1px 0 0 rgba(0, 0, 0, 0.05),
-          0 -2px 3px 0px rgba(182, 226, 244, 1) inset,
-          0 -10px 0 0 #73abda inset;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/fun/spelling.css">
 </head>
 
 <body>
-  <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.<br><br>
-    Please type the correct sequence of characters into the field below.</p>
-  <br>
-  <div class="text-center" id="captcha-image-container"></div>
+  <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.</p>
+  <p class="text-center">Please type the correct sequence of characters into the field below.</p>
+  <div id="captcha-image-container"></div>
   <form class="text-center">
-    <p class="text-center" id="full-answer"></p>
+    <p id="full-answer"></p>
     <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
   </form>
 
-  {% include jquery.html %}
-
   <script>
+    /**
+     * Select a random item from an array.
+     * @param {array} The array to select from.
+     * @return A randomly chosen element.
+     */
     function _selectRandom(myArray) {
       "use strict";
-      /* Select a random item */
       return myArray[Math.floor(Math.random() * myArray.length)];
     }
 
-    var selectedAnswer;
+    var theAnswer;
 
     (function() {
       "use strict";
-      var prefix          = "{{ site.github.url }}/img/captcha/",
-          images          = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"],
-          answers         = ['"&nbsp;&nbsp;input-box the only one who can prevent forest fires."', '"Look over input-box&nbsp;."'],
-          template        = "<img class='captcha-image' height='100' src='prefix-image' /><br><br>";
-      selectedAnswer  = _selectRandom(answers).replace(/input-box/, '<input id="input-box" autocomplete="off" />');
+      var prefix    = "{{ site.github.url }}/img/captcha/",
+          images    = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"],
+          answers   = ["input-box the only one who can prevent forest fires.", "Look over input-box."],
+          template  = "<img class='captcha-image' width='200' height='100' src='prefix-image'>";
+      theAnswer     = _selectRandom(answers).replace(/input-box/, '<input id="input-box" autocomplete="off" />');
 
-      if (selectedAnswer.indexOf("forest fires") > -1) {
-        $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[0]));
-        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[1]));
+      var imgString    = "",
+          imgContainer = document.querySelector("#captcha-image-container");
 
+      if (theAnswer.indexOf("forest") > -1) {
+        imgString  = template.replace(/prefix-image/, prefix + images[0]);
+        imgString += template.replace(/prefix-image/, prefix + images[1]);
       } else {
-        $("#captcha-image-container").html(template.replace(/prefix-image/, prefix + images[2]));
-        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[3]));
-        $("#captcha-image-container").append(template.replace(/prefix-image/, prefix + images[4]));
+        imgString  = template.replace(/prefix-image/, prefix + images[2]);
+        imgString += template.replace(/prefix-image/, prefix + images[3]);
+        imgString += template.replace(/prefix-image/, prefix + images[4]);
       }
-      $("#full-answer").html(selectedAnswer);
+      imgContainer.innerHTML = imgString;
+      document.querySelector("#full-answer").innerHTML = theAnswer;
     })();
+
 
     function checkInput() {
       "use strict";
-       var userInput      = $("#input-box").val(),
-           theRightAnswer = selectedAnswer.indexOf("forest fires") > -1 ? "you're" : "there";
+       var input  = document.querySelector("#input-box").value,
+           answer = theAnswer.indexOf("forest") > -1 ? "you're" : "there";
 
-      if (userInput.toLowerCase() === theRightAnswer) {
-        window.location.href = "http://google.com";
+      if (input.toLowerCase() === answer) {
+        window.location.href = "http://google.com/";
       } else {
-        $("body").empty();
+        document.querySelector("body").innerHTML = "";
       }
+      return false;
     }
   </script>
   </body>
