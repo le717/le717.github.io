@@ -23,11 +23,11 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 9em;
-  padding-bottom: 1px;
+  width: 100%;
+  height: 13.5%;
   background-color: rgba(128, 20, 20, 0.8);
   color: $color-white;
-  border-left: 7px solid $color-yellow-light;
+  border-bottom: 5px solid $color-yellow-light;
   z-index: 1;
 
   @media only screen and (max-width: 720px) { @include transform(translate3d(0, -100%, 0)); }
@@ -38,13 +38,17 @@
  .ion a { font-family: $font-family; }
 
   ul {
-    margin-top: 7px;
-    margin-left: -25px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
   }
 
   li {
     padding-bottom: 0.3em;
-    display: list-item;
+    float: left;
+
+    // Remove the triangle
+    &::before { content: ""; }
 
     // Line up navbar icons
     // About
@@ -224,7 +228,7 @@
   // Flatten blockquotes
   blockquote p {
     display: inline;
-    margin:0 -0.8em;
+    margin: 0 -0.8em;
   }
 
   // Blog post images
