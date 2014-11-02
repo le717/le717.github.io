@@ -136,11 +136,13 @@
     text-shadow: 0 0 1px $color-black;
     margin-top: 0.15em;
     @include transform(rotate(-90deg));
+
+    &:hover { @extend .text-decor-none; }
   }
 }
 
 // ------- Site header
-.header-logo { margin-bottom: -2em; }
+//.header-logo { margin-bottom: -2em; }
 
 // ------- Featured item displays
 #featured-project {
