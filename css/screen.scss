@@ -25,10 +25,11 @@
 
 
 @media only screen and (max-width: 720px) {
-  .navbar li {
-    font-size: 1.05em;
-    margin-left: -4%;
-  }
+  .navbar .navbar-text { display: none; }
+//  .navbar li {
+//    font-size: 1.05em;
+//    margin-left: -4%;
+//  }
 
   .single-post, .page-section { width: 93%; }
   #featured-code-box { width: auto; }

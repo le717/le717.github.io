@@ -46,14 +46,15 @@
   }
 
   li {
-    padding-bottom: 0.3em;
+    maegin-top: 0.6em;
     float: left;
 
     // Remove the triangle
     &::before { content: ""; }
 
-    &:nth-child(5) > a > span {
+    &:last-of-type > a > span {
       position: absolute;
+      top: 0.2em;
       left: 50%;
     }
 
