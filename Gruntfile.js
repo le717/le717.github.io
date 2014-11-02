@@ -103,8 +103,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-//          "js/<%= pkg.name %>.min.js": "<%= jsfiles %>"
-          "js/tinycolor-min2.js": "js/tinycolor-mod.js"
+          "js/<%= pkg.name %>.min.js": "<%= jsfiles %>"
         }
       }
     },

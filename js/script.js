@@ -12,11 +12,11 @@
   /**
    * Show sidebar once button upon click/tap
    */
-  (function() {
-    $(".btn-navbar").on("click", function() {
-      $(".navbar").toggleClass("navbar-hidden");
-    });
-  })();
+//  (function() {
+//    $(".btn-navbar").on("click", function() {
+//      $(".navbar").toggleClass("navbar-hidden");
+//    });
+//  })();
 
   /**
    * Scroll to top button
@@ -45,10 +45,6 @@
     $(".scroll-up").on("click", function() {
       $("html, body").animate({scrollTop: 0}, 500);
     });
-
-    // Mobile-only actions
-    //if ($.browser.mobile) {
-    //}
 
     // Fully center the items that need centering
     var $centered = $(".fully-centered");
