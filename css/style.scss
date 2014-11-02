@@ -50,24 +50,24 @@
     // Remove the triangle
     &::before { content: ""; }
 
-    // Line up navbar icons
-    // About
-    &:nth-child(1):before {
-      font-size: 1.25em;
-      margin-left: -2px;
-    }
-
-    // Contact
-    &:nth-child(3):before {
-      font-size: 1.1em;
-      margin-left: -1px;
-    }
-
-    // Portfolio
-    &:nth-child(4):before {
-      font-size: 1.45em;
-      margin-left: 1px;
-    }
+//  // Line up navbar icons
+//  // About
+//    &:nth-child(1):before {
+//      font-size: 1.25em;
+//      margin-left: -2px;
+//    }
+//
+//    // Contact
+//    &:nth-child(3):before {
+//      font-size: 1.1em;
+//      margin-left: -1px;
+//    }
+//
+//    // Portfolio
+//    &:nth-child(4):before {
+//      font-size: 1.45em;
+//      margin-left: 1px;
+//    }
   }
 }
 
