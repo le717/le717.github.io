@@ -159,20 +159,14 @@
 
 // ------- Social buttons styling
 
-.contact-email { color: $color-yellow-light; }
-.contact-gh { color: #e5e5e5; }
-.contact-twitter { color: #55ACEE; }
-.contact-wp { color: #1E8CBE; }
-.contact-yt { color: #CC181E; }
-
 .contact-field {
   a { text-shadow: none; }
   p { font-size: 4em; }
 
   // Icon size and color
   span {
-    font-size: 5em;
-    margin-bottom: -4%;
+    font-size: 4.5em;
+    margin-bottom: 5%;
   }
 
   // Overwrite the default table stying
@@ -184,6 +178,13 @@
 
     &:hover { @include transform(scale(1.05)); }
   }
+
+  // Button icons
+  .contact-email { color: $color-yellow-light; }
+  .contact-gh { color: #e5e5e5; }
+  .contact-twitter { color: #55ACEE; }
+  .contact-wp { color: #1E8CBE; }
+  .contact-yt { color: #CC181E; }
 }
 
 /* ------- Previous button styling ------- */
