@@ -1,10 +1,11 @@
 {% include top.html %}
 {% include navbar.html %}
-
+  <div class="page-wrapper">
     {{ content }}
 
-  {% include footer.html %}
-  {% if page.type != "home" %}{% include scrollup.html %}{% endif %}
+    {% include footer.html %}
+    {% if page.type != "home" %}{% include scrollup.html %}{% endif %}
+  </div>
   {% if page.type != "script" %}{% include scripts.html %}{% endif %}
   {% include analytics.html %}
 </body>
