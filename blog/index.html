@@ -5,13 +5,13 @@ title: Blog
 {% include loading.html %}
 <noscript>
   Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
-  <a target="_blank" href="{{ site.wpurl }}">blog directly</a> and read to your heart's content. :smiley:
+  <a target="_blank" href="{{ site.wpurl }}">WordPress.com</a> and read to your heart's content. :smiley:
 </noscript>
 
 <div class="blog-posts" style="display: none;"></div>
 <p class="end-of-posts">
-  Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit the
-  <a target="_blank" href="{{ site.wpurl }}">actual blog</a> and read to your heart's content. :smiley:
+  Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit
+  <a target="_blank" href="{{ site.wpurl }}">WordPress.com</a> and read to your heart's content. :smiley:
 </p>
 
 <script>
@@ -50,12 +50,12 @@ title: Blog
    */
   (function() {
     "use strict";
-    // Download a different number of posts on different platforms.
-    var toDownload = ($.browser.desktop ? 7 : 4);
+    // Display a different number of posts depending on the platform
+    var numOfPosts = ($.browser.desktop ? 7 : 4);
 
     $.ajax({
       dataType: "json",
-      url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + toDownload + "&callback=?",
+      url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + numOfPosts + "&callback=?",
       success: function(data) {
         data.posts.forEach(function(postInfo) {
           // Create a unique post ID
@@ -82,6 +82,7 @@ title: Blog
         $(".blog-posts").removeAttr("style");
         $(".post-content").removeAttr("style");
         $(".end-of-posts").css("display", "block");
+        return true;
       }
     });
   })();
@@ -113,6 +114,7 @@ title: Blog
 
       // Perform post-DOM addition cleanup
       cleanupPost(value.selector);
+      return true;
     });
   }
 
@@ -138,11 +140,12 @@ title: Blog
     // Spans (WordPress emotes)
     this.content = this.content.replace(/span class='.*?'/g, "span");
     this.content = this.content.replace(/span title='.*?'/g, "span");
-    
+
     // Blank attributes
     this.content = this.content.replace(/\sclass="\s?"/g, "");
     this.content = this.content.replace(/\sstyle="\s?"/g, "");
     // console.log(this.content);
+    return true;
   };
 
 

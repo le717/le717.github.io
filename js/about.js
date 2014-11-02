@@ -14,11 +14,11 @@
  */
 function calcDate(date, element) {
   "use strict";
-  var curDate         = new Date();
-  var curYear         = curDate.getUTCFullYear(),
-      curMonth        = curDate.getUTCMonth(),
-      curDay          = curDate.getUTCDate(),
-      dateDifference  = curYear % date[0];
+  var curDate        = new Date();
+  var curYear        = curDate.getUTCFullYear(),
+      curMonth       = curDate.getUTCMonth(),
+      curDay         = curDate.getUTCDate(),
+      dateDifference = curYear % date[0];
 
 //  var yearDifference  = curYear % date[0],
 //      monthDifference = curMonth - date[1],
@@ -45,10 +45,10 @@ function calcDate(date, element) {
   // Do not update the date unless it is time
   if (curMonth < date[1] && curDay < date[2] ||
       curMonth < date[1] && curDay === date[2] ||
-     curMonth === date[1] && curDay < date[2]) {
+      curMonth === date[1] && curDay < date[2]) {
     dateDifference -= 1;
   }
-  $(element).html(dateDifference);
+  document.querySelectorAll(element).innerHTML = dateDifference;
 }
 
 // Calculate my age
@@ -74,4 +74,4 @@ codingIKnow.forEach(function(value, index) {
 
 // Remove generated trailing space and comma
 listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
-$("#code-i-know").html(listAllTheCodes);
+document.querySelectorAll("#code-i-know").innerHTML = listAllTheCodes;
