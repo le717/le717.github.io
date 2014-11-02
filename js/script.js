@@ -43,7 +43,7 @@
 
     // Scroll up button action
     $(".scroll-up").on("click", function() {
-      $("html, body").animate({scrollTop: 0}, 500);
+      $("html, body").animate({scrollTop: 0}, 1000);
     });
 
     // Fully center the items that need centering
