@@ -25,11 +25,15 @@
 
 
 @media only screen and (max-width: 720px) {
-  .navbar .navbar-icon {
-    font-size: 1.25em;
-    margin-top: 0.1em;
+  .navbar {
+    .navbar-icon {
+      font-size: 1.3em;
+      margin-top: 0.1em;
+      margin-top: 0.6em;
+    }
+    .navbar-text { display: none; }
+    .navbar-logo { right: 3%; }
   }
-  .navbar .navbar-text { display: none; }
 
   .single-post, .page-section { width: 93%; }
   #featured-code-box { width: auto; }

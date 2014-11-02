@@ -22,7 +22,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 3em;
   background-color: rgba(128, 20, 20, 0.8);
@@ -42,6 +42,7 @@
   }
   .navbar-text { margin-left: 0.5em; }
 
+  // Flatten the list
   ul {
     list-style: outside none none;
     margin: 0;
@@ -52,17 +53,18 @@
     margin-top: 0.6em;
     float: left;
 
-    // Remove the triangle
+    // Remove the triangles
     &::before { content: ""; }
 
-    &:last-of-type > a > span {
+    // Center position the logo
+    .navbar-logo {
       position: absolute;
-      top: 0.2em;
-      left: 50%;
+      top: -0.1em;
+      left: 47.5%;
     }
 
     // Increase the text size
-    a { font-size: 1.2em; }
+    a { font-size: 1.15em; }
 
 //  // Line up navbar icons
 //  // About
