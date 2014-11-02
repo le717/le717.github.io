@@ -60,7 +60,7 @@
     .navbar-logo {
       position: absolute;
       top: -0.1em;
-      left: 47.5%;
+      right: 3%;
     }
 
     // Increase the text size
@@ -113,7 +113,7 @@
   @extend .text-center;
   position: fixed;
   cursor: pointer;
-  right: 0.5em;
+  right: 3%;
   bottom: 1em;
   z-index: 2;
   width: 3em;
@@ -125,10 +125,10 @@
 
   span {
     @extend a;
+    font-size: 1.9em;
     text-decoration: none;
     text-shadow: 0 0 1px $color-black;
     margin-top: 0.15em;
-    margin-left: 0.1em;
     @include transform(rotate(-90deg));
   }
 }
