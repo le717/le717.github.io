@@ -63,6 +63,12 @@
       right: 3%;
     }
 
+    // Fix baseline height
+    .fa-pencil-square-o {
+      position: relative;
+      top: 0.1em;
+    }
+
     // Increase the text size
     a { font-size: 1.15em; }
 
