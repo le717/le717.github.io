@@ -32,7 +32,7 @@
   }
 
   $(function() {
-    // NOTE Work around a weird bug affecting only the Portfolio page
+    // NOTE Work around a weird bug affecting only the Projects page
     // where the button does not reappear when the page is scrolled
     // to visibility then reloaded.
     toggleScrollUp();
@@ -50,8 +50,8 @@
     var $centered = $(".fully-centered");
     $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
 
-    // Add text to WIP label
-    $(".portfolio-wip").wrap("<div class='text-center'/>")
+    // Add text to Project WIP label
+    $(".project-wip").wrap("<div class='text-center'/>")
                        .html("Work in Progress");
 
     // Get the featured content feed

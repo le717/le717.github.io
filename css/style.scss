@@ -303,8 +303,8 @@
   background-color: #0000C4;
 }*/
 
-// ------- Portfolio
-.portfolio-item {
+// ------- Projects
+.project-item {
   @extend .page-section;
   padding-left: 0.7em;
   padding-bottom: 1em;
@@ -323,12 +323,12 @@
     max-width: 93%;
   }
 
-  /*.portfolio-description {
+  /*.project-description {
 
   }*/
 }
 
-.portfolio-wip {
+.project-wip {
   background-color: rgba(255, 0, 0, 0.5);
   border-radius: 5px;
   padding: 0.1em 2em 0.1em 2em;

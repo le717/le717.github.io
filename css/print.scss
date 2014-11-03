@@ -7,7 +7,7 @@
 
 // Remove all text shadows
 a, blockquote, em h1, h2, p, pre,
-.post-title { text-shadow: none; }
+.post-title, code { text-shadow: none; }
 
 // Remove shadows on images
 img {
