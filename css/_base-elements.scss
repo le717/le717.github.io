@@ -8,8 +8,16 @@
 @import "variables";
 @import "mixins/box-shadow";
 
-::-moz-selection { text-shadow: none; background-color: $color-white; color: $color-black; }
-     ::selection { text-shadow: none; background-color: $color-white; color: $color-black; }
+::-moz-selection {
+  text-shadow: none;
+  background-color: $color-white;
+  color: $color-black;
+}
+::selection {
+  text-shadow: none;
+  background-color: $color-white;
+  color: $color-black;
+}
 
 body {
   font-family: $font-family;
@@ -35,6 +43,11 @@ blockquote::before {
   padding-right: 0.1em;
 }
 
+code {
+  font-family: $font-family-code;
+  font-size: 0.85em;
+  text-shadow: 0 0 12px #a09797;
+}
 em { padding-right: 0.1em; }
 
 // ------- Footer
@@ -88,7 +101,7 @@ pre {
   overflow: auto;
   background-color: $color-gray-trans;
   font-size: 0.93em;
-  font-family: "Share Tech Mono", sans-serif;
+  font-family: $font-family-code;
   text-shadow: 1px 1px 1px $color-black;
 }
 
