@@ -48,7 +48,7 @@ function calcDate(date, element) {
       curMonth === date[1] && curDay < date[2]) {
     dateDifference -= 1;
   }
-  document.querySelectorAll(element).innerHTML = dateDifference;
+  document.querySelector(element).innerHTML = dateDifference;
 }
 
 // Calculate my age
@@ -74,4 +74,4 @@ codingIKnow.forEach(function(value, index) {
 
 // Remove generated trailing space and comma
 listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
-document.querySelectorAll("#code-i-know").innerHTML = listAllTheCodes;
+document.querySelector("#code-i-know").innerHTML = listAllTheCodes;
