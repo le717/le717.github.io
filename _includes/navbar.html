@@ -1,11 +1,10 @@
-<!--<div class="btn-navbar"></div>-->
 <div class="navbar">
   <ul>
-    <li><a href="/"><span class="navbar-icon fa fa-home"></span><span class="navbar-text">Home</span></a></li>
-    <li><a href="/about/"><span class="navbar-icon fa fa-user"></span><span class="navbar-text">About</span></a></li>
-    <li><a href="/blog/"><span class="navbar-icon fa fa-book"></span><span class="navbar-text">Blog</span></a></li>
-    <li><a href="/contact/"><span class="navbar-icon fa fa-envelope"></span><span class="navbar-text">Contact</span></a></li>
-    <li><a href="/projects/"><span class="navbar-icon fa fa-pencil-square-o"></span><span class="navbar-text">Projects</span></a></li>
+    <li><a {% if page.title contains 'Christian' %}class="current-page"{% endif %} href="/"><span class="navbar-icon fa fa-home"></span><span class="navbar-text">Home</span></a></li>
+    <li><a {% if page.title contains 'About' %}class="current-page"{% endif %} href="/about/"><span class="navbar-icon fa fa-user"></span><span class="navbar-text">About</span></a></li>
+    <li><a {% if page.title contains 'Blog' %}class="current-page"{% endif %} href="/blog/"><span class="navbar-icon fa fa-book"></span><span class="navbar-text">Blog</span></a></li>
+    <li><a {% if page.title contains 'Contact' %}class="current-page"{% endif %} href="/contact/"><span class="navbar-icon fa fa-envelope"></span><span class="navbar-text">Contact</span></a></li>
+    <li><a {% if page.title contains 'Project' %}class="current-page"{% endif %} href="/projects/"><span class="navbar-icon fa fa-pencil-square-o"></span><span class="navbar-text">Projects</span></a></li>
     <li><span class="navbar-logo"><img alt="Triangle Land logo" width="50" height="50" src="/img/Triangle717.svg"></span></li>
   </ul>
 </div>
