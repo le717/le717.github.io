@@ -57,21 +57,3 @@ calcDate([1995, 2, 13], "#i-am-age");
 
 // Calculate how long I have been a programmer
 // calcDate([2013, 0, 26], "#i-am-programmer");
-
-// List the coding languages I know
-var listAllTheCodes = "",
-    codingIKnow = ["Python", "HTML/CSS", "JavaScript"];
-
-codingIKnow.forEach(function(value, index) {
-  "use strict";
-  listAllTheCodes += value + ", ";
-
-  // Make it grammatically correct
-  if (index === codingIKnow.length - 2) {
-    listAllTheCodes += "and ";
-  }
-});
-
-// Remove generated trailing space and comma
-listAllTheCodes = listAllTheCodes.substr(0, listAllTheCodes.length - 2);
-document.querySelector("#code-i-know").innerHTML = listAllTheCodes;
