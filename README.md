@@ -7,16 +7,14 @@ My very own Jekyll-based website, which I am writing completely from scratch. Al
 AsI am utilizing many HTML5 and CSS3 in this site, a fairly modern browser is recommended browsing. I would define a "modern browser" as Internet Explorer 10 equivelent or better. If you need a modern browser, visit  [browsehappy.com](http://browsehappy.com/) to pick one out. I personally recommend Mozilla Firefox. :smiley:
 
 ## Third-party Libraries ##
-
 I've used some very nice third-party libraries and styling in developing my site. You should check them out.
 
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
-* [Ionicons](http://ionicons.com/)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
 * [jquery.browser](https://github.com/gabceb/jquery-browser-plugin/)
 * [String::format](https://github.com/davidchambers/string-format/)
 * [Sass](http://sass-lang.com)
 
 ## License ##
-
 Created 2014 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](license/LICENSE).

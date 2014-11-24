@@ -31,10 +31,6 @@
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
   z-index: 1;
 
-//  @media only screen and (max-width: 720px) { @include transform(translate3d(0, -100%, 0)); }
-//  @include webkit-transition-long(-webkit-transform, 0.5s, ease-out);
-//  @include        transition-long((-webkit-transform, -ms-transform, transform), 0.5s, ease-out);
-
   .navbar-icon {
     color: $color-white;
     font-size: 1.3em;
@@ -71,33 +67,6 @@
 
     // Increase the text size
     a { font-size: 1.15em; }
-
-//  // Line up navbar icons
-//  // About
-//    &:nth-child(1):before {
-//      font-size: 1.25em;
-//      margin-left: -2px;
-//    }
-//
-//    // Contact
-//    &:nth-child(3):before {
-//      font-size: 1.1em;
-//      margin-left: -1px;
-//    }
-//
-//    // Portfolio
-//    &:nth-child(4):before {
-//      font-size: 1.45em;
-//      margin-left: 1px;
-//    }
-  }
-}
-
-// Navbar show/hide movement
-//.navbar-hidden {
-//  @include transform(translate3d(0, -100%, 0));
-//  @media only screen and (max-width: 720px) { @include transform(translate3d(0, 0, 0)); }
-//}
 
 // Navbar toggle button
 .btn-navbar {
@@ -140,9 +109,6 @@
     &:hover { @extend .text-decor-none; }
   }
 }
-
-// ------- Site header
-//.header-logo { margin-bottom: -2em; }
 
 // ------- Featured item displays
 #featured-project {
@@ -195,7 +161,7 @@
   .contact-yt { color: #CC181E; }
 }
 
-/* ------- Previous button styling ------- */
+// ------- Previous button styling
 #previous-link {
   margin-left: 10px;
   margin-top: -5px;
@@ -270,38 +236,6 @@
   margin-top: 2.5%;
   margin-bottom: -1%;
 }
-
-
-// ------- Spoiler styling
-/*.spoiler {
-  overflow: hidden;
-  border-radius: 10px;
-  margin-top: 5px;
-  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.8));
-  @include transition-short(height 1s cubic-bezier(.27, 1.15, .93, .85));
-}
-
-.btn-spoiler {
-  width: 4em;
-  height: 2em;
-  background-color: $color-yellow-light;
-  display: inline-block;
-  border-radius: 5px;
-  color: $color-black;
-  cursor: pointer;
-  @include transition((background-color, color), (0.5s, 0.7s), ease);
-
-  div {
-    position: relative;
-    left: 0.5em;
-    top: 0.2em;
-  }
-}
-
-.btn-spoiler-active {
-  color: $color-white;
-  background-color: #0000C4;
-}*/
 
 // ------- Projects
 .project-item {
