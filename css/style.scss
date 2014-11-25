@@ -266,7 +266,8 @@
 
 .project-wip {
   background-color: rgba(255, 0, 0, 0.5);
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   padding: 0.1em 2em 0.1em 2em;
   color: $color-white;
   font-size: 2em;
