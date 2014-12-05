@@ -10,15 +10,6 @@
 (function($) {
   "use strict";
   /**
-   * Show sidebar once button upon click/tap
-   */
-//  (function() {
-//    $(".btn-navbar").on("click", function() {
-//      $(".navbar").toggleClass("navbar-hidden");
-//    });
-//  })();
-
-  /**
    * Scroll to top button
    * Based on example from
    * http://briancray.com/posts/scroll-to-top-link-jquery-css/

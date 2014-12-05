@@ -1,71 +1,17 @@
----
-title: Spelling Captcha
-google_font: Open+Sans:400,700
----
-{% include head.html %}
-  <!-- Inspired by http://i.imgur.com/WmdsdL3.jpg -->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family={{ page.google_font }}">
-  <link rel="stylesheet" href="/css/fun/spelling.css">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <link rel="canonical" href="{{ site.github.url }}/spelling/"/>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="refresh" content="0; url={{ site.github.url }}/spelling/" />
 </head>
 
 <body>
-  <p class="text-center" id="intro-text">Hello, and thank you for your interest in The Internet.</p>
-  <p class="text-center">Please type the correct sequence of characters into the field below.</p>
-  <div id="captcha-image-container"></div>
-  <form class="text-center">
-    <p id="full-answer"></p>
-    <button id="submit-button" onclick="checkInput(); return false;">Get Me On That Information Superhighway, baby!</button>
-  </form>
-
+  <p><strong>Redirecting...</strong></p>
+  <p><a href="{{ site.github.url }}/spelling/">Click here if you are not redirected.</a></p>
   <script>
-    /**
-     * Select a random item from an array.
-     * @param {array} The array to select from.
-     * @return A randomly chosen element.
-     */
-    function _selectRandom(myArray) {
-      "use strict";
-      return myArray[Math.floor(Math.random() * myArray.length)];
-    }
-
-    var theAnswer;
-
-    (function() {
-      "use strict";
-      var prefix    = "{{ site.github.url }}/img/captcha/",
-          images    = ["your.png", "youre.png", "there.png", "their.png", "theyre.png"],
-          answers   = ["input-box the only one who can prevent forest fires.", "Look over input-box."],
-          template  = "<img class='captcha-image' width='200' height='100' src='prefix-image'>";
-      theAnswer     = _selectRandom(answers).replace(/input-box/, '<input id="input-box" autocomplete="off" />');
-
-      var imgString    = "",
-          imgContainer = document.querySelector("#captcha-image-container");
-
-      if (theAnswer.indexOf("forest") > -1) {
-        imgString  = template.replace(/prefix-image/, prefix + images[0]);
-        imgString += template.replace(/prefix-image/, prefix + images[1]);
-      } else {
-        imgString  = template.replace(/prefix-image/, prefix + images[2]);
-        imgString += template.replace(/prefix-image/, prefix + images[3]);
-        imgString += template.replace(/prefix-image/, prefix + images[4]);
-      }
-      imgContainer.innerHTML = imgString;
-      document.querySelector("#full-answer").innerHTML = theAnswer;
-    })();
-
-
-    function checkInput() {
-      "use strict";
-       var input  = document.querySelector("#input-box").value,
-           answer = theAnswer.indexOf("forest") > -1 ? "you're" : "there";
-
-      if (input.toLowerCase() === answer) {
-        window.location.href = "http://google.com/";
-      } else {
-        document.querySelector("body").innerHTML = "";
-      }
-      return false;
-    }
+    document.location.href = "{{ site.github.url }}/spelling/";
   </script>
-  </body>
+</body>
 </html>
