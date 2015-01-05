@@ -48,6 +48,7 @@ function calcDate(date, element) {
       curMonth === date[1] && curDay < date[2]) {
     dateDifference -= 1;
   }
+
   document.querySelector(element).innerHTML = dateDifference;
 }
 
