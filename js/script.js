@@ -45,30 +45,30 @@
     $(".project-wip").wrap("<div class='text-center'/>")
                        .html("Work in Progress");
 
-    // Get the featured content feed
-    $.ajax({
-      dataType: "json",
-      url: "/json/featured.json",
-      success: function(data) {
-        // Display the featured code snippet
-        $("#featured-code-box").css("display", "block");
-        $("#featured-code-box").html(data.featuredCode[0].snippet);
-        $("#featured-code-desc").html(data.featuredCode[0].description);
-
-        // Display the featured project
-        $("#featured-project-name").html(data.featuredProject[0].name);
-        $("#featured-project-name").wrap("<a target='_blank' href='{0}'></a>".format(
-          data.featuredProject[0].url));
-
-        // Add the version and description
-        $("#featured-project-version").html(data.featuredProject[0].version);
-        $("#featured-project-desc").html(" " + data.featuredProject[0].description);
-
-        // Open links in featured descriptions in a new tab/window
-        $("#featured-project-desc, #featured-code-desc").find("a").each(function() {
-          $(this).attr("target", "_blank");
-        });
-      }
-    });
+//    // Get the featured content feed
+//    $.ajax({
+//      dataType: "json",
+//      url: "/json/featured.json",
+//      success: function(data) {
+//        // Display the featured code snippet
+//        $("#featured-code-box").css("display", "block");
+//        $("#featured-code-box").html(data.featuredCode[0].snippet);
+//        $("#featured-code-desc").html(data.featuredCode[0].description);
+//
+//        // Display the featured project
+//        $("#featured-project-name").html(data.featuredProject[0].name);
+//        $("#featured-project-name").wrap("<a target='_blank' href='{0}'></a>".format(
+//          data.featuredProject[0].url));
+//
+//        // Add the version and description
+//        $("#featured-project-version").html(data.featuredProject[0].version);
+//        $("#featured-project-desc").html(" " + data.featuredProject[0].description);
+//
+//        // Open links in featured descriptions in a new tab/window
+//        $("#featured-project-desc, #featured-code-desc").find("a").each(function() {
+//          $(this).attr("target", "_blank");
+//        });
+//      }
+//    });
   });
 })(jQuery);
