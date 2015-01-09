@@ -19,7 +19,7 @@
 @import "mixins/webkit-transition-long";
 
 
-// ------- Navbar styling
+// ------- Navbar
 .navbar {
   position: fixed;
   top: 0;
@@ -86,7 +86,15 @@
 }
 
 
-// ------- Scroll to the top box styling
+// ------- Footer
+.footer {
+  @extend .text-center;
+  font-size: 0.95em;
+  padding-top: 0.8em;
+}
+
+
+// ------- Scroll to the top box
 .scroll-up {
   @extend .text-center;
   position: fixed;
@@ -136,7 +144,7 @@
 }
 
 
-// ------- Social buttons styling
+// ------- Social buttons
 .contact-field {
   @extend .text-center;
   a { text-shadow: none; }
@@ -166,7 +174,7 @@
 }
 
 
-// ------- Previous button styling
+// ------- Previous button
 #previous-link {
   margin-left: 10px;
   margin-top: -5px;
@@ -193,7 +201,7 @@
 }
 
 
-// ------- Blog post styling
+// ------- Blog post
 .single-post {
   @extend .page-section;
   width: 75%;
@@ -284,11 +292,11 @@
 }
 
 
-// ------- Various styling
+// ------- Various
 .current-page {
   color: #E4E1E8;
   text-shadow: 2px 2px 2px $color-black;
 }
 
-// Mobile-only styling
+// Mobile-only
 @import "screen";

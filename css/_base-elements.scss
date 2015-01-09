@@ -54,18 +54,6 @@ code {
 // prevent the ending letters from touching
 em, .text-italic { padding-right: 0.1em; }
 
-// ------- Footer
-// Sticky footer from http://mystrd.at/modern-clean-css-sticky-footer
-
-.footer {
-  @extend .text-center;
-  font-size: 0.95em;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-}
-
 html {
   position: relative;
   min-height: 100%;
@@ -95,7 +83,7 @@ p {
 }
 
 pre {
-  border-left: 7px solid #DDD;
+  border-left: 0.4em solid #DDD;
   padding: 10px;
   margin-left: 2.5em;
   margin-right: 2.5em;
@@ -114,7 +102,7 @@ table {
 }
 
 td {
-  outline: 0.1em dashed #E4E1E8;
+//  outline: 0.1em dashed #E4E1E8;
   padding: 5px;
 }
 
