@@ -25,12 +25,14 @@ body {
   letter-spacing: -0.5px;
   color: $font-color;
   background: $background;
+  margin: 0;
+  padding: 0;
   margin-bottom: 4em;
 }
 
 blockquote {
-  border-left: 7px solid rgb(0, 0, 196);
-  padding: 10px 15px;
+  border-left: 0.4em solid rgb(0, 0, 196);
+  padding: 0 0.5em 0.3em;
   background-color: rgba(128, 128, 128, 0.8);
   font-size: 1.05em;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
@@ -48,7 +50,10 @@ code {
   font-size: 0.85em;
   text-shadow: 0 0 12px #a09797;
 }
-em { padding-right: 0.1em; }
+
+// Tad bit of spacing after italic text to
+// prevent the ending letters from touching
+em, .text-italic { padding-right: 0.1em; }
 
 // ------- Footer
 // Sticky footer from http://mystrd.at/modern-clean-css-sticky-footer
@@ -59,7 +64,6 @@ em { padding-right: 0.1em; }
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 3.8em;
   width: 100%;
 }
 
@@ -67,7 +71,6 @@ html {
   position: relative;
   min-height: 100%;
   min-width: 320px;
-  margin: 0;
 }
 
 // <kbd> element styling from http://meta.superuser.com/q/4788
