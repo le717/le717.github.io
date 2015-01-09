@@ -43,7 +43,7 @@
 
     // Add text to Project WIP label
     $(".project-wip").wrap("<div class='text-center'/>")
-                       .html("Work in Progress");
+                     .html("Work in Progress");
 
 //    // Get the featured content feed
 //    $.ajax({
