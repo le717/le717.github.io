@@ -1,7 +1,7 @@
 ---
 ---
 @charset "UTF-8";
-// Created 2014 Triangle717
+// Created 2014-2015 Triangle717
 // <http://Triangle717.WordPress.com/>
 // Licensed under The MIT License
 // <http://opensource.org/licenses/MIT/>
@@ -17,6 +17,7 @@
 @import "mixins/transition-long";
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
+
 
 // ------- Navbar styling
 .navbar {
@@ -69,7 +70,7 @@
     a { font-size: 1.15em; }
   }
 }
- 
+
 // Navbar toggle button
 .btn-navbar {
   width: 2.5em;
@@ -112,6 +113,7 @@
   }
 }
 
+
 // ------- Featured item displays
 #featured-project {
   margin-top: -19%;
@@ -133,8 +135,8 @@
   max-width: 53%;
 }
 
-// ------- Social buttons styling
 
+// ------- Social buttons styling
 .contact-field {
   a { text-shadow: none; }
   p { font-size: 4em; }
@@ -163,6 +165,7 @@
   .contact-yt { color: #CC181E; }
 }
 
+
 // ------- Previous button styling
 #previous-link {
   margin-left: 10px;
@@ -189,8 +192,8 @@
   &:hover { @include transform(translate3d(-5px, 0, 0)); }
 }
 
-// ------- Blog post styling
 
+// ------- Blog post styling
 .single-post {
   @extend .page-section;
   width: 75%;
@@ -223,6 +226,9 @@
     margin: 0 -0.8em;
   }
 
+  // Indent leading paragraph sentences
+  p { text-indent: 0.8em; }
+
   // Blog post images
   img {
     @extend .img-shadow;
@@ -238,6 +244,7 @@
   margin-top: 2.5%;
   margin-bottom: -1%;
 }
+
 
 // ------- Projects
 .project-item {
@@ -276,8 +283,12 @@
   &:hover { @extend .text-decor-none; }
 }
 
+
 // ------- Various styling
 .current-page {
   color: #E4E1E8;
   text-shadow: 2px 2px 2px $color-black;
 }
+
+// Mobile-only styling
+@import "screen";
