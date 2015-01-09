@@ -16,9 +16,9 @@
    */
   function toggleScrollUp() {
     if ($(window).scrollTop() >= 100) {
-      $(".scroll-up").css("opacity", "1");
+      $(".btn-scroll-up").css("opacity", "1");
     } else {
-      $(".scroll-up").css("opacity", "");
+      $(".btn-scroll-up").css("opacity", "");
     }
   }
 
@@ -33,7 +33,7 @@
     });
 
     // Scroll up button action
-    $(".scroll-up").on("click", function() {
+    $(".btn-scroll-up").on("click", function() {
       $("html, body").animate({scrollTop: 0}, 700, "easeInOutQuad");
     });
 

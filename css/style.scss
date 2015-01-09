@@ -71,20 +71,6 @@
   }
 }
 
-// Navbar toggle button
-.btn-navbar {
-  width: 2.5em;
-  height: 2.5em;
-  position: fixed;
-  top: 0.313em;
-  right: 0.7em;
-  z-index: 2;
-  cursor: pointer;
-  background-image: url("/img/bowtie.svg");
-
-  &:active { @include transform(translateY(1px)); }
-}
-
 
 // ------- Footer
 .footer {
@@ -94,30 +80,26 @@
 }
 
 
-// ------- Scroll to the top box
-.scroll-up {
-  @extend .text-center;
+// ------- Scroll to top box
+.btn-scroll-up {
   position: fixed;
   cursor: pointer;
   right: 3%;
   bottom: 1em;
   z-index: 2;
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   opacity: 0;
   background-color: rgba(128, 0, 0, 0.7);
-  border-radius: 50%;
+  border-radius: 0.5em;
   @include transition-short(opacity 0.3s ease-out);
 
   span {
-    @extend a;
-    font-size: 1.9em;
-    text-decoration: none;
-    text-shadow: 0 0 1px $color-black;
-    margin-top: 0.15em;
+    color: $color-yellow-light;
+    font-size: 1.6em;
+    text-shadow: none;
+    margin: 0.25em 0.48em;
     @include transform(rotate(-90deg));
-
-    &:hover { @extend .text-decor-none; }
   }
 }
 
