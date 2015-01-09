@@ -1,10 +1,10 @@
 {
   "name": "le717.github.io",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "My WIP, Jekyll-powered website",
   "main": "index.html",
   "scripts": {
-    "test": "grunt lint"
+    "test": "grunt all"
   },
   "repository": {
     "type": "git",
