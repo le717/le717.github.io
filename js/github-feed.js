@@ -3,22 +3,24 @@
   /**
    * @constructor
    * [[Description]]
+   * @param {String} id Event ID.
    * @param {String} url Event URL.
-   * @param {String} sha Event SHA.
+   * @param {String} sha Event SHA value or branch name.
    * @param {String} date Event date.
    * @param {String} repo Event repo.
    * @param {String} event Event type.
    * @param {String} msg Event message.
    */
-  function GHEvent(url, sha, date, repo, event, msg) {
+  function GHEvent(id, url, sha, date, repo, event, msg) {
+    this.id    = id;
     this.msg   = msg;
     this.url   = url;
     this.sha   = sha;
     this.date  = date;
     this.repo  = repo;
     this.event = event;
-    this.selector = "#gh-" + sha;
-    this.container = '<dl id="gh-' + sha + '"></dl>';
+    this.selector = "#gh-" + id;
+    this.container = "<dl id='gh-" + id + "'></dl>";
   }
 
 
@@ -48,17 +50,18 @@
    */
   function loadEvents(data) {
     for (var i = 0, limit = 7; i < limit; i += 1) {
-      var url       = "",
+      var id        = data[i].id,
+          url       = "",
           sha       = "",
+          repo      = data[i].repo.name,
           date      = createDate(data[i].created_at).substring(0, data[i].created_at.length - 1),
           message   = "No commit message available.",
           tagName   = "",
           tagType   = "",
-          repo  = data[i].repo.name,
           eventName = data[i].type.replace(/event/i, "");
 
       // Do not report certain events
-      if (/release|issue|comment|fork|watch/i.test(eventName)) {
+      if (/release|issue|comment|fork|watch/gi.test(eventName)) {
         limit += 1;
         continue;
       }
@@ -76,8 +79,9 @@
 
       // Delete event
       if (/delete/i.test(eventName)) {
-        eventName = "Deletion";
-  //      console.log(eventName + repo + " @ " + date);
+        eventName = "Delete";
+        message = "Delete " + data[i].payload.ref_type;
+        sha = data[i].payload.ref;
       }
 
       // New tag or branch
@@ -87,9 +91,16 @@
   //      console.log(eventName + " " + tagType + " " + tagName + repo + " @ " + date);
       }
 
+      // Pull request
       else if (/pullre/i.test(eventName)) {
         eventName = eventName.replace(/PullRequest/, "Pull Request");
-  //      console.log(eventName + " " + sha + repo + " @ " + date);
+        sha = "#" + data[i].payload.number;
+        url = data[i].payload.pull_request.html_url;
+
+        // Capitalize first letter of the message
+        message = data[i].payload.pull_request.state;
+        message = message.charAt(0).toUpperCase() + message.substr(1);
+        message += " \"" + data[i].payload.pull_request.title + "\"";
       }
 
       // Push event
@@ -99,7 +110,7 @@
       }
 
       // Create a new event object
-      var ghEvent = new GHEvent(url, sha, date, repo, eventName, message);
+      var ghEvent = new GHEvent(id, url, sha, date, repo, eventName, message);
 
       // Add tag information
       if (tagName !== "" && tagType !== "") {
