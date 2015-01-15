@@ -4,7 +4,7 @@
    * @constructor
    * [[Description]]
    * @param {String} id Event ID.
-   * @param {String} url Event URL.
+   * @param {String} url Event url.
    * @param {String} sha Event SHA value or branch name.
    * @param {String} date Event date.
    * @param {String} repo Event repo.
@@ -25,11 +25,22 @@
 
 
   /**
+   * Convert an API url into a web interface one.
+   * @param {String} url
+   * @returns {Sring}
+   */
+  function _makeURL(url) {
+    return url.replace(/(?:api.|repos\/)/gi, "")
+              .replace(/commits/gi, "commit");
+  }
+
+
+  /**
    * Create a date stamp in the format "DD Month, YYYY".
    * @param {String} rawDate GitHub timestamp.
    * @returns {String}.
    */
-  function createDate(rawDate) {
+  function _createDate(rawDate) {
     var months = {"01": "January", "02": "February", "03": "March", "04": "April",
                   "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
                   "10": "October", "11": "November", "12": "December"
@@ -51,10 +62,10 @@
   function loadEvents(data) {
     for (var i = 0, limit = 7; i < limit; i += 1) {
       var id        = data[i].id,
-          url       = "",
+          url       = "#",
           sha       = "",
           repo      = data[i].repo.name,
-          date      = createDate(data[i].created_at).substring(0, data[i].created_at.length - 1),
+          date      = _createDate(data[i].created_at).substring(0, data[i].created_at.length - 1),
           message   = "No commit message available.",
           tagName   = "",
           tagType   = "",
@@ -73,8 +84,7 @@
         message = data[i].payload.commits[0].message;
 
         // Modify URL to create a link to the commit
-        url = url.replace(/(?:api.|repos\/)/gi, "");
-        url = url.replace(/commits/gi, "commit");
+        url = _makeURL(url);
       }
 
       // Delete event
@@ -82,6 +92,7 @@
         eventName = "Delete";
         message = "Delete " + data[i].payload.ref_type;
         sha = data[i].payload.ref;
+        url = _makeURL(data[i].repo.url);
       }
 
       // New tag or branch
@@ -118,7 +129,7 @@
         ghEvent.tagType = tagType;
       }
       events.push(ghEvent);
-      //    console.log(ghEvent);
+//          console.log(ghEvent);
     }
   }
 
@@ -134,7 +145,7 @@
       $(value.selector).append("<dt class='gh-title'/>");
       $(value.selector).append("<dd/>");
 
-      $(value.selector + " .gh-title").html(value.event + " <a class='gh-url' target='_blank' href='#'></a> @ " + value.repo + " on " + value.date);
+      $(value.selector + " .gh-title").html(value.event + " <a class='gh-url' target='_blank' href=''></a> @ " + value.repo + " on " + value.date);
       $(value.selector + " .gh-url").html(value.sha);
       $(value.selector + " .gh-url").attr("href", value.url);
       $(value.selector + " dd").html("<code>" + value.msg + "</code>");
