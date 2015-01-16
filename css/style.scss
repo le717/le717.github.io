@@ -94,11 +94,19 @@
   border-radius: 0.5em;
   @include transition-short(opacity 0.3s ease-out);
 
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   span {
     color: $color-yellow-light;
     font-size: 1.6em;
     text-shadow: none;
-    margin: 0.25em 0.48em;
+//    margin: 0.25em 0.48em;
     @include transform(rotate(-90deg));
   }
 }
