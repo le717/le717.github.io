@@ -92,7 +92,7 @@
           message   = "No commit message available.",
           tagName   = "",
           tagType   = "",
-          eventName = curEvent.type.replace(/event/i, "").toLowerCase();
+          eventName = curEvent.type.replace(/event/i, "");
 
       // Do not report certain events
       if (/release|issue|comment|fork|watch/gi.test(eventName)) {
@@ -110,22 +110,48 @@
         url = _makeURL(url);
       }
 
-      // Delete event
-      if (/delete/i.test(eventName)) {
-        eventName = "Delete";
-        sha = curEvent.payload.ref;
-        url = _makeURL(curEvent.repo.url);
-        message = "Delete " + curEvent.payload.ref_type;
+      switch(eventName) {
+          case "Create":
+            break;
+          case "Branch":
+            break;
+
+          // Delete event
+          case "Delete":
+            eventName = "Delete";
+            sha = curEvent.payload.ref;
+            url = _makeURL(curEvent.repo.url);
+            message = "Delete " + curEvent.payload.ref_type;
+            break;
+
+          // Wiki edit
+          case "Gollum":
+            eventName = "Wiki Edit";
+            sha = curEvent.payload.pages[0].sha.substr(0, 10);
+            url = curEvent.payload.pages[0].html_url;
+
+            // Capitalize first letter of the message
+            message = curEvent.payload.pages[0].action;
+            message = message.charAt(0).toUpperCase() + message.substr(1);
+            message += " \"" + curEvent.payload.pages[0].title + "\"";
+            break;
+
+          // Pull request
+          case "PullRequest":
+            break;
+
+          // Push event
+          default:
+            break;
       }
 
       // New tag, branch, or repo
-      else if (/create/i.test(eventName)) {
+      if (/create/i.test(eventName)) {
         sha = curEvent.payload.ref;
         message = "Create " + curEvent.payload.ref_type;
 
         // Only append /tree/ if new branch
         if (/branch/.test(curEvent.payload.ref_type)) {
-          alert();
           url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
         }
 
@@ -146,18 +172,6 @@
         message = curEvent.payload.pull_request.state;
         message = message.charAt(0).toUpperCase() + message.substr(1);
         message += " \"" + curEvent.payload.pull_request.title + "\"";
-      }
-
-      // Wiki edit
-      else if (/gollum/i.test(eventName)) {
-        eventName = "Wiki Edit";
-        sha = curEvent.payload.pages[0].sha.substr(0, 10);
-        url = curEvent.payload.pages[0].html_url;
-
-        // Capitalize first letter of the message
-        message = curEvent.payload.pages[0].action;
-        message = message.charAt(0).toUpperCase() + message.substr(1);
-        message += " \"" + curEvent.payload.pages[0].title + "\"";
       }
 
       // Create a new event object
