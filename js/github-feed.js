@@ -24,6 +24,9 @@
   }
 
 
+  // TODO Limit commit message length
+
+
   /**
    * Convert an API url into a web interface one.
    * @param {String} url
@@ -90,16 +93,23 @@
       // Delete event
       if (/delete/i.test(eventName)) {
         eventName = "Delete";
-        message = "Delete " + data[i].payload.ref_type;
         sha = data[i].payload.ref;
         url = _makeURL(data[i].repo.url);
+        message = "Delete " + data[i].payload.ref_type;
       }
 
-      // New tag or branch
+      // New tag, branch, or repo
       else if (/create/i.test(eventName)) {
-        tagName = data[i].payload.ref;
-        tagType = data[i].payload.ref_type;
-  //      console.log(eventName + " " + tagType + " " + tagName + repo + " @ " + date);
+        sha = data[i].payload.ref;
+        // TODO Only append /tree/ if new branch
+        url = _makeURL(data[i].repo.url) + "/tree/" + data[i].payload.ref;
+        message = "Create " + data[i].payload.ref_type;
+
+       // TODO New repo
+
+        // TODO Only generate these if this is a tag
+//        tagName = data[i].payload.ref;
+//        tagType = data[i].payload.ref_type;
       }
 
       // Pull request
@@ -129,7 +139,7 @@
         ghEvent.tagType = tagType;
       }
       events.push(ghEvent);
-//          console.log(ghEvent);
+//      console.log(ghEvent);
     }
   }
 
