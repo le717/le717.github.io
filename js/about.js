@@ -18,7 +18,7 @@ function calcDate(date, element) {
   var curYear        = curDate.getUTCFullYear(),
       curMonth       = curDate.getUTCMonth(),
       curDay         = curDate.getUTCDate(),
-      dateDifference = curYear % date[0];
+      myAge = curYear % date[0];
 
 //  var yearDifference  = curYear % date[0],
 //      monthDifference = curMonth - date[1],
@@ -43,13 +43,14 @@ function calcDate(date, element) {
   // 12 / 1.2 === 10, so how do I calculate every 1.2 months?
 
   // Do not update the date unless it is time
-  if (curMonth < date[1] && curDay < date[2] ||
+  if (curMonth < date[1] && curDay > date[2] ||
+      curMonth < date[1] && curDay < date[2] ||
       curMonth < date[1] && curDay === date[2] ||
       curMonth === date[1] && curDay < date[2]) {
-    dateDifference -= 1;
+    myAge -= 1;
   }
 
-  document.querySelector(element).innerHTML = dateDifference;
+  document.querySelector(element).innerHTML = myAge;
 }
 
 // Calculate my age
