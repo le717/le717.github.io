@@ -143,8 +143,9 @@
         message += " \"" + data[i].payload.pull_request.title + "\"";
       }
 
-      // Push event
-      else {
+      // Wiki edit
+      else if (/gollum/i.test(eventName)) {
+        eventName = "Edit Wiki";
         //      console.log(eventName + " " + sha + repo + " @ " + date);
         //      console.log(message);
       }
