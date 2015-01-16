@@ -23,8 +23,28 @@
     this.container = "<dl id='gh-" + id + "'></dl>";
   }
 
+  /**
+   * @constant
+   * @type {Number}
+   * The number of characters the commit message should be limited to.
+   * This is a hard limit and may increase cut off part of a word.
+   */
+  GHEvent.prototype.charLimit = 80;
 
-  // TODO Limit commit message length
+
+  /**
+   * Summarize a commit messgae.
+   * @returns {Boolean} true.
+   */
+  GHEvent.prototype.summarize = function() {
+    if (this.msg.length > this.charLimit) {
+      this.msg = this.msg.substr(0, this.charLimit) + "...";
+    }
+
+    // Preserve any new lines
+    this.msg = this.msg.replace(/\n/, "<br>");
+    return true;
+  };
 
 
   /**
@@ -33,8 +53,7 @@
    * @returns {Sring}
    */
   function _makeURL(url) {
-    return url.replace(/(?:api.|repos\/)/gi, "")
-              .replace(/commits/gi, "commit");
+    return url.replace(/(?:api.|repos\/)/gi, "").replace(/commits/gi, "commit");
   }
 
 
@@ -105,7 +124,7 @@
         url = _makeURL(data[i].repo.url) + "/tree/" + data[i].payload.ref;
         message = "Create " + data[i].payload.ref_type;
 
-       // TODO New repo
+        // TODO New repo
 
         // TODO Only generate these if this is a tag
 //        tagName = data[i].payload.ref;
@@ -126,12 +145,13 @@
 
       // Push event
       else {
-  //      console.log(eventName + " " + sha + repo + " @ " + date);
-  //      console.log(message);
+        //      console.log(eventName + " " + sha + repo + " @ " + date);
+        //      console.log(message);
       }
 
       // Create a new event object
       var ghEvent = new GHEvent(id, url, sha, date, repo, eventName, message);
+      ghEvent.summarize();
 
       // Add tag information
       if (tagName !== "" && tagType !== "") {
