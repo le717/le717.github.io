@@ -14,11 +14,11 @@
  */
 function calcDate(date, element) {
   "use strict";
-  var curDate        = new Date();
-  var curYear        = curDate.getUTCFullYear(),
-      curMonth       = curDate.getUTCMonth(),
-      curDay         = curDate.getUTCDate(),
-      myAge = curYear % date[0];
+  var curDate  = new Date();
+  var curDay   = curDate.getUTCDate(),
+      curYear  = curDate.getUTCFullYear(),
+      curMonth = curDate.getUTCMonth(),
+      myCurAge = curYear % date[0];
 
 //  var yearDifference  = curYear % date[0],
 //      monthDifference = curMonth - date[1],
@@ -47,10 +47,10 @@ function calcDate(date, element) {
       curMonth < date[1] && curDay < date[2] ||
       curMonth < date[1] && curDay === date[2] ||
       curMonth === date[1] && curDay < date[2]) {
-    myAge -= 1;
+    myCurAge -= 1;
   }
 
-  document.querySelector(element).innerHTML = myAge;
+  document.querySelector(element).innerHTML = myCurAge;
 }
 
 // Calculate my age
