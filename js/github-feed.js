@@ -53,7 +53,7 @@
    * @returns {Sring}
    */
   function _makeURL(url) {
-    return url.replace(/(?:api.|repos\/)/gi, "").replace(/commits/gi, "commit");
+    return url.replace(/(?:api\.|repos\/)/gi, "").replace(/commits/gi, "commit");
   }
 
 
@@ -83,15 +83,16 @@
    */
   function loadEvents(data) {
     for (var i = 0, limit = 7; i < limit; i += 1) {
-      var id        = data[i].id,
+      var curEvent  = data[i];
+      var id        = curEvent.id,
           url       = "#",
           sha       = "",
-          repo      = data[i].repo.name,
-          date      = _createDate(data[i].created_at).substring(0, data[i].created_at.length - 1),
+          repo      = curEvent.repo.name,
+          date      = _createDate(curEvent.created_at).substring(0, curEvent.created_at.length - 1),
           message   = "No commit message available.",
           tagName   = "",
           tagType   = "",
-          eventName = data[i].type.replace(/event/i, "");
+          eventName = curEvent.type.replace(/event/i, "").toLowerCase();
 
       // Do not report certain events
       if (/release|issue|comment|fork|watch/gi.test(eventName)) {
@@ -100,10 +101,10 @@
       }
 
       // Only present in certain events
-      else if (data[i].payload.commits !== undefined) {
-        url = data[i].payload.commits[0].url;
-        sha = data[i].payload.commits[0].sha.substr(0, 10);
-        message = data[i].payload.commits[0].message;
+      else if (curEvent.payload.commits !== undefined) {
+        url = curEvent.payload.commits[0].url;
+        sha = curEvent.payload.commits[0].sha.substr(0, 10);
+        message = curEvent.payload.commits[0].message;
 
         // Modify URL to create a link to the commit
         url = _makeURL(url);
@@ -112,42 +113,51 @@
       // Delete event
       if (/delete/i.test(eventName)) {
         eventName = "Delete";
-        sha = data[i].payload.ref;
-        url = _makeURL(data[i].repo.url);
-        message = "Delete " + data[i].payload.ref_type;
+        sha = curEvent.payload.ref;
+        url = _makeURL(curEvent.repo.url);
+        message = "Delete " + curEvent.payload.ref_type;
       }
 
       // New tag, branch, or repo
       else if (/create/i.test(eventName)) {
-        sha = data[i].payload.ref;
-        // TODO Only append /tree/ if new branch
-        url = _makeURL(data[i].repo.url) + "/tree/" + data[i].payload.ref;
-        message = "Create " + data[i].payload.ref_type;
+        sha = curEvent.payload.ref;
+        message = "Create " + curEvent.payload.ref_type;
+
+        // Only append /tree/ if new branch
+        if (/branch/.test(curEvent.payload.ref_type)) {
+          alert();
+          url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
+        }
 
         // TODO New repo
 
         // TODO Only generate these if this is a tag
-//        tagName = data[i].payload.ref;
-//        tagType = data[i].payload.ref_type;
+//        tagName = curEvent.payload.ref;
+//        tagType = curEvent.payload.ref_type;
       }
 
       // Pull request
       else if (/pullre/i.test(eventName)) {
         eventName = eventName.replace(/PullRequest/, "Pull Request");
-        sha = "#" + data[i].payload.number;
-        url = data[i].payload.pull_request.html_url;
+        sha = "#" + curEvent.payload.number;
+        url = curEvent.payload.pull_request.html_url;
 
         // Capitalize first letter of the message
-        message = data[i].payload.pull_request.state;
+        message = curEvent.payload.pull_request.state;
         message = message.charAt(0).toUpperCase() + message.substr(1);
-        message += " \"" + data[i].payload.pull_request.title + "\"";
+        message += " \"" + curEvent.payload.pull_request.title + "\"";
       }
 
       // Wiki edit
       else if (/gollum/i.test(eventName)) {
-        eventName = "Edit Wiki";
-        //      console.log(eventName + " " + sha + repo + " @ " + date);
-        //      console.log(message);
+        eventName = "Wiki Edit";
+        sha = curEvent.payload.pages[0].sha.substr(0, 10);
+        url = curEvent.payload.pages[0].html_url;
+
+        // Capitalize first letter of the message
+        message = curEvent.payload.pages[0].action;
+        message = message.charAt(0).toUpperCase() + message.substr(1);
+        message += " \"" + curEvent.payload.pages[0].title + "\"";
       }
 
       // Create a new event object
