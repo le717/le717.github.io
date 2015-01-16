@@ -34,10 +34,12 @@
   .navbar-icon {
     color: $color-white;
     font-size: 1.3em;
-    margin-left: 0.2em;
-    display: inline;
+    margin-left: 0.3em;
   }
-  .navbar-text { margin-left: 0.5em; }
+  .navbar-text {
+    margin-left: 0.3em;
+    font-size: 1.15em;
+  }
 
   // Flatten the list
   ul {
@@ -64,10 +66,8 @@
     .fa-pencil-square-o {
       position: relative;
       top: 0.1em;
+      margin-right: -0.2em;
     }
-
-    // Increase the text size
-    a { font-size: 1.15em; }
   }
 }
 
