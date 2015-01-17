@@ -156,8 +156,13 @@
 
       switch(eventName) {
           case "Create":
-            break;
-          case "Branch":
+            sha = curEvent.payload.ref;
+            message = "Create " + curEvent.payload.ref_type;
+
+            // Add/remove branch
+            if (/branch/.test(curEvent.payload.ref_type)) {
+              url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
+            }
             break;
 
           // Open/close issue
@@ -197,13 +202,6 @@
 
       // New tag, branch, or repo
       if (/create/i.test(eventName)) {
-        sha = curEvent.payload.ref;
-        message = "Create " + curEvent.payload.ref_type;
-
-        // Only append /tree/ if new branch
-        if (/branch/.test(curEvent.payload.ref_type)) {
-          url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
-        }
 
         // TODO New repo
 
