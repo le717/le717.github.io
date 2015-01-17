@@ -32,9 +32,10 @@
   z-index: 1;
 
   .navbar-icon {
+    display: inline;
+    margin-left: 0.3em;
     color: $color-white;
     font-size: 1.5em;
-    margin-left: 0.3em;
   }
   .navbar-text {
     margin-left: 0.3em;
