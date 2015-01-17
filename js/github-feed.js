@@ -89,7 +89,8 @@
     if (activeTense) {
       var changeTense = {
         "Closed": "Close",
-        "Opened": "Open"
+        "Opened": "Open",
+        "Published": "Publish"
       };
 
       // If a replacement is defined, use it
@@ -134,12 +135,10 @@
           repo      = curEvent.repo.name,
           date      = _createDate(curEvent.created_at).substring(0, curEvent.created_at.length - 1),
           message   = "No commit message available.",
-          tagName   = "",
-          tagType   = "",
           eventName = curEvent.type.replace(/event/i, "");
 
       // Do not report certain events
-      if (/release|comment|fork|watch/gi.test(eventName)) {
+      if (/comment|fork|watch/gi.test(eventName)) {
         limit += 1;
         continue;
       }
@@ -155,21 +154,29 @@
       }
 
       switch(eventName) {
+          // Create event
           case "Create":
-            var _eventType = curEvent.payload.ref_type;
+          // Filter out create tag events
+          var _eventType = curEvent.payload.ref_type;
+            if (/tag/.test(_eventType))  {
+              continue;
+            }
+
             sha = curEvent.payload.ref;
             message = "Create " + curEvent.payload.ref_type;
 
             // New branch
             if (/branch/.test(_eventType)) {
               url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
-
-              // New tag
-            } else if (/tag/.test(_eventType))  {
-              url = _makeURL(curEvent.repo.url);
-              tagName = curEvent.payload.ref;
-              tagType = curEvent.payload.ref_type;
             }
+            break;
+
+          // New release
+          case "Release":
+            eventName = _makeEventName(curEvent.payload.action, true);
+            sha = curEvent.payload.release.tag_name;
+            url = curEvent.payload.release.html_url;
+            message = "\"" + curEvent.payload.release.name + "\"";
             break;
 
           // Open/close issue
@@ -230,12 +237,6 @@
       // Create a new event object
       var ghEvent = new GHEvent(id, url, sha, date, repo, eventName, message);
       ghEvent.summarize();
-
-      // Add tag information
-      if (tagName !== "" && tagType !== "") {
-        ghEvent.tagName = tagName;
-        ghEvent.tagType = tagType;
-      }
       events.push(ghEvent);
 //      console.log(ghEvent);
     }
