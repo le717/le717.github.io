@@ -72,6 +72,10 @@
 }
 
 
+// Logo at top of home page
+header { @extend .text-center; }
+
+
 // ------- Footer
 .footer {
   @extend .text-center;
