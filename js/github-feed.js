@@ -46,60 +46,58 @@
     return true;
   };
 
+  var EventUtils = {
+    /**
+     * Convert an API url into a web interface one.
+     * @param {String} url
+     * @returns {Sring}
+     */
+    makeURL: function(url) {
+      return url.replace(/(?:api\.|repos\/)/gi, "").replace(/commits/gi, "commit");
+    },
 
-  /**
-   * @private
-   * Convert an API url into a web interface one.
-   * @param {String} url
-   * @returns {Sring}
-   */
-  function _makeURL(url) {
-    return url.replace(/(?:api\.|repos\/)/gi, "").replace(/commits/gi, "commit");
-  }
-
-
-  /**
-   * @private
-   * Capitalize the first letter of the given text.
-   * @param {String} text
-   * @returns {String}
-   */
-  function _capitalFirst(text) {
-    return text.charAt(0).toUpperCase() + text.substr(1);
-  }
-
-
-  /**
-   * Construct a proper event name.
-   * @param {String}  name The event name.
-   * @param {Boolean} [activeTense=false] If true, the event name
-   *                                      will be converted to an active tense verb.
-   * @returns {String} The corrected name.
-   */
-  function _makeEventName(name, activeTense) {
-    // Default to leaving verb tense as-is
-    if (activeTense === undefined) {
-      activeTense = false;
-    }
-
-    // Capitalize the first letter
-    name = _capitalFirst(name);
-
-    // Convert verb to active tense
-    if (activeTense) {
-      var changeTense = {
-        "Closed": "Close",
-        "Opened": "Open",
-        "Published": "Publish"
-      };
-
-      // If a replacement is defined, use it
-      if (changeTense[name] !== undefined) {
-        name = changeTense[name];
+    /**
+     * Capitalize the first letter of the given text.
+     * @param {String} text
+     * @returns {String}
+     */
+    capitalFirst: function(text) {
+      return text.charAt(0).toUpperCase() + text.substr(1);
+    },
+    
+    /**
+     * Construct a proper event name.
+     * @param {String}  name The event name.
+     * @param {Boolean} [activeTense=false] If true, the event name
+     *                                      will be converted to an active tense verb.
+     * @returns {String} The corrected name.
+     */
+    makeEventName: function(name, activeTense) {
+      // Default to leaving verb tense as-is
+      if (activeTense === undefined) {
+        activeTense = false;
       }
+
+      // Capitalize the first letter
+      name = this.capitalFirst(name);
+
+      // Convert verb to active tense
+      if (activeTense) {
+        var changeTense = {
+          "Closed": "Close",
+          "Opened": "Open",
+          "Published": "Publish"
+        };
+
+        // If a replacement is defined, use it
+        if (changeTense[name] !== undefined) {
+          name = changeTense[name];
+        }
+      }
+      return name;
     }
-    return name;
-  }
+  };
+
 
 
   /**
@@ -150,7 +148,7 @@
         message = curEvent.payload.commits[0].message;
 
         // Modify URL to create a link to the commit
-        url = _makeURL(url);
+        url = EventUtils.makeURL(url);
       }
 
       switch(eventName) {
@@ -167,13 +165,13 @@
 
             // New branch
             if (/branch/.test(_eventType)) {
-              url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
+              url = EventUtils.makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
             }
             break;
 
           // New release
           case "Release":
-            eventName = _makeEventName(curEvent.payload.action, true);
+            eventName = EventUtils.makeEventName(curEvent.payload.action, true);
             sha = curEvent.payload.release.tag_name;
             url = curEvent.payload.release.html_url;
             message = "\"" + curEvent.payload.release.name + "\"";
@@ -181,17 +179,17 @@
 
           // Open/close issue
           case "Issues":
-            eventName = _makeEventName(curEvent.payload.action, true);
+            eventName = EventUtils.makeEventName(curEvent.payload.action, true);
             sha = "#" + curEvent.payload.issue.number;
             url = curEvent.payload.issue.html_url;
-            message = _makeEventName(curEvent.payload.action) + " \"" + curEvent.payload.issue.title + "\"";
+            message = EventUtils.makeEventName(curEvent.payload.action) + " \"" + curEvent.payload.issue.title + "\"";
             break;
 
           // Delete event
           case "Delete":
             eventName = "Delete";
             sha = curEvent.payload.ref;
-            url = _makeURL(curEvent.repo.url);
+            url = EventUtils.makeURL(curEvent.repo.url);
             message = "Delete " + curEvent.payload.ref_type;
             break;
 
@@ -201,7 +199,7 @@
             sha = curEvent.payload.pages[0].sha.substr(0, 10);
             url = curEvent.payload.pages[0].html_url;
 
-            message = _capitalFirst(curEvent.payload.pages[0].action);
+            message = EventUtils.capitalFirst(curEvent.payload.pages[0].action);
             message += " \"" + curEvent.payload.pages[0].title + "\"";
             break;
 
@@ -230,7 +228,7 @@
         sha = "#" + curEvent.payload.number;
         url = curEvent.payload.pull_request.html_url;
 
-        message = _capitalFirst(curEvent.payload.pull_request.state);
+        message = EventUtils.capitalFirst(curEvent.payload.pull_request.state);
         message += " \"" + curEvent.payload.pull_request.title + "\"";
       }
 
