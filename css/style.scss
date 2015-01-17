@@ -31,17 +31,28 @@
   border-bottom: 5px solid $color-yellow-light;
   z-index: 1;
 
+  a {
+    text-shadow: none;
+    @include transition-short(color 0.5s ease);
+    &:hover {
+      color: #E4E1E8;
+      @extend .text-decor-none;
+    }
+  }
+
   .navbar-icon {
     display: inline;
     margin-left: 0.3em;
     color: $color-white;
     font-size: 1.5em;
-    text-shadow: none;
   }
   .navbar-text {
     margin-left: 0.3em;
     font-size: 1.15em;
-    text-shadow: none;
+  }
+  .current-page {
+    color: #E4E1E8;
+    text-shadow: 2px 2px 2px $color-black;
   }
 
   // Flatten the list
@@ -270,11 +281,5 @@
 }
 
 
-// ------- Various
-.current-page {
-  color: #E4E1E8;
-  text-shadow: 2px 2px 2px $color-black;
-}
-
-// Mobile-only
+// ------- Mobile-only
 @import "screen";
