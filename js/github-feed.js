@@ -139,7 +139,7 @@
           eventName = curEvent.type.replace(/event/i, "");
 
       // Do not report certain events
-      if (/release|issue|comment|fork|watch/gi.test(eventName)) {
+      if (/release|comment|fork|watch/gi.test(eventName)) {
         limit += 1;
         continue;
       }
@@ -160,6 +160,14 @@
           case "Branch":
             break;
 
+          // Open/close issue
+          case "Issues":
+            eventName = _makeEventName(curEvent.payload.action, true);
+            sha = "#" + curEvent.payload.issue.number;
+            url = curEvent.payload.issue.html_url;
+            message = _makeEventName(curEvent.payload.action) + " \"" + curEvent.payload.issue.title + "\"";
+            break;
+
           // Delete event
           case "Delete":
             eventName = "Delete";
@@ -174,9 +182,7 @@
             sha = curEvent.payload.pages[0].sha.substr(0, 10);
             url = curEvent.payload.pages[0].html_url;
 
-            // Capitalize first letter of the message
-            message = curEvent.payload.pages[0].action;
-            message = message.charAt(0).toUpperCase() + message.substr(1);
+            message = _capitalFirst(curEvent.payload.pages[0].action);
             message += " \"" + curEvent.payload.pages[0].title + "\"";
             break;
 
@@ -212,9 +218,7 @@
         sha = "#" + curEvent.payload.number;
         url = curEvent.payload.pull_request.html_url;
 
-        // Capitalize first letter of the message
-        message = curEvent.payload.pull_request.state;
-        message = message.charAt(0).toUpperCase() + message.substr(1);
+        message = _capitalFirst(curEvent.payload.pull_request.state);
         message += " \"" + curEvent.payload.pull_request.title + "\"";
       }
 
