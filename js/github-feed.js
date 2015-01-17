@@ -156,12 +156,19 @@
 
       switch(eventName) {
           case "Create":
+            var _eventType = curEvent.payload.ref_type;
             sha = curEvent.payload.ref;
             message = "Create " + curEvent.payload.ref_type;
 
-            // Add/remove branch
-            if (/branch/.test(curEvent.payload.ref_type)) {
+            // New branch
+            if (/branch/.test(_eventType)) {
               url = _makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
+
+              // New tag
+            } else if (/tag/.test(_eventType))  {
+              url = _makeURL(curEvent.repo.url);
+              tagName = curEvent.payload.ref;
+              tagType = curEvent.payload.ref_type;
             }
             break;
 
