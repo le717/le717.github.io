@@ -35,7 +35,7 @@
     text-shadow: none;
     @include transition-short(color 0.5s ease);
     &:hover {
-      color: #E4E1E8;
+      color: #B3D4FC;
       @extend .text-decor-none;
     }
   }
@@ -51,7 +51,7 @@
     font-size: 1.15em;
   }
   .current-page {
-    color: #E4E1E8;
+    color: #B3D4FC;
     text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
   }
 
