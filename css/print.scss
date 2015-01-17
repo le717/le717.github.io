@@ -6,7 +6,9 @@
 // <http://opensource.org/licenses/MIT/>
 
 // Remove all text and box shadows
-* {
+a, blockquote, code, em,
+h1, h2, h3, h4, h5, h6,
+p, pre, .post-title {
   text-shadow: none !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
