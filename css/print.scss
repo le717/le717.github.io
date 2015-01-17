@@ -7,9 +7,9 @@
 
 // Remove all text and box shadows
 * {
-  text-shadow: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  text-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 // Further shrink images when printing
@@ -21,5 +21,5 @@
 // Hide any nonessential elements
 .navbar,
 .btn-navbar,
-.btn-scroll-up { display: none; }
+.btn-scroll-up,
 .end-of-posts { display: none !important; }
