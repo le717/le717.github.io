@@ -36,6 +36,7 @@
     margin-left: 0.3em;
     color: $color-white;
     font-size: 1.5em;
+    text-shadow: none;
   }
   .navbar-text {
     margin-left: 0.3em;
@@ -70,10 +71,6 @@
     }
   }
 }
-
-
-// Logo at top of home page
-header { @extend .text-center; }
 
 
 // ------- Footer
@@ -116,27 +113,7 @@ header { @extend .text-center; }
 }
 
 
-// ------- Featured item displays
-#featured-project {
-  margin-top: -19%;
-
-  p {
-    max-width: 45%;
-    float: right;
-  }
-}
-
-#featured-code-box {
-  width: 47%;
-  margin-top: -10px;
-  display: none;
-}
-
-#featured-code-desc {
-  margin-top: -0.5em;
-  max-width: 53%;
-}
-
+// ------- GitHub feed
 .gh-events {
   max-width: 40%;
 

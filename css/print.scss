@@ -5,12 +5,9 @@
 // Licensed under The MIT License
 // <http://opensource.org/licenses/MIT/>
 
-// Remove all text shadows
-a, blockquote, em h1, h2, p, pre,
-.post-title, code { text-shadow: none; }
-
-// Remove shadows on images
-img {
+// Remove all text and box shadows
+* {
+  text-shadow: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }

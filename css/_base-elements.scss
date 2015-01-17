@@ -54,6 +54,9 @@ code {
 // prevent the ending letters from touching
 em, .text-italic { padding-right: 0.1em; }
 
+// Logo at top of home page
+header { @extend .text-center; }
+
 html {
   position: relative;
   min-height: 100%;
