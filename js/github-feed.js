@@ -48,12 +48,56 @@
 
 
   /**
+   * @private
    * Convert an API url into a web interface one.
    * @param {String} url
    * @returns {Sring}
    */
   function _makeURL(url) {
     return url.replace(/(?:api\.|repos\/)/gi, "").replace(/commits/gi, "commit");
+  }
+
+
+  /**
+   * @private
+   * Capitalize the first letter of the given text.
+   * @param {String} text
+   * @returns {String}
+   */
+  function _capitalFirst(text) {
+    return text.charAt(0).toUpperCase() + text.substr(1);
+  }
+
+
+  /**
+   * Construct a proper event name.
+   * @param {String}  name The event name.
+   * @param {Boolean} [activeTense=false] If true, the event name
+   *                                      will be converted to an active tense verb.
+   * @returns {String} The corrected name.
+   */
+  function _makeEventName(name, activeTense) {
+    // Default to leaving verb tense as-is
+    if (activeTense === undefined) {
+      activeTense = false;
+    }
+
+    // Capitalize the first letter
+    name = _capitalFirst(name);
+
+    // Convert verb to active tense
+    if (activeTense) {
+      var changeTense = {
+        "Closed": "Close",
+        "Opened": "Open"
+      };
+
+      // If a replacement is defined, use it
+      if (changeTense[name] !== undefined) {
+        name = changeTense[name];
+      }
+    }
+    return name;
   }
 
 
