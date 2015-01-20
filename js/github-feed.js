@@ -2,7 +2,7 @@
   "use strict";
   /**
    * @constructor
-   * [[Description]]
+   * Create a GitHub event object.
    * @param {String} id Event ID.
    * @param {String} url Event url.
    * @param {String} sha Event SHA value or branch name.
@@ -113,7 +113,7 @@
 
     var dateParts  = rawDate.split("T")[0].split("-"),
         dateFormat = "{0} {1} {2}".format(dateParts[2], dateParts[1], dateParts[0]).split(" ");
-    dateFormat[1]  = "{0},".format(dateFormat[1].replace(dateFormat[1], months[dateFormat[1]]));
+    dateFormat[1]  = months[dateFormat[1]] + ",";
     return dateFormat.join(" ");
   }
 
@@ -126,8 +126,8 @@
    */
   function loadEvents(data) {
     for (var i = 0, limit = 7; i < limit; i += 1) {
-      var curEvent  = data[i];
-      var id        = curEvent.id,
+      var curEvent  = data[i],
+          id        = curEvent.id,
           url       = "#",
           sha       = "",
           repo      = curEvent.repo.name,

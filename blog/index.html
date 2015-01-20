@@ -15,33 +15,38 @@ title: Blog
 </p>
 
 <script>
-  var posts  = [],
-      months = {
-        "01": "January",
-        "02": "February",
-        "03": "March",
-        "04": "April",
-        "05": "May",
-        "06": "June",
-        "07": "July",
-        "08": "August",
-        "09": "September",
-        "10": "October",
-        "11": "November",
-        "12": "December"
-      };
+  var posts  = [];
+
+  /**
+   * Create a date stamp in the format "DD Month, YYYY".
+   * @param {String} rawDate GitHub timestamp.
+   * @returns {String}.
+   */
+  function _createDate(rawDate) {
+    var months = {"01": "January", "02": "February", "03": "March", "04": "April",
+                  "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
+                  "10": "October", "11": "November", "12": "December"
+                 };
+
+    var dateParts  = rawDate.split("T")[0].split("-"),
+        dateFormat = "{0} {1} {2}".format(dateParts[2], dateParts[1], dateParts[0]).split(" ");
+    dateFormat[1]  = months[dateFormat[1]] + ",";
+    return dateFormat.join(" ");
+  }
+
 
   /**
    * @constructor
-   * Create a blog post object
+   * Create a blog post object.
    */
   function BlogPost(date, id, title, address, content) {
+    this.id        = "post-" + id;
     this.date      = date;
     this.title     = title;
     this.address   = address;
     this.content   = content;
-    this.selector  = "#" + id;
-    this.container = '<div class="single-post" id="' + id + '"></div>';
+    this.selector  = "#" + this.id;
+    this.container = '<div class="single-post" id="' + this.id + '"></div>';
   }
 
   /**
@@ -57,20 +62,14 @@ title: Blog
       url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + numOfPosts + "&callback=?",
       success: function(data) {
         data.posts.forEach(function(postInfo) {
-          // Create a unique post ID
-          var postID  = "post-{0}".format(postInfo.guid.substr(-4));
-
           // Convert publishing date to a nicer format
           // Index 0 = Year
           // Index 1 = Month
           // Index 2 = Day
-          var postDateParts = postInfo.date.split("T")[0].split("-");
-          var dateFormat    = "{0} {1} {2}".format(postDateParts[2], postDateParts[1], postDateParts[0]).split(" ");
-          dateFormat[1]     = "{0},".format(dateFormat[1].replace(dateFormat[1], months[dateFormat[1]]));
-          var postDate      = dateFormat.join(" ");
+          var postDate = _createDate(postInfo.date);
 
           // Create the post object and store it
-          var myPost = new BlogPost(postDate, postID, postInfo.title, postInfo.short_URL, postInfo.content);
+          var myPost = new BlogPost(postDate, postInfo.guid.substr(-4), postInfo.title, postInfo.short_URL, postInfo.content);
           posts.push(myPost);
         });
 
