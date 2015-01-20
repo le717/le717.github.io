@@ -64,7 +64,7 @@
     capitalFirst: function(text) {
       return text.charAt(0).toUpperCase() + text.substr(1);
     },
-    
+
     /**
      * Construct a proper event name.
      * @param {String}  name The event name.
@@ -141,16 +141,6 @@
         continue;
       }
 
-      // Only present in certain events
-      else if (curEvent.payload.commits !== undefined) {
-        url = curEvent.payload.commits[0].url;
-        sha = curEvent.payload.commits[0].sha.substr(0, 10);
-        message = curEvent.payload.commits[0].message;
-
-        // Modify URL to create a link to the commit
-        url = EventUtils.makeURL(url);
-      }
-
       switch(eventName) {
           // Create event
           case "Create":
@@ -167,6 +157,8 @@
             if (/branch/.test(_eventType)) {
               url = EventUtils.makeURL(curEvent.repo.url) + "/tree/" + curEvent.payload.ref;
             }
+
+            // TODO New repo
             break;
 
           // New release
@@ -205,31 +197,19 @@
 
           // Pull request
           case "PullRequest":
+            eventName = "Pull Request";
+            sha = "#" + curEvent.payload.number;
+            url = curEvent.payload.pull_request.html_url;
+            message = EventUtils.capitalFirst(curEvent.payload.pull_request.state);
+            message += " \"" + curEvent.payload.pull_request.title + "\"";
             break;
 
           // Push event
           default:
+            url = EventUtils.makeURL(curEvent.payload.commits[0].url);
+            sha = curEvent.payload.commits[0].sha.substr(0, 10);
+            message = curEvent.payload.commits[0].message;
             break;
-      }
-
-      // New tag, branch, or repo
-      if (/create/i.test(eventName)) {
-
-        // TODO New repo
-
-        // TODO Only generate these if this is a tag
-//        tagName = curEvent.payload.ref;
-//        tagType = curEvent.payload.ref_type;
-      }
-
-      // Pull request
-      else if (/pullre/i.test(eventName)) {
-        eventName = eventName.replace(/PullRequest/, "Pull Request");
-        sha = "#" + curEvent.payload.number;
-        url = curEvent.payload.pull_request.html_url;
-
-        message = EventUtils.capitalFirst(curEvent.payload.pull_request.state);
-        message += " \"" + curEvent.payload.pull_request.title + "\"";
       }
 
       // Create a new event object
