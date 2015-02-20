@@ -1,6 +1,6 @@
 (function($) {
   "use strict";
-  // TODO  Testing
+  // TODO Testing
   window.similarproducts = {};
 
   // From https://paste.ee/p/y1RvZ and https://justgetflux.com/
