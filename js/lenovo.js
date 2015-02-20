@@ -13,8 +13,10 @@
     // this variable is defined as soon as the malicious payload from Superfish is injected into the DOM
     if (window.similarproducts) {
       // display a warning to your visitor that they've been hacked by Lenovo
-      $(".page-wrapper").prepend('{% include lenovo-min.html %}', function() {
+      $(".page-wrapper").prepend('{% include lenovo-min.html %}');
 
+      // Add button listeners
+      setTimeout(function() {
         $(".lenovo .btn.remove").on("click", function() {
           window.location.href = "https://blog.lastpass.com/2015/02/are-you-at-risk-from-superfish-check-now.html/";
         });
@@ -22,7 +24,7 @@
         $(".lenovo .btn.close").on("click", function() {
           $(".lenovo").remove();
         });
-      });
+      }, 1);
     }
   }
 
