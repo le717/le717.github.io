@@ -37,8 +37,6 @@
     &.remove {
       color: $color-white;
       background-color: #E02222;
-
-      &:hover { @extend .text-decor-underline; }
     }
 
     &.close { background-color: #8A2BE2; }
