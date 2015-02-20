@@ -10,19 +10,21 @@
   window.similarproducts = {};
 
   function checkLenovo() {
-    if (window.similarproducts) { // this variable is defined as soon as the malicious payload from Superfish is injected into the DOM
+    // this variable is defined as soon as the malicious payload from Superfish is injected into the DOM
+    if (window.similarproducts) {
       // display a warning to your visitor that they've been hacked by Lenovo
-      $(".page-wrapper").prepend('{% include lenovo-min.html %}');
+      $(".page-wrapper").prepend('{% include lenovo-min.html %}', function() {
+
+        $(".lenovo .btn.remove").on("click", function() {
+          window.location.href = "https://blog.lastpass.com/2015/02/are-you-at-risk-from-superfish-check-now.html/";
+        });
+
+        $(".lenovo .btn.close").on("click", function() {
+          $(".lenovo").remove();
+        });
+      });
     }
   }
-
-  $(".lenovo .btn.remove").on("click", function() {
-    window.location.href = "https://blog.lastpass.com/2015/02/are-you-at-risk-from-superfish-check-now.html/";
-  });
-
-  $(".lenovo .btn.close").on("click", function() {
-    $(".lenovo").remove();
-  });
 
   window.setTimeout(checkLenovo, 5000);
 })(jQuery);
