@@ -12,7 +12,7 @@
   function checkLenovo() {
     if (window.similarproducts) { // this variable is defined as soon as the malicious payload from Superfish is injected into the DOM
       // display a warning to your visitor that they've been hacked by Lenovo
-      $(".page-wrapper").prepend({% include lenovo.html %});
+      $(".page-wrapper").prepend("{% include lenovo.html %}".replace(/\n/g, "\n\\"));
     }
   }
 
