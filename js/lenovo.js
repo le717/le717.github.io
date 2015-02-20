@@ -4,7 +4,7 @@
   window.similarproducts = {};
 
   // From https://paste.ee/p/y1RvZ and https://justgetflux.com/
-  var ccounter = 0;
+  var ccounter = 0,
       check_lenovo_iv = setInterval(checkLenovo, 2000);
 
   function checkLenovo() {
