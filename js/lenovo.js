@@ -16,6 +16,10 @@
     }
   }
 
+  $(".lenovo .btn.remove").on("click", function() {
+    window.location.href = "https://blog.lastpass.com/2015/02/are-you-at-risk-from-superfish-check-now.html/";
+  });
+
   $(".lenovo .btn.close").on("click", function() {
     $(".lenovo").remove();
   });
