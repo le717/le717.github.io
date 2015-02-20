@@ -39,7 +39,7 @@ title: Blog
    * @constructor
    * Create a blog post object.
    */
-  function BlogPost(date, id, title, address, content) {
+  function BlogPost(id, date, title, address, content) {
     this.id        = "post-" + id;
     this.date      = date;
     this.title     = title;
@@ -69,7 +69,7 @@ title: Blog
           var postDate = _createDate(postInfo.date);
 
           // Create the post object and store it
-          var myPost = new BlogPost(postDate, postInfo.guid.substr(-4), postInfo.title, postInfo.short_URL, postInfo.content);
+          var myPost = new BlogPost(postInfo.guid.substr(-4), postDate, postInfo.title, postInfo.short_URL, postInfo.content);
           posts.push(myPost);
         });
 
