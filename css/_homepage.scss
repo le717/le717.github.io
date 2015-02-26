@@ -4,17 +4,17 @@
   display: -webkit-flex;
   display: flex;
 
-  & > div { width: 50%; }
+  & > div {
+    width: 50%;
+    margin-right: 0.5em;
+  }
+  & > div > h2 { @extend .text-center; }
 
   // ------- GitHub feed
-  .gh-events {
-  //  max-width: 40%;
-
-    dl { font-size: 0.95em; }
-  }
+  .gh-events dl { font-size: 0.95em; }
 
 
-  #info {
+  //  #info {
 
-  }
+  //  }
 }
