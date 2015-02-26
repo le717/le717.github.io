@@ -1,0 +1,20 @@
+// Flexbox columns
+.homepage-columns {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+
+  & > div { width: 50%; }
+
+  // ------- GitHub feed
+  .gh-events {
+  //  max-width: 40%;
+
+    dl { font-size: 0.95em; }
+  }
+
+
+  #info {
+
+  }
+}
