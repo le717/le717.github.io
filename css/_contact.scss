@@ -1,0 +1,25 @@
+// ------- Social buttons
+.contact-field {
+  @extend .text-center;
+  a { text-shadow: none; }
+
+  // Icon size and color
+  span {
+    font-size: 4.5em;
+    margin-bottom: 5%;
+  }
+
+  // Overwrite the default table stying
+   td {
+    outline: none;
+    padding: 0;
+    &:hover { @include transform(scale(1.05)); }
+  }
+
+  // Button icons
+  .contact-email { color: $color-yellow-light; }
+  .contact-gh { color: #e5e5e5; }
+  .contact-twitter { color: #55ACEE; }
+  .contact-wp { color: #1E8CBE; }
+  .contact-yt { color: #CC181E; }
+}
