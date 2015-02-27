@@ -20,7 +20,8 @@
 @include img-responsive(720px);
 
 @import "variables";
-@import "animations";
+@import "parts/text";
+@import "parts/animations";
 @import "common";
 @import "base-elements";
 

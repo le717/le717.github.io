@@ -13,16 +13,6 @@
 }
 
 .page-wrapper { margin-top: 5em; }
-.text-left { text-align: left; }
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-normal { font-weight: 400; }
-.text-bold { font-weight: 700; }
-.text-italic { font-style: italic; }
-.text-decor-none { text-decoration: none; }
-.text-decor-underline { text-decoration: underline; }
-.text-small { font-size: 0.8em; }
-.text-smaller { font-size: 0.7em; }
 
 a {
   @extend .text-decor-none;
