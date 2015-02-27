@@ -1,7 +1,3 @@
-// Created 2014 Triangle717
-// <http://Triangle717.WordPress.com/>
-// Licensed under The MIT License
-// <http://opensource.org/licenses/MIT/>
 
 
 @import "variables";
@@ -13,6 +9,7 @@
 
 // Commonly used alignments and type styles
 @include block-center();
+// ------- Commonly used alignments and type styles
 .page-section {
   @extend .block-center;
   background-color: $color-blue-bg;
