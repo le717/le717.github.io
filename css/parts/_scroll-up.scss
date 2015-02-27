@@ -1,0 +1,30 @@
+// ------- Scroll to top button
+.btn-scroll-up {
+  position: fixed;
+  cursor: pointer;
+  right: 3%;
+  bottom: 1em;
+  z-index: 2;
+  width: 2.5em;
+  height: 2.5em;
+  opacity: 0;
+  background-color: $color-trans-red;
+  border-radius: 0.5em;
+  @include transition-short(opacity 0.3s ease-out);
+
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    color: $color-yellow-light;
+    font-size: 1.6em;
+    text-shadow: none;
+    margin-left: 0.15em;
+    @include transform(rotate(-90deg));
+  }
+}
