@@ -6,19 +6,23 @@
 // Licensed under The MIT License
 // <http://opensource.org/licenses/MIT/>
 
-
-@import "common";
-@import "variables";
-@import "animations";
-@import "base-elements";
-
 // Mixins
+@import "mixins/block-center";
+@import "mixins/box-shadow";
+@import "mixins/ie-img-link";
+@import "mixins/img-responsive";
 @import "mixins/transform";
 @import "mixins/transition";
-@import "mixins/img-responsive";
 @import "mixins/transition-long";
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
+@include ie-img-link();
+@include img-responsive(720px);
+
+@import "variables";
+@import "common";
+@import "animations";
+@import "base-elements";
 
 // Page layout
 @import "parts/footer";
@@ -97,7 +101,7 @@
   img {
     @extend .img-shadow;
     @extend .img-responsive;
-    @extend .block-center;
+    @include block-center();
   }
 }
 
@@ -125,7 +129,7 @@
   img {
     @extend .img-responsive;
     @extend .img-shadow;
-    @extend .block-center;
+    @include block-center();
     // This has no effect on the desktop
     max-width: 93%;
   }

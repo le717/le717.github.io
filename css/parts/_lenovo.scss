@@ -25,8 +25,8 @@
   }
 
   .btn {
-    @extend .block-center;
     @extend .text-center;
+    @include block-center();
     width: 40%;
     margin-top: 0.6em;
     padding: 0.5em;

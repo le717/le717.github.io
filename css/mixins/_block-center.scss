@@ -2,9 +2,7 @@
 // SCSS mixin from https://github.com/le717/scss-mixins
 
 @mixin block-center() {
-  .block-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
