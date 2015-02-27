@@ -20,7 +20,13 @@
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
 
+// Page layout
 @import "parts/navbar";
+
+@import "parts/contact";
+@import "parts/homepage";
+@import "parts/lenovo";
+
 
 // ------- Footer
 .footer {
@@ -60,9 +66,6 @@
     @include transform(rotate(-90deg));
   }
 }
-
-@import "homepage";
-@import "contact";
 
 // ------- Previous button
 #previous-link {
@@ -184,5 +187,4 @@
 
 // ------- Mobile and print-only
 @import "screen";
-@import "lenovo";
 @import "print";
