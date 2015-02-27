@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
   "use strict";
-  // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     banner: "/* <%= pkg.name %> - v<%= pkg.version %>\n" +
@@ -10,7 +9,6 @@ module.exports = function(grunt) {
     cssfiles: ["css/*.css", "!css/*.min.css"],
     jsfiles: ["js/*.js", "!js/*.min.js"],
 
-    // Keep the devDependencies up-to-date
     devUpdate: {
       main: {
         options: {
@@ -26,7 +24,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Copy dependencies to their proper locations
     copy: {
       main: {
         files: [
@@ -49,7 +46,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Lint the HTML using HTMLHint
     htmlhint: {
       html: {
         options: {
@@ -59,7 +55,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Lint CSS using CSS Lint
     csslint: {
       strict: {
         options: {
@@ -70,7 +65,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Minify any CSS using CSSMin
     cssmin: {
       add_banner: {
         options: {
@@ -82,7 +76,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Lint JavaScript using JSHint
     jshint: {
       src: {
         options: {
@@ -92,7 +85,6 @@ module.exports = function(grunt) {
       },
     },
 
-    // Minify JavaScript using Uglify
     uglify: {
       options: {
         banner: "<%= banner %>",
@@ -108,28 +100,24 @@ module.exports = function(grunt) {
       }
     },
 
-    // Watched files to trigger grunt
     watch: {
       files: ["Gruntfile.js", "<%= cssfiles %>", "<%= jsfiles %>"],
       tasks: ["all"]
     }
   });
 
-  // Load all the plugins required to perform our tasks
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   grunt.registerTask("default", "List of commands", function() {
     grunt.log.writeln("");
-    grunt.log.writeln("Run 'grunt copy' to copy any dependencies");
     grunt.log.writeln("Run 'grunt lint' to lint the source files");
     grunt.log.writeln("Run 'grunt build' to minify the source files");
     grunt.log.writeln("Run 'grunt devUpdate' to update the devDependencies");
     grunt.log.writeln("Run 'grunt all' to run all tasks except 'devUpdate'");
   });
 
-  // Define the tasks
   grunt.registerTask("lint", ["htmlhint", "jshint", "csslint"]);
-  grunt.registerTask("build", "cssmin", "uglify");
+  grunt.registerTask("build", ["copy", "cssmin", "uglify"]);
   grunt.registerTask("all", ["lint", "build"]);
 
   // Always use --force to stop csslint from killing the task
