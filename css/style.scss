@@ -20,8 +20,8 @@
 @include img-responsive(720px);
 
 @import "variables";
-@import "common";
 @import "animations";
+@import "common";
 @import "base-elements";
 
 // Page layout
@@ -151,6 +151,9 @@
   &:hover { @extend .text-decor-none; }
 }
 
+
+// 404 image
+#image-four-oh-four { @include block-center; }
 
 // ------- Mobile and print-only
 @import "screen";

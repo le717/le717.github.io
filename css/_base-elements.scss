@@ -5,9 +5,6 @@
 // <http://opensource.org/licenses/MIT/>
 
 
-@import "variables";
-@import "mixins/box-shadow";
-
 ::-moz-selection {
   text-shadow: none;
   background-color: $color-white;
