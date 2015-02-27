@@ -11,6 +11,8 @@
 @import "variables";
 @import "animations";
 @import "base-elements";
+
+// Mixins
 @import "mixins/transform";
 @import "mixins/transition";
 @import "mixins/img-responsive";
@@ -18,72 +20,7 @@
 @import "mixins/transition-short";
 @import "mixins/webkit-transition-long";
 
-
-// ------- Navbar
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3em;
-  background-color: $color-trans-red;
-  color: $color-white;
-  border-bottom: 5px solid $color-yellow-light;
-  z-index: 1;
-
-  a {
-    text-shadow: none;
-    @include transition-short(color 0.5s ease);
-    &:hover {
-      color: #B3D4FC;
-      @extend .text-decor-none;
-    }
-  }
-
-  .navbar-icon {
-    display: inline;
-    margin-left: 0.3em;
-    color: $color-white;
-    font-size: 1.5em;
-  }
-  .navbar-text {
-    margin-left: 0.3em;
-    font-size: 1.15em;
-  }
-  .current-page {
-    color: #B3D4FC;
-    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
-  }
-
-  // Flatten the list
-  ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    margin-top: 0.7em;
-    float: left;
-
-    // Remove the triangles
-    &::before { content: ""; }
-
-    // Center position the logo
-    .navbar-logo {
-      position: absolute;
-      top: -0.1em;
-      right: 3%;
-    }
-
-    // Fix baseline height
-    .fa-pencil-square-o {
-      position: relative;
-      top: 0.1em;
-    }
-  }
-}
-
+@import "parts/navbar";
 
 // ------- Footer
 .footer {
