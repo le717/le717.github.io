@@ -10,27 +10,16 @@
 (function($) {
   "use strict";
   /**
-   * Scroll to top button
-   * Based on example from
-   * http://briancray.com/posts/scroll-to-top-link-jquery-css/
+   * Scroll to top button.
    */
   function toggleScrollUp() {
-    if ($(window).scrollTop() >= 100) {
-      $(".btn-scroll-up").css("opacity", "1");
-    } else {
-      $(".btn-scroll-up").css("opacity", "");
-    }
+    ($(window).scrollTop() >= 100) ? $(".btn-scroll-up").css("opacity", "1") : $(".btn-scroll-up").css("opacity", "");
   }
 
   $(function() {
-    // NOTE Work around a weird bug affecting only the Projects page
-    // where the button does not reappear when the page is scrolled
-    // to visibility then reloaded.
+    // Show/hide the scroll to top button
     toggleScrollUp();
-    $(window).scroll(function() {
-      // Of course, call it when the page is scrolled too
-      toggleScrollUp();
-    });
+    $(window).scroll(toggleScrollUp);
 
     // Scroll up button action
     $(".btn-scroll-up").on("click", function() {
