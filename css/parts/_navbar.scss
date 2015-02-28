@@ -15,7 +15,7 @@
     @include transition-short(color 0.5s ease);
     &:hover {
       color: #B3D4FC;
-      @extend .text-decor-none;
+      border-bottom: none;
     }
   }
 

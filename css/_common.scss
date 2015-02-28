@@ -19,7 +19,7 @@ a {
   color: $color-yellow-light;
   text-shadow: 1px 1px 2px $color-black;
 
-  &:hover { @extend .text-decor-underline; }
+  &:hover { border-bottom: 1px solid $color-yellow-light; }
 }
 
 .fully-centered {

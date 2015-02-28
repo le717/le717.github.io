@@ -49,7 +49,7 @@
     margin-left: 10px;
   }
 
-  &:hover { @extend .text-decor-underline; }
+  &:hover { @extend a:hover; }
 }
 
 
@@ -72,7 +72,7 @@
 }
 
 .post-url {
-  &:hover { @extend .text-decor-none; }
+  &:hover { border-bottom: none; }
 
   .post-title {
     @extend .text-center;
@@ -149,7 +149,7 @@
   font-size: 2em;
   display: inline-block;
 
-  &:hover { @extend .text-decor-none; }
+  &:hover { border-bottom: none; }
 }
 
 

@@ -47,10 +47,6 @@ code {
   text-shadow: 1px 1px #000;
 }
 
-// Tad bit of spacing after italic text to
-// prevent the ending letters from touching
-em, .text-italic { padding-right: 0.1em; }
-
 // Logo at top of home page
 header { @extend .text-center; }
 
