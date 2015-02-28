@@ -1,7 +1,11 @@
 // ------- Social buttons
 .contact-field {
   @extend .text-center;
-  a { text-shadow: none; }
+  a {
+    text-shadow: none;
+
+    &:hover { border-bottom: none; }
+  }
 
   // Icon size and color
   span {
