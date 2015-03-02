@@ -13,13 +13,14 @@
    * Scroll to top button.
    */
   function toggleScrollUp() {
-    ($(window).scrollTop() >= 100) ? $(".btn-scroll-up").css("opacity", "1") : $(".btn-scroll-up").css("opacity", "");
+    var QbtnScrollUp = document.querySelector(".btn-scroll-up");
+    (window.scrollY >= 100) ? QbtnScrollUp.style.opacity = "1" : QbtnScrollUp.style.opacity = "";
   }
 
   $(function() {
     // Show/hide the scroll to top button
     toggleScrollUp();
-    $(window).scroll(toggleScrollUp);
+    window.addEventListener("scroll", toggleScrollUp);
 
     // Scroll up button action
     $(".btn-scroll-up").on("click", function() {
