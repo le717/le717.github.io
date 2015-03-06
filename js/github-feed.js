@@ -11,7 +11,7 @@
    * @param {String} event Event type.
    * @param {String} msg Event message.
    */
-  function GHEvent(id, url, sha, date, repo, event, msg) {
+  function GHEvent(id, url, sha, date, repo, repoUrl, event, msg) {
     this.id    = id;
     this.msg   = msg;
     this.url   = url;
@@ -19,6 +19,7 @@
     this.date  = date;
     this.repo  = repo;
     this.event = event;
+    this.repoUrl = repoUrl;
     this.selector = "#gh-" + id;
     this.container = "<dl id='gh-" + id + "'></dl>";
   }
@@ -69,7 +70,7 @@
      * Construct a proper event name.
      * @param {String}  name The event name.
      * @param {Boolean} [activeTense=false] If true, the event name
-     *                                      will be converted to an active tense verb.
+     *     will be converted to an active tense verb.
      * @returns {String} The corrected name.
      */
     makeEventName: function(name, activeTense) {
@@ -121,7 +122,7 @@
   var events = [];
 
   /**
-   * [[Description]].
+   * Process the fetched GitHub event feed.
    * @param {Object} data [[Description]].
    */
   function loadEvents(data) {
@@ -132,6 +133,7 @@
           sha       = "",
           repo      = curEvent.repo.name,
           date      = _createDate(curEvent.created_at).substring(0, curEvent.created_at.length - 1),
+          repoUrl   = EventUtils.makeURL(curEvent.repo.url),
           message   = "No commit message available.",
           eventName = curEvent.type.replace(/event/i, "");
 
@@ -213,7 +215,7 @@
       }
 
       // Create a new event object
-      var ghEvent = new GHEvent(id, url, sha, date, repo, eventName, message);
+      var ghEvent = new GHEvent(id, url, sha, date, repo, repoUrl, eventName, message);
       ghEvent.summarize();
       events.push(ghEvent);
 //      console.log(ghEvent);
