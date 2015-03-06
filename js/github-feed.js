@@ -34,7 +34,7 @@
 
 
   /**
-   * Summarize a commit messgae.
+   * Summarize a commit message.
    * @returns {Boolean} true.
    */
   GHEvent.prototype.summarize = function() {
@@ -44,6 +44,14 @@
 
     // Preserve any new lines
     this.msg = this.msg.replace(/\n/, "<br>");
+
+    // Check for any issue/PR references and generate links
+    var issueRef = this.msg.match( /(?:gh-|#)(\d+)/);
+    if (issueRef) {
+      var issueLink = "<a target='_blank' href='" + this.repoUrl +
+                      "/issues/" + issueRef[1] + "'>" + issueRef[0] + "</a>";
+      this.msg = this.msg.replace(issueRef[0], issueLink);
+    }
     return true;
   };
 
@@ -176,7 +184,8 @@
             eventName = EventUtils.makeEventName(curEvent.payload.action, true);
             sha = "#" + curEvent.payload.issue.number;
             url = curEvent.payload.issue.html_url;
-            message = EventUtils.makeEventName(curEvent.payload.action) + " \"" + curEvent.payload.issue.title + "\"";
+            message = EventUtils.makeEventName(curEvent.payload.action) +
+                      " \"" + curEvent.payload.issue.title + "\"";
             break;
 
           // Delete event
@@ -218,7 +227,6 @@
       var ghEvent = new GHEvent(id, url, sha, date, repo, repoUrl, eventName, message);
       ghEvent.summarize();
       events.push(ghEvent);
-//      console.log(ghEvent);
     }
   }
 
@@ -229,15 +237,17 @@
    */
   function displayEvents() {
     var $container = $(".gh-events");
-    events.forEach(function(value) {
-      $container.append(value.container);
-      $(value.selector).append("<dt class='gh-title'/>");
-      $(value.selector).append("<dd/>");
+    events.forEach(function(event) {
+      $container.append(event.container);
+      $(event.selector).append("<dt class='gh-title'/>");
+      $(event.selector).append("<dd/>");
 
-      $(value.selector + " .gh-title").html(value.event + " <a class='gh-url' target='_blank' href=''></a> @ " + value.repo + " on " + value.date);
-      $(value.selector + " .gh-url").html(value.sha);
-      $(value.selector + " .gh-url").attr("href", value.url);
-      $(value.selector + " dd").html("<code>" + value.msg + "</code>");
+      $(event.selector + " .gh-title").html(event.event +
+                                            " <a class='gh-url' target='_blank' href=''></a> @ " +
+                                            event.repo + " on " + event.date);
+      $(event.selector + " .gh-url").html(event.sha);
+      $(event.selector + " .gh-url").attr("href", event.url);
+      $(event.selector + " dd").html("<code>" + event.msg + "</code>");
     });
     return true;
   }
