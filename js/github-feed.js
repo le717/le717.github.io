@@ -12,15 +12,15 @@
    * @param {String} msg Event message.
    */
   function GHEvent(id, url, sha, date, repo, repoUrl, event, msg) {
-    this.id    = id;
-    this.msg   = msg;
-    this.url   = url;
-    this.sha   = sha;
-    this.date  = date;
-    this.repo  = repo;
-    this.event = event;
-    this.repoUrl = repoUrl;
-    this.selector = "#gh-" + id;
+    this.id        = id;
+    this.msg       = msg;
+    this.url       = url;
+    this.sha       = sha;
+    this.date      = date;
+    this.repo      = repo;
+    this.event     = event;
+    this.repoUrl   = repoUrl;
+    this.selector  = "#gh-" + id;
     this.container = "<dl id='gh-" + id + "'></dl>";
   }
 
