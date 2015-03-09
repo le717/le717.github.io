@@ -19,31 +19,16 @@
 body {
   font-family: $font-family;
   font-weight: 400;
-  letter-spacing: -0.5px;
+  line-height: 1.6;
   color: $font-color;
   background: $background;
   margin: 0;
   padding: 0;
 }
 
-blockquote {
-  border-left: 0.4em solid rgb(0, 0, 196);
-  padding: 0 0.5em 0.3em;
-  background-color: rgba(128, 128, 128, 0.8);
-  font-size: 1.05em;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  quotes: "\201C""\201D""\201C""\201D";
-}
-
-blockquote::before {
-  content: open-quote;
-  font-size: 1.6em;
-  padding-right: 0.1em;
-}
-
 code {
   font-family: $font-family-code;
-  font-size: 0.85em;
+  font-size: 0.88em;
   text-shadow: 1px 1px #000;
 }
 

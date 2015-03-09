@@ -5,11 +5,11 @@
   right: 3%;
   bottom: 1em;
   z-index: 2;
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.6em;
+  height: 2.6em;
   opacity: 0;
   background-color: $color-trans-red;
-  border-radius: 0.5em;
+  border-radius: 2px;
   @include transition-short(opacity 0.3s ease-out);
 
   display: -webkit-flex;
@@ -24,7 +24,7 @@
     color: $color-yellow-light;
     font-size: 1.6em;
     text-shadow: none;
-    margin-left: 0.15em;
+    margin-left: 0.1em;
     @include transform(rotate(-90deg));
   }
 }

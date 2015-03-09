@@ -1,0 +1,14 @@
+blockquote {
+  border-left: 0.4em solid rgb(0, 0, 196);
+  padding: 0 0.5em 0.3em;
+  background-color: #6D6D6F;
+  font-size: 1.05em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  quotes: "\201C""\201D""\201C""\201D";
+
+  &::before {
+    content: open-quote;
+    font-size: 1.6em;
+    margin-right: -0.1em;
+  }
+}
