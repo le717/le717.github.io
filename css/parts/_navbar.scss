@@ -25,14 +25,13 @@
     color: $color-white;
     font-size: 1.5em;
   }
+
   .navbar-text {
     margin-left: 0.3em;
     font-size: 1.15em;
   }
-  .current-page {
-    color: #B3D4FC;
-    text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
-  }
+
+  .current-page { color: #B3D4FC; }
 
   // Flatten the list
   ul {
