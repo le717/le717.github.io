@@ -130,20 +130,21 @@
 //        value.cleanUp();
 
         // Add the post container to the page
-        $(".blog-posts").append(value.container);
+//        $(".blog-posts").append(value.container);
+        $(".blog-posts").append(value.final);
 
-        // Display post details in the following order:
-        // Post title/permalink to WordPress
-        // Publish date
-        // Post content
-        $(value.selector).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
-        $(value.selector).append("<p class='post-meta'><span class='post-date'></span></p>");
-        $(value.selector).append("<div class='post-content'></div>");
-
-        $(value.selector + " .post-title").html(value.title);
-        $(value.selector + " .post-url").attr("href", value.url);
-        $(value.selector + " .post-date").html(value.date);
-        $(value.selector + " .post-content").html(value.content);
+//        // Display post details in the following order:
+//        // Post title/permalink to WordPress
+//        // Publish date
+//        // Post content
+//        $(value.selector).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
+//        $(value.selector).append("<p class='post-meta'><span class='post-date'></span></p>");
+//        $(value.selector).append("<div class='post-content'></div>");
+//
+//        $(value.selector + " .post-title").html(value.title);
+//        $(value.selector + " .post-url").attr("href", value.url);
+//        $(value.selector + " .post-date").html(value.date);
+//        $(value.selector + " .post-content").html(value.content);
 
         // Perform post-DOM addition cleanup
         cleanupPost(value.selector);
