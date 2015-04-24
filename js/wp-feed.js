@@ -141,7 +141,7 @@
 
       // Spans (WordPress emotes)
       this.content = this.content.replace(/span(.*)class='.*?'/g, "span$1");
-      this.content = this.content.replace(/title=':P'/g, "span$1");
+      this.content = this.content.replace(/span(.*)title='.*?'/g, "span$1");
 
       // Blank attributes
       this.content = this.content.replace(/\s*class="\s?"/g, "");
