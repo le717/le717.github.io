@@ -1,25 +1,5 @@
 (function($) {
   "use strict";
-  var posts  = [];
-
-  /**
-   * Convert a date/time stamp to the format "DD Month, YYYY".
-   * @param {String} stamp
-   * @returns {String}.
-   */
-  function _createDate(stamp) {
-    var months = {"01": "January", "02": "February", "03": "March", "04": "April",
-                  "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
-                  "10": "October", "11": "November", "12": "December"
-                 };
-
-    var dateParts = stamp.split("T")[0].split("-"),
-        formatted = [dateParts[2], dateParts[1], dateParts[0]];
-    formatted[1]  = months[formatted[1]] + ",";
-    return formatted.join(" ");
-  }
-
-
   /**
    * @constructor
    * Create a blog post object.
@@ -32,8 +12,8 @@
     this.final     = null;
     this.content   = content;
     this.selector  = "#" + this.id;
-    this.container = "<div class='single-post' id='" + this.id + "'></div>";
   }
+
 
   /**
    * [[Description]]
@@ -47,6 +27,7 @@
     final.push("<h1 class='post-title'>", this.title, "</h1></a>");
 
     // Post metadata
+    this.createDate();
     final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
 
     // Post body
@@ -57,6 +38,23 @@
     final.push("</div>");
     this.final = final.join("");
   };
+
+  /**
+   * Convert a date/time stamp to the format "DD Month, YYYY".
+   * @returns {String}.
+   */
+   BlogPost.prototype.createDate = function() {
+    var months = {"01": "January", "02": "February", "03": "March", "04": "April",
+                  "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
+                  "10": "October", "11": "November", "12": "December"
+                 };
+
+    var dateParts = this.date.split("T")[0].split("-"),
+        formatted = [dateParts[2], dateParts[1], dateParts[0]];
+    formatted[1]  = months[formatted[1]] + ",";
+    this.date = formatted.join(" ");
+  };
+
 
   /**
    * Remove WordPress classes, IDs, and other unnecessary markup.
@@ -87,9 +85,11 @@
     return true;
   };
 
+
   /**
    * Create a blog post object.
    */
+  var posts  = [];
   (function() {
     var numOfPosts = 5;
 
@@ -99,14 +99,9 @@
       numOfPosts + "&callback=?",
       success: function(data) {
         data.posts.forEach(function(postInfo) {
-          // Convert publishing date to a nicer format
-          // Index 0 = Year
-          // Index 1 = Month
-          // Index 2 = Day
-          var postDate = _createDate(postInfo.date);
 
           // Create the post object and store it
-          var myPost = new BlogPost(postInfo.guid.substr(-4), postDate,
+          var myPost = new BlogPost(postInfo.guid.substr(-4), postInfo.date,
                                     postInfo.title, postInfo.short_URL, postInfo.content);
           myPost.compile();
           posts.push(myPost);
@@ -123,34 +118,34 @@
     });
   })();
 
+
   /**
    *  Display each blog post
    */
   function showPosts() {
-    $.each(posts, function(key, value) {
+    posts.forEach(function(post) {
       // Add the posts to the DOM
-      $(".blog-posts").append(value.final);
+      $(".blog-posts").append(post.final);
 
       // Perform post-DOM addition cleanup
-      cleanupPost(value.selector);
+      cleanupPost(post.selector);
       return true;
     });
   }
+
 
   /**
    * Remove WordPress classes, IDs, and other unnecessary clutter.
    */
   function cleanupPost(postContainer) {
     // TODO Move this into the BlogPost prototype
-    $(function() {
-      // Apply alignment for image caption text
-      $(postContainer).find("p").each(function() {
-        var $this = $(this);
-        if ($this.hasClass("wp-caption-text")) {
-          $this.removeAttr("class");
-          $this.css("text-align", "inherit");
-        }
-      });
+    // Apply alignment for image caption text
+    $(postContainer).find("p").each(function() {
+      var $this = $(this);
+      if ($this.hasClass("wp-caption-text")) {
+        $this.removeAttr("class");
+        $this.css("text-align", "inherit");
+      }
     });
   }
 }(jQuery));
