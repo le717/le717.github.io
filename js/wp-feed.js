@@ -35,6 +35,10 @@
       this.container = "<div class='single-post' id='" + this.id + "'></div>";
     }
 
+    /**
+     * [[Description]]
+     * @returns {Boolean} Always returns true.
+     */
     BlogPost.prototype.compile = function() {
       // Post title and URL
       this.final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
@@ -53,7 +57,36 @@
     };
 
     /**
-     * Create a blog post object
+     * Remove WordPress classes, IDs, and other unnecessary markup.
+     * @returns {Boolean} Always returns true.
+     */
+    BlogPost.prototype.cleanUp = function() {
+      // Alignment and captions
+      this.content = this.content.replace(/align(?:none|left|center|right)/g, "");
+      this.content = this.content.replace(/size-(?:thumbnail|full|medium|large)/g, "");
+      this.content = this.content.replace(/wp-caption(?!-)/g, "text-center");
+
+      // Divs
+      this.content = this.content.replace(/div\s?(?:(.*?) id=".*?")/g, "div$1");
+      this.content = this.content.replace(/div\s?(?:(.*?) style=".*?")/g, "div$1");
+
+      // Images
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?class=".*?")/g, "img$1");
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?id=".*?")/g, "img$1");
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?style=".*?")/g, "img$1");
+
+      // Spans (WordPress emotes)
+      this.content = this.content.replace(/span(.*)class='.*?'/g, "span$1");
+      this.content = this.content.replace(/span(.*)title='.*?'/g, "span$1");
+
+      // Blank attributes
+      this.content = this.content.replace(/\s*class="\s?"/g, "");
+      this.content = this.content.replace(/\s*style="\s?"/g, "");
+      return true;
+    };
+
+    /**
+     * Create a blog post object.
      */
     (function() {
       var numOfPosts = 5;
@@ -118,38 +151,8 @@
       });
     }
 
-
     /**
-     * Remove WordPress classes, IDs, and other unnecessary markup.
-     */
-    BlogPost.prototype.cleanUp = function() {
-      // Alignment and captions
-      this.content = this.content.replace(/align(?:none|left|center|right)/g, "");
-      this.content = this.content.replace(/size-(?:thumbnail|full|medium|large)/g, "");
-      this.content = this.content.replace(/wp-caption(?!-)/g, "text-center");
-
-      // Divs
-      this.content = this.content.replace(/div\s?(?:(.*?) id=".*?")/g, "div$1");
-      this.content = this.content.replace(/div\s?(?:(.*?) style=".*?")/g, "div$1");
-
-      // Images
-      this.content = this.content.replace(/img(?:\s?(.*?)\s?class=".*?")/g, "img$1");
-      this.content = this.content.replace(/img(?:\s?(.*?)\s?id=".*?")/g, "img$1");
-      this.content = this.content.replace(/img(?:\s?(.*?)\s?style=".*?")/g, "img$1");
-
-      // Spans (WordPress emotes)
-      this.content = this.content.replace(/span(.*)class='.*?'/g, "span$1");
-      this.content = this.content.replace(/span(.*)title='.*?'/g, "span$1");
-
-      // Blank attributes
-      this.content = this.content.replace(/\s*class="\s?"/g, "");
-      this.content = this.content.replace(/\s*style="\s?"/g, "");
-      return true;
-    };
-
-
-    /**
-     * Remove WordPress classes, IDs, and other unnecessary clutter
+     * Remove WordPress classes, IDs, and other unnecessary clutter.
      */
     function cleanupPost(postContainer) {
       // TODO Move this into the BlogPost prototype
