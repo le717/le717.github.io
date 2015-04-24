@@ -57,7 +57,7 @@
      */
     (function() {
       // Display a different number of posts depending on the platform
-      var numOfPosts = 1;  // ($.browser.desktop ? 7 : 4);
+      var numOfPosts = 4;  // ($.browser.desktop ? 7 : 4);
 
       $.ajax({
         dataType: "json",
