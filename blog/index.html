@@ -80,7 +80,7 @@ title: Blog
         $(".loading-dots").remove();
         $(".blog-posts").removeClass("page-section");
         showPosts();
-        $(".post-content").removeAttr("style");
+//        $(".post-content").removeAttr("style");
         $(".end-of-posts").removeClass("hidden");
         return true;
       }
@@ -105,7 +105,8 @@ title: Blog
       // Post content
       $(value.selector).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
       $(value.selector).append("<p class='post-meta'><span class='post-date'></span></p>");
-      $(value.selector).append("<div class='post-content' style='display: none;'></div>");
+//      $(value.selector).append("<div class='post-content' style='display: none;'></div>");
+      $(value.selector).append("<div class='post-content'></div>");
 
       $(value.selector + " .post-title").html(value.title);
       $(value.selector + " .post-url").attr("href", value.address);
