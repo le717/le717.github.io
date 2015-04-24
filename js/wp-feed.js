@@ -131,20 +131,21 @@
       this.content = this.content.replace(/wp-caption(?!-)/g, "text-center");
 
       // Divs
-      this.content = this.content.replace(/div\s(?:(.*?) id=".*?")/g, "div $1");
-      this.content = this.content.replace(/div\s(?:(.*?) style=".*?")/g, "div $1");
+      this.content = this.content.replace(/div\s?(?:(.*?) id=".*?")/g, "div$1");
+      this.content = this.content.replace(/div\s?(?:(.*?) style=".*?")/g, "div$1");
 
       // Images
-      this.content = this.content.replace(/img class=".*?"/g, "img");
-      this.content = this.content.replace(/img style=".*?"/g, "img");
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?class=".*?")/g, "img$1");
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?id=".*?")/g, "img$1");
+      this.content = this.content.replace(/img(?:\s?(.*?)\s?style=".*?")/g, "img$1");
 
       // Spans (WordPress emotes)
-      this.content = this.content.replace(/span class='.*?'/g, "span");
-      this.content = this.content.replace(/span title='.*?'/g, "span");
+      this.content = this.content.replace(/span(.*)class='.*?'/g, "span$1");
+      this.content = this.content.replace(/title=':P'/g, "span$1");
 
       // Blank attributes
-      this.content = this.content.replace(/\sclass="\s?"/g, "");
-      this.content = this.content.replace(/\sstyle="\s?"/g, "");
+      this.content = this.content.replace(/\s*class="\s?"/g, "");
+      this.content = this.content.replace(/\s*style="\s?"/g, "");
       // console.log(this.content);
       return true;
     };
