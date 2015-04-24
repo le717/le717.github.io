@@ -61,7 +61,7 @@ title: Blog
 
     $.ajax({
       dataType: "json",
-      url: "//public-api.wordpress.com/rest/v1/sites/triangle717.wordpress.com/posts/?number=" + numOfPosts + "&callback=?",
+      url: "//public-api.wordpress.com/rest/v1.1/sites/triangle717.wordpress.com/posts/?number=" + numOfPosts + "&callback=?",
       success: function(data) {
         data.posts.forEach(function(postInfo) {
           // Convert publishing date to a nicer format
