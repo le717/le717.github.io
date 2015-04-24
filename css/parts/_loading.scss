@@ -1,3 +1,24 @@
 // ------- Loading animation
+.loading {
+  @include block-center();
+  z-index: 5;
+  -webkit-animation: aniLoading 3s linear infinite;
+          animation: aniLoading 3s linear infinite;
+}
 
-.loading { @include block-center(); }
+@-webkit-keyframes aniLoading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes aniLoading {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
