@@ -1,0 +1,52 @@
+// ------- Blog
+.single-post {
+  @extend .page-section;
+  border-radius: 0.5em;
+  padding-top: 0;
+  background-color: $color-blue-bg;
+}
+
+.post-url {
+  &:hover { border-bottom: none; }
+
+  .post-title {
+    @extend .text-center;
+    padding-top: 0.2em;
+
+    &:active { @include transform(translate3d(0, 2px, 0)); }
+  }
+}
+
+.post-meta {
+  @extend .text-center;
+  color: $color-yellow-light;
+  margin-top: -0.5em;
+}
+
+.post-content {
+  // Flatten blockquotes
+  blockquote p {
+    display: inline;
+    margin: 0 -0.8em;
+  }
+
+  // Indent leading paragraph sentences
+  p { text-indent: 0.8em; }
+
+  // Blog post images
+  img {
+    @extend .img-shadow;
+    @extend .img-responsive;
+    @include block-center();
+  }
+}
+
+.end-of-posts {
+  @extend .text-center;
+  display: block;
+  font-size: 1.1em;
+  margin-top: 2.5%;
+  margin-bottom: -1%;
+}
+
+.end-of-posts.hidden { display: none; }

@@ -2,16 +2,16 @@
 layout: script
 title: Blog
 ---
-<noscript>
-  Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
-  <a target="_blank" href="{{ site.author_wp }}">WordPress.com</a> and read to your heart's content.
-</noscript>
-
-<div class="blog-posts">
+<div class="blog-posts page-section">
   {% include loading-dots.html %}
+
+  <noscript>
+    Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
+    <a target="_blank" href="{{ site.author_wp }}">WordPress.com</a> and read to your heart's content.
+  </noscript>
 </div>
 
-<p class="end-of-posts">
+<p class="end-of-posts hidden">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit
   <a target="_blank" href="{{ site.author_wp }}">WordPress.com</a> and read to your heart's content!
 </p>
@@ -78,10 +78,10 @@ title: Blog
         // Now that the posts are stored, go through and display them
         // and stop the loading animation
         $(".loading-dots").remove();
+        $(".blog-posts").removeClass("page-section");
         showPosts();
-//        $(".blog-posts").removeAttr("style");
         $(".post-content").removeAttr("style");
-        $(".end-of-posts").css("display", "block");
+        $(".end-of-posts").removeClass("hidden");
         return true;
       }
     });
