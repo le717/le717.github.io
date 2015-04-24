@@ -45,6 +45,7 @@
       final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
 
       // Post body
+      this.cleanUp();
       final.push("<div class='post-content'>", this.content, "</div>");
 
       // Finally, close off the container
@@ -95,7 +96,7 @@
     function showPosts() {
       $.each(posts, function(key, value) {
         // Perform initial cleanup measures
-        value.cleanUp();
+//        value.cleanUp();
 
         // Add the post container to the page
         $(".blog-posts").append(value.container);
@@ -125,13 +126,13 @@
      */
     BlogPost.prototype.cleanUp = function() {
       // Alignment and captions
-      this.content = this.content.replace(/alignnone|alignleft|aligncenter|alignright/g, "");
+      this.content = this.content.replace(/align(?:none|left|center|right)/g, "");
       this.content = this.content.replace(/size-(?:thumbnail|full|medium|large)/g, "");
-      this.content = this.content.replace(/wp-caption(?!-text)/g, "text-center");
+      this.content = this.content.replace(/wp-caption(?!-)/g, "text-center");
 
       // Divs
-      this.content = this.content.replace(/div id=".*?"/g, "div");
-      this.content = this.content.replace(/div style=".*?"/g, "div");
+      this.content = this.content.replace(/div\s(?:(.*?) id=".*?")/g, "div $1");
+      this.content = this.content.replace(/div\s(?:(.*?) style=".*?")/g, "div $1");
 
       // Images
       this.content = this.content.replace(/img class=".*?"/g, "img");
