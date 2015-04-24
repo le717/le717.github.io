@@ -91,7 +91,7 @@
      * Create a blog post object.
      */
     (function() {
-      var numOfPosts = 1; // 5;
+      var numOfPosts = 5;
 
       $.ajax({
         dataType: "json",
