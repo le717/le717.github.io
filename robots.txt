@@ -3,5 +3,4 @@ Disallow: /blog/
 Disallow: /css/
 Disallow: /img/
 Disallow: /js/
-Disallow: /json/
 Disallow: /lib/

@@ -1,6 +1,6 @@
 // ------- Commonly used alignments and type styles
 .page-section {
-  @include block-center();
+  @include block-center;
   background-color: $color-blue-bg;
   border-radius: 0.7em;
   width: 93%;

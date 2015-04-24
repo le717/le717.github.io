@@ -79,14 +79,10 @@
   img {
     @extend .img-responsive;
     @extend .img-shadow;
-    @include block-center();
+    @include block-center;
     // This has no effect on the desktop
     max-width: 93%;
   }
-
-  /*.project-description {
-
-  }*/
 }
 
 .project-wip {
