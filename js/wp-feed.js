@@ -29,7 +29,7 @@
       this.url       = url;
       this.date      = date;
       this.title     = title;
-      this.final     = "";
+      this.final     = null;
       this.content   = content;
       this.selector  = "#" + this.id;
       this.container = "<div class='single-post' id='" + this.id + "'></div>";
@@ -123,53 +123,34 @@
       });
     })();
 
-    /**
-     *  Display each blog post
-     */
-    function showPosts() {
-      $.each(posts, function(key, value) {
-        // Perform initial cleanup measures
-//        value.cleanUp();
+  /**
+   *  Display each blog post
+   */
+  function showPosts() {
+    $.each(posts, function(key, value) {
+      // Add the posts to the DOM
+      $(".blog-posts").append(value.final);
 
-        // Add the post container to the page
-//        $(".blog-posts").append(value.container);
-        console.log(value.final);
-        $(".blog-posts").append(value.final);
+      // Perform post-DOM addition cleanup
+      cleanupPost(value.selector);
+      return true;
+    });
+  }
 
-//        // Display post details in the following order:
-//        // Post title/permalink to WordPress
-//        // Publish date
-//        // Post content
-//        $(value.selector).append("<a class='post-url' target='_blank'><h1 class='post-title'></h1></a>");
-//        $(value.selector).append("<p class='post-meta'><span class='post-date'></span></p>");
-//        $(value.selector).append("<div class='post-content'></div>");
-//
-//        $(value.selector + " .post-title").html(value.title);
-//        $(value.selector + " .post-url").attr("href", value.url);
-//        $(value.selector + " .post-date").html(value.date);
-//        $(value.selector + " .post-content").html(value.content);
-
-        // Perform post-DOM addition cleanup
-        cleanupPost(value.selector);
-        return true;
+  /**
+   * Remove WordPress classes, IDs, and other unnecessary clutter.
+   */
+  function cleanupPost(postContainer) {
+    // TODO Move this into the BlogPost prototype
+    $(function() {
+      // Apply alignment for image caption text
+      $(postContainer).find("p").each(function() {
+        var $this = $(this);
+        if ($this.hasClass("wp-caption-text")) {
+          $this.removeAttr("class");
+          $this.css("text-align", "inherit");
+        }
       });
-    }
-
-    /**
-     * Remove WordPress classes, IDs, and other unnecessary clutter.
-     */
-    function cleanupPost(postContainer) {
-      // TODO Move this into the BlogPost prototype
-      $(function() {
-        // Apply alignment for image caption text
-        $(postContainer).find("p").each(function() {
-          var $this = $(this);
-          if ($this.hasClass("wp-caption-text")) {
-            $this.removeAttr("class");
-            $this.css("text-align", "inherit");
-          }
-        });
-     });
-    }
-
+   });
+  }
 }(jQuery));
