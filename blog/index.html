@@ -2,13 +2,15 @@
 layout: script
 title: Blog
 ---
-{% include loading-dots.html %}
 <noscript>
   Well, would you look at that? The posts could not be loaded.<br>That's OK, because you can visit the
   <a target="_blank" href="{{ site.author_wp }}">WordPress.com</a> and read to your heart's content.
 </noscript>
 
-<div class="blog-posts" style="display: none;"></div>
+<div class="blog-posts">
+  {% include loading-dots.html %}
+</div>
+
 <p class="end-of-posts">
   Well, would you look at that? That's all the posts that were loaded!<br>If you would like to read more, you can visit
   <a target="_blank" href="{{ site.author_wp }}">WordPress.com</a> and read to your heart's content!
@@ -77,7 +79,7 @@ title: Blog
         // and stop the loading animation
         $(".loading-dots").remove();
         showPosts();
-        $(".blog-posts").removeAttr("style");
+//        $(".blog-posts").removeAttr("style");
         $(".post-content").removeAttr("style");
         $(".end-of-posts").css("display", "block");
         return true;

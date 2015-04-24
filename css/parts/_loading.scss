@@ -26,7 +26,7 @@
 
 // ------- Loading animation (dots)
 .loading-dots {
-  @include block-center();
+  @extend .text-center;
   z-index: 5;
 
   h1:first-of-type { margin-top: 0; }
