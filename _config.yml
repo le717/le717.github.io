@@ -6,7 +6,6 @@ baseurl: ""
 author_wp: http://Triangle717.WordPress.com
 author_twitter: https://twitter.com/_le717
 gems:
-  - jekyll-mentions
   - jekyll-redirect-from
   - jekyll-sitemap
   - jemoji
