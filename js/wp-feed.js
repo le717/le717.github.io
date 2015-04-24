@@ -24,22 +24,40 @@
      * @constructor
      * Create a blog post object.
      */
-    function BlogPost(id, date, title, address, content) {
+    function BlogPost(id, date, title, url, content) {
       this.id        = "post-" + id;
+      this.url       = url;
       this.date      = date;
       this.title     = title;
-      this.address   = address;
       this.content   = content;
       this.selector  = "#" + this.id;
       this.container = "<div class='single-post' id='" + this.id + "'></div>";
     }
+
+    BlogPost.prototype.compile = function() {
+      var final = ["<div class='single-post' id='", this.id, "'>"];
+
+      // Post title and URL
+      final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
+      final.push("<h1 class='post-title'>", this.title, "</h1></a>");
+
+      // Post metadata
+      final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
+
+      // Post body
+      final.push("<div class='post-content'>", this.content, "</div>");
+
+      // Finally, close off the container
+      final.push("</div>");
+      console.log(final.join());
+    };
 
     /**
      * Create a blog post object
      */
     (function() {
       // Display a different number of posts depending on the platform
-      var numOfPosts = ($.browser.desktop ? 7 : 4);
+      var numOfPosts = 1;  // ($.browser.desktop ? 7 : 4);
 
       $.ajax({
         dataType: "json",
@@ -56,6 +74,7 @@
             // Create the post object and store it
             var myPost = new BlogPost(postInfo.guid.substr(-4), postDate,
                                       postInfo.title, postInfo.short_URL, postInfo.content);
+            myPost.compile();
             posts.push(myPost);
           });
 
@@ -90,7 +109,7 @@
         $(value.selector).append("<div class='post-content'></div>");
 
         $(value.selector + " .post-title").html(value.title);
-        $(value.selector + " .post-url").attr("href", value.address);
+        $(value.selector + " .post-url").attr("href", value.url);
         $(value.selector + " .post-date").html(value.date);
         $(value.selector + " .post-content").html(value.content);
 
