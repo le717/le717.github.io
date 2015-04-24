@@ -29,36 +29,34 @@
       this.url       = url;
       this.date      = date;
       this.title     = title;
+      this.final     = ["<div class='single-post' id='", this.id, "'>"];
       this.content   = content;
       this.selector  = "#" + this.id;
       this.container = "<div class='single-post' id='" + this.id + "'></div>";
     }
 
     BlogPost.prototype.compile = function() {
-      var final = ["<div class='single-post' id='", this.id, "'>"];
-
       // Post title and URL
-      final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
-      final.push("<h1 class='post-title'>", this.title, "</h1></a>");
+      this.final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
+      this.final.push("<h1 class='post-title'>", this.title, "</h1></a>");
 
       // Post metadata
-      final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
+      this.final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
 
       // Post body
       this.cleanUp();
-      final.push("<div class='post-content'>", this.content, "</div>");
+      this.final.push("<div class='post-content'>", this.content, "</div>");
 
       // Finally, close off the container
-      final.push("</div>");
-      console.log(final.join(""));
+      this.final.push("</div>");
+      this.final.join("");
     };
 
     /**
      * Create a blog post object
      */
     (function() {
-      // Display a different number of posts depending on the platform
-      var numOfPosts = 4;  // ($.browser.desktop ? 7 : 4);
+      var numOfPosts = 5;
 
       $.ajax({
         dataType: "json",
@@ -146,7 +144,6 @@
       // Blank attributes
       this.content = this.content.replace(/\s*class="\s?"/g, "");
       this.content = this.content.replace(/\s*style="\s?"/g, "");
-      // console.log(this.content);
       return true;
     };
 
