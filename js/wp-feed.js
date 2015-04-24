@@ -29,7 +29,7 @@
       this.url       = url;
       this.date      = date;
       this.title     = title;
-      this.final     = ["<div class='single-post' id='", this.id, "'>"];
+      this.final     = "";
       this.content   = content;
       this.selector  = "#" + this.id;
       this.container = "<div class='single-post' id='" + this.id + "'></div>";
@@ -40,20 +40,22 @@
      * @returns {Boolean} Always returns true.
      */
     BlogPost.prototype.compile = function() {
+      var final = ["<div class='single-post' id='", this.id, "'>"];
+
       // Post title and URL
-      this.final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
-      this.final.push("<h1 class='post-title'>", this.title, "</h1></a>");
+      final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
+      final.push("<h1 class='post-title'>", this.title, "</h1></a>");
 
       // Post metadata
-      this.final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
+      final.push("<p class='post-meta'><span class='post-date'>", this.date, "</span></p>");
 
       // Post body
       this.cleanUp();
-      this.final.push("<div class='post-content'>", this.content, "</div>");
+      final.push("<div class='post-content'>", this.content, "</div>");
 
       // Finally, close off the container
-      this.final.push("</div>");
-      this.final.join("");
+      final.push("</div>");
+      this.final = final.join("");
     };
 
     /**
@@ -89,7 +91,7 @@
      * Create a blog post object.
      */
     (function() {
-      var numOfPosts = 5;
+      var numOfPosts = 1; // 5;
 
       $.ajax({
         dataType: "json",
@@ -131,6 +133,7 @@
 
         // Add the post container to the page
 //        $(".blog-posts").append(value.container);
+        console.log(value.final);
         $(".blog-posts").append(value.final);
 
 //        // Display post details in the following order:
