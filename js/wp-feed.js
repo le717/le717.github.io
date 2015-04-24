@@ -49,7 +49,7 @@
 
       // Finally, close off the container
       final.push("</div>");
-      console.log(final.join());
+      console.log(final.join(""));
     };
 
     /**
