@@ -41,7 +41,7 @@
 
   /**
    * Convert a date/time stamp to the format "DD Month, YYYY".
-   * @returns {String}.
+   * @returns {String}
    */
    BlogPost.prototype.createDate = function() {
     var months = {"01": "January", "02": "February", "03": "March", "04": "April",
@@ -120,12 +120,13 @@
 
 
   /**
-   *  Display each blog post
+   * Add the posts to the page.
+   * @returns {Boolean} Always returns true.
    */
   function showPosts() {
+    var $container = $(".blog-posts");
     posts.forEach(function(post) {
-      // Add the posts to the DOM
-      $(".blog-posts").append(post.final);
+      $container.append(post.final);
 
       // Perform post-DOM addition cleanup
       cleanupPost(post.selector);
