@@ -5,14 +5,11 @@
   background-color: $color-blue-bg;
 }
 
-.post-url {
-  &:hover { border-bottom: none; }
+.post-url { @extend .perma-anchor; }
 
-  .post-title {
-    @extend .text-center;
-
-    &:active { @include transform(translate3d(0, 2px, 0)); }
-  }
+.post-title {
+  @extend .text-center;
+  &:hover .post-url { opacity: 1; }
 }
 
 .post-meta {
@@ -23,7 +20,7 @@
 
 .post-content {
   // Flatten blockquotes
-  blockquote p {
+  blockquote * {
     display: inline;
     margin: 0 -0.8em;
   }

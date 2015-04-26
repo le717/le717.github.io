@@ -23,8 +23,9 @@
     var final = ["<div class='single-post' id='", this.id, "'>"];
 
     // Post title and URL
-    final.push("<a class='post-url' target='_blank' href='", this.url, "'>");
-    final.push("<h1 class='post-title'>", this.title, "</h1></a>");
+    final.push("<h1 class='post-title'>", this.title);
+    final.push("<a class='fa fa-link post-url' target='_blank' href='", this.url, "'>",
+               "</a></h1>");
 
     // Post metadata
     this.createDate();
