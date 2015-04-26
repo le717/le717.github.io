@@ -34,7 +34,7 @@
     $.each($(".project-item h1"), function(i, ele) {
       var $this  = $(ele),
           anchor = $this.parent().attr("id");
-      $this.append("<a class='fa fa-link project-anchor' href='#" + anchor + "'></a>");
+      $this.append("<a class='fa fa-link perma-anchor' href='#" + anchor + "'></a>");
     });
 
     // Add text to Project WIP label
