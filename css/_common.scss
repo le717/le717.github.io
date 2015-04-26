@@ -6,7 +6,10 @@
   height: auto;
   padding: 0 1.5em 0.2em 1.5em;
 
-  h1, h2, h3, h4, h5, h6 { color: $color-blue-header; }
+  h1, h2, h3, h4, h5, h6 {
+    color: $color-blue-header;
+    text-shadow: 0 1px 1px $color-black;
+  }
 }
 
 .page-wrapper { margin-top: 5em; }
