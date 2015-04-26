@@ -1,5 +1,5 @@
 /*
- * Created 2014 Triangle717
+ * Created 2014-2015 Triangle717
  * <http://Triangle717.WordPress.com/>
  *
  * Licensed under The MIT License
@@ -24,7 +24,7 @@
 
     // Scroll up button action
     $(".btn-scroll-up").on("click", function() {
-      $("html, body").animate({scrollTop: 0}, 1350, "easeInOutQuad");
+      $("html, body").animate({scrollTop: 0}, 500, "easeInOutQuad");
     });
 
     // Fully center the items that need centering
