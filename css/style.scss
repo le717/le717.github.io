@@ -112,6 +112,8 @@
 // 404 image
 #image-four-oh-four { @include block-center; }
 
+.embed-youtube { @include block-center; }
+
 // ------- Mobile and print-only
 @import "screen";
 @import "print";
