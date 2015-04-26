@@ -27,4 +27,4 @@ a {
   left: 50%;
 }
 
-.img-shadow { @include box-shadow(0 1px 2px 1px $color-black); }
+.img-shadow { @include box-shadow(0 1px 8px #3f3232); }
