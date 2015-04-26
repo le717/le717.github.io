@@ -60,7 +60,7 @@
 
     // Post body
     this.summarize();
-    final.push("<dd><code>", event.msg, "</code></dd>");
+    final.push("<dd><code>", this.msg, "</code></dd>");
 
     // Finally, close off the container
     final.push("</dl>");
