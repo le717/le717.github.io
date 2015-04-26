@@ -73,11 +73,7 @@
   @extend .page-section;
   padding-bottom: 1em;
 
-//  h2 {
-//    position: relative;
-//    top: 0.2em;
-//    left: 0.5em;
-//  }
+  h1 { @extend .text-center; }
 
   img {
     @extend .img-responsive;
