@@ -31,8 +31,10 @@
     var $centered = $(".fully-centered");
     $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
 
-    $.each($(".project-item a h1"), function(i, ele) {
-      $(ele).append("<span class='fa fa-link project-anchor'></span>");
+    $.each($(".project-item h1"), function(i, ele) {
+      var $this  = $(ele),
+          anchor = $this.parent().attr("id");
+      $this.append("<a class='fa fa-link project-anchor' href='#" + anchor + "'></a>");
     });
 
     // Add text to Project WIP label

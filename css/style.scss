@@ -80,6 +80,8 @@
     opacity: 0;
     transform: translate3d(-1.5em, 0, 0);
     transition: transform 0.5s ease 0.1s;
+
+    &:hover { border-bottom: none; }
   }
 
   a:hover .project-anchor {
