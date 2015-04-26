@@ -61,7 +61,7 @@
     var final = ["<dl id='gh-", this.id, "'>"];
 
     // Event title, date, and URL
-    final.push("<dt class='gh-title'>", this.event);
+    final.push("<dt class='gh-title'>", this.event, " ");
     final.push("<a class='gh-url' target='_blank' href='", this.url, "'>",
                this.sha, "</a> @ ", this.repo, " on ", this.date, "</dt>");
 
