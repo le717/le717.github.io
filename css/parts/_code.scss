@@ -2,12 +2,12 @@
 code { font-family: $font-family-code; }
 
 pre {
-  border-left: 0.3em solid #e2f89c;
-  padding: 0 0.5em;
-  margin-left: 2.5em;
-  margin-right: 2.5em;
-  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding: 0.5em;
   overflow: auto;
   background-color: $color-gray-trans;
+  border-left: 0.3em solid #e2f89c;
   font-family: $font-family-code;
 }
