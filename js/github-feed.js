@@ -19,6 +19,7 @@
     this.date      = date;
     this.repo      = repo;
     this.event     = event;
+    this.final     = null;
     this.repoUrl   = repoUrl;
     this.selector  = "#gh-" + id;
     this.container = "<dl id='gh-" + id + "'></dl>";
@@ -31,6 +32,41 @@
    * This is a hard limit and may increase cut off part of a word.
    */
   GHEvent.prototype.charLimit = 80;
+
+  /**
+   * Convert a date/time stamp to the format "DD Month, YYYY".
+   * @returns {String}
+   */
+   GHEvent.prototype.createDate = function() {
+    var months = {"01": "January", "02": "February", "03": "March", "04": "April",
+                  "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
+                  "10": "October", "11": "November", "12": "December"
+                 };
+
+    var dateParts = this.date.split("T")[0].split("-"),
+        formatted = [dateParts[2], dateParts[1], dateParts[0]];
+    formatted[1]  = months[formatted[1]] + ",";
+    this.date = formatted.join(" ");
+  };
+
+  GHEvent.prototype.compile = function() {
+    var final = ["<dl id='gh-", this.id, "'>"];
+
+    // Event title, date, and URL
+//    this.createDate()
+    final.push("<dt class='gh-title'>", this.event);
+    final.push("<a class='gh-url' target='_blank' href='", this.url, "'>",
+               this.sha, "</a> @ ", this.repo, " on ", this.date, "</dt>");
+
+    // Post body
+    this.summarize();
+    final.push("<dd><code>", event.msg, "</code></dd>");
+
+    // Finally, close off the container
+    final.push("</dl>");
+    this.final = final.join("");
+
+  };
 
 
   /**
@@ -225,9 +261,22 @@
 
       // Create a new event object
       var ghEvent = new GHEvent(id, url, sha, date, repo, repoUrl, eventName, message);
-      ghEvent.summarize();
+      ghEvent.compile();
       events.push(ghEvent);
     }
+  }
+
+
+  /**
+   * Add the events to the page.
+   * @returns {Boolean} Always returns true.
+   */
+  function displayEvents() {
+    var $container = $(".gh-events");
+    events.forEach(function(event) {
+      $container.append(event.final);
+      return true;
+    });
   }
 
 
@@ -235,8 +284,7 @@
    * Display the feed results.
    * @returns {Boolean} Always returns true.
    */
-  function displayEvents() {
-    var $container = $(".gh-events");
+  function displayEventsOrg() {
     events.forEach(function(event) {
       $container.append(event.container);
       $(event.selector).append("<dt class='gh-title'/>");
