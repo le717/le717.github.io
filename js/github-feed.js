@@ -33,41 +33,6 @@
    */
   GHEvent.prototype.charLimit = 80;
 
-  /**
-   * Convert a date/time stamp to the format "DD Month, YYYY".
-   * @returns {String}
-   */
-   GHEvent.prototype.createDate = function() {
-    var months = {"01": "January", "02": "February", "03": "March", "04": "April",
-                  "05": "May", "06": "June", "07": "July", "08": "August", "09": "September",
-                  "10": "October", "11": "November", "12": "December"
-                 };
-
-    var dateParts = this.date.split("T")[0].split("-"),
-        formatted = [dateParts[2], dateParts[1], dateParts[0]];
-    formatted[1]  = months[formatted[1]] + ",";
-    this.date = formatted.join(" ");
-  };
-
-  GHEvent.prototype.compile = function() {
-    var final = ["<dl id='gh-", this.id, "'>"];
-
-    // Event title, date, and URL
-//    this.createDate()
-    final.push("<dt class='gh-title'>", this.event);
-    final.push("<a class='gh-url' target='_blank' href='", this.url, "'>",
-               this.sha, "</a> @ ", this.repo, " on ", this.date, "</dt>");
-
-    // Post body
-    this.summarize();
-    final.push("<dd><code>", this.msg, "</code></dd>");
-
-    // Finally, close off the container
-    final.push("</dl>");
-    this.final = final.join("");
-
-  };
-
 
   /**
    * Summarize a commit message.
@@ -90,6 +55,26 @@
     }
     return true;
   };
+
+
+  GHEvent.prototype.compile = function() {
+    var final = ["<dl id='gh-", this.id, "'>"];
+
+    // Event title, date, and URL
+    final.push("<dt class='gh-title'>", this.event);
+    final.push("<a class='gh-url' target='_blank' href='", this.url, "'>",
+               this.sha, "</a> @ ", this.repo, " on ", this.date, "</dt>");
+
+    // Post body
+    this.summarize();
+    final.push("<dd><code>", this.msg, "</code></dd>");
+
+    // Finally, close off the container
+    final.push("</dl>");
+    this.final = final.join("");
+
+  };
+
 
   var EventUtils = {
     /**
@@ -279,26 +264,6 @@
     });
   }
 
-
-  /**
-   * Display the feed results.
-   * @returns {Boolean} Always returns true.
-   */
-  function displayEventsOrg() {
-    events.forEach(function(event) {
-      $container.append(event.container);
-      $(event.selector).append("<dt class='gh-title'/>");
-      $(event.selector).append("<dd/>");
-
-      $(event.selector + " .gh-title").html(event.event +
-                                            " <a class='gh-url' target='_blank' href=''></a> @ " +
-                                            event.repo + " on " + event.date);
-      $(event.selector + " .gh-url").html(event.sha);
-      $(event.selector + " .gh-url").attr("href", event.url);
-      $(event.selector + " dd").html("<code>" + event.msg + "</code>");
-    });
-    return true;
-  }
 
   // Poll the GitHub API
   $.ajax({
