@@ -26,11 +26,6 @@ body {
   padding: 0;
 }
 
-code {
-  font-family: $font-family-code;
-  font-size: 0.9em;
-}
-
 // Logo at top of home page
 header { @extend .text-center; }
 
@@ -60,19 +55,6 @@ kbd {
 p {
   padding-left: 1em;
   padding-right: 1em;
-}
-
-pre {
-  border-left: 0.4em solid #DDD;
-  padding: 10px;
-  margin-left: 2.5em;
-  margin-right: 2.5em;
-  width: auto;
-  overflow: auto;
-  background-color: $color-gray-trans;
-  font-size: 0.93em;
-  font-family: $font-family-code;
-  text-shadow: 1px 1px 1px $color-black;
 }
 
 // Create collapsible tables

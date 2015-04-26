@@ -19,19 +19,23 @@
 @include ie-img-link();
 @include img-responsive(720px);
 
-@import "variables";
-@import "parts/text";
-@import "parts/animations";
+@import "variables"
 @import "common";
 @import "base-elements";
 
+// Page elements
+@import "parts/animations";
+@import "parts/code";
+@import "parts/loading";
+@import "parts/text";
+@import "parts/quotes";
+
 // Page sections
 @import "parts/footer";
-@import "parts/loading";
 @import "parts/navbar";
-@import "parts/quotes";
 @import "parts/scroll-up";
 
+// Page specific
 @import "parts/blog";
 @import "parts/contact";
 @import "parts/homepage";
