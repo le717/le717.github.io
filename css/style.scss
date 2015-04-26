@@ -76,18 +76,16 @@
   h1 { @extend .text-center; }
 
   .project-anchor {
+    position: relative;
+    left: 0.2em;
     color: #FF4;
     opacity: 0;
-    transform: translate3d(-1.5em, 0, 0);
-    transition: transform 0.5s ease 0.1s;
+    transition: opacity 0.5s ease 0.1s;
 
     &:hover { border-bottom: none; }
   }
 
-  a:hover .project-anchor {
-    opacity: 1;
-    transform: translate3d(0.2em, 0, 0);
-  }
+  h1:hover .project-anchor { opacity: 1; }
 
   img {
     @extend .img-responsive;
