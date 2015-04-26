@@ -76,14 +76,15 @@
   h1 { @extend .text-center; }
 
   .project-anchor {
+    color: #FF4;
     opacity: 0;
     transform: translate3d(-1.5em, 0, 0);
-    transition: transform 0.5s ease 0s;
+    transition: transform 0.5s ease 0.1s;
   }
 
   a:hover .project-anchor {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0.2em, 0, 0);
   }
 
   img {
