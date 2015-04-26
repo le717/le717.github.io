@@ -1,18 +1,13 @@
 // ------- Code display
-code {
-  font-family: $font-family-code;
-  font-size: 0.9em;
-}
+code { font-family: $font-family-code; }
 
 pre {
-  border-left: 0.4em solid #DDD;
-  padding: 10px;
+  border-left: 0.3em solid #e2f89c;
+  padding: 0 0.5em;
   margin-left: 2.5em;
   margin-right: 2.5em;
   width: auto;
   overflow: auto;
   background-color: $color-gray-trans;
-  font-size: 0.93em;
   font-family: $font-family-code;
-  text-shadow: 1px 1px 1px $color-black;
 }
