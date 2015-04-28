@@ -8,13 +8,13 @@
 
 
 /**
- * Calculate and display the difference between two dates.
+ * Calculate and display the year difference between two dates.
  * @param {Object.<number>} date The starting date to calculate from.
  *                               The object contains three numeric keys, year, month, and day.
  *                               The year is expressed in four digits, e.g., 2015.
- * @param {String} ele DOM element ID or class selector.
+ * @returns {Number}.
  */
-function calcDate(date, ele) {
+function calcDate(date) {
   "use strict";
   var curDate  = new Date();
   var curDay   = curDate.getUTCDate(),
@@ -30,8 +30,8 @@ function calcDate(date, ele) {
     myCurAge -= 1;
   }
 
-  document.querySelector(ele).innerHTML = myCurAge;
+  return myCurAge;
 }
 
 // Calculate my age
-calcDate({ year: 1995, month: 3, day: 13 }, "#i-am-age");
+document.querySelector("#i-am-age").innerHTML = calcDate({ year: 1995, month: 3, day: 13 });
