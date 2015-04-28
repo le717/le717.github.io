@@ -19,9 +19,7 @@
   ],
   "homepage": "http://le717.github.io",
   "dependencies": {
-    "jquery.browser": "^0.0.7",
-    "scss-mixins": "git://github.com/le717/scss-mixins.git",
-    "string-format": "^0.2.1"
+    "scss-mixins": "git://github.com/le717/scss-mixins.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -31,7 +29,6 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-dev-update": "^1.0.2",
     "grunt-htmlhint": "^0.4.1",
     "matchdep": "^0.3.0"
   }

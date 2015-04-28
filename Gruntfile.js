@@ -29,14 +29,6 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: "node_modules/",
-            src: ["jquery.browser/dist/*.min.js", "string-format/lib/*"],
-            dest: "lib/",
-            flatten: true,
-            filter: "isFile"
-          },
-          {
-            expand: true,
             flatten: true,
             cwd: "node_modules/",
             src: "scss-mixins/mixins/*",

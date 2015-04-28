@@ -12,9 +12,7 @@ I've used some very nice third-party libraries and styling in developing my site
 * [Grunt](http://gruntjs.com/)
 * [jQuery](http://jquery.com/)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome/)
-* [jquery.browser](https://github.com/gabceb/jquery-browser-plugin/)
-* [String::format](https://github.com/davidchambers/string-format/)
-* [Sass](http://sass-lang.com)
+* [SCSS](http://sass-lang.com)
 
 ## License ##
 Created 2014-2015 [Triangle717](http://Triangle717.WordPress.com/), licensed under [The MIT License](license/LICENSE).
