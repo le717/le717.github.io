@@ -258,6 +258,8 @@
    */
   function displayEvents() {
     var $container = $(".gh-events");
+    $(".loading-dots").remove();
+
     events.forEach(function(event) {
       $container.append(event.final);
       return true;

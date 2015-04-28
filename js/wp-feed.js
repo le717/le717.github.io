@@ -108,11 +108,8 @@
           posts.push(myPost);
         });
 
-        // Now that the posts are stored, go through and display them
-        // and stop the loading animation
+        // Now that the posts are stored, display them
         $(".loading-dots").remove();
-        $(".blog-posts").removeClass("page-section");
-        $(".end-of-posts").removeClass("hidden");
         showPosts();
         return true;
       }
@@ -126,6 +123,9 @@
    */
   function showPosts() {
     var $container = $(".blog-posts");
+    $(".blog-posts").removeClass("page-section");
+    $(".end-of-posts").removeClass("hidden");
+
     posts.forEach(function(post) {
       $container.append(post.final);
 
