@@ -1,8 +1,8 @@
 // ------- Flexbox columns
 .homepage-columns {
-  display: -ms-flex;
   display: -webkit-flex;
-  display: flex;
+  display:     -ms-flex;
+  display:         flex;
 
   & > div { width: 50%; }
   & > div > h2 { @extend .text-center; }

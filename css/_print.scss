@@ -10,8 +10,7 @@
   h1, h2, h3, h4, h5, h6,
   p, pre, .post-title {
     text-shadow: none !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    @include box-shadow(none !important);
   }
 
   // Further shrink images when printing
