@@ -87,7 +87,8 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          "js/<%= pkg.name %>.min.js": "<%= jsfiles %>"
+          "js/about.min.js": "js/about.js",
+          "js/script.min.js": "js/script.js"
         }
       }
     },
