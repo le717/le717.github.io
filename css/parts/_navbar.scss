@@ -7,11 +7,12 @@
   height: 3.1rem;
   background-color: $color-trans-red;
   color: $color-white;
+  @include box-shadow(0 2px 4.75px 0.25px rgba(0, 0, 0, 0.3));
   z-index: 1;
 
   a {
     text-shadow: none;
-    @include transition(color 0.5s ease);
+    @include transition(color 0.3s ease);
     &:hover {
       color: #B3D4FC;
       border-bottom: none;
