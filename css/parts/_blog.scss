@@ -19,12 +19,6 @@
 }
 
 .post-content {
-  // Flatten blockquotes
-  blockquote * {
-    display: inline;
-    margin: 0 -0.8em;
-  }
-
   // Indent leading paragraph sentences
   p { text-indent: 0.8em; }
 
