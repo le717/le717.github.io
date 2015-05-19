@@ -1,6 +1,6 @@
 // Remove image color border on linked images in <= IE 10
 // SCSS mixin from https://github.com/le717/scss-mixins
 
-@mixin ie-img-link() {
+@mixin img-ie-link() {
   a > img { border: none; }
 }

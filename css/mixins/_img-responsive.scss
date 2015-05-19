@@ -2,10 +2,8 @@
 // SCSS mixin from https://github.com/le717/scss-mixins
 
 @mixin img-responsive($maxViewWidth: 800px, $maxCSSWidth: 100%) {
-  .img-responsive {
-    @media only screen and (max-width: $maxViewWidth) {
-      max-width: $maxCSSWidth;
-      height: auto;
-    }
+  @media only screen and (max-width: $maxViewWidth) {
+    max-width: $maxCSSWidth;
+    height: auto;
   }
 }

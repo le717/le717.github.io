@@ -1,12 +1,8 @@
-// CSS longhand WebKit-prefixed and unprefixed transition property
+// CSS shorthand transition property
+// for standard and WebKit prefixed version
 // SCSS mixin from https://github.com/le717/scss-mixins
 
-@mixin transition($property, $duration, $easing) {
-  -webkit-transition-property: $property;
-  -webkit-transition-duration: $duration;
-  -webkit-transition-timing-function: $easing;
-
-  transition-property: $property;
-  transition-duration: $duration;
-  transition-timing-function: $easing;
+@mixin transition($props...) {
+  -webkit-transition: $props;
+          transition: $props;
 }
