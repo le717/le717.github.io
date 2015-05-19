@@ -1,6 +1,2 @@
 User-agent: *
-Disallow: /blog/
-Disallow: /css/
-Disallow: /img/
-Disallow: /js/
-Disallow: /lib/
+Disallow:
