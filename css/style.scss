@@ -42,33 +42,6 @@
 @import "parts/homepage";
 
 
-// ------- Previous button
-#previous-link {
-  margin-left: 10px;
-  margin-top: -5px;
-  display: inline-block;
-  text-decoration: none;
-  color: #fcf54a;
-  text-shadow: 1px 1px 2px $color-black;
-
-  span {
-    font-size: 1.2em;
-    margin-left: 10px;
-  }
-
-  &:hover { @extend a:hover; }
-}
-
-
-#previous-button {
-  font-size: 1.3em;
-  @include webkit-transition-long(-webkit-transform, 0.2s, ease-out);
-  @include        transition-long((-webkit-transform, -ms-transform, transform), 0.2s, ease-out);
-
-  &:hover { @include transform(translate3d(-5px, 0, 0)); }
-}
-
-
 // ------- Projects
 .project-item {
   @extend .page-section;
@@ -106,6 +79,6 @@
 
 .embed-youtube iframe { @include block-center; }
 
-// ------- Mobile and print-only
-@import "screen";
+// ------- Mobile and print
+@import "mobile";
 @import "print";
