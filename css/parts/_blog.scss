@@ -26,7 +26,7 @@
   img {
     @extend .img-shadow;
     @extend .img-responsive;
-    @include block-center;
+    @include center-horizon;
   }
 }
 

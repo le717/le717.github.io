@@ -10,7 +10,7 @@
   opacity: 0;
   background-color: $color-trans-red;
   border-radius: 2px;
-  @include transition-short(opacity 0.3s ease-out);
+  @include transition(opacity 0.3s ease-out);
 
   display: -webkit-box;
   display: -webkit-flex;

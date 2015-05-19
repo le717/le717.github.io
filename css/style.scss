@@ -7,16 +7,14 @@
 // <http://opensource.org/licenses/MIT/>
 
 // Mixins
-@import "mixins/block-center";
+@import "mixins/center-horizon";
 @import "mixins/box-shadow";
-@import "mixins/ie-img-link";
+@import "mixins/img-ie-link";
 @import "mixins/img-responsive";
 @import "mixins/transform";
 @import "mixins/transition";
 @import "mixins/transition-long";
-@import "mixins/transition-short";
-@import "mixins/webkit-transition-long";
-@include ie-img-link();
+@include img-ie-link();
 @include img-responsive(720px);
 
 @import "variables";
@@ -55,7 +53,7 @@
   img {
     @extend .img-responsive;
     @extend .img-shadow;
-    @include block-center;
+    @include center-horizon;
     // This has no effect on the desktop
     max-width: 93%;
   }
@@ -74,10 +72,8 @@
 }
 
 
-// 404 image
-#image-four-oh-four { @include block-center; }
-
-.embed-youtube iframe { @include block-center; }
+#image-four-oh-four,
+.embed-youtube iframe{ @include center-horizon; }
 
 // ------- Mobile and print
 @import "mobile";
