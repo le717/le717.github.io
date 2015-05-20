@@ -1,30 +1,32 @@
 // ------- Projects page
-.project-item {
-  @extend .page-section;
-  padding-bottom: 1em;
+.projects {
+  .project-item {
+    @extend .page-section;
+    padding-bottom: 1em;
 
-  h1 {
-    @extend .text-center;
-    &:hover .perma-anchor { opacity: 1; }
+    h1 {
+      @extend .text-center;
+      &:hover .perma-anchor { opacity: 1; }
+    }
+
+    img {
+      @extend .img-responsive;
+      @extend .img-shadow;
+      @include center-horizon;
+      // This has no effect on the desktop
+      max-width: 93%;
+    }
   }
 
-  img {
-    @extend .img-responsive;
-    @extend .img-shadow;
-    @include center-horizon;
-    // This has no effect on the desktop
-    max-width: 93%;
+  .project-wip {
+    background-color: rgba(255, 0, 0, 0.5);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0.1em 2em 0.1em 2em;
+    color: $color-white;
+    font-size: 2em;
+    display: inline-block;
+
+    &:hover { border-bottom: none; }
   }
-}
-
-.project-wip {
-  background-color: rgba(255, 0, 0, 0.5);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 0.1em 2em 0.1em 2em;
-  color: $color-white;
-  font-size: 2em;
-  display: inline-block;
-
-  &:hover { border-bottom: none; }
 }

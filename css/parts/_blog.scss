@@ -1,41 +1,43 @@
 // ------- Blog
-.single-post {
-  @extend .page-section;
-  border-radius: 0.5em;
-  background-color: $color-blue-bg;
-}
-
-.post-url { @extend .perma-anchor; }
-
-.post-title {
-  @extend .text-center;
-  &:hover .post-url { opacity: 1; }
-}
-
-.post-meta {
-  @extend .text-center;
-  color: $color-yellow-light;
-  margin-top: -1em;
-}
-
-.post-content {
-  // Indent leading paragraph sentences
-  p { text-indent: 0.8em; }
-
-  // Blog post images
-  img {
-    @extend .img-shadow;
-    @extend .img-responsive;
-    @include center-horizon;
+.blog {
+  .single-post {
+    @extend .page-section;
+    border-radius: 0.5em;
+    background-color: $color-blue-bg;
   }
-}
 
-.end-of-posts {
-  @extend .text-center;
-  display: block;
-  font-size: 1.1em;
-  margin-top: 2.5%;
-  margin-bottom: -1%;
+  .post-url { @extend .perma-anchor; }
 
-  &.hidden { display: none; }
+  .post-title {
+    @extend .text-center;
+    &:hover .post-url { opacity: 1; }
+  }
+
+  .post-meta {
+    @extend .text-center;
+    color: $color-yellow-light;
+    margin-top: -1em;
+  }
+
+  .post-content {
+    // Indent leading paragraph sentences
+    p { text-indent: 0.8em; }
+
+    // Blog post images
+    img {
+      @extend .img-shadow;
+      @extend .img-responsive;
+      @include center-horizon;
+    }
+  }
+
+  .end-of-posts {
+    @extend .text-center;
+    display: block;
+    font-size: 1.1em;
+    margin-top: 2.5%;
+    margin-bottom: -1%;
+
+    &.hidden { display: none; }
+  }
 }
