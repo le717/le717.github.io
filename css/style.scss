@@ -17,6 +17,7 @@
 @include img-ie-link();
 @include img-responsive(720px);
 
+// Required styling
 @import "variables";
 @import "common";
 @import "base-elements";
@@ -25,6 +26,7 @@
 @import "parts/animations";
 @import "parts/code";
 @import "parts/loading";
+@import "parts/misc";
 @import "parts/perma-anchor";
 @import "parts/text";
 @import "parts/quotes";
@@ -38,43 +40,8 @@
 @import "parts/blog";
 @import "parts/contact";
 @import "parts/homepage";
+@import "parts/projects";
 
-
-// ------- Projects
-.project-item {
-  @extend .page-section;
-  padding-bottom: 1em;
-
-  h1 {
-    @extend .text-center;
-    &:hover .perma-anchor { opacity: 1; }
-  }
-
-  img {
-    @extend .img-responsive;
-    @extend .img-shadow;
-    @include center-horizon;
-    // This has no effect on the desktop
-    max-width: 93%;
-  }
-}
-
-.project-wip {
-  background-color: rgba(255, 0, 0, 0.5);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 0.1em 2em 0.1em 2em;
-  color: $color-white;
-  font-size: 2em;
-  display: inline-block;
-
-  &:hover { border-bottom: none; }
-}
-
-
-#image-four-oh-four,
-.embed-youtube iframe{ @include center-horizon; }
-
-// ------- Mobile and print
+// Mobile and print
 @import "mobile";
 @import "print";
