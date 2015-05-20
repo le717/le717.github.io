@@ -19,14 +19,14 @@
     }
   }
 
-  .navbar-icon {
+  .icon {
     display: inline;
     margin-left: 0.3em;
     color: $color-white;
     font-size: 1.5em;
   }
 
-  .navbar-text {
+  .text {
     margin-left: 0.3em;
     font-size: 1.15em;
   }
@@ -48,7 +48,7 @@
     &::before { content: " "; }
 
     // Center position the logo
-    .navbar-logo {
+    .logo {
       position: absolute;
       top: -0.1em;
       right: 3%;
