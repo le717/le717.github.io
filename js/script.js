@@ -27,10 +27,6 @@
       $("html, body").animate({scrollTop: 0}, 500, "easeInOutQuad");
     });
 
-    // Fully center the items that need centering
-    var $centered = $(".fully-centered");
-    $centered.css({"margin-left": -$centered.width() / 2, "margin-top": -$centered.height() / 2});
-
     $.each($(".project-item h1"), function(i, ele) {
       var $this  = $(ele),
           anchor = $this.parent().attr("id");
