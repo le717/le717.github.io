@@ -14,7 +14,7 @@
    */
   function toggleScrollUp() {
     var QbtnScrollUp = document.querySelector(".btn-scroll-up");
-    (window.scrollY >= 100) ? QbtnScrollUp.style.opacity = "1" : QbtnScrollUp.style.opacity = "";
+    (window.pageYOffset >= 100) ? QbtnScrollUp.style.opacity = "1" : QbtnScrollUp.style.opacity = "";
   }
 
   $(function() {
