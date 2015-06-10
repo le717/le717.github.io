@@ -43,7 +43,6 @@ kbd {
   border-radius: 3px;
   @include box-shadow((0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $color-white inset));
   color: #333;
-  display: inline-block;
   font-family: $font-family;
   font-size: 0.688em;
   line-height: 1.4;
