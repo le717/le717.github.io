@@ -2,6 +2,7 @@
 {% include navbar.html %}
   <div class="page-wrapper">
     {% include header.html %}
+    {% if page.type == "home" %}{% include highlighted.html %}{% endif %}
     {{ content }}
 
     {% include footer.html %}
