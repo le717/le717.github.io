@@ -34,4 +34,4 @@ function calcDate(date) {
 }
 
 // Calculate my age
-document.querySelector("#i-am-age").innerHTML = calcDate({ year: 1995, month: 3, day: 13 });
+document.querySelector("#my-age").innerHTML = calcDate({ year: 1995, month: 3, day: 13 });
