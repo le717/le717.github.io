@@ -1,3 +1,30 @@
+a {
+  @extend .text-decor-none;
+  color: $color-yellow-light;
+
+  &:hover { border-bottom: 1px solid $color-yellow-light; }
+}
+
+.img-shadow { @include box-shadow(0 1px 8px #3f3232); }
+
+.page-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .page-section {
   @include center-horizon;
   background-color: $color-blue-bg;
@@ -13,12 +40,3 @@
 }
 
 .page-wrapper { margin-top: 5em; }
-
-a {
-  @extend .text-decor-none;
-  color: $color-yellow-light;
-
-  &:hover { border-bottom: 1px solid $color-yellow-light; }
-}
-
-.img-shadow { @include box-shadow(0 1px 8px #3f3232); }
