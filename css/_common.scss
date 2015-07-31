@@ -32,6 +32,7 @@ a {
   width: 80%;
   height: auto;
   padding: 0 1.5em 0.2em 1.5em;
+  @include box-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 
   h1, h2, h3, h4, h5, h6 {
     color: $color-blue-header;
