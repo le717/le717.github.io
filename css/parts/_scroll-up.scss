@@ -9,7 +9,7 @@
   height: 2.6em;
   opacity: 0;
   background-color: $color-trans-red;
-  border-radius: 2px;
+  border-radius: 3px;
   @include transition(opacity 0.3s ease-out);
 
   display: -webkit-box;
