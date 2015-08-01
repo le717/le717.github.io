@@ -4,9 +4,9 @@ title: Test
 ---
 {% include loading-dots.html %}
 
-{% for name in site.html_pages %}
-  {{name}}<br>
-  {% include {{name}} %}
+{% for path in site.html_pages %}
+  {{path}}<br>
+  {% include {{path}} %}
 {% endfor %}
 
 <br>
