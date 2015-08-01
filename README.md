@@ -15,6 +15,6 @@ I've used some very nice third-party libraries and styling in developing my site
 * [SCSS](http://sass-lang.com)
 
 ## License ##
-Created 2014-2015 [Triangle717](http://Triangle717.WordPress.com/)
+Created 2014-2015 [Caleb Ely](http://Triangle717.WordPress.com/)
 
-[MIT](license/LICENSE)
+[MIT](LICENSE)
