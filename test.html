@@ -3,10 +3,20 @@ layout: root
 title: Test
 ---
 
+<style>
+  #btn-resume {
+    background-color: #008fef;
+    border-radius: 0.5em;
+    color: #fff;
+    width: 5em;
+    height: auto;
+  }
+</style>
+
 {% include highlighted.html %}
 
-<main class="page-section">
-  <h1 class="text-center">About Me</h1>
+<main class="page-section" id="about">
+  <h1 class="text-center">About</h1>
   <p>I am a <span id="my-age"></span> year old programmer, Web developer, and all-around technology fan harkening from Georgia, USA, of course!</p>
 
   <p>In late 2012 I was introduced to the magical world of programming, and by January 2013 I began teaching myself <a target="_blank" href="https://www.python.org/">Python programming</a>. That September I enrolled at <a target="_blank" href="http://southeasterntech.edu/">Southeastern Technical College</a> and obtained my Associate's degree in Website development, where I gradute in December 2015. Because of my programming knowledge and abilities, I have often been called a Python and JavaScript reference guide!</p>
@@ -21,24 +31,24 @@ title: Test
   </blockquote>
 </main>
 
-<main class="page-section">
-  <h1>Hire Me!</h1>
-  <p>That is right, I can be hired! If you are looking for a front-end developer who works from home and can write extraordinary code, then I am the guy for you!</p>
+<main class="page-section" id="hireme">
+  <h1 class="text-center">Hire Me!</h1>
+  <p>That is right, I can be hired! If you are looking for a front-end developer who works from home and can write extraordinary code, then I am the guy for you! What are you waiting for? Download my <a download href="#">resume</a> and send me an email today!</p>
+
+  <div id="btn-resume">Resume</div>
 </main>
 
-<main class="page-section">
-  <div class="contact-field">
-    <h1>Yes, you can contact me.</h1>
-    <table>
-      <tr>
-        <td><a target="_blank" href="http://www.youtube.com/user/Triangle717"><span class="fa fa-youtube-play contact-yt"></span></a></td>
-        <td><a target="_blank" href="{{ site.author_twitter }}"><span class="fa fa-twitter contact-twitter"></span></a></td>
-        <td><a target="_blank" href="https://www.facebook.com/cely717"><span class="fa fa-facebook contact-fb"></span></a></td>
-        <td><a target="_blank" href="{{ site.github.owner_url }}"><span class="fa fa-github contact-gh"></span></a></td>
-        <td><a target="_blank" href="{{ site.author_wp }}/contact"><span class="fa fa-wordpress contact-wp"></span></a></td>
-        <td><a target="_blank" href="https://www.linkedin.com/in/cely717"><span class="fa fa-linkedin contact-ln"></span></a></td>
-        <td>{% include contact.html %}<span class="fa fa-envelope contact-email"></span></a></td>
-      </tr>
-    </table>
-  </div>
+<main class="page-section contact-field" id="contact">
+  <h1 class="text-center">Yes, you can contact me.</h1>
+  <table>
+    <tr>
+      <td><a target="_blank" href="http://www.youtube.com/user/Triangle717"><span class="fa fa-youtube-play contact-yt"></span></a></td>
+      <td><a target="_blank" href="{{ site.author_twitter }}"><span class="fa fa-twitter contact-twitter"></span></a></td>
+      <td><a target="_blank" href="https://www.facebook.com/cely717"><span class="fa fa-facebook contact-fb"></span></a></td>
+      <td><a target="_blank" href="{{ site.github.owner_url }}"><span class="fa fa-github contact-gh"></span></a></td>
+      <td><a target="_blank" href="{{ site.author_wp }}/contact"><span class="fa fa-wordpress contact-wp"></span></a></td>
+      <td><a target="_blank" href="https://www.linkedin.com/in/cely717"><span class="fa fa-linkedin contact-ln"></span></a></td>
+      <td>{% include contact.html %}<span class="fa fa-envelope contact-email"></span></a></td>
+    </tr>
+  </table>
 </main>
