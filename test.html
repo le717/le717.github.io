@@ -1,15 +1,13 @@
 ---
 layout: default
 title: Test
-pages:
-  - about/index
 ---
 {% include loading-dots.html %}
 
-{% for content in page.pages %}
+{% for content in site.html_pages %}
   {% assign path = "" %}
-  {% capture path %}{{content}}.html{% endcapture %}
-  {% include {{path}} %}
+  {% capture path %}{{content}}{% endcapture %}
+  {{path}}<br>
 {% endfor %}
 
 <br>
