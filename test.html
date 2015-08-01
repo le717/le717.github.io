@@ -4,10 +4,9 @@ title: Test
 ---
 {% include loading-dots.html %}
 
-{% for content in site.html_pages %}
-  {% assign path = "" %}
-  {% capture path %}{{content}}{% endcapture %}
-  {{path}}<br>
+{% for name in site.html_pages %}
+  {{name}}<br>
+  {% include {{name}} %}
 {% endfor %}
 
 <br>
