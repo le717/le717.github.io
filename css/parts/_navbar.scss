@@ -47,13 +47,6 @@
     // Remove the triangles
     &::before { content: " "; }
 
-    // Center position the logo
-    .logo {
-      position: absolute;
-      top: -0.1em;
-      right: 3%;
-    }
-
     // Fix baseline height
     .fa-pencil-square-o {
       position: relative;
