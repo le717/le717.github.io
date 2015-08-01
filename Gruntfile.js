@@ -6,7 +6,6 @@ module.exports = function(grunt) {
     " * <%= pkg.homepage ? '' + pkg.homepage + '\\n' : '' %>" +
     " * Created <%= grunt.template.today('yyyy') %> <%= pkg.author %>;\n" +
     " * Licensed under the <%= _.pluck(pkg.licenses, 'type').join(', ') %>\n */\n",
-    cssfiles: ["css/*.css", "!css/*.min.css"],
     jsfiles: ["js/*.js", "!js/*.min.js"],
 
     devUpdate: {
@@ -47,27 +46,6 @@ module.exports = function(grunt) {
       }
     },
 
-    csslint: {
-      strict: {
-        options: {
-          csslintrc: ".csslintrc",
-          "import": 2
-        },
-        src: "<%= cssfiles %>",
-      }
-    },
-
-    cssmin: {
-      add_banner: {
-        options: {
-          banner: "<%= banner %>"
-        },
-        files: {
-          "css/not-pong.min.css": "css/not-pong.css",
-        }
-      }
-    },
-
     jshint: {
       src: {
         options: {
@@ -95,7 +73,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ["Gruntfile.js", "<%= cssfiles %>", "<%= jsfiles %>"],
+      files: ["Gruntfile.js", "<%= jsfiles %>"],
       tasks: ["all"]
     }
   });
@@ -110,10 +88,7 @@ module.exports = function(grunt) {
     grunt.log.writeln("Run 'grunt all' to run all tasks except 'devUpdate'");
   });
 
-  grunt.registerTask("lint", ["htmlhint", "jshint", "csslint"]);
-  grunt.registerTask("build", ["copy", "cssmin", "uglify"]);
+  grunt.registerTask("lint", ["htmlhint", "jshint"]);
+  grunt.registerTask("build", ["copy", "uglify"]);
   grunt.registerTask("all", ["lint", "build"]);
-
-  // Always use --force to stop csslint from killing the task
-  grunt.option("force", true);
 };
