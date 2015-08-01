@@ -2,63 +2,7 @@
 layout: default
 title: Test
 ---
-
-<style>
-  .new-loading {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-
-  .new-loading h1:first-of-type { margin-top: 0; }
-
-  .new-loading .dot {
-    display: inline;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    position: relative;
-    top: -1em;
-    font-size: 2.5em;
-    opacity: 0;
-
-    -webkit-animation: showHideDot 2.5s ease-in-out infinite;
-            animation: showHideDot 2.5s ease-in-out infinite;
-  }
-
-  .dot.one {
-    -webkit-animation-delay: 0.2s;
-            animation-delay: 0.2s;
-  }
-
-  .dot.two {
-    -webkit-animation-delay: 0.4s;
-            animation-delay: 0.4s;
-  }
-
-  .dot.three {
-    -webkit-animation-delay: 0.6s;
-            animation-delay: 0.6s;
-  }
-
-  @-webkit-keyframes showHideDot {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    60% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-  @keyframes showHideDot {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    60% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-</style>
-
-<div class="new-loading">
-  <h1>Loading</h1>
-  <h1 class="dot one">.</h1><h1 class="dot two">.</h1><h1 class="dot three">.</h1>
-</div>
+{% include loading-dots.html % }
 
 <br>
 <br>
