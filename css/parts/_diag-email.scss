@@ -1,0 +1,45 @@
+// ------- Email form
+.diag-email {
+  position: relative;
+  width: 50em;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-bottom: 1.5%;
+  padding-right: 1em;
+  border-radius: 0.5em;
+  background-color: $color-white;
+  color: $color-black;
+  background-clip: padding-box;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  a {
+    text-shadow: none;
+    color: $color-blue-header;
+  }
+
+  h1 {
+    @extend .text-center;
+    color: $color-blue-header;
+  }
+
+  .btn {
+    @extend .text-center;
+    @include block-center();
+    width: 40%;
+    margin-top: 0.6em;
+    padding: 0.5em;
+    color: $color-white;
+    border-radius: 0.5em;
+
+    &:hover { opacity: 0.9; }
+
+    &.remove {
+      color: $color-white;
+      background-color: #E02222;
+    }
+
+    &.close { background-color: #8A2BE2; }
+  }
+}
