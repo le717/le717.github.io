@@ -28,6 +28,7 @@
 #form-email {
   label {
     display: block;
+    @extend .text-center;
 
     & > span {
       @extend .text-bold;
@@ -51,7 +52,6 @@
       border-radius: 0.4em;
       font-family: $font-family;
       font-size: 1.05em;
-      @extend .text-center;
 
       &:focus { @include box-shadow(0px 1px 2px 2px #DDD); }
     }
