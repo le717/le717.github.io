@@ -35,6 +35,8 @@
       margin-bottom: 0.3em;
     }
 
+    & > h3 { @extend .text-center; }
+
     input[type="text"],
     input[type="email"],
     textarea {
@@ -49,6 +51,7 @@
       border-radius: 0.4em;
       font-family: $font-family;
       font-size: 1.05em;
+      @extend .text-center;
 
       &:focus { @include box-shadow(0px 1px 2px 2px #DDD); }
     }
@@ -61,7 +64,8 @@
     margin-top: 0.6em;
     padding: 0.5em;
     color: $color-white;
-    border-radius: 0.5em;
+    border-radius: 0.4em;
+    cursor: pointer;
 
     &:hover { opacity: 0.9; }
 
@@ -70,6 +74,11 @@
       background-color: #E02222;
     }
 
-    &.send { background-color: #8A2BE2; }
+    &.send {
+      background-color: #8A2BE2;
+      font-family: $font-family;
+      border: none;
+      font-size: 1em;
+    }
   }
 }
