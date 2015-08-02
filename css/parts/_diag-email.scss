@@ -26,7 +26,7 @@
 
   .btn {
     @extend .text-center;
-    @include block-center();
+    @include center-horizon;
     width: 40%;
     margin-top: 0.6em;
     padding: 0.5em;
