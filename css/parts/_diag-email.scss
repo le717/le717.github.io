@@ -40,6 +40,8 @@
       margin-left: 0.3em;
     }
 
+    &:nth-child(3) > span:nth-child(1) { display: block; }
+
     input[type="text"],
     input[type="email"],
     textarea {
@@ -56,9 +58,9 @@
       // font-size: 1.05em;
 
       &:focus { @include box-shadow(0px 1px 2px 2px #DDD); }
-
-      textarea { display: block; }
     }
+
+    textarea { display: block; }
   }
 
   .btn {
