@@ -1,7 +1,7 @@
 // ------- Email form
 .diag-email {
   position: relative;
-  width: 50em;
+  width: 35em;
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -26,7 +26,7 @@
 }
 
 #form-email {
-  h3 { @extend .text-center; }
+  h3, p { @extend .text-center; }
 
   label {
     display: block;
