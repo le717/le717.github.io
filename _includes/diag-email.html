@@ -3,10 +3,23 @@
   <p>Text here</p>
 
   <form id="form-email">
-    <label>Email <input type="email" name="email"></label>
-    <label>Name <input type="text" name="name"></label>
-    <label>Message <textarea name="message"></textarea></label>
-    <div class="btn cancel"></div>
-    <input class="btn send" type="submit" name="send">
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" placeholder="Your email goes here" required>
+    </label>
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" placeholder="Your name goes here" required>
+    </label>
+    <label>
+      <span>Message</span>
+      <textarea name="message" placeholder="Your message goes here!" required></textarea>
+    </label>
+
+    <h3>Prove you are not a bot</h3>
+    <label><input name="bot" type="checkbox">&nbsp;Do not check</label>
+
+    <div class="btn cancel">Cancel</div>
+    <input class="btn send" type="submit" name="submit" value="Send">
   </form>
 </main>

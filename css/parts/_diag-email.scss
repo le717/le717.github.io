@@ -23,6 +23,36 @@
     @extend .text-center;
     color: $color-blue-header;
   }
+}
+
+#form-email {
+  label {
+    display: block;
+
+    & > span {
+      @extend .text-bold;
+      display: inline-block;
+      margin-bottom: 0.3em;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      display: block;
+      width: 50%;
+      padding: 0.5em 0.75em;
+      margin-right: auto;
+      margin-bottom: 1em;
+      margin-left: auto;
+      @include box-shadow(0 1px 2px #ddd inset);
+      border: 1px solid rgba(147, 128, 108, 0.25);
+      border-radius: 0.4em;
+      font-family: $font-family;
+      font-size: 1.05em;
+
+      &:focus { @include box-shadow(0px 1px 2px 2px #DDD); }
+    }
+  }
 
   .btn {
     @extend .text-center;
