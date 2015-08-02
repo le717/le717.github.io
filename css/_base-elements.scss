@@ -16,6 +16,8 @@
   color: $color-black;
 }
 
+* { box-sizing: border-box; }
+
 body {
   font-family: $font-family;
   font-weight: 400;
