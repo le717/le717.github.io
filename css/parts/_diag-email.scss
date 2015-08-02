@@ -14,20 +14,16 @@
   background-clip: padding-box;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 
-  a {
-    text-shadow: none;
-    color: $color-blue-header;
-  }
-
-  h1 {
-    @extend .text-center;
-    color: $color-blue-header;
-  }
+  h1 { @extend .text-center; }
 }
 
 #form-email {
   h3, p { @extend .text-center; }
-  h3 ~ label { display: block; }
+  h3 ~ label {
+    display: block;
+    margin-top: -0.7em;
+    margin: 1em;
+  }
 
   label {
     // display: block;
@@ -85,6 +81,7 @@
       font-family: $font-family;
       border: none;
       font-size: 1em;
+      float: right;
     }
   }
 }
