@@ -36,7 +36,7 @@
       margin-bottom: 0.3em;
     }
 
-    h3 { @extend .text-center; }
+    & > h3:nth-child(4) { @extend .text-center; }
 
     input[type="text"],
     input[type="email"],
