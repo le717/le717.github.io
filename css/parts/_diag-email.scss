@@ -22,16 +22,15 @@
   position: relative;
   width: 35em;
   max-width: 100%;
-  margin-left: auto;
   display: block;
   margin-right: auto;
-  padding-left: 1em;
+  margin-left: auto;
+  padding-right: 0.7em;
   padding-bottom: 1.5%;
-  padding-right: 1em;
+  padding-left: 0.7em;
   border-radius: 0.4em;
   background-color: $color-white;
   color: $color-black;
-  // background-clip: padding-box;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 
   h2 {
@@ -42,10 +41,11 @@
 
 #form-email {
   h3, p { @extend .text-center; }
+  h3 { margin-top: -0.2em; }
   h3 ~ label {
     display: block;
     margin-top: -0.7em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   label {
