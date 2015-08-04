@@ -3,16 +3,16 @@
 #diag-email-wrapper {
   width: 100%;
   position: fixed;
-  top: 4.8em;
+  top: 4.5em;
   display: none;
   z-index: 1;
 
-  &.fadeIn {
+  &.fade-in {
     display: block;
     @extend .ani-fadein;
   }
 
-  &.fadeOut {
+  &.fade-out {
     display: block;
     @extend .ani-fadeout;
   }
