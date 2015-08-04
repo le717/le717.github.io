@@ -42,7 +42,7 @@
       QemailDialog = document.querySelector("#diag-email-wrapper");
 
   QbtnEmail.addEventListener("click", function() {
-    QemailDialog.classList.add("fadeIn");
+    QemailDialog.classList.add("fade-in");
   });
 
   // TODO proper closing
