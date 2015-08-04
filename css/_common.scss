@@ -1,8 +1,8 @@
 a {
   @extend .text-decor-none;
-  color: $color-yellow-light;
+  color: $color-yellow;
 
-  &:hover { border-bottom: 1px solid $color-yellow-light; }
+  &:hover { border-bottom: 1px solid $color-yellow; }
 }
 
 .img-shadow { @include box-shadow(0 1px 8px #3f3232); }

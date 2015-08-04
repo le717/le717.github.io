@@ -1,11 +1,7 @@
 // ------- Social buttons
 .contact-field {
   @extend .text-center;
-  a {
-    text-shadow: none;
-
-    &:hover { border-bottom: none; }
-  }
+  a:hover { border-bottom: none; }
 
   // Icon size and color
   span {
@@ -23,7 +19,7 @@
   }
 
   // Button icons
-  .contact-email { color: $color-yellow-light; }
+  .contact-email { color: $color-yellow; }
   .contact-fb { color: #3b5998; }
   .contact-gh { color: #999999; }
   .contact-ln { color: #caccce; }
