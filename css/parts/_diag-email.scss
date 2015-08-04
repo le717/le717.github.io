@@ -37,10 +37,12 @@
     @extend .text-center;
     margin-bottom: -0.6em;
   }
+
+  p { @extend .text-center; }
 }
 
 #form-email {
-  h3, p { @extend .text-center; }
+  h3 { @extend .text-center; }
   h3 { margin-top: -0.2em; }
   h3 ~ label {
     margin-top: -0.7em;
