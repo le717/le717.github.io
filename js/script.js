@@ -42,16 +42,20 @@
                      .html("Work in Progress");
   });
 
-  var QbtnEmail    = document.querySelector(".contact-email"),
-      QemailDialog = document.querySelector("#diag-email-wrapper");
+  var QbtnEmail       = document.querySelector(".contact-email"),
+      QemailDialog    = document.querySelector("#diag-email-wrapper"),
+      QbtnEmailSend   = document.querySelector("#form-email .btn.send"),
+      QbtnEmailCancel = document.querySelector("#form-email .btn.cancel");
+
 
   // Display the email form when the email icon is clicked
   QbtnEmail.addEventListener("click", function() {
     QemailDialog.classList.add("fade-in");
   });
 
-  // TODO proper closing
-  document.querySelector("#form-email .btn.cancel").addEventListener("click", function() {
+  // Hide the form
+  // TODO Also hide after sending
+  QbtnEmailCancel.addEventListener("click", function() {
     if (QemailDialog.classList.contains("fade-in")) {
       QemailDialog.classList.remove("fade-in");
       QemailDialog.classList.add("fade-out");
