@@ -14,7 +14,11 @@
    */
   function toggleScrollUp() {
     var QbtnScrollUp = document.querySelector(".btn-scroll-up");
-    (window.pageYOffset >= 100) ? QbtnScrollUp.classList.add("visible") : QbtnScrollUp.classList.remove("visible");
+    if (window.pageYOffset >= 100) {
+      QbtnScrollUp.classList.add("visible");
+    } else {
+      QbtnScrollUp.classList.remove("visible");
+    }
   }
 
   $(function() {

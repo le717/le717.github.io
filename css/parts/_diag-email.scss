@@ -3,7 +3,7 @@
 #diag-email-wrapper {
   width: 100%;
   position: fixed;
-  top: 4.5em;
+  top: 3em;
   display: none;
   z-index: 1;
 
@@ -21,7 +21,7 @@
 #diag-email {
   position: relative;
   width: 35em;
-  max-width: 80%;
+  max-width: 100%;
   margin-left: auto;
   display: block;
   margin-right: auto;
