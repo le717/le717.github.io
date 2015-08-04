@@ -4,7 +4,18 @@
   width: 100%;
   position: fixed;
   top: 4.8em;
+  display: none;
   z-index: 1;
+
+  &.fadeIn {
+    display: block;
+    @extend .ani-fadein;
+  }
+
+  &.fadeOut {
+    display: block;
+    @extend .ani-fadeout;
+  }
 }
 
 #diag-email {
