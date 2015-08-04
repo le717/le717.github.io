@@ -43,13 +43,13 @@
   h3, p { @extend .text-center; }
   h3 { margin-top: -0.2em; }
   h3 ~ label {
-    display: block;
     margin-top: -0.7em;
     margin-bottom: 0.5em;
   }
 
   label {
     @extend .text-center;
+    display: block;
 
     & > span {
       @extend .text-bold;
