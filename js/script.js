@@ -37,4 +37,26 @@
     $(".project-wip").wrap("<div class='text-center'/>")
                      .html("Work in Progress");
   });
+
+  var QbtnEmail    = document.querySelector(".contact-email"),
+      QemailDialog = document.querySelector("#diag-email-wrapper");
+
+  QbtnEmail.addEventListener("click", function() {
+    QemailDialog.classList.add("fadeIn");
+  });
+
+  // TODO proper closing
+  document.querySelector("#form-email .btn.cancel").addEventListener("click", function() {
+    if (QemailDialog.classList.contains("fade-in")) {
+      QemailDialog.classList.remove("fade-in");
+      QemailDialog.classList.add("fade-out");
+    }
+  });
+
+  QemailDialog.addEventListener("animationend", function(e) {
+    if (e.animationName === "fade-out") {
+      QemailDialog.classList.remove(e.animationName);
+    }
+  });
+
 })(jQuery);
