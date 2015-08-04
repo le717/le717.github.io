@@ -1,7 +1,9 @@
 // ------- Fade in animation
 .ani-fadein {
-  -webkit-animation: aniFadeIn 1.5s ease-out;
-          animation: aniFadeIn 1.5s ease-out;
+  -webkit-animation-name: aniFadeIn;
+          animation-name: aniFadeIn;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
@@ -16,8 +18,10 @@
 
 // ------- Fade out animation
 .ani-fadeout {
-  -webkit-animation: aniFadeOut 1.5s ease-out;
-          animation: aniFadeOut 1.5s ease-out;
+  -webkit-animation-name: aniFadeOut;
+          animation-name: aniFadeOut;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-timing-function: linear;
