@@ -45,6 +45,7 @@
   var QbtnEmail    = document.querySelector(".contact-email"),
       QemailDialog = document.querySelector("#diag-email-wrapper");
 
+  // Display the email form when the email icon is clicked
   QbtnEmail.addEventListener("click", function() {
     QemailDialog.classList.add("fade-in");
   });
@@ -57,10 +58,10 @@
     }
   });
 
+  // Remove the fading animation when done
   QemailDialog.addEventListener("animationend", function(e) {
     if (e.animationName === "aniFadeOut") {
       QemailDialog.classList.remove("fade-out");
     }
   });
-
 })(jQuery);

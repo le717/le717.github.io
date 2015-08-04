@@ -31,10 +31,13 @@
   border-radius: 0.4em;
   background-color: $color-white;
   color: $color-black;
-  background-clip: padding-box;
+  // background-clip: padding-box;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 
-  h1 { @extend .text-center; }
+  h2 {
+    @extend .text-center;
+    margin-bottom: -0.6em;
+  }
 }
 
 #form-email {
