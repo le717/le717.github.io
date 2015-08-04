@@ -55,7 +55,7 @@
 
   QemailDialog.addEventListener("animationend", function(e) {
     if (e.animationName === "aniFadeOut") {
-      QemailDialog.classList.remove(e.animationName);
+      QemailDialog.classList.remove("fade-out");
     }
   });
 
