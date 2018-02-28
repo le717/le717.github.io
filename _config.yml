@@ -1,6 +1,6 @@
 name: Triangle Land
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 baseurl: ""
 
 author_wp: https://Triangle717.WordPress.com
