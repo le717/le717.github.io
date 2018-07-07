@@ -9,28 +9,7 @@
 
 (function($) {
   "use strict";
-  /**
-   * Scroll to top button.
-   */
-  function toggleScrollUp() {
-    var QbtnScrollUp = document.querySelector(".btn-scroll-up");
-    if (window.pageYOffset >= 100) {
-      QbtnScrollUp.classList.add("visible");
-    } else {
-      QbtnScrollUp.classList.remove("visible");
-    }
-  }
-
   $(function() {
-    // Show/hide the scroll to top button
-    toggleScrollUp();
-    window.addEventListener("scroll", toggleScrollUp);
-
-    // Scroll up button action
-    $(".btn-scroll-up").on("click", function() {
-      $("html, body").animate({scrollTop: 0}, 500, "easeInOutQuad");
-    });
-
     $.each($(".project-item h1"), function(i, ele) {
       var $this  = $(ele),
           anchor = $this.parent().attr("id");
@@ -40,32 +19,5 @@
     // Add text to Project WIP label
     $(".project-wip").wrap("<div class='text-center'/>")
                      .html("Work in Progress");
-  });
-
-  var QbtnEmail       = document.querySelector(".contact-email"),
-      QemailDialog    = document.querySelector("#diag-email-wrapper"),
-      QbtnEmailSend   = document.querySelector("#form-email .btn.send"),
-      QbtnEmailCancel = document.querySelector("#form-email .btn.cancel");
-
-
-  // Display the email form when the email icon is clicked
-  QbtnEmail.addEventListener("click", function() {
-    QemailDialog.classList.add("fade-in");
-  });
-
-  // Hide the form
-  // TODO Also hide after sending
-  QbtnEmailCancel.addEventListener("click", function() {
-    if (QemailDialog.classList.contains("fade-in")) {
-      QemailDialog.classList.remove("fade-in");
-      QemailDialog.classList.add("fade-out");
-    }
-  });
-
-  // Remove the fading animation when done
-  QemailDialog.addEventListener("animationend", function(e) {
-    if (e.animationName === "aniFadeOut") {
-      QemailDialog.classList.remove("fade-out");
-    }
   });
 })(jQuery);
