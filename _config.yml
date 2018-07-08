@@ -1,13 +1,7 @@
-name: Triangle Land
+name: CodeTriangle
 markdown: kramdown
 highlighter: rouge
 baseurl: ""
-
-author_wp: https://Triangle717.WordPress.com
-author_twitter: https://twitter.com/_le717
-gems:
-  - jekyll-redirect-from
-  - jekyll-sitemap
 
 sass:
   style: :compressed

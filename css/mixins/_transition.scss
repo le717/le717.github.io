@@ -1,8 +1,0 @@
-// CSS shorthand transition property
-// for standard and WebKit prefixed version
-// SCSS mixin from https://github.com/le717/scss-mixins
-
-@mixin transition($props...) {
-  -webkit-transition: $props;
-          transition: $props;
-}

@@ -1,8 +1,0 @@
-// CSS transform property
-// SCSS mixin from https://github.com/le717/scss-mixins
-
-@mixin transform($props) {
-  -webkit-transform: $props;
-      -ms-transform: $props;
-          transform: $props;
-}

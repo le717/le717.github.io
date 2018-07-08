@@ -1,7 +1,0 @@
-// CSS box-shadow property
-// SCSS mixin from https://github.com/le717/scss-mixins
-
-@mixin box-shadow($props...) {
-  -webkit-box-shadow: $props;
-          box-shadow: $props;
-}
