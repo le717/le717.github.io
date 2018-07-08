@@ -1,8 +1,0 @@
-name: CodeTriangle
-markdown: kramdown
-highlighter: rouge
-baseurl: ""
-
-sass:
-  style: :compressed
-  sass_dir: css/
