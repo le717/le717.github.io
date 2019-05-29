@@ -2,6 +2,6 @@
 
 ## License
 
-Created 2014-2018 [Caleb Ely](https://CodeTri.net)
+Created 2014-2019 [Caleb Ely](https://CodeTri.net)
 
 [MIT](LICENSE)
