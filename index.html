@@ -5,61 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>le717.github.io</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code|Montserrat:200,400,500&display=swap">
   <style>
+    :root {
+      --primary-font-stack: "Montserrat", sans-serif;
+      --code-font-stack: "Fira Code", "Montserrat", sans-serif;
+    }
+
     *, *::before, *::after { box-sizing: border-box; }
 
+    html { min-width: 320px; }
+
     body {
-      font-family: "Open Sans", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
       font-size: 18px;
+      font-family: var(--primary-font-stack);
+      font-weight: 400;
+      color: rgb(37, 16, 16);
       line-height: 1.6;
     }
 
-    a { color: blue; }
+    header {
+      padding: 0 1em;
+      margin-bottom: 1em;
+      border-bottom: 2px solid lightgray;
+    }
+
+    header h1 { font-weight: 400; }
+    h2 {
+      font-family: var(--primary-font-stack);
+      font-weight: 400;
+    }
+
+    code {
+      font-family: var(--code-font-stack);
+      font-weight: 400;
+    }
+
+    li {
+      margin: 0.5em;
+    }
+
+    a {
+      background-color: rgb(49, 224, 255);
+      color: rgb(37, 16, 16);
+      padding: 0.2em 0.5em;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: transparent;
+    }
 
     div {
       display: inline-block;
       vertical-align: top;
     }
+
+    main {
+      width: 65%;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
   </style>
 </head>
 
 <body>
-  <h1>le717.github.io</h1>
+  <header>
+    <h1>le717.github.io</h1>
+  </header>
 
-  <div>
-    <h2>Directory listing</h2>
-    <h3><code>/demo</code></h3>
-    <ul>
-      <li><a href="demo/ie-inkscape.html">Internet Explorer and Inkscape SVG</a></li>
-      <li><a href="demo/ie-pre-em.html">Internet Explorer, &lt;pre&gt;, and em</a></li>
-    </ul>
+  <main>
+    <section>
+      <h2>Directory listing</h2>
+      <h3><code>/demo</code></h3>
+      <ul>
+        <li><a href="demo/ie-inkscape.html">Internet Explorer and Inkscape SVG</a></li>
+        <li><a href="demo/ie-pre-em.html">Internet Explorer, &lt;pre&gt;, and em</a></li>
+      </ul>
 
-    <h3><code>/fun</code></h3>
-    <ul>
-      <li><a href="fun/notpong.html">Not Pong</a></li>
-      <li><a href="fun/gray-vs-darkgray.html">CSS gray VS darkgray</a></li>
-    </ul>
-  </div>
+      <h3><code>/fun</code></h3>
+      <ul>
+        <li><a href="fun/notpong.html">Not Pong</a></li>
+        <li><a href="fun/gray-vs-darkgray.html">CSS gray VS darkgray</a></li>
+      </ul>
+    </section>
 
-  <div>
-    <h2>Website listing</h2>
-    <ul>
-      <li><a href="https://le717.github.io/CRTC/">Cycles Render Time Calculator</a></li>
-      <li><a href="https://le717.github.io/did-a-thing/">did-a-thing</a></li>
-      <li><a href="https://le717.github.io/jquery-spoiler/">jQuery Spoiler</a></li>
-      <li><a href="https://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
-      <li><a href="https://le717.github.io/LEGO-Island-VGF/">LEGO-Island-VGF archive</a></li>
-      <li><a href="https://le717.github.io/loss-js/">loss.js</a></li>
-      <li><a href="https://le717.github.io/nexo-bingo/">Nexo Knights Bingo</a></li>
-      <li><a href="https://le717.github.io/notepad/">Notepad</a></li>
-      <li><a href="https://le717.github.io/PatchIt/">PatchIt</a></li>
-      <li><a href="https://le717.github.io/quote/">"""""quote"""""</a></li>
-      <li><a href="https://le717.github.io/ROBOX/">ROBOX</a></li>
-      <li><a href="https://le717.github.io/spelling/">Spelling Captcha</a></li>
-      <li><a href="https://le717.github.io/teevee/">TEE VEE HERE</a></li>
-      <li><a href="https://le717.github.io/tic-tac-toe/">Tic-tac-toe</a></li>
-      <li><a href="https://le717.github.io/yeeeeeeeeeeeeeees/">yeeeeeeeeeeeeeees</a></li>
-    </ul>
-  </div>
+    <section>
+      <h2>Website listing</h2>
+      <ul>
+        <li><a href="https://le717.github.io/CRTC/">Cycles Render Time Calculator</a></li>
+        <li><a href="https://le717.github.io/did-a-thing/">did-a-thing</a></li>
+        <li><a href="https://le717.github.io/jquery-spoiler/">jQuery Spoiler</a></li>
+        <li><a href="https://le717.github.io/landslides/">A LANDSLIDE HAS OCCURRED</a></li>
+        <li><a href="https://le717.github.io/LEGO-Island-VGF/">LEGO-Island-VGF archive</a></li>
+        <li><a href="https://le717.github.io/loss-js/">loss.js</a></li>
+        <li><a href="https://le717.github.io/nexo-bingo/">Nexo Knights Bingo</a></li>
+        <li><a href="https://le717.github.io/notepad/">Notepad</a></li>
+        <li><a href="https://le717.github.io/PatchIt/">PatchIt</a></li>
+        <li><a href="https://le717.github.io/quote/">"""""quote"""""</a></li>
+        <li><a href="https://le717.github.io/ROBOX/">ROBOX</a></li>
+        <li><a href="https://le717.github.io/spelling/">Spelling Captcha</a></li>
+        <li><a href="https://le717.github.io/teevee/">TEE VEE HERE</a></li>
+        <li><a href="https://le717.github.io/tic-tac-toe/">Tic-tac-toe</a></li>
+        <li><a href="https://le717.github.io/yeeeeeeeeeeeeeees/">yeeeeeeeeeeeeeees</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
