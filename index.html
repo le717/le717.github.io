@@ -5,12 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>le717.github.io</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code|Montserrat:200,400,500&display=swap">
   <style>
+    :root {
+      --primary-font-stack: "Montserrat", sans-serif;
+      --code-font-stack: "Fira Code", "Montserrat", sans-serif;
+    }
+    
     *, *::before, *::after { box-sizing: border-box; }
+    
+    html { min-width: 320px; }
 
     body {
-      font-family: "Open Sans", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
       font-size: 18px;
+      font-family: var(--primary-font-stack);
+      font-weight: 400;
+      color: black;
       line-height: 1.6;
     }
 
